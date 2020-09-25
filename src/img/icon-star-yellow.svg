@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-star-yellow</title>
+    <g id="Top-menu-responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-full" transform="translate(-878.000000, -1230.000000)">
+            <g id="Group-34" transform="translate(182.000000, 718.000000)">
+                <g id="Group-12-Copy-5" transform="translate(0.000000, 124.000000)">
+                    <g id="Group-Copy-24" transform="translate(648.000000, 0.000000)">
+                        <g id="Group-6" transform="translate(0.000000, 388.000000)">
+                            <g id="Icon-24px" transform="translate(48.000000, 0.000000)">
+                                <polygon id="Shape" points="0 0 16 0 16 16 0 16"></polygon>
+                                <polygon id="star" fill="#FFC31A" points="12.12 14 11.03 9.314 14.6666667 6.16266667 9.87266667 5.75133333 8 1.33333333 6.12733333 5.75133333 1.33333333 6.16266667 4.97 9.314 3.88 14 8 11.5146667"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

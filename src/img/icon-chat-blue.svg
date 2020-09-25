@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-chat-blue</title>
+    <g id="Top-menu-responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-full" transform="translate(-918.000000, -1230.000000)">
+            <g id="Group-34" transform="translate(182.000000, 718.000000)">
+                <g id="Group-12-Copy-5" transform="translate(0.000000, 124.000000)">
+                    <g id="Group-Copy-24" transform="translate(648.000000, 0.000000)">
+                        <g id="Group-6" transform="translate(0.000000, 388.000000)">
+                            <g id="Icon-24px" transform="translate(88.000000, 0.000000)">
+                                <polygon id="Shape" points="0 0 16 0 16 16 0 16"></polygon>
+                                <path d="M13.3333333,1.33333333 L2.66666667,1.33333333 C1.93333333,1.33333333 1.33333333,1.93333333 1.33333333,2.66666667 L1.33333333,14.6666667 L4,12 L13.3333333,12 C14.0666667,12 14.6666667,11.4 14.6666667,10.6666667 L14.6666667,2.66666667 C14.6666667,1.93333333 14.0666667,1.33333333 13.3333333,1.33333333 L13.3333333,1.33333333 Z" id="Shape" fill="#1782E9"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

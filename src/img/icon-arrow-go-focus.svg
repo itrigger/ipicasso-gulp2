@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="16px" viewBox="0 0 14 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-arrow-go-focus</title>
+    <g id="Top-menu-responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-full" transform="translate(-1631.000000, -786.000000)">
+            <g id="Group-34" transform="translate(182.000000, 718.000000)">
+                <g id="Group-12" transform="translate(88.000000, 0.000000)">
+                    <g id="Group-5" transform="translate(1120.000000, 64.000000)">
+                        <g id="icons/arrow-go" transform="translate(236.000000, 0.000000)">
+                            <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                            <polygon id="Path" fill="#1782E9" points="11.9289322 4.93 10.5189322 6.34 15.17 11.0010678 5 11.0010678 5 13.0010678 15.17 13.0010678 10.5189322 17.6621356 11.9289322 19.0721356 19 12.0010678"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-hamburger-focus</title>
+    <g id="Top-menu-responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-full" transform="translate(-138.000000, -36.000000)">
+            <g id="icon-hamburger-focus" transform="translate(138.000000, 36.000000)">
+                <rect id="Rectangle" x="0" y="0" width="32" height="32"></rect>
+                <rect id="Rectangle" fill="#1782E9" x="4" y="5" width="24" height="2" rx="1"></rect>
+                <rect id="Rectangle" fill="#1782E9" x="4" y="15" width="24" height="2" rx="1"></rect>
+                <rect id="Rectangle" fill="#1782E9" x="4" y="25" width="24" height="2" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

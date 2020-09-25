@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-search-focus</title>
+    <g id="Top-menu-responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-full" transform="translate(-1750.000000, -113.000000)">
+            <g id="Group-3" transform="translate(146.000000, 113.000000)">
+                <g id="icon-search-focus" transform="translate(1604.000000, 0.000000)">
+                    <rect id="shape" x="0" y="0" width="32" height="32"></rect>
+                    <path d="M13,2 C19.0751322,2 24,6.92486775 24,13 C24,19.0751322 19.0751322,24 13,24 C6.92486775,24 2,19.0751322 2,13 C2,6.92486775 6.92486775,2 13,2 Z M13,4 C8.02943725,4 4,8.02943725 4,13 C4,17.9705627 8.02943725,22 13,22 C17.9705627,22 22,17.9705627 22,13 C22,8.02943725 17.9705627,4 13,4 Z" id="Combined-Shape" fill="#1782E9"></path>
+                    <path d="M20.7718047,19.3575911 L29.7050288,28.2908153 C30.0955531,28.6813396 30.0955531,29.3145046 29.7050288,29.7050288 C29.3145046,30.0955531 28.6813396,30.0955531 28.2908153,29.7050288 L19.3811272,20.7953407 L20.7718047,19.3575911 Z" id="Rectangle" fill="#1782E9"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

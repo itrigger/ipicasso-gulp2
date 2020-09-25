@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="26px" viewBox="0 0 28 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-3d</title>
+    <g id="Top-menu-responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mobile-home-full-copy" transform="translate(-95.000000, -223.000000)">
+            <g id="icons/3d" transform="translate(93.000000, 220.000000)">
+                <rect id="Rectangle" x="0" y="0" width="32" height="32"></rect>
+                <path d="M24.6778462,3.00732308 L15.9776,8.80748718 L7.27692308,3.00732308 L2,15.6719385 L15.9776,28.6507282 L29.9553436,15.6719385 L24.6778462,3.00732308 Z M4.19175385,15.1950769 L8.1166359,5.77803077 L15.9776,11.0193436 L23.8384205,5.77889231 L27.7638769,15.1968 L15.9776,26.1402051 L4.19175385,15.1950769 Z" id="Shape" fill="#404142" fill-rule="nonzero"></path>
+                <polygon id="Path" fill="#F44436" fill-rule="nonzero" points="16.898441 14.1994256 20.1083897 16.2813333 24.8696821 12.5393846"></polygon>
+                <polygon id="Path" fill="#F44436" fill-rule="nonzero" points="7.08508718 12.5393846 11.8469538 16.2813333 15.0571897 14.1994256"></polygon>
+                <polygon id="Path" fill="#404142" fill-rule="nonzero" points="15.9776 20.1762051 18.2769026 17.0061744 13.6780103 17.0061744"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
