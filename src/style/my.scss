@@ -1,0 +1,48 @@
+@import "parts/_utils";
+
+body{
+  font-family: 'PT Sans', sans-serif;
+  /*temp*/
+  //background: url('../img/temp.png') center top no-repeat;
+  /**/
+}
+body *{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  &:hover{
+    color: $blue;
+  }
+}
+
+/*Хаотичная разметка по дизайну*/
+#banners{
+  margin-bottom: 61px;
+}
+.main-page-collections{
+  margin-top: 140px;
+}
+.module-mp-cat-actions{
+  margin-top: 173px;
+}
+.module-mp-media-center{
+
+}
+
+@import "parts/_scrollbar";
+@import "parts/_grid";
+@import "parts/_icos";
+@import "parts/_buttons";
+@import "parts/_header";
+@import "parts/_menu";
+@import "parts/_banner";
+@import "parts/_mod_carousel";
+@import "parts/_uniqs";
+@import "parts/_footer";
+
+
+/*
+ToDo 1) Баг в файрфокс с каруселью, надо указать ширину контейнера
+ */

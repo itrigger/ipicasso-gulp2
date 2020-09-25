@@ -24,7 +24,7 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/main.js',
+        js: 'src/js/**/*.js',
         style: 'src/style/main.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
@@ -72,8 +72,12 @@ var gulp = require('gulp'),                                 // подключа�
     pngquant = require('imagemin-pngquant'),                // плагин для сжатия png
     rimraf = require('gulp-rimraf'),                        // плагин для удаления файлов и каталогов
     version = require('gulp-version-number'),               // плагин для добавлении версий css и js файлов
-    rename = require('gulp-rename');
-
+    rename = require('gulp-rename'),
+    babel = require('gulp-babel'),
+    sourcemaps = require('gulp-sourcemaps'),
+    concat = require('gulp-concat'),
+    browserSync = require('browser-sync').create(),
+    webpack = require('webpack-stream');
 /* задачи */
 
 // запуск сервера
@@ -107,15 +111,21 @@ gulp.task('css:build', function () {
 });
 
 // сбор js
-gulp.task('js:build', function () {
-    return gulp.src(path.src.js)                    // получим файл main.js
-        .pipe(plumber())                            // для отслеживания ошибок
-        .pipe(rigger())                             // импортируем все указанные файлы в main.js
+gulp.task('js:build', () => {
+    return gulp.src(path.src.js)
+        .pipe(plumber())
+        /*.pipe(webpack({
+            mode: 'development',
+            output: {filename: 'my.js'}
+        }))*/
+        /*.pipe(babel({
+            presets: [ '@babel/env' ]
+        }))*/
+        //.pipe(concat('all.js'))
+        //.pipe(uglify())
+
         .pipe(gulp.dest(path.build.js))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(uglify())                             // минимизируем js
-        .pipe(gulp.dest(path.build.js))             // положим готовый файл
-        .pipe(webserver.reload({ stream: true }));  // перезагрузим сервер
+        .pipe(browserSync.stream());
 });
 
 // перенос шрифтов

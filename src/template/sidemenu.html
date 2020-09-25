@@ -1,0 +1,165 @@
+<div class="sidemenu" id="sidemenu">
+    <div class="heading">
+        <div class="sign-block">
+            <div class="greetings">Hello</div>
+            <div class="sign-line">
+                <a class="ico-user white" href="/account">Dmitri</a>
+            </div>
+        </div>
+        <div class="close"></div>
+    </div>
+
+
+    <div class="j-sidemenu-scrollbar-wrapper">
+        <div class="scrollbar-inner">
+            <div class="sidemenu--catalog">
+                <div class="sidemenu--catalog_heading">CATALOG</div>
+                <ul class="ul sidemenu--catalog_ul zeynep">
+                    <li class="has-submenu">  <!-- добавляем класс has-submenu для пунктов, у которых есть потомки -->
+                        <a href="javascript:void(0);" data-submenu="catid-01">Paint by numbers</a> <!-- в data submenu снова айди категории-->
+                        <div class="submenu" id="catid-01">
+                            <div class="scrollbar-inner">
+                                <!-- контейнер с потомком, тут нужен уникальный ID, можно просто к catid- добавить реальный Id категории -->
+                                <div class="submenu-header">
+                                    <a data-all-close="1" href="#"><span class="arrow arrow-left"></span> Menu</a>
+                                    <!-- на ссылку возврата в дата атрибут тоже вписать catid- "+ ID категории" -->
+                                </div>
+                                <label>Paint by numbers</label>
+                                <!-- Дублируем название родительской категории, будет заголовком контейнера -->
+                                <ul class="ul"> <!-- в UL LI заполняем циклично дочерние категории -->
+                                    <li><a href="#" class="sidemenu--viewall">View all <span class="arrow"></span></a></li> <!-- ссылка на страницу этой категории -->
+                                    <li><a href="#">Images of people</a></li>
+
+                                    <li class="has-submenu">
+                                        <a href="#" data-submenu="carid-01-02">Animals</a>
+                                        <div class="submenu" id="carid-01-02">
+                                            <div class="scrollbar-inner">
+                                                <div class="submenu-header">
+                                                    <a data-all-close="1" href="#"><span class="arrow arrow-left"></span> Menu</a>
+                                                    <a data-submenu-close="carid-01-02" href="#"><span class="arrow arrow-left"></span> Paint by numbers</a>
+                                                </div>
+                                                <label>Animals</label>
+                                                <ul class="ul">
+                                                    <li><a href="#" class="sidemenu--viewall">View all <span class="arrow"></span></a></li>
+                                                    <li><a href="#">Hedgehogs</a></li>
+                                                    <li><a href="#">Pandas</a></li>
+                                                    <li><a href="#">Raccoons</a></li>
+                                                    <li><a href="#">Foxes</a></li>
+                                                    <li><a href="#">Monkeys</a></li>
+                                                    <li><a href="#">Horses</a></li>
+                                                    <li><a href="#">Cats</a></li>
+                                                    <li><a href="#">Dogs</a></li>
+                                                    <li><a href="#">Wolves</a></li>
+                                                    <li><a href="#">Lions, Tigers</a></li>
+                                                    <li><a href="#">Birds</a></li>
+                                                    <li><a href="#">Deers</a></li>
+                                                    <li><a href="#">Rainbow animals</a></li>
+                                                    <li><a href="#">Butterflies</a></li>
+                                                    <li><a href="#">Other animals</a></li>
+                                                    <li><a href="#">Other animals</a></li>
+                                                    <li><a href="#">Other animals</a></li>
+                                                    <li><a href="#">Other animals</a></li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><a href="#">Abstractions</a></li>
+                                    <li><a href="#">Still life</a></li>
+                                    <li><a href="#">Landscapes</a></li>
+                                    <li><a href="#">Religion</a></li>
+                                    <li><a href="#">Romance</a></li>
+                                    <li><a href="#">Cities and Countries</a></li>
+                                    <li><a href="#">Set for kids</a></li>
+                                    <li><a href="#">Flowers</a></li>
+                                    <li><a href="#">Transport</a></li>
+                                    <li><a href="#">Architecture</a></li>
+                                    <li><a href="#">Astronomy and space</a></li>
+                                    <li><a href="#">Food and drinks</a></li>
+                                    <li><a href="#">Painting by famous artists</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Nature</a></li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0);">Ramy do obrazow</a></li>
+                    <li><a href="javascript:void(0);">Diamentova mozika</a></li>
+                    <li><a href="javascript:void(0);">Papercraft 3D modele</a></li>
+                    <li><a href="javascript:void(0);">Gobeleny</a></li>
+                </ul>
+            </div>
+            <div class="sidemenu--accordion">
+                <div class="js-accordion">
+                    <div class="accordion_tab">
+                        IPICASSO.PL
+                        <div class="accordion_arrow"></div>
+                    </div>
+                    <div class="accordion_content">
+                        <div class="accordion_item">
+                            <ul class="ul js-accordion--ul">
+                                <li><a href="#">Jak zamówić</a></li>
+                                <li><a href="#">Formy płatności</a></li>
+                                <li><a href="#">Koszty i sposoby dostawy</a></li>
+                                <li><a href="#">Reklamacje i zwroty</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="js-accordion">
+                    <div class="accordion_tab">
+                        Pomoc dla kupującego
+                        <div class="accordion_arrow"></div>
+                    </div>
+                    <div class="accordion_content">
+                        <div class="accordion_item">
+                            <ul class="ul js-accordion--ul">
+                                <li><a href="#">Jak zamówić</a></li>
+                                <li><a href="#">Formy płatności</a></li>
+                                <li><a href="#">Koszty i sposoby dostawy</a></li>
+                                <li><a href="#">Reklamacje i zwroty</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="js-accordion">
+                    <div class="accordion_tab">
+                        Media center
+                        <div class="accordion_arrow"></div>
+                    </div>
+                    <div class="accordion_content">
+                        <div class="accordion_item">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="sidemenu--contacts">
+                    <div class="mediacenter--heading">CONTACT</div>
+                    <ul class="ul mediacenter--contacts">
+                        <li class="ico-sidebar-phone"><a href="tel:+48881044186">+48 881-044-186</a></li>
+                        <li><a href="tel:+48733782620">+48 733-782-620</a></li>
+                        <li class="ico-sidebar-mail"><a href="mailto:ipicasso.pl@gmail.com">ipicasso.pl@gmail.com</a></li>
+                    </ul>
+                    <ul class="ul mediacenter--socials">
+                        <li><a class="ico-sidebar-fb" href="#"></a></li>
+                        <li><a class="ico-sidebar-yt" href="#"></a></li>
+                        <li><a class="ico-sidebar-ig" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
