@@ -53,3 +53,9 @@ span.arrow{
     top: 8px;
   }
 }
+
+.btn-arrowed{
+  span.arrow{
+    background-position: 0 0;
+  }
+}
