@@ -217,16 +217,14 @@ body.sidemenu--open {
   border-bottom: 1px solid $borderGrey;
 }
 
-.zeynep .sidemenu--viewall {
+.sidemenu--viewall {
   height: 40px;
   display: flex;
   align-items: center;
   font-size: 16px;
   font-weight: 800;
-
   letter-spacing: 0;
   line-height: 16px;
-
   span.arrow {
     top: 0;
     margin-left: 6px;

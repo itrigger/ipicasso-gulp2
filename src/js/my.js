@@ -64,10 +64,17 @@ $(document).ready(function () {
             autoUpdate: true,
             disableBodyScroll: false
         });
-    }
-
+    };
+    const myScroll2 = function() {
+        $('.j-megamenu-scrollbar-wrapper .scrollbar-inner').scrollbar({
+            //autoScrollSize:!1,
+            autoUpdate: true,
+            disableBodyScroll: false
+        });
+    };
     /*запускаем кастом скролл при загрузке документа*/
     myScroll();
+    myScroll2();
 
     /*Открытие / закрытие бокового меню*/
     $(".burger--btn").click(function () {
