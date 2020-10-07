@@ -94,6 +94,15 @@ $(document).ready(function () {
         $(".burger--btn").removeClass("opened");
     })
 
+
+    /*Мега меню ховер*/
+    $(".minicat.hasChild").hover(function () {
+        $(this).after()
+    })
+
+
+
+
 });
 
 
@@ -125,3 +134,5 @@ $(function() {
     });
 
 });
+
+
