@@ -96,8 +96,23 @@ $(document).ready(function () {
 
 
     /*Мега меню ховер*/
-    $(".minicat.hasChild").hover(function () {
-        $(this).after()
+    $(".minicat").hover(function () {
+        //mm height 491
+        let containerHeight = $(".megamenu-inner").height() - 45;
+        let myFullHeight = $(this).find(".submenu").height() + 150 + 14;
+        let myOffset = $(this).position().top + myFullHeight;
+        let sub = myOffset - containerHeight;
+        let aheight = $(this).find(".name").height();
+        console.log(aheight);
+
+        $(this).find(".submenu").css({"paddingTop":aheight+130});
+
+        if(myOffset > containerHeight){
+           $(this).find(".submenu").css({"top":sub*(-1)-8});
+           $(this).find(">a").css("top",sub*(-1)+10);
+       }
+    }, function () {
+        $(this).find(".submenu, >a").removeAttr("style");
     })
 
 

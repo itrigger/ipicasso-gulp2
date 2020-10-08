@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 0 20px;
- // background: #fff;
+  background: #fff;
   border: 1px solid $borderGrey;
   border-radius: 4px;
  // max-height: calc(100vh - 175px);
@@ -317,7 +317,7 @@
   height: 140px;
   position: relative;
   &>a{
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     top: 0;
@@ -340,7 +340,7 @@
     font-size: 14px;
     line-height: 18px;
     color: #404142;
-    height: 36px;
+    max-height: 36px;
     overflow: hidden;
   }
   &:before{
@@ -370,8 +370,11 @@
     .name{
       font-weight: 800;
     }
+    .submenu{
+      display: block;
+    }
     &:before{
-      opacity: 1;
+      //opacity: 1;
       transition: opacity 0.1s;
     }
   }
@@ -389,18 +392,54 @@
         bottom: -4px;
       }
     }
+    &:hover{
+      .name span:after{
+        transform: rotate(180deg);
+      }
+    }
   }
   .submenu{
     display: none;
+    position: absolute;
+    left: -18px;
+    right: -18px;
+    top:-18px;
+    padding-top: 150px;
+    border: 1px solid #1782E9;
+    border-radius: 4px;
+    box-shadow: 0 1px 16px rgba(#000000, .12);
+    padding-bottom: 10px;
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #fff;
+      z-index: -1;
+    }
     ul{
-      margin: 0;
+      margin: 10px 0 0 0;
       padding: 0;
+      background: #fff;
+      border-radius: 0 0 4px 4px;
       li{
         list-style: none;
         a{
           font-size: 14px;
           line-height: 16px;
           color: #404142;
+          &:hover{
+            color: #1782E9;
+          }
+        }
+        &.last{
+          margin-top: 3px;
+          a{
+            color: #1782E9;
+          }
         }
       }
     }
