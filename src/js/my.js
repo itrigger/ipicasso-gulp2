@@ -113,7 +113,7 @@ $(document).ready(function () {
        }
     }, function () {
         $(this).find(".submenu, >a").removeAttr("style");
-    })
+    });
 
 
     /*tabs*/
@@ -128,6 +128,7 @@ $(document).ready(function () {
             $(this).removeClass('active');
         });
         $tabs.find(".tabs_content").eq(index).addClass("active");
+        $tabs.parent().find(".swiper-button-prev").addClass("swiper-button-disabled");
         swiperName[index].update();
         swiperName[index].slideTo(0,0);
     })
