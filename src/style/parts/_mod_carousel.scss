@@ -172,3 +172,13 @@
     line-height: 24px;
   }
 }
+
+
+.tabs_content_wrapper{
+  .tabs_content{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+}

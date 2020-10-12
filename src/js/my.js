@@ -116,7 +116,21 @@ $(document).ready(function () {
     })
 
 
-
+    /*tabs*/
+    $(".tabs li").on("click", function () {
+        let tabId = $(this).parent().parent().attr("data-tabid");
+        let $tabs = $(".tabs_content_wrapper[data-tabcid="+tabId+"]");
+        let index = $(this).index();
+        let swiperName = eval($(this).parent().parent().attr("data-swiper"));
+        $(this).parent().parent().find("li").removeClass("active");
+        $(this).addClass("active");
+        $tabs.find(".tabs_content").each(function () {
+            $(this).removeClass('active');
+        });
+        $tabs.find(".tabs_content").eq(index).addClass("active");
+        swiperName[index].update();
+        swiperName[index].slideTo(0,0);
+    })
 
 });
 
