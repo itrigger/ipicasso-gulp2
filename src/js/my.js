@@ -96,6 +96,17 @@ $(document).ready(function () {
 
 
     /*Мега меню ховер*/
+
+    $("html").on("hover",function () {
+        $(".megamenu").removeClass("active");
+    });
+
+    $("#category_menu li").hover(function () {
+        $(".megamenu").removeClass("active");
+        let catId = $(this).attr("data-menu-id");
+        $(".megamenu[data-id="+catId+"]").addClass("active");
+    });
+
     $(".minicat").hover(function () {
         //mm height 491
         let containerHeight = $(".megamenu-inner").height() - 45;
@@ -103,7 +114,6 @@ $(document).ready(function () {
         let myOffset = $(this).position().top + myFullHeight;
         let sub = myOffset - containerHeight;
         let aheight = $(this).find(".name").height();
-        console.log(aheight);
 
         $(this).find(".submenu").css({"paddingTop":aheight+130});
 
@@ -114,6 +124,20 @@ $(document).ready(function () {
     }, function () {
         $(this).find(".submenu, >a").removeAttr("style");
     });
+    const basePopImgHeight = $(".mm--popular>ul>li img").height();
+
+    $(".mm--popular>ul>li").hover(function () {
+        let imgHeight = $(this).find("img").height();
+        let ulHeight = $(this).find(".submenu ul").height();
+        $(this).find(".submenu").css({"paddingTop":basePopImgHeight + 80 - ulHeight});
+        $(this).find(".pic img").css({"height":basePopImgHeight-ulHeight+50});
+    },
+    function () {
+        $(this).find(".pic img").css({"height":basePopImgHeight});
+    }
+    );
+
+
 
 
     /*tabs*/
