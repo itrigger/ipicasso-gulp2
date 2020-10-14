@@ -1,16 +1,20 @@
 .megamenu{
   position: absolute;
-  display: none;
   top: auto;
   width: 100%;
-  z-index: 46;
+  z-index: -10;
   margin-top: -1px;
   height: 520px;
+  opacity: 0;
+  transition: all 0.5s;
   .j-megamenu-scrollbar-wrapper{
-    height: 480px;
+    //height: 480px;
+    height: 500px;
   }
   &.active{
-    display: block;
+    z-index: 46;
+    opacity: 1;
+    transition: all 0.3s;
   }
 }
 .megamenu-inner{
@@ -29,6 +33,13 @@
   }
 }
 
+
+.mm-popup{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
 .megamenu .col--left{
   grid-column: 1 /span 2;
   border-right: 1px solid $borderGrey;
@@ -43,11 +54,16 @@
     height: 40px;
     left: 0;
     right: 0;
-    bottom: 7px;
+    bottom: 0px;
     background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(0deg, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 100%);
   }
   &:hover{
+    &:after{
+      display: none;
+    }
+  }
+  &.isbottom{
     &:after{
       display: none;
     }
@@ -122,6 +138,14 @@
           color: inherit;
         }
       }
+      &.active:not(.viewall-margin){
+         a{
+           border-left: 4px solid #1782E9;
+           background: #E7F2FC;
+           font-weight: 800;
+           color: inherit;
+         }
+       }
       &.viewall-margin{
         margin-bottom: 9px;
         a{
@@ -399,7 +423,7 @@
         letter-spacing: normal;
         font-family: "Open Sans", sans-serif;
         &:hover{
-          color: inherit;
+          color: $blue;
         }
       }
     }
@@ -476,7 +500,7 @@
     border-radius: 4px;
     box-shadow: 0 1px 16px rgba(#000000, .12);
   }
-  &:hover{
+  &.hover{
     z-index: 999;
     .pic{
       height: 120px;

@@ -97,37 +97,46 @@ $(document).ready(function () {
 
     /*Мега меню ховер*/
 
-    $("html").on("hover",function () {
-        $(".megamenu").removeClass("active");
-    });
-
     $("#category_menu li").hover(function () {
         $(".megamenu").removeClass("active");
+        $(this).addClass("active");
         let catId = $(this).attr("data-menu-id");
         $(".megamenu[data-id="+catId+"]").addClass("active");
     });
 
+
+
     $(".minicat").hover(function () {
         //mm height 491
         let containerHeight = $(".megamenu-inner").height() - 45;
-        let myFullHeight = $(this).find(".submenu").height() + 150 + 14;
+        let nameHeight = $(this).find(".name").height();
+        let imgHeight = $(this).find("img").height();
+        let myFullHeight = $(this).find(".submenu").height() + imgHeight + nameHeight;
         let myOffset = $(this).position().top + myFullHeight;
+        let myOffset2 = $(this).position().top + $(this).height()-40;
+
         let sub = myOffset - containerHeight;
-        let aheight = $(this).find(".name").height();
 
-        $(this).find(".submenu").css({"paddingTop":aheight+130});
+        if(myOffset2<containerHeight) {
+            $(this).addClass("hover");
+            $(this).find(".submenu").css({"paddingTop": nameHeight + 130});
 
-        if(myOffset > containerHeight){
-           $(this).find(".submenu").css({"top":sub*(-1)-8});
-           $(this).find(">a").css("top",sub*(-1)+10);
-       }
+            if (myOffset > containerHeight) {
+                $(this).find(".submenu").css({"top": sub * (-1) -8 - 20});
+                $(this).find(">a").css("top", sub * (-1) -10);
+            }
+        }
     }, function () {
         $(this).find(".submenu, >a").removeAttr("style");
+        $(this).removeClass("hover");
     });
+
+
+
+
     const basePopImgHeight = $(".mm--popular>ul>li img").height();
 
     $(".mm--popular>ul>li").hover(function () {
-        let imgHeight = $(this).find("img").height();
         let ulHeight = $(this).find(".submenu ul").height();
         $(this).find(".submenu").css({"paddingTop":basePopImgHeight + 80 - ulHeight});
         $(this).find(".pic img").css({"height":basePopImgHeight-ulHeight+50});
@@ -136,6 +145,32 @@ $(document).ready(function () {
         $(this).find(".pic img").css({"height":basePopImgHeight});
     }
     );
+
+    $(".megamenu-inner").mouseleave(function(){
+        $(".megamenu").removeClass("active");
+        $(".category_menu li").removeClass("active");
+        $(".megamenu--catalog li:not(.viewall-margin)").removeClass("active");
+    });
+
+    $(".category_menu li").hover(function () {
+        $(".category_menu li").removeClass("active");
+        $(this).addClass("active");
+    });
+    $("#header").hover(function () {
+        $(".category_menu li").removeClass("active");
+        $(".megamenu").removeClass("active");
+        $("#megamenu--catalog li:not(.viewall-margin)").removeClass("active");
+    });
+
+    $(".megamenu--catalog li").hover(function () {
+        $(".mm-popup").removeClass("active");
+        $(".megamenu--catalog li:not(.viewall-margin)").removeClass("active");
+        $(this).addClass("active");
+        let catId = $(this).attr("data-id");
+        $(".mm-popup[data-itemId="+catId+"]").addClass("active");
+    });
+
+
 
 
 
@@ -169,11 +204,11 @@ $(function() {
         $(this).zeynep({
             opened: function (el) {
                 // log
-                console.log(el.attr('data-menu-name') + ' side menu opened')
+                //console.log(el.attr('data-menu-name') + ' side menu opened')
             },
             closed: function (el) {
                 // log
-                console.log(el.attr('data-menu-name') + ' side menu closed')
+                //console.log(el.attr('data-menu-name') + ' side menu closed')
             }
         })
     })
@@ -189,4 +224,15 @@ $(function() {
 
 });
 
+/*проверяем, докручен ли скролл до конца, чтобы убрать затемнение нижнего элемента в меню*/
 
+/*$('.j-megamenu-scrollbar-wrapper').scrollbar({
+    "onScroll": function(y, x){
+
+        if(y.scroll == y.maxScroll){
+            $(".col--left").addClass("isbottom");
+        } else {
+            $(".col--left").removeClass("isbottom");
+        }
+    }
+});*/
