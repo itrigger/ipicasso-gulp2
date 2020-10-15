@@ -138,11 +138,13 @@ $(document).ready(function () {
 
     $(".mm--popular>ul>li").hover(function () {
         let ulHeight = $(this).find(".submenu ul").height();
-        $(this).find(".submenu").css({"paddingTop":basePopImgHeight + 80 - ulHeight});
-        $(this).find(".pic img").css({"height":basePopImgHeight-ulHeight+50});
+       // $(this).find(".submenu").css({"paddingTop":basePopImgHeight + 80 - ulHeight, "maxHeight":"auto"});
+        $(this).find(".submenu").css({"maxHeight":ulHeight+10});
+        $(this).find(".pic img").css({"height":basePopImgHeight-ulHeight+54});
     },
     function () {
         $(this).find(".pic img").css({"height":basePopImgHeight});
+        $(this).find(".submenu").removeAttr("style");
     }
     );
 
