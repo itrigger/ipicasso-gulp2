@@ -173,6 +173,12 @@ $(document).ready(function () {
     });
 
 
+    $(".module_carousel--item").hover(function () {
+        let addHeight = $(this).find(".additions").height();
+       $(this).find(".shover").css({"height": $(this).height()+addHeight});
+    }, function () {
+        $(this).find(".shover").removeAttr("style");
+    });
 
 
 
