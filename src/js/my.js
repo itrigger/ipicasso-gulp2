@@ -99,9 +99,11 @@ $(document).ready(function () {
 
     $("#category_menu li").hover(function () {
         $(".megamenu").removeClass("active");
+        $(".mm-popup").removeClass("active");
         $(this).addClass("active");
         let catId = $(this).attr("data-menu-id");
         $(".megamenu[data-id="+catId+"]").addClass("active");
+        $(".mm-popup[data-itemid="+catId+"]").addClass("active");
     });
 
 
