@@ -1,0 +1,84 @@
+.card {
+  .price_w {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .cart_btn_w{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    padding-right: 6px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .cart_btn__like{
+    background: url("../img/card-ico-heart.jpg") 0 0 no-repeat;
+    background-size: contain;
+    width: 22px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  .cart_btn__incart{
+    background: url("../img/card-ico-cart.jpg") 0 0 no-repeat;
+    background-size: contain;
+    width: 29px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+  }
+  .cart_btn__hover{
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.1s all;
+    cursor: pointer;
+    background: #1782E9;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    position: absolute;
+    right: -6px; top: 0;
+    border-radius: 16px;
+    white-space: nowrap;
+    padding: 9px 24px;
+    text-transform: uppercase;
+  }
+
+  .notify{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #1782E9;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 16px;
+    height: 14px;
+    min-width: 14px;
+    text-align: center;
+    padding: 1px 3px;
+    &.notify--empty{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      padding-top: 0;
+    }
+  }
+
+  .cart_btn__incart:hover{
+    .cart_btn__hover{
+      opacity: 1;
+      pointer-events: auto;
+      transition: 0.2s all;
+    }
+  }
+  &:hover{
+    .cart_btn_w{
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

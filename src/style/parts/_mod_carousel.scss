@@ -2,18 +2,18 @@
   grid-column: 2 / span 10;
   position: relative;
   margin-bottom: 0;
-  max-width: calc(100% + 40px);
-  margin-left: -20px;
-  margin-right: -20px;
+  .swiper-container-wrapper{
+    width: calc(100% + 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+  }
   .swiper-container{
     margin-top: 9px;
-    width: calc(100% + 20px);
     padding-bottom: 90px;
+    overflow: visible;
   }
-  .swiper-wrapper{
-    margin-left: 20px;
-
-  }
+  .swiper-wrapper{}
   .swiper-button-prev{
     left: -68px;
     right: auto;
@@ -35,6 +35,15 @@
     }
     &:hover, &:focus{
       outline: none;
+    }
+  }
+  .swiper-slide{
+
+    &:first-child{
+
+    }
+    &:last-child{
+
     }
   }
 }
@@ -194,6 +203,7 @@
     border: 1px solid #CDCECF;
     border-radius: 5px;
     box-shadow: 0 1px 16px rgba(#000000, .12);
+    pointer-events: none;
   }
   &:hover{
     .shover{
