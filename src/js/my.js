@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
     /*карусель для модуля Новинки каталога на главной*/
   const mySwiper = new Swiper('.module-mp-cat-news .swiper-container', {
@@ -201,6 +199,41 @@ $(document).ready(function () {
         swiperName[index].update();
         swiperName[index].slideTo(0,0);
     })
+
+
+    /*мини-карточка товара*/
+    $(".card .btn-increase").click(function (e) {
+        e.preventDefault();
+        let cur = parseInt($(this).parent().find("input").val());
+        $(this).parent().find("input").val(cur + 1);
+        $(this).parent().parent().find(".notify").removeClass("notify--empty").text(cur + 1);
+    });
+    $(".card .btn-decrease").click(function (e) {
+        e.preventDefault();
+        let cur = parseInt($(this).parent().find("input").val());
+        if(cur > 0) {
+            $(this).parent().find("input").val(cur - 1);
+            $(this).parent().parent().find(".notify").text(cur - 1);
+            if((cur-1) == 0){
+                $(this).parent().parent().removeClass("hasItems");
+                $(this).parent().parent().find(".notify").addClass("notify--empty").text("+");
+            }
+        } else {
+            $(this).parent().parent().removeClass("hasItems");
+        }
+    });
+    $(".cart_btn__hover").click(function () {
+        $(this).parent().addClass("hasItems");
+        $(this).parent().find(".add_delete_w input").val("1");
+        $(this).parent().parent().find(".notify").removeClass("notify--empty").text("1");
+    })
+
+/* ToDo:
+*   1. Прокрутка вверх в левом меню при ховере на топ меню
+*   2. Слайдер на главной
+*   3. ТопТоп меню
+*
+* */
 
 });
 
