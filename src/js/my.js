@@ -176,8 +176,10 @@ $(document).ready(function () {
     $(".module_carousel--item").hover(function () {
         let addHeight = $(this).find(".additions").height();
        $(this).find(".shover").css({"height": $(this).height()+addHeight*2+16});
+       $(this).css({"paddingBottom": addHeight*2});
     }, function () {
         $(this).find(".shover").removeAttr("style");
+        $(this).css({"paddingBottom":"20px"});
     });
 
 

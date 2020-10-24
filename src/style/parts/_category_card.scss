@@ -89,7 +89,8 @@
     white-space: nowrap;
     border: 1px solid #9E9FA0;
     padding: 2px;
-    a{
+
+    a {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -98,18 +99,22 @@
       border-radius: 50%;
       color: #fff;
       background: url("../img/card-ico-plus.png") center center no-repeat #1782E9;
-      &:hover{
+
+      &:hover {
         background-color: #1475D2;
-        &.btn-decrease{
+
+        &.btn-decrease {
           background-color: #d2e6f9;
         }
       }
-      &.btn-decrease{
+
+      &.btn-decrease {
         background: url("../img/card-ico-minus.png") center center no-repeat #e7f2fc;
         color: #000;
       }
     }
-    input{
+
+    input {
       border: none !important;
       text-align: center;
       font-size: 14px;
@@ -117,6 +122,13 @@
     }
   }
 
+  .cart_notifyme {
+    width: 23px;
+    height: 28px;
+    background: url("../img/card-ico-alert.jpg") 0 0 no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
 
   /*hovers*/
   .cart_btn__incart:not(.hasItems):hover {
@@ -127,8 +139,8 @@
     }
   }
 
-  .cart_btn__incart.hasItems:hover{
-    .add_delete_w{
+  .cart_btn__incart.hasItems:hover {
+    .add_delete_w {
       opacity: 1;
       pointer-events: auto;
       transition: 0.2s all;
