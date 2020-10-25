@@ -193,8 +193,8 @@ $(document).ready(function () {
     /*tabs*/
     $(".tabs li").on("click", function () {
         let tabId = $(this).parent().parent().attr("data-tabid");
-        let $tabs = $(".tabs_content_wrapper[data-tabcid=" + tabId + "]");
-        let index = $(this).index();
+/*        let $tabs = $(".tabs_content_wrapper[data-tabcid=" + tabId + "]");
+        let index = $(this).index();*/
         let swiperName = eval($(this).parent().parent().attr("data-swiper"));
         let slug =  $(this).attr('data-slug').toString();
 
@@ -215,8 +215,6 @@ $(document).ready(function () {
             }
         }
 
-        console.log(slug);
-        console.log(temp_array);
 
         $(this).parent().parent().find("li").removeClass("active");
         $(this).addClass("active");
