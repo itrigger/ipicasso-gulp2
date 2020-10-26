@@ -3,11 +3,11 @@
         <div class="module_carousel">
             <div class="module--heading">Media Center</div>
             <div class="tabs_w">
-                <div class="tabs" data-tabid="3" data-swiper="mySwiper3">
+                <div class="tabs" data-swiper="mySwiper3" data-array="media">
                     <ul class="ul">
-                        <li class="active">All</li>
-                        <li>Artykuły i recenzje</li>
-                        <li>Aktualności</li>
+                        <li class="active" data-slug="all">All</li>
+                        <li data-slug="artykuly-i-recenzje">Artykuły i recenzje</li>
+                        <li data-slug="aktualnosci">Aktualności</li>
                     </ul>
                 </div>
                 <div class="linkmore">
@@ -20,94 +20,12 @@
                     <div class="swiper-container-wrapper">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/1.jpg">
-                                    </div>
-                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>
-                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę
-                                        trzymać w rękach
-                                        pędzel!
-                                    </div>
-                                </div>
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/2.jpg">
-                                    </div>
-                                    <div class="title">Instrukcja montażu 3D origami PAPERRAZ</div>
-                                    <div class="desc">Dla kogo i dlaczego są stworzone obrazy po numerach? Spróbujemy
-                                        wyjaśnić.
-                                    </div>
-                                </div>
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/3.jpg"></div>
-                                    <div class="title">Korzyści z malowania dla dzieci</div>
-                                    <div class="desc">Malowanie stanowi dla dzieci istotną umiejętność, której trudno
-                                        nie docenić.
-                                    </div>
-                                </div>
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/1.jpg">
-                                    </div>
-                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>
-                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę
-                                        trzymać w rękach
-                                        pędzel!
-                                    </div>
-                                </div>
+
+
+
+
                             </div>
                         </div>
-
-                        <!-- end of swiper -->
-                    </div>
-                </div>
-                <div class="tabs_content">
-                    <div class="swiper-container-wrapper">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/2.jpg">
-                                    </div>
-                                    <div class="title">Instrukcja montażu 3D origami PAPERRAZ</div>
-                                    <div class="desc">Dla kogo i dlaczego są stworzone obrazy po numerach? Spróbujemy
-                                        wyjaśnić.
-                                    </div>
-                                </div>
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/1.jpg">
-                                    </div>
-                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>
-                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę
-                                        trzymać w rękach
-                                        pędzel!
-                                    </div>
-                                </div>
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/3.jpg"></div>
-                                    <div class="title">Korzyści z malowania dla dzieci</div>
-                                    <div class="desc">Malowanie stanowi dla dzieci istotną umiejętność, której trudno
-                                        nie docenić.
-                                    </div>
-                                </div>
-                                <div class="swiper-slide module_carousel--item">
-                                    <div class="pic">
-                                        <img alt="" src="/img/mediacenter/1.jpg">
-                                    </div>
-                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>
-                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę
-                                        trzymać w rękach
-                                        pędzel!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- end of swiper -->
                     </div>
                 </div>
             </div>
@@ -117,3 +35,85 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    let media_default_slides_array = [
+        {
+            slug: 'artykuly-i-recenzje',
+            html: ' <div class="swiper-slide module_carousel--item">\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" src="/img/mediacenter/1.jpg">\n' +
+                '                                    </div>\n' +
+                '                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>\n' +
+                '                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę\n' +
+                '                                        trzymać w rękach\n' +
+                '                                        pędzel!\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'artykuly-i-recenzje',
+            html: ' <div class="swiper-slide module_carousel--item">\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" src="/img/mediacenter/2.jpg">\n' +
+                '                                    </div>\n' +
+                '                                    <div class="title">Instrukcja montażu 3D origami PAPERRAZ</div>\n' +
+                '                                    <div class="desc">Dla kogo i dlaczego są stworzone obrazy po numerach? Spróbujemy\n' +
+                '                                        wyjaśnić.\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'artykuly-i-recenzje',
+            html: '  <div class="swiper-slide module_carousel--item">\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" src="/img/mediacenter/1.jpg">\n' +
+                '                                    </div>\n' +
+                '                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>\n' +
+                '                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę\n' +
+                '                                        trzymać w rękach\n' +
+                '                                        pędzel!\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'artykuly-i-recenzje',
+            html: ' <div class="swiper-slide module_carousel--item">\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" src="/img/mediacenter/3.jpg"></div>\n' +
+                '                                    <div class="title">Korzyści z malowania dla dzieci</div>\n' +
+                '                                    <div class="desc">Malowanie stanowi dla dzieci istotną umiejętność, której trudno\n' +
+                '                                        nie docenić.\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'artykuly-i-recenzje',
+            html: '  <div class="swiper-slide module_carousel--item">\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" src="/img/mediacenter/1.jpg">\n' +
+                '                                    </div>\n' +
+                '                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>\n' +
+                '                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę\n' +
+                '                                        trzymać w rękach\n' +
+                '                                        pędzel!\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'aktualnosci', //aktualnosci
+            html: '  <div class="swiper-slide module_carousel--item">\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" src="/img/mediacenter/1.jpg">\n' +
+                '                                    </div>\n' +
+                '                                    <div class="title">Malowanie po numerach: dla kogo i po co są stwozone</div>\n' +
+                '                                    <div class="desc">Dzieci, ich rodzice, babcie, dziadkowie – wszyscy, kto ma siłę\n' +
+                '                                        trzymać w rękach\n' +
+                '                                        pędzel!\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+    ]
+
+</script>

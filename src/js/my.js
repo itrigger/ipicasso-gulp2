@@ -1,5 +1,15 @@
 $(document).ready(function () {
     /*карусель для модуля Новинки каталога на главной*/
+
+    const actions_all_slides_array = []; //все слайды карусельки с акциями
+    const news_all_slides_array = []; //все слайды карусельки с акциями
+    const media_all_slides_array = []; //все слайды карусельки с акциями
+
+    if (news_default_slides_array) {
+        for (const [i, arr] of news_default_slides_array.entries()) {
+            news_all_slides_array.push(arr['html'])
+        }
+    }
     const mySwiper = new Swiper('.module-mp-cat-news .swiper-container', {
         slidesPerView: 5,
         spaceBetween: 20,
@@ -8,8 +18,9 @@ $(document).ready(function () {
             prevEl: '.module-mp-cat-news .swiper-button-prev',
         },
     });
+    console.log(mySwiper);
+    mySwiper.appendSlide(news_all_slides_array);
 
-    const actions_all_slides_array = []; //все слайды карусельки с акциями
 
     if (actions_default_slides_array) {
         for (const [i, arr] of actions_default_slides_array.entries()) {
@@ -25,17 +36,68 @@ $(document).ready(function () {
             prevEl: '.module-mp-cat-actions .swiper-button-prev',
         },
     });
-    mySwiper2[0].appendSlide(actions_all_slides_array);
+    mySwiper2.appendSlide(actions_all_slides_array);
 
-    /!*карусель для модуля медиацентр на главной*!/
+    /*карусель для модуля медиацентр на главной*/
+    if (media_default_slides_array) {
+        for (const [i, arr] of media_default_slides_array.entries()) {
+            media_all_slides_array.push(arr['html'])
+        }
+    }
     const mySwiper3 = new Swiper('.module-mp-media-center .swiper-container', {
         slidesPerView: 3,
-        spaceBetween: 20,
+        spaceBetween: 21,
         navigation: {
             nextEl: '.module-mp-media-center .swiper-button-next',
             prevEl: '.module-mp-media-center .swiper-button-prev',
         },
     });
+    mySwiper3.appendSlide(media_all_slides_array);
+
+    /*tabs*/
+    $(".tabs li").on("click", function () {
+        let tabId = $(this).parent().parent().attr("data-tabid");
+        /*        let $tabs = $(".tabs_content_wrapper[data-tabcid=" + tabId + "]");
+                let index = $(this).index();*/
+        let swiperName = eval($(this).parent().parent().attr("data-swiper"));
+        let slug =  $(this).attr('data-slug').toString();
+        let array = eval($(this).parent().parent().attr('data-array').toString()+'_default_slides_array');
+
+        let temp_array = [];
+
+
+        if (array) {
+            if (slug === 'all'){
+                for (const [i, arr] of array.entries()) {
+                    temp_array.push(arr['html'])
+                }
+            } else {
+                for (const [i, arr] of array.entries()) {
+                    if(arr['slug'] === slug) {
+                        temp_array.push(arr['html'])
+                    }
+                }
+            }
+        }
+
+        $(this).parent().parent().find("li").removeClass("active");
+        $(this).addClass("active");
+        swiperName.removeAllSlides();
+        swiperName.appendSlide(temp_array);
+        swiperName.update();
+        swiperName.slideTo(0, 0);
+    });
+
+
+
+
+
+
+
+
+
+
+
 
     /*Первый аккордеон для сео блока*/
     $("#mp-accordion [data-accordion]").accordion({
@@ -183,61 +245,21 @@ $(document).ready(function () {
     $(".module_carousel--item").hover(function () {
         let addHeight = $(this).find(".additions").height();
         $(this).find(".shover").css({"height": $(this).height() + addHeight * 2 + 16});
-        $(this).css({"paddingBottom": addHeight * 2});
+        //$(this).css({"paddingBottom": addHeight * 2});
     }, function () {
         $(this).find(".shover").removeAttr("style");
-        $(this).css({"paddingBottom": "20px"});
+        //$(this).css({"paddingBottom": "20px"});
     });
 
 
-    /*tabs*/
-    $(".tabs li").on("click", function () {
-        let tabId = $(this).parent().parent().attr("data-tabid");
-/*        let $tabs = $(".tabs_content_wrapper[data-tabcid=" + tabId + "]");
-        let index = $(this).index();*/
-        let swiperName = eval($(this).parent().parent().attr("data-swiper"));
-        let slug =  $(this).attr('data-slug').toString();
-
-
-        let temp_array = [];
-
-        if (actions_default_slides_array) {
-            if (slug === 'all'){
-                for (const [i, arr] of actions_default_slides_array.entries()) {
-                    temp_array.push(arr['html'])
-                }
-            } else {
-                for (const [i, arr] of actions_default_slides_array.entries()) {
-                    if(arr['slug'] === slug) {
-                        temp_array.push(arr['html'])
-                    }
-                }
-            }
-        }
-
-
-        $(this).parent().parent().find("li").removeClass("active");
-        $(this).addClass("active");
-       /* $tabs.find(".tabs_content").each(function () {
-            $(this).removeClass('active');
-        });
-        $tabs.find(".tabs_content").eq(index).addClass("active");
-        $tabs.parent().find(".swiper-button-prev").addClass("swiper-button-disabled");*/
-        swiperName[0].removeAllSlides();
-        swiperName[0].appendSlide(temp_array);
-        swiperName[0].update();
-        swiperName[0].slideTo(0, 0);
-    })
-
-
     /*мини-карточка товара*/
-    $(".card .btn-increase").click(function (e) {
+    $("body").on("click", ".btn-increase", function (e) {
         e.preventDefault();
         let cur = parseInt($(this).parent().find("input").val());
         $(this).parent().find("input").val(cur + 1);
         $(this).parent().parent().find(".notify").removeClass("notify--empty").text(cur + 1);
     });
-    $(".card .btn-decrease").click(function (e) {
+    $("body").on("click", ".btn-decrease", function (e) {
         e.preventDefault();
         let cur = parseInt($(this).parent().find("input").val());
         if (cur > 0) {
@@ -251,7 +273,7 @@ $(document).ready(function () {
             $(this).parent().parent().removeClass("hasItems");
         }
     });
-    $(".cart_btn__hover").click(function () {
+    $("body").on("click", ".cart_btn__hover", function () {
         $(this).parent().addClass("hasItems");
         $(this).parent().find(".add_delete_w input").val("1");
         $(this).parent().parent().find(".notify").removeClass("notify--empty").text("1");
