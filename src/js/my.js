@@ -1,10 +1,23 @@
 $(document).ready(function () {
-    /*карусель для модуля Новинки каталога на главной*/
+
+
+    const SwiperSlider = new Swiper('#mainpage_slider .swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        navigation: {
+            nextEl: '#mainpage_slider .swiper-button-next',
+            prevEl: '#mainpage_slider .swiper-button-prev',
+        },
+    });
+
+
 
     const actions_all_slides_array = []; //все слайды карусельки с акциями
     const news_all_slides_array = []; //все слайды карусельки с акциями
     const media_all_slides_array = []; //все слайды карусельки с акциями
 
+    /*карусель для модуля Новинки каталога на главной*/
     if (news_default_slides_array) {
         for (const [i, arr] of news_default_slides_array.entries()) {
             news_all_slides_array.push(arr['html'])
@@ -21,13 +34,12 @@ $(document).ready(function () {
     console.log(mySwiper);
     mySwiper.appendSlide(news_all_slides_array);
 
-
+    /*карусель для модуля Акционный товар на главной*/
     if (actions_default_slides_array) {
         for (const [i, arr] of actions_default_slides_array.entries()) {
             actions_all_slides_array.push(arr['html'])
         }
     }
-    /*карусель для модуля Акционный товар на главной*/
     const mySwiper2 = new Swiper('.module-mp-cat-actions .swiper-container', {
         slidesPerView: 5,
         spaceBetween: 20,
