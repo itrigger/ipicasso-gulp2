@@ -224,7 +224,7 @@ $(document).ready(function () {
     });
 
     $(".category_menu li").hover(function () {
-        $(".category_menu li").removeClass("active");
+        $(this).parent().find("li").removeClass("active");
         $(this).addClass("active");
     });
     $("#header").hover(function () {
