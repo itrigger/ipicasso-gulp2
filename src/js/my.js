@@ -31,7 +31,6 @@ $(document).ready(function () {
             prevEl: '.module-mp-cat-news .swiper-button-prev',
         },
     });
-    console.log(mySwiper);
     mySwiper.appendSlide(news_all_slides_array);
 
     /*карусель для модуля Акционный товар на главной*/
@@ -254,9 +253,9 @@ $(document).ready(function () {
     });
 
 
-    $(".module_carousel--item").hover(function () {
+    $(".card").hover(function () {
         let addHeight = $(this).find(".additions").height();
-        $(this).find(".shover").css({"height": $(this).height() + addHeight * 2 + 16});
+        $(this).find(".shover").css({"height": $(this).height() + addHeight * 2});
         //$(this).css({"paddingBottom": addHeight * 2});
     }, function () {
         $(this).find(".shover").removeAttr("style");
@@ -291,10 +290,10 @@ $(document).ready(function () {
         $(this).parent().parent().find(".notify").removeClass("notify--empty").text("1");
     })
 
+    $('.tooltipstered').tooltipster();
+
     /* ToDo:
     *   1. Прокрутка вверх в левом меню при ховере на топ меню
-    *   2. Слайдер на главной
-    *   3. ТопТоп меню
     *
     * */
 
