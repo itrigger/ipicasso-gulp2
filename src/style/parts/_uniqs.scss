@@ -156,6 +156,9 @@
     .trustpilot-module--frame{
       grid-column: 2 / span 10;
       margin-top: 74px;
+      img{
+        max-width: 100%;
+      }
     }
   }
 }
@@ -190,6 +193,14 @@
         .desc{
           color: $base;
         }
+      }
+    }
+    .item-1{grid-column: span 1;}
+    .item-2{grid-column: span 1;}
+    .item-3{
+      grid-column: span 2;
+      img{
+        max-width: 100%;
       }
     }
   }

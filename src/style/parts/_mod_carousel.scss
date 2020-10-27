@@ -96,7 +96,11 @@
 }
 
 .module_carousel--item{
-
+  .pic{
+    img{
+      max-width: 100%;
+    }
+  }
   //??width: 260px !important;
 
 }
@@ -108,5 +112,25 @@
     &.active{
       display: block;
     }
+  }
+}
+
+
+@media (min-width: 1440px) and (max-width: 1659px) {
+  .module_carousel {
+    grid-column: 1 / span 12;
+  }
+  .module--heading{
+    padding-left: 0;
+  }
+  .tabs_w{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .module_carousel .swiper-button-prev{
+    left: -20px;
+  }
+  .module_carousel .swiper-button-next{
+    right: -20px;
   }
 }
