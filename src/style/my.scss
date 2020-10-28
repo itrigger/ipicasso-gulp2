@@ -40,6 +40,13 @@ a{
 
 }
 
+@media (min-width: 1440px) and (max-width: 1659px) {
+  .main-page-collections{
+    margin-top: 0;
+  }
+}
+
+
 @import "parts/_scrollbar";
 @import "parts/_grid";
 @import "parts/_icos";

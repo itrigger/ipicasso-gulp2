@@ -237,3 +237,32 @@
 .module-mp-media-center{
   margin-top: 109px;
 }
+
+
+
+@media (min-width: 1440px) and (max-width: 1659px) {
+  .circles{
+    grid-column: 1 / span 10;
+  }
+  .yellow_promo{
+    margin-top: 0;
+  }
+  .yellow_promo .pic{
+    grid-column: 1 / span 5;
+  }
+  .yellow_promo .text{
+    grid-column: span 5;
+  }
+  .trustpilot-module .in .trustpilot-module--frame{
+    grid-column: 1 / span 10;
+  }
+  .useful-module .useful-module--items{
+    grid-column: 1 / span 10;
+  }
+  .accordion{
+    grid-column: 3 / span 6;
+  }
+  .mp-wpcs .wpcs--items{
+    grid-column: span 10;
+  }
+}

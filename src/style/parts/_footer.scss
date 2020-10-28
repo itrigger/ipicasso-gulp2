@@ -120,3 +120,17 @@
 ul.social {
   display: flex;
 }
+
+
+@media (min-width: 1440px) and (max-width: 1659px) {
+  .footer{
+    margin-top: 25px;
+  }
+  .footer .line1{
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .footer .line1 .inner{
+    grid-column: 1 /span 10;
+    padding: 0 19px;
+  }
+}
