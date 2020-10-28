@@ -266,3 +266,59 @@
     grid-column: span 10;
   }
 }
+
+
+@media (min-width: 1140px) and (max-width: 1439px) {
+  .main-page-collections{
+    margin-top: 0;
+  }
+  .circles{
+    grid-column: 1 / span 8;
+  }
+  .circle--item{
+    width: 201px;
+    height: 201px;
+  }
+  .mp-wpcs .wpcs--items{
+    grid-column: span 8;
+  }
+  .yellow_promo{
+    margin-top: 0;
+  }
+  .yellow_promo .pic{
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .yellow_promo .text{
+    grid-column: span 5;
+  }
+  .trustpilot-module{
+    margin-top: 128px;
+  }
+  .trustpilot-module .in .trustpilot-module--frame{
+    grid-column: 1 / span 8;
+  }
+  .useful-module,
+  .faq_block
+  {
+    margin-top: 128px;
+  }
+  .useful-module .useful-module--items{
+    grid-column: 1 / span 8;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .useful-module .useful-module--items .item-1{
+    grid-column: span 2;
+  }
+  .useful-module .useful-module--items .item-2{
+    grid-column: span 2;
+  }
+  .useful-module .useful-module--items .item-3{
+    grid-column: span 4;
+  }
+  .accordion {
+    grid-column: 2 / span 6;
+  }
+}
+

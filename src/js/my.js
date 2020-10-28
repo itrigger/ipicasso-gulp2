@@ -248,7 +248,7 @@ $(document).ready(function () {
     });
 
 
-    const basePopImgHeight = $(".mm--popular>ul>li img").height();
+    const basePopImgHeight = $(".no-left-col .mm--popular>ul>li img").height();
 
     $(".mm--popular>ul>li").hover(function () {
             let ulHeight = $(this).find(".submenu ul").height();

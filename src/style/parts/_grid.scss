@@ -22,6 +22,8 @@
   .in{
     grid-template-columns: repeat(10, 1fr);
     padding: 0 19px;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
 
@@ -29,5 +31,7 @@
   .in{
     grid-template-columns: repeat(8, 1fr);
     padding: 0 19px;
+    max-width: 1140px;
+    margin: 0 auto;
   }
 }
