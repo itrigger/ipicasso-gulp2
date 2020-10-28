@@ -68,3 +68,11 @@
     grid-column: span 5 / -1;
   }
 }
+
+@media (min-width: 860px) and (max-width: 1139px) {
+  .banner-1-3-top,
+  .banner-1-3-bottom
+  {
+    display: none;
+  }
+}

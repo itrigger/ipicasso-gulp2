@@ -186,3 +186,31 @@
     margin-top: 128px;
   }
 }
+
+@media (min-width: 860px) and (max-width: 1139px) {
+  .module_carousel {
+    grid-column: 1 / span 6;
+  }
+  .module--heading{
+    padding-left: 0;
+  }
+  .tabs_w{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .module_carousel .swiper-button-prev{
+    left: -19px;
+  }
+  .module_carousel .swiper-button-next{
+    right: -19px;
+  }
+  .module_carousel .swiper-container-wrapper{
+    width: calc(100% + 39px);
+  }
+  .linkmore{
+    display: none;
+  }
+  .tabs ul li{
+    margin-right: 20px;
+  }
+}

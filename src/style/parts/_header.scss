@@ -52,7 +52,8 @@
   grid-column: 11 / span 1;
   text-align: right;
   border-right: 1px solid $borderGrey;
-  padding: 10px 70px 10px 0;
+  padding: 10px 70px 20px 0;
+  position: relative;
 }
 .header--cart_block{
   grid-column: 12 / span 1;
@@ -77,6 +78,8 @@
   letter-spacing: 0;
   line-height: 14px;
   white-space: nowrap;
+  position: absolute;
+  right: 70px;
 }
 .cart_block--price{
   font-size: 16px;
@@ -111,5 +114,25 @@
   }
   .burger{
     grid-column: 1 / span 2;
+  }
+}
+
+@media (min-width: 860px) and (max-width: 1139px) {
+  .burger{
+    grid-column: 1 / span 2;
+  }
+  .logo-wrapper{
+    grid-column: 3 / span 3;
+  }
+  .logo {
+    width: 158px;
+    height: 40px;
+    background-size: contain;
+  }
+  .header--cart_block {
+    grid-column: -1 / span 1;
+  }
+  .sign-block {
+    grid-column: -2 / span 1;
   }
 }
