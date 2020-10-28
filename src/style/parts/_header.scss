@@ -105,3 +105,11 @@
 @media (min-width: 1440px) and (max-width: 1659px) {
   
 }
+@media (min-width: 1140px) and (max-width: 1439px) {
+  .logo-wrapper{
+    grid-column: 5 / span 3;
+  }
+  .burger{
+    grid-column: 1 / span 2;
+  }
+}

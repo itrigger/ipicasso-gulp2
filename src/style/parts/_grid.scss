@@ -24,3 +24,10 @@
     padding: 0 19px;
   }
 }
+
+@media (min-width: 1140px) and (max-width: 1439px) {
+  .in{
+    grid-template-columns: repeat(8, 1fr);
+    padding: 0 19px;
+  }
+}
