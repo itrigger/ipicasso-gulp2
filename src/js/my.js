@@ -17,6 +17,7 @@ $(document).ready(function () {
     const news_all_slides_array = []; //все слайды карусельки с акциями
     const media_all_slides_array = []; //все слайды карусельки с акциями
 
+
     /*карусель для модуля Новинки каталога на главной*/
     if (news_default_slides_array.length > 0) {
         for (const [i, arr] of news_default_slides_array.entries()) {
