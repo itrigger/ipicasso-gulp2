@@ -18,7 +18,7 @@ $(document).ready(function () {
     const media_all_slides_array = []; //все слайды карусельки с акциями
 
     /*карусель для модуля Новинки каталога на главной*/
-    if (news_default_slides_array) {
+    if (news_default_slides_array.length > 0) {
         for (const [i, arr] of news_default_slides_array.entries()) {
             news_all_slides_array.push(arr['html'])
         }
@@ -51,7 +51,7 @@ $(document).ready(function () {
     mySwiper.appendSlide(news_all_slides_array);
 
     /*карусель для модуля Акционный товар на главной*/
-    if (actions_default_slides_array) {
+    if (actions_default_slides_array.length > 0) {
         for (const [i, arr] of actions_default_slides_array.entries()) {
             actions_all_slides_array.push(arr['html'])
         }
@@ -84,7 +84,7 @@ $(document).ready(function () {
     mySwiper2.appendSlide(actions_all_slides_array);
 
     /*карусель для модуля медиацентр на главной*/
-    if (media_default_slides_array) {
+    if (media_default_slides_array.length > 0) {
         for (const [i, arr] of media_default_slides_array.entries()) {
             media_all_slides_array.push(arr['html'])
         }
