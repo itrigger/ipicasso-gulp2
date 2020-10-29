@@ -1,105 +1,6 @@
 $(document).ready(function () {
 
 
-    const SwiperSlider = new Swiper('#mainpage_slider .swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        navigation: {
-            nextEl: '#mainpage_slider .swiper-button-next',
-            prevEl: '#mainpage_slider .swiper-button-prev',
-        },
-    });
-
-
-
-    const actions_all_slides_array = []; //все слайды карусельки с акциями
-    const news_all_slides_array = []; //все слайды карусельки с акциями
-    const media_all_slides_array = []; //все слайды карусельки с акциями
-
-
-    /*карусель для модуля Новинки каталога на главной*/
-    if (news_default_slides_array.length > 0) {
-        for (const [i, arr] of news_default_slides_array.entries()) {
-            news_all_slides_array.push(arr['html'])
-        }
-    }
-    const mySwiper = new Swiper('.module-mp-cat-news .swiper-container', {
-        slidesPerView: 5,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.module-mp-cat-news .swiper-button-next',
-            prevEl: '.module-mp-cat-news .swiper-button-prev',
-        },
-        breakpoints: {
-            // when window width is >= 320px
-            860: {
-                slidesPerView: 3,
-                spaceBetween: 20
-            },
-            // when window width is >= 480px
-            1140: {
-                slidesPerView: 4,
-                spaceBetween: 20
-            },
-            // when window width is >= 640px
-            1440: {
-                slidesPerView: 5,
-                spaceBetween: 20
-            }
-        }
-    });
-    mySwiper.appendSlide(news_all_slides_array);
-
-    /*карусель для модуля Акционный товар на главной*/
-    if (actions_default_slides_array.length > 0) {
-        for (const [i, arr] of actions_default_slides_array.entries()) {
-            actions_all_slides_array.push(arr['html'])
-        }
-    }
-    const mySwiper2 = new Swiper('.module-mp-cat-actions .swiper-container', {
-        slidesPerView: 5,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.module-mp-cat-actions .swiper-button-next',
-            prevEl: '.module-mp-cat-actions .swiper-button-prev',
-        },
-        breakpoints: {
-            // when window width is >= 320px
-            860: {
-                slidesPerView: 3,
-                spaceBetween: 20
-            },
-            // when window width is >= 480px
-            1140: {
-                slidesPerView: 4,
-                spaceBetween: 20
-            },
-            // when window width is >= 640px
-            1440: {
-                slidesPerView: 5,
-                spaceBetween: 20
-            }
-        }
-    });
-    mySwiper2.appendSlide(actions_all_slides_array);
-
-    /*карусель для модуля медиацентр на главной*/
-    if (media_default_slides_array.length > 0) {
-        for (const [i, arr] of media_default_slides_array.entries()) {
-            media_all_slides_array.push(arr['html'])
-        }
-    }
-    const mySwiper3 = new Swiper('.module-mp-media-center .swiper-container', {
-        slidesPerView: 3,
-        spaceBetween: 21,
-        navigation: {
-            nextEl: '.module-mp-media-center .swiper-button-next',
-            prevEl: '.module-mp-media-center .swiper-button-prev',
-        },
-    });
-    mySwiper3.appendSlide(media_all_slides_array);
-
     /*tabs*/
     $(".tabs li").on("click", function () {
         let tabId = $(this).parent().parent().attr("data-tabid");
@@ -133,16 +34,6 @@ $(document).ready(function () {
         swiperName.update();
         swiperName.slideTo(0, 0);
     });
-
-
-
-
-
-
-
-
-
-
 
 
     /*Первый аккордеон для сео блока*/

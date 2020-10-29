@@ -37,8 +37,9 @@
 </div>
 
 <script>
-
-    let media_default_slides_array = [
+    let media_default_slides_array = [];
+    let mySwiper3;
+    media_default_slides_array = [
         {
             slug: 'artykuly-i-recenzje',
             html: ' <div class="swiper-slide module_carousel--item">\n' +
@@ -115,5 +116,26 @@
                 '                                </div>'
         },
     ]
+
+    $(document).ready(function () {
+        const media_all_slides_array = []; //все слайды карусельки с акциями
+
+        /*карусель для модуля медиацентр на главной*/
+        if (media_default_slides_array.length > 0) {
+            for (const [i, arr] of media_default_slides_array.entries()) {
+                media_all_slides_array.push(arr['html'])
+            }
+        }
+        mySwiper3 = new Swiper('.module-mp-media-center .swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 21,
+            navigation: {
+                nextEl: '.module-mp-media-center .swiper-button-next',
+                prevEl: '.module-mp-media-center .swiper-button-prev',
+            },
+        });
+        mySwiper3.appendSlide(media_all_slides_array);
+
+    })
 
 </script>

@@ -41,7 +41,9 @@
 </div>
 
 <script>
-    let news_default_slides_array = [
+    let news_default_slides_array = [];
+    let mySwiper;
+    news_default_slides_array = [
         {
             slug: 'malowanie-po-numerach',
             html: '<div class="swiper-slide module_carousel--item card">\n' +
@@ -295,4 +297,41 @@
             html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" src="/img/00000005503-460x347.jpg"></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
         },
     ];
+
+    $(document).ready(function () {
+        const news_all_slides_array = []; //все слайды карусельки с акциями
+        /*карусель для модуля Новинки каталога на главной*/
+        if (news_default_slides_array.length > 0) {
+            for (const [i, arr] of news_default_slides_array.entries()) {
+                news_all_slides_array.push(arr['html'])
+            }
+        }
+        mySwiper = new Swiper('.module-mp-cat-news .swiper-container', {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.module-mp-cat-news .swiper-button-next',
+                prevEl: '.module-mp-cat-news .swiper-button-prev',
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                860: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                // when window width is >= 480px
+                1140: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+                // when window width is >= 640px
+                1440: {
+                    slidesPerView: 5,
+                    spaceBetween: 20
+                }
+            }
+        });
+        mySwiper.appendSlide(news_all_slides_array);
+
+    })
 </script>

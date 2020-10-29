@@ -75,6 +75,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        let SwiperSlider = new Swiper('#mainpage_slider .swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            navigation: {
+                nextEl: '#mainpage_slider .swiper-button-next',
+                prevEl: '#mainpage_slider .swiper-button-prev',
+            },
+        });
+    })
+</script>
 <!-- end of main page banners -->
 
 <!-- carousel new in catalog -->
