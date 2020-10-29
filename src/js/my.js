@@ -1,5 +1,44 @@
 $(document).ready(function () {
 
+    let MenuSwiper = undefined;
+
+    function initSwiper() {
+        var screenWidth = $(window).width();
+        if(screenWidth < 1140 && MenuSwiper == undefined) {
+            $('body').addClass("tablet");
+            MenuSwiper  = new Swiper('.cm-level-1 .swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                slidesOffsetAfter: 10,
+                slideClass: 'mm--item',
+                slideToClickedSlide: true,
+                watchOverflow: true,
+                navigation: {
+                    nextEl: '.cm-level-1 .swiper-button-next',
+                    prevEl: '.cm-level-1 .swiper-button-prev',
+                },
+            });
+            $(".tablet .cm-level-1 .ul-level-1 li").hover(function () {
+                MenuSwiper.slideTo($(this).index());
+            });
+        } else if (screenWidth > 991 && MenuSwiper != undefined) {
+            MenuSwiper.destroy();
+            MenuSwiper = undefined;
+            $('body').removeClass("tablet");
+            jQuery('.cm-level-1 .swiper-wrapper').removeAttr('style');
+            jQuery('.cm-level-1 .swiper-slide').removeAttr('style');
+        }
+    }
+
+//Swiper plugin initialization
+    initSwiper();
+
+//Swiper plugin initialization on window resize
+    $(window).on('resize', function(){
+        initSwiper();
+    });
+    //
+
 
     /*tabs*/
     $(".tabs li").on("click", function () {
@@ -266,3 +305,6 @@ $(function () {
         }
     }
 });*/
+
+
+

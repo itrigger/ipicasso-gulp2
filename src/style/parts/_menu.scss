@@ -21,6 +21,7 @@
 
 .ul-level-1 {
   margin: 0 8px 0 16px;
+  width: auto;
   a {
     text-transform: uppercase;
     font-size: 14px;
@@ -575,5 +576,44 @@ body.sidemenu--open {
   margin-top: 21px;
   li{
     margin-right: 5px;
+  }
+}
+//(min-width: 860px) and
+@media  (max-width: 1139px) {
+  .cm-level-1{
+    position: relative;
+    padding: 0 40px;
+
+    .swiper-button-prev{
+      left: 0;
+      right: auto;
+      background: url("../img/carousel-arrow-left.png") center center no-repeat;
+    }
+    .swiper-button-next{
+      right: 0;
+      left: auto;
+      background: url("../img/carousel-arrow-right.png") center center no-repeat;
+    }
+    .swiper-button-next,
+    .swiper-button-prev
+    {
+      top: 30px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      &:after{
+        display: none;
+      }
+      &:hover, &:focus{
+        outline: none;
+      }
+    }
+  }
+  .category_menu.cm-level-1 .ul {
+    justify-content: flex-start;
+    margin: 0;
+  }
+  .ul-level-1 a{
+    white-space: nowrap;
   }
 }
