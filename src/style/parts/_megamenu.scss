@@ -3,10 +3,12 @@
   top: auto;
   width: 100%;
   z-index: -10;
-  margin-top: -1px;
+  margin: -1px auto 0;
   height: 520px;
   opacity: 0;
   transition: all 0.5s;
+  left: 0;
+  right: 0;
   .j-megamenu-scrollbar-wrapper{
     //height: 480px;
     height: 500px;
@@ -18,6 +20,7 @@
   }
 }
 .megamenu-inner{
+  position: relative;
   margin: 0 auto;
   max-width: 1660px;
   display: grid;
@@ -646,9 +649,6 @@
 }
 
 @media (min-width: 1440px) and (max-width: 1659px) {
-  .megamenu{
-    padding: 0 19px;
-  }
   .megamenu-inner{
     grid-template-columns: repeat(10, 1fr);
   }
@@ -697,9 +697,6 @@
 }
 
 @media (min-width: 1140px) and (max-width: 1439px) {
-  .megamenu{
-    padding: 0 19px;
-  }
   .megamenu-inner{
     grid-template-columns: repeat(8, 1fr);
   }
@@ -758,5 +755,66 @@
   }
   .col--popular .mm--popular > ul > li{
     width: 155px;
+  }
+}
+
+@media (min-width: 860px) and (max-width: 1139px) {
+  .megamenu-inner{
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .megamenu .col--right{
+    grid-column: span 4;
+  }
+  .col--right-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .col--right-grid .j-megamenu-scrollbar-wrapper{
+    grid-column: span 4;
+    width: 100%;
+  }
+  .megamenu-inner .col--left .j-megamenu-scrollbar-wrapper{
+    width: calc(100% + 4px);
+  }
+  .scroll-wrapper > .scroll-content{
+    width: calc(100% - 4px) !important;
+  }
+  .minicats-flex-wrap{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .mmcpng1{
+    display: none;
+  }
+  .col--filter + .col--popular{
+    grid-column: span 2;
+    .mm--popular > ul > li{
+      width: 110px;
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 20px;
+      &:hover{
+        z-index: 10;
+      }
+    }
+    .mm--popular .pic img{
+      max-height: 100px;
+    }
+    .mm--popular .name{
+      font-size: 14px;
+      text-align: center;
+    }
+    .mm--popular .name span.arrow{
+      display: none;
+    }
+  }
+  .col--sales {
+    text-align: left;
+    padding-right: 0;
+    grid-row: 2;
+  }
+  .megamenu .col--left{
+    width: 100%;
+  }
+  .megamenu--catalog{
+    width: 100%;
   }
 }

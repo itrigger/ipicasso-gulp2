@@ -85,7 +85,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 20px;
+    grid-gap: 20px;
     margin-top: 50px;
   }
 }
@@ -293,12 +293,11 @@
   .yellow_promo .text{
     grid-column: span 5;
   }
-  .trustpilot-module{
-    margin-top: 128px;
-  }
+
   .trustpilot-module .in .trustpilot-module--frame{
     grid-column: 1 / span 8;
   }
+  .trustpilot-module,
   .useful-module,
   .faq_block
   {
@@ -347,5 +346,50 @@
         display: none;
       }
     }
+  }
+  .mp-wpcs .wpcs--items{
+    grid-column: 1 / span 6;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .wpcs--item{
+    width: 31%;
+  }
+  .yellow_promo .pic{
+    display: none;
+  }
+  .yellow_promo .text{
+    padding: 64px 0 39px;
+    grid-column: span 6;
+  }
+  .trustpilot-module .in .trustpilot-module--frame{
+    grid-column: span 6;
+  }
+  .trustpilot-module,
+  .useful-module,
+  .faq_block
+  {
+    margin-top: 96px;
+  }
+  .useful-module .useful-module--items{
+    grid-column: 1 / span 6;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .useful-module .useful-module--items .item-1{
+    grid-column: span 2;
+  }
+  .useful-module .useful-module--items .item-2{
+    grid-column: span 2;
+  }
+  .useful-module .useful-module--items .item-3{
+    grid-column: span 2;
+  }
+  .useful-module .useful-module--items .item .pic{
+    img{
+      max-width: 100%;
+    }
+  }
+  .accordion{
+    grid-column: 1 / span 6;
   }
 }

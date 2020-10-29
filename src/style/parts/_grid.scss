@@ -19,7 +19,7 @@
 }
 
 @media (min-width: 1440px) and (max-width: 1659px) {
-  .in{
+  .in, .megamenu{
     grid-template-columns: repeat(10, 1fr);
     padding: 0 19px;
     max-width: 1440px;
@@ -28,7 +28,7 @@
 }
 
 @media (min-width: 1140px) and (max-width: 1439px) {
-  .in{
+  .in, .megamenu{
     grid-template-columns: repeat(8, 1fr);
     padding: 0 19px;
     max-width: 1140px;
@@ -37,7 +37,7 @@
 }
 
 @media (min-width: 860px) and (max-width: 1139px) {
-  .in{
+  .in, .megamenu{
     grid-template-columns: repeat(6, 1fr);
     padding: 0 19px;
     max-width: 860px;
