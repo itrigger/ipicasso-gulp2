@@ -2,6 +2,8 @@
   position: relative;
   padding-top: 16px;
   padding-bottom: 90px;
+  z-index: 10;
+  background: #fff;
   .pic{
     min-height: 260px;
     display: flex;
@@ -107,6 +109,7 @@
     border-radius: 5px;
     box-shadow: 0 1px 16px rgba(#000000, .12);
     pointer-events: none;
+
   }
   &:hover{
     .shover{

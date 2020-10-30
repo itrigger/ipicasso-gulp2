@@ -784,6 +784,40 @@
   .mmcpng1{
     display: none;
   }
+  .col--popular {
+    grid-column: span 1;
+  }
+  .col--sales {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    padding-right: 0;
+    ul{
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 20px;
+      li{
+        white-space: nowrap;
+        margin-left: 20px;
+      }
+    }
+  }
+  .col--popular + .col--sales{
+      text-align: right;
+      padding-right: 32px;
+      grid-row: 1;
+      position: relative;
+      top: 0;
+      right: auto;
+      ul{
+        display: block;
+        padding-right: 20px;
+        li{
+          white-space: nowrap;
+          margin-left: 0;
+        }
+      }
+  }
   .col--filter + .col--popular{
     grid-column: span 2;
     .mm--popular > ul > li{
@@ -805,16 +839,126 @@
     .mm--popular .name span.arrow{
       display: none;
     }
+    .col--sales{
+      text-align: right;
+      padding-right: 32px;
+      grid-row: 1;
+      position: relative;
+      top: 0;
+      right: auto;
+      ul{
+        display: block;
+        padding-right: 20px;
+        li{
+          white-space: nowrap;
+          margin-left: 0;
+        }
+      }
+    }
+    & + .col--sales {
+      text-align: left;
+      padding-right: 0;
+      grid-row: 2;
+      position: relative;
+      top: 0;
+      right: auto;
+      ul{
+        display: block;
+        padding-right: 20px;
+        li{
+          white-space: nowrap;
+          margin-left: 0;
+        }
+      }
+    }
   }
-  .col--sales {
-    text-align: left;
-    padding-right: 0;
-    grid-row: 2;
-  }
+
+
+
   .megamenu .col--left{
     width: 100%;
   }
   .megamenu--catalog{
     width: 100%;
+  }
+  .mm--popular > ul > li{
+    width: 110px;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 20px;
+    &:hover{
+      z-index: 10;
+    }
+  }
+  .mm--popular .pic img{
+    max-height: 100px;
+  }
+  .mm--popular .name{
+    font-size: 14px;
+    text-align: center;
+  }
+  .mm--popular .name span.arrow{
+    display: none;
+  }
+  .megamenu .no-left-col{
+    .mm--popular{
+      li:nth-child(5),
+      li:nth-child(6),
+      li:nth-child(7){
+        display: none;
+      }
+    }
+    .col--popular{
+      grid-column: span 6;
+      grid-row: 2;
+      .mm--popular > ul > li{
+        width: 180px;
+        margin-right: 18px;
+      }
+      .mm--popular .pic img{
+        width: auto;
+        max-height: 287px;
+      }
+    }
+  }
+  .megamenu .no-left-col .col--right{
+    grid-column: span 6;
+    .col--sales{
+      position: absolute;
+      right: 0;
+      top: 36px;
+      padding-right: 0;
+      ul{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        li{
+          white-space: nowrap;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  .megamenu .no-left-col .col--right-grid{
+    grid-row: 1;
+    grid-template-columns: repeat(6, 1fr);
+    .col--heading{
+      margin-bottom: 25px;
+    }
+  }
+  .mm--popular > ul > li.hasChild:hover span.arrow{
+    display: none;
+  }
+  .mm--popular .submenu{
+    display: none;
+  }
+  .col--sales ul li a{
+    font-size: 12px;
+  }
+  .mm--popular > ul > li.hasChild .name:after{
+    display: none;
+  }
+  .col--minis-link{
+    max-width: 173px;
   }
 }

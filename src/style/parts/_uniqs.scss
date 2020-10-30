@@ -117,6 +117,9 @@
     line-height: 23px;
   }
 }
+.wpcs--item.tablet{
+  display: none;
+}
 
 .yellow_promo{
   background: #ffcf2c;
@@ -340,8 +343,22 @@
     width: auto;
     height: auto;
     background: transparent;
+    margin-top: 40px;
     .desc{
-      width: auto;
+      width: 344px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      display: inline-flex;
+      border: 1px solid #CDCECF;
+      border-radius: 20px;
+      padding: 10px 62px;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      .ico-arrow{
+        margin-left: 10px;
+      }
       br{
         display: none;
       }
@@ -367,7 +384,11 @@
   }
   .trustpilot-module,
   .useful-module,
-  .faq_block
+  .faq_block,
+  .mp-wpcs,
+  .module-mp-cat-actions,
+  .main-page_gallery,
+  .module-mp-media-center
   {
     margin-top: 96px;
   }
@@ -391,5 +412,31 @@
   }
   .accordion{
     grid-column: 1 / span 6;
+  }
+  .wpcs--item.tablet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 800;
+    .ico-arrow{
+      margin-top: 5px;
+    }
+  }
+  .yellow_promo{
+    margin-top: 0;
+  }
+  .btn-wrapper .btn-bordered{
+    width: 344px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    span.arrow{
+      top: 5px;
+    }
   }
 }
