@@ -7,7 +7,9 @@
 #category_menu_0{
   border-top: 1px solid $borderGrey;
 }
-
+.category_menu_mobile{
+  display: none;
+}
 .category_menu {
   grid-column: 1 / -1;
 
@@ -359,6 +361,10 @@ body.sidemenu--open {
     margin: 0 15px 16px 12px;
     background: url("../img/icon-close-white.svg") center center no-repeat;
   }
+  .sign-line{
+    position: relative;
+    right: auto;
+  }
 }
 
 .sidemenu--catalog {
@@ -616,4 +622,81 @@ body.sidemenu--open {
   .ul-level-1 a{
     white-space: nowrap;
   }
+}
+
+.category_menu_mobile{
+  ul{
+
+  }
+  .sidemenu--ico-nums {
+    background: url(../img/icon-paint.svg) 0 0 no-repeat;
+    left: 3px;
+    top: 11px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-ramy {
+    background: url(../img/icon-frame.svg) 0 0 no-repeat;
+    left: 3px;
+    top: 11px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-mozaika {
+    background: url(../img/icon-diamond.svg) 0 0 no-repeat;
+    left: 3px;
+    top: 11px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-3d {
+    background: url(../img/icon-3d.svg) 0 0 no-repeat;
+    left: 3px;
+    top: 11px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-gobeleny {
+    background: url(../img/icon-gobeliny.svg) 0 0 no-repeat;
+    left: 3px;
+    top: 11px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-sale {
+    background: url(../img/icon-sale.svg) 0 0 no-repeat;
+    left: 2px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 859px) {
+  .category_menu{
+    display: none;
+  }
+  .category_menu_mobile{
+    display: block;
+  }
+/*
+icon-paint
+icon-frame
+icon-diamond
+icon-3d
+icon-gobeliny
+icon-sale
+
+*/
 }

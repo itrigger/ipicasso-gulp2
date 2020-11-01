@@ -44,3 +44,12 @@
     margin: 0 auto;
   }
 }
+@media (max-width: 859px) {
+  .in{
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 8px;
+    max-width: 860px;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+}
