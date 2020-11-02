@@ -9,6 +9,89 @@
 }
 .category_menu_mobile{
   display: none;
+  margin-bottom: 20px;
+  ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;
+      position: relative;
+      text-align: center;
+      padding-top: 45px;
+      &:before{
+        content: "";
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+  a{
+    display: block;
+    color: #404142;
+    font-size: 12px;
+    line-height: 14px;
+    width: 88px;
+  }
+  .sidemenu--ico-nums:before {
+    background: url(../img/icon-paint.svg) 0 0 no-repeat;
+    top: 11px;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-ramy:before {
+    background: url(../img/icon-frame.svg) 0 0 no-repeat;
+    top: 11px;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-mozaika:before {
+    background: url(../img/icon-diamond.svg) 0 0 no-repeat;
+    top: 11px;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-3d:before {
+    background: url(../img/icon-3d.svg) 0 0 no-repeat;
+    top: 11px;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-gobeleny:before {
+    background: url(../img/icon-gobeliny.svg) 0 0 no-repeat;
+    top: 11px;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .sidemenu--ico-sale:before {
+    background: url(../img/icon-sale.svg) 0 0 no-repeat;
+    top: 10px;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
 }
 .category_menu {
   grid-column: 1 / -1;
@@ -624,64 +707,7 @@ body.sidemenu--open {
   }
 }
 
-.category_menu_mobile{
-  ul{
 
-  }
-  .sidemenu--ico-nums {
-    background: url(../img/icon-paint.svg) 0 0 no-repeat;
-    left: 3px;
-    top: 11px;
-    width: 32px;
-    height: 32px;
-    background-size: contain;
-  }
-
-  .sidemenu--ico-ramy {
-    background: url(../img/icon-frame.svg) 0 0 no-repeat;
-    left: 3px;
-    top: 11px;
-    width: 32px;
-    height: 32px;
-    background-size: contain;
-  }
-
-  .sidemenu--ico-mozaika {
-    background: url(../img/icon-diamond.svg) 0 0 no-repeat;
-    left: 3px;
-    top: 11px;
-    width: 32px;
-    height: 32px;
-    background-size: contain;
-  }
-
-  .sidemenu--ico-3d {
-    background: url(../img/icon-3d.svg) 0 0 no-repeat;
-    left: 3px;
-    top: 11px;
-    width: 32px;
-    height: 32px;
-    background-size: contain;
-  }
-
-  .sidemenu--ico-gobeleny {
-    background: url(../img/icon-gobeliny.svg) 0 0 no-repeat;
-    left: 3px;
-    top: 11px;
-    width: 32px;
-    height: 32px;
-    background-size: contain;
-  }
-
-  .sidemenu--ico-sale {
-    background: url(../img/icon-sale.svg) 0 0 no-repeat;
-    left: 2px;
-    top: 10px;
-    width: 32px;
-    height: 32px;
-    background-size: contain;
-  }
-}
 
 @media (max-width: 859px) {
   .category_menu{

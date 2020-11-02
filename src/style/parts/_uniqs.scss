@@ -440,3 +440,44 @@
     }
   }
 }
+
+@media (max-width: 859px) {
+  .trustpilot-module,
+  .useful-module,
+  .faq_block,
+  .mp-wpcs,
+  .module-mp-cat-actions,
+  .main-page_gallery,
+  .module-mp-media-center
+  {
+    margin-top: 48px;
+  }
+  .yellow_promo .pic{
+    display: none;
+  }
+  .yellow_promo .text{
+    padding: 64px 0 39px;
+    grid-column: span 4;
+  }
+  .useful-module .useful-module--items{
+    grid-column: 1 / span 4;
+  }
+  .useful-module .useful-module--items .item-1{
+    grid-column: span 2;
+  }
+  .useful-module .useful-module--items .item-2{
+    grid-column: span 2;
+  }
+  .useful-module .useful-module--items .item-3{
+    grid-column: span 4;
+    grid-row: 2;
+  }
+  .useful-module .useful-module--items .item .pic{
+    img{
+      max-width: 100%;
+    }
+  }
+  .accordion{
+    grid-column: 1 / span 4;
+  }
+}

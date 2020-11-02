@@ -78,6 +78,10 @@
 }
 
 @media (max-width: 859px) {
+  #banners{
+    margin-bottom: 9px;
+    margin-top: 0;
+  }
   .banner-2-3{
     grid-column: 1 / 5;
   }

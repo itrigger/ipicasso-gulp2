@@ -235,3 +235,18 @@
     top: 30px;
   }
 }
+@media (max-width: 859px) {
+  .module_carousel{
+    grid-column: auto;
+  }
+  .module--heading{
+    padding-left: 0;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 0;
+  }
+  .tabs_w{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

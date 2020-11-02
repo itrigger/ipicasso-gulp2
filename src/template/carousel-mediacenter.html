@@ -138,6 +138,17 @@
                 nextEl: '.module-mp-media-center .swiper-button-next',
                 prevEl: '.module-mp-media-center .swiper-button-prev',
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 8
+                },
+                // when window width is >= 860px
+                860: {
+                    slidesPerView: 3,
+                    spaceBetween: 21
+                },
+            }
         });
         mySwiper3.appendSlide(media_all_slides_array);
 

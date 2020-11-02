@@ -136,3 +136,36 @@
     grid-column: -2 / span 1;
   }
 }
+
+@media (max-width: 859px) {
+  .header{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    .sign-block{
+      display: none;
+    }
+    .header--cart_block{
+      display: none;
+    }
+  }
+  .logo-wrapper {
+    grid-column: auto;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+  }
+  .logo{
+    width: 127px;
+    height: 32px;
+    background-size: contain;
+  }
+  .burger--btn{
+    font-size: 0;
+  }
+  .burger--btn:before{
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+  }
+}
