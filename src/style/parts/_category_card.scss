@@ -301,7 +301,23 @@
 }
 
 @media (max-width: 859px) {
-  .card .pic img{
-
+  .card .pic {
+    height: 168px;
+    min-height: 168px;
+    max-height: 168px;
+    img{
+      width: auto;
+      max-height: 100%;
+    }
+  }
+  .card{
+    padding-bottom: 0;
+  }
+  .shover, .additions, .cart_btn_w{
+    display: none !important;
+  }
+  .card .labels{
+    font-size: 0;
+    margin-bottom: 3px;
   }
 }

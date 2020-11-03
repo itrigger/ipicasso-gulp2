@@ -42,12 +42,12 @@ $(document).ready(function () {
 
     /*tabs*/
     $(".tabs li").on("click", function () {
-        let tabId = $(this).parent().parent().attr("data-tabid");
+        let tabId = $(this).parents(".tabs").attr("data-tabid");
         /*        let $tabs = $(".tabs_content_wrapper[data-tabcid=" + tabId + "]");
                 let index = $(this).index();*/
-        let swiperName = eval($(this).parent().parent().attr("data-swiper"));
+        let swiperName = eval($(this).parents(".tabs").attr("data-swiper"));
         let slug =  $(this).attr('data-slug').toString();
-        let array = eval($(this).parent().parent().attr('data-array').toString()+'_default_slides_array');
+        let array = eval($(this).parents(".tabs").attr('data-array').toString()+'_default_slides_array');
 
         let temp_array = [];
 
@@ -66,7 +66,7 @@ $(document).ready(function () {
             }
         }
 
-        $(this).parent().parent().find("li").removeClass("active");
+        $(this).parents(".tabs").find("li").removeClass("active");
         $(this).addClass("active");
         swiperName.removeAllSlides();
         swiperName.appendSlide(temp_array);

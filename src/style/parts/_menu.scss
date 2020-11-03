@@ -9,6 +9,8 @@
 }
 .category_menu_mobile{
   display: none;
+  grid-column: 1 / span 4;
+  overflow: hidden;
   margin-bottom: 20px;
   ul{
     display: flex;
@@ -710,7 +712,7 @@ body.sidemenu--open {
 
 
 @media (max-width: 859px) {
-  .category_menu{
+  .category_menu, .megamenu{
     display: none;
   }
   .category_menu_mobile{

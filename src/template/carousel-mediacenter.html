@@ -4,11 +4,15 @@
             <div class="module--heading">Media Center</div>
             <div class="tabs_w">
                 <div class="tabs" data-swiper="mySwiper3" data-array="media">
-                    <ul class="ul">
-                        <li class="active" data-slug="all">All</li>
-                        <li data-slug="artykuly-i-recenzje">Artykuły i recenzje</li>
-                        <li data-slug="aktualnosci">Aktualności</li>
-                    </ul>
+                    <div class="swiper-container-wrapper">
+                        <div class="swiper-container">
+                            <ul class="ul swiper-wrapper">
+                                <li class="cm--item active" data-slug="all">All</li>
+                                <li class="cm--item" data-slug="artykuly-i-recenzje">Artykuły i recenzje</li>
+                                <li class="cm--item" data-slug="aktualnosci">Aktualności</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="linkmore">
                     <a href="#">All Media Center</a>
@@ -22,8 +26,6 @@
                             <div class="swiper-wrapper">
 
 
-
-
                             </div>
                             <div class="btn-wrapper mobile tablet">
                                 <a class="btn btn-bordered btn-arrowed" href="#">
@@ -32,11 +34,12 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev swiper-button-disabled"></div>
                 </div>
             </div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev swiper-button-disabled"></div>
+
         </div>
     </div>
 </div>
@@ -131,12 +134,12 @@
                 media_all_slides_array.push(arr['html'])
             }
         }
-        mySwiper3 = new Swiper('.module-mp-media-center .swiper-container', {
+        mySwiper3 = new Swiper('.module-mp-media-center .tabs_content .swiper-container', {
             slidesPerView: 3,
             spaceBetween: 21,
             navigation: {
-                nextEl: '.module-mp-media-center .swiper-button-next',
-                prevEl: '.module-mp-media-center .swiper-button-prev',
+                nextEl: '.module-mp-media-center .tabs_content .swiper-button-next',
+                prevEl: '.module-mp-media-center .tabs_content .swiper-button-prev',
             },
             breakpoints: {
                 320: {
@@ -151,6 +154,39 @@
             }
         });
         mySwiper3.appendSlide(media_all_slides_array);
+
+
+        let carousel_media_menu = undefined;
+
+        function initCarouselMediaMenu() {
+            var screenWidth = $(window).width();
+            if (screenWidth < 860 && carousel_media_menu == undefined) {
+                carousel_media_menu = new Swiper('.module-mp-media-center .tabs .swiper-container', {
+                    slidesPerView: 'auto',
+                    slidesOffsetAfter: 10,
+                    spaceBetween: 20,
+                    slideToClickedSlide: true,
+                    slideClass: 'cm--item',
+                    /* navigation: {
+                         nextEl: '.module-mp-cat-news .tabs .swiper-button-next',
+                         prevEl: '.module-mp-cat-news .tabs .swiper-button-prev',
+                     },*/
+                });
+            } else if (screenWidth > 859 && carousel_media_menu != undefined) {
+                carousel_media_menu.destroy();
+                carousel_media_menu = undefined;
+                jQuery('.module-mp-media-center .tabs .swiper-wrapper').removeAttr('style');
+                jQuery('.module-mp-media-center .tabs .swiper-slide').removeAttr('style');
+            }
+        }
+
+
+        initCarouselMediaMenu();
+
+
+        $(window).on('resize', function () {
+            initCarouselMediaMenu();
+        });
 
     })
 

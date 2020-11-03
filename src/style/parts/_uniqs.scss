@@ -22,6 +22,7 @@
 
 .circles_w .swiper-container-wrapper{
   grid-column: 1 / -1;
+  //width: calc(100% + 16px);
 }
 .circles{
   grid-column: 2 / span 10;
@@ -450,16 +451,38 @@
   .mp-wpcs,
   .module-mp-cat-actions,
   .main-page_gallery,
-  .module-mp-media-center
+  .module-mp-media-center,
+  .yellow_promo
   {
     margin-top: 48px;
+  }
+  .main-page_gallery .mosaic-wrapper{
+    grid-column: 1 / span 4;
+  }
+  .main-page_gallery .btn-wrapper{
+    grid-column: 1 / span 4;
   }
   .yellow_promo .pic{
     display: none;
   }
   .yellow_promo .text{
-    padding: 64px 0 39px;
+    padding: 27px 8px 19px;
     grid-column: span 4;
+    .heading{
+      font-size: 20px;
+      line-height: 24px;
+      span{
+        display: inline;
+      }
+    }
+    p{
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  .trustpilot-module .in .trustpilot-module--frame{
+    grid-column: 1 / span 4;
+    margin-top: 16px;
   }
   .useful-module .useful-module--items{
     grid-column: 1 / span 4;
@@ -475,21 +498,47 @@
     grid-row: 2;
   }
   .useful-module .useful-module--items .item .pic{
+    margin-bottom: 8px;
     img{
       max-width: 100%;
     }
   }
+  .useful-module .useful-module--items .item .title{
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .useful-module .useful-module--items .item .desc{
+    font-size: 14px;
+    line-height: 20px;
+  }
   .accordion{
     grid-column: 1 / span 4;
+    margin-top: 24px;
+  }
+  [data-accordion] [data-control]{
+    font-size: 18px;
+    line-height: 30px;
+    padding-right: 30px;
+  }
+  [data-content] .article{
+    padding: 24px 16px 4px;
+  }
+  [data-control] {
+    padding: 10px 16px;
   }
   .circles_w{
     position: relative;
+  }
+  .circles_w .swiper-container-wrapper{
+    grid-column: 1 / span 4;
+    width: 100%;
   }
   .circles{
     margin-top: 24px;
     grid-column: auto;
     grid-gap: inherit;
     height: 380px;
+    width: 100% !important;
   }
   .circle--item{
     width: 160px !important;
@@ -509,7 +558,21 @@
     grid-column: 1 / span 4;
   }
   .wpcs--item{
-    width: 47%;
+    width: 46%;
+  }
+  .wpcs--item .heading{
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    min-height: auto;
+  }
+  .wpcs--item .pic{
+    transform: scale(0.8);
+    height: 80px;
+  }
+  .wpcs--item .desc{
+    font-size: 14px;
+    line-height: 22px;
   }
   .mp-wpcs .wpcs--items{
     flex-wrap: wrap;
@@ -521,10 +584,7 @@
   .desc--h2{
     font-size: 16px;
     line-height: 20px;
+    padding: 0 8px;
   }
 
-
-  .tabs ul{
-    flex-direction: column;
-  }
 }

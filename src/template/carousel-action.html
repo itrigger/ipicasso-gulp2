@@ -4,14 +4,18 @@
             <div class="module--heading">Akcje</div>
             <div class="tabs_w">
                 <div class="tabs" data-array="actions" data-swiper="mySwiper2">
-                    <ul class="ul">
-                        <li class="active" data-slug="all">All</li>
-                        <li data-slug="cat1">Malowanie po numerach</li>
-                        <li data-slug="cat2">Ramy do obrazow</li>
-                        <li data-slug="cat3">Diamentowa Mozaika</li>
-                        <li data-slug="all">Papercraft 3D modele</li>
-                        <li data-slug="all">Gobeliny</li>
-                    </ul>
+                    <div class="swiper-container-wrapper">
+                        <div class="swiper-container">
+                            <ul class="ul swiper-wrapper">
+                                <li class="cm--item active" data-slug="all">All</li>
+                                <li class="cm--item" data-slug="cat1">Malowanie po numerach</li>
+                                <li class="cm--item" data-slug="cat2">Ramy do obrazow</li>
+                                <li class="cm--item" data-slug="cat3">Diamentowa Mozaika</li>
+                                <li class="cm--item" data-slug="all">Papercraft 3D modele</li>
+                                <li class="cm--item" data-slug="all">Gobeliny</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="linkmore">
                     <a href="#">All Malowanie po numerach</a>
@@ -33,10 +37,11 @@
                             </a>
                         </div>
                     </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev swiper-button-disabled"></div>
                 </div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev swiper-button-disabled"></div>
+
             </div>
         </div>
     </div>
@@ -97,12 +102,12 @@
                 actions_all_slides_array.push(arr['html'])
             }
         }
-        mySwiper2 = new Swiper('.module-mp-cat-actions .swiper-container', {
+        mySwiper2 = new Swiper('.module-mp-cat-actions .tabs_content .swiper-container', {
             slidesPerView: 5,
             spaceBetween: 20,
             navigation: {
-                nextEl: '.module-mp-cat-actions .swiper-button-next',
-                prevEl: '.module-mp-cat-actions .swiper-button-prev',
+                nextEl: '.module-mp-cat-actions .tabs_content .swiper-button-next',
+                prevEl: '.module-mp-cat-actions .tabs_content .swiper-button-prev',
             },
             breakpoints: {
                 // when window width is >= 860px
@@ -127,6 +132,39 @@
             }
         });
         mySwiper2.appendSlide(actions_all_slides_array);
+
+        let carousel_actions_menu = undefined;
+
+        function initCarouselActionsMenu() {
+            var screenWidth = $(window).width();
+            if(screenWidth < 860 && carousel_actions_menu == undefined) {
+                carousel_actions_menu  = new Swiper('.module-mp-cat-actions .tabs .swiper-container', {
+                    slidesPerView: 'auto',
+                    slidesOffsetAfter: 10,
+                    spaceBetween: 20,
+                    slideToClickedSlide: true,
+                    slideClass: 'cm--item',
+                    /* navigation: {
+                         nextEl: '.module-mp-cat-news .tabs .swiper-button-next',
+                         prevEl: '.module-mp-cat-news .tabs .swiper-button-prev',
+                     },*/
+                });
+            } else if (screenWidth > 859 && carousel_actions_menu != undefined) {
+                carousel_actions_menu.destroy();
+                carousel_actions_menu = undefined;
+                jQuery('.module-mp-cat-actions .tabs .swiper-wrapper').removeAttr('style');
+                jQuery('.module-mp-cat-actions .tabs .swiper-slide').removeAttr('style');
+            }
+        }
+
+
+        initCarouselActionsMenu();
+
+
+        $(window).on('resize', function(){
+            initCarouselActionsMenu();
+        });
     })
+
 
 </script>

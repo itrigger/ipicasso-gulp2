@@ -4,14 +4,18 @@
             <div class="module--heading">Nowości katalogu</div>
             <div class="tabs_w">
                 <div class="tabs" data-swiper="mySwiper" data-array="news">
-                    <ul class="ul">
-                        <li class="active" data-slug="all">All</li>
-                        <li data-slug="malowanie-po-numerach">Malowanie po numerach</li>
-                        <li data-slug="ramy-do-obrazow">Ramy do obrazow</li>
-                        <li data-slug="diamentowa-mozaika">Diamentowa Mozaika</li>
-                        <li data-slug="all">Papercraft 3D modele</li>
-                        <li data-slug="all">Gobeliny</li>
-                    </ul>
+                    <div class="swiper-container-wrapper">
+                        <div class="swiper-container">
+                            <ul class="ul swiper-wrapper">
+                                <li class="cm--item active" data-slug="all">All</li>
+                                <li class="cm--item" data-slug="malowanie-po-numerach">Malowanie po numerach</li>
+                                <li class="cm--item" data-slug="ramy-do-obrazow">Ramy do obrazow</li>
+                                <li class="cm--item" data-slug="diamentowa-mozaika">Diamentowa Mozaika</li>
+                                <li class="cm--item" data-slug="all">Papercraft 3D modele</li>
+                                <li class="cm--item" data-slug="all">Gobeliny</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="linkmore">
                     <a href="#">All News</a>
@@ -34,12 +38,13 @@
                         </div>
                         <!-- end of swiper -->
                     </div>
+                    <!-- Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev swiper-button-disabled"></div>
                 </div>
 
             </div>
-            <!-- Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev swiper-button-disabled"></div>
+
 
         </div> <!-- module carousel -->
     </div>
@@ -312,15 +317,15 @@
                 news_all_slides_array.push(arr['html'])
             }
         }
-        mySwiper = new Swiper('.module-mp-cat-news .swiper-container', {
+        mySwiper = new Swiper('.module-mp-cat-news .tabs_content .swiper-container', {
             slidesPerView: 5,
             spaceBetween: 20,
             navigation: {
-                nextEl: '.module-mp-cat-news .swiper-button-next',
-                prevEl: '.module-mp-cat-news .swiper-button-prev',
+                nextEl: '.module-mp-cat-news .tabs_content .swiper-button-next',
+                prevEl: '.module-mp-cat-news .tabs_content .swiper-button-prev',
             },
             breakpoints: {
-                0: {
+                320: {
                     slidesPerView: 2,
                     spaceBetween: 8
                 },
@@ -329,12 +334,12 @@
                     slidesPerView: 3,
                     spaceBetween: 20
                 },
-                // when window width is >= 480px
+                // when window width is >= 1140px
                 1140: {
                     slidesPerView: 4,
                     spaceBetween: 20
                 },
-                // when window width is >= 640px
+                // when window width is >= 1440px
                 1440: {
                     slidesPerView: 5,
                     spaceBetween: 20
@@ -342,6 +347,40 @@
             }
         });
         mySwiper.appendSlide(news_all_slides_array);
+
+
+        let carousel_new_menu = undefined;
+
+        function initCarouselNewMenu() {
+            var screenWidth = $(window).width();
+            if(screenWidth < 860 && carousel_new_menu == undefined) {
+                carousel_new_menu  = new Swiper('.module-mp-cat-news .tabs .swiper-container', {
+                    slidesPerView: 'auto',
+                    slidesOffsetAfter: 10,
+                    spaceBetween: 20,
+                    slideToClickedSlide: true,
+                    slideClass: 'cm--item',
+                   /* navigation: {
+                        nextEl: '.module-mp-cat-news .tabs .swiper-button-next',
+                        prevEl: '.module-mp-cat-news .tabs .swiper-button-prev',
+                    },*/
+                });
+            } else if (screenWidth > 859 && carousel_new_menu != undefined) {
+                carousel_new_menu.destroy();
+                carousel_new_menu = undefined;
+                jQuery('.module-mp-cat-news .tabs .swiper-wrapper').removeAttr('style');
+                jQuery('.module-mp-cat-news .tabs .swiper-slide').removeAttr('style');
+            }
+        }
+
+
+        initCarouselNewMenu();
+
+
+        $(window).on('resize', function(){
+            initCarouselNewMenu();
+        });
+        //
 
     })
 </script>

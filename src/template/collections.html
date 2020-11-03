@@ -51,13 +51,13 @@
                 let SwiperCollection = undefined;
 
                 function initSwiperCollection() {
-                    var screenWidth = $(window).width();
+                    let screenWidth = $(window).width();
                     if(screenWidth < 860 && SwiperCollection == undefined) {
                         SwiperCollection  = new Swiper('.circles_w .swiper-container', {
                             slidesPerView: 2,
                             slidesPerColumn: 2,
                             slidesPerColumnFill: 'column',
-                            spaceBetween: 30,
+                            spaceBetween: 10,
                             slideToClickedSlide: true,
                             slideClass: 'circle--item',
                             navigation: {
@@ -69,7 +69,7 @@
                         SwiperCollection.destroy();
                         SwiperCollection = undefined;
                         jQuery('.circles_w .swiper-wrapper').removeAttr('style');
-                        jQuery('.circles_w .swiper-slide').removeAttr('style');
+                       // jQuery('.circles_w .swiper-slide').removeAttr('style');
                     }
                 }
 

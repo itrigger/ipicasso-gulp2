@@ -246,6 +246,9 @@ ul.social {
 }
 
 @media (max-width: 859px) {
+  .footer{
+    margin-top: 10px;
+  }
   .footer .line1 .inner{
     display: flex;
     flex-direction: column;
