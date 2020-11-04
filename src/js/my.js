@@ -24,6 +24,7 @@ $(document).ready(function () {
         } else if (screenWidth > 991 && MenuSwiper != undefined) {
             MenuSwiper.destroy();
             MenuSwiper = undefined;
+            $(".spoiler_desc").removeAttr('style');
             $('body').removeClass("tablet");
             jQuery('.cm-level-1 .swiper-wrapper').removeAttr('style');
             jQuery('.cm-level-1 .swiper-slide').removeAttr('style');
@@ -262,6 +263,10 @@ $(document).ready(function () {
     *
     * */
 
+
+    $(".spoiler_href").on('click', function () {
+        $(this).next(".spoiler_desc").slideToggle().toggleClass("active");
+    })
 });
 
 

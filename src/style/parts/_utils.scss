@@ -392,3 +392,20 @@ body{
 .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border{
   border: none !important;
 }
+
+.spoiler_href{
+  display: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1782E9;
+  margin-bottom: 25px;
+}
+.spoiler_desc{
+  display: block;
+  p:last-child{
+    margin: 0 !important;
+  }
+  p:first-child{
+    margin: 0;
+  }
+}
