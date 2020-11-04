@@ -18,25 +18,10 @@
   .swiper-button-prev{
     left: -68px;
     right: auto;
-    background: url("../img/carousel-arrow-left.png") 0 0 no-repeat;
   }
   .swiper-button-next{
     right: -68px;
     left: auto;
-    background: url("../img/carousel-arrow-right.png") 0 0 no-repeat;
-  }
-  .swiper-button-next,
-  .swiper-button-prev
-  {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    &:after{
-      display: none;
-    }
-    &:hover, &:focus{
-      outline: none;
-    }
   }
   .swiper-slide{
 

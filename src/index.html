@@ -72,9 +72,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- end of swiper -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
 
         </div>
@@ -92,6 +89,9 @@
         let SwiperSlider = new Swiper('#mainpage_slider .swiper-container', {
             slidesPerView: 1,
             spaceBetween: 0,
+            autoplay: {
+                delay: 3000,
+            },
             loop: true,
             navigation: {
                 nextEl: '#mainpage_slider .swiper-button-next',
@@ -104,17 +104,17 @@
 <div class="in">
     <div class="category_menu_mobile">
         <div class="swiper-container-wrapper">
-        <div class="swiper-container">
-            <ul class="swiper-wrapper">
-                <li class="mm--item sidemenu--ico-nums"><a href="#">Malowanie po numerach</a></li>
-                <li class="mm--item sidemenu--ico-ramy"><a href="#">Ramy do obrazow</a></li>
-                <li class="mm--item sidemenu--ico-mozaika"><a href="#">Diamentova mozika</a></li>
-                <li class="mm--item sidemenu--ico-3d"><a href="#">Papercraft 3D modele</a></li>
-                <li class="mm--item sidemenu--ico-gobeleny"><a href="#">Gobeleny</a></li>
-                <li class="mm--item sidemenu--ico-sale"><a href="#">Sale</a></li>
-            </ul>
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="mm--item sidemenu--ico-nums"><a href="#">Malowanie po numerach</a></li>
+                    <li class="mm--item sidemenu--ico-ramy"><a href="#">Ramy do obrazow</a></li>
+                    <li class="mm--item sidemenu--ico-mozaika"><a href="#">Diamentova mozika</a></li>
+                    <li class="mm--item sidemenu--ico-3d"><a href="#">Papercraft 3D modele</a></li>
+                    <li class="mm--item sidemenu--ico-gobeleny"><a href="#">Gobeleny</a></li>
+                    <li class="mm--item sidemenu--ico-sale"><a href="#">Sale</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 <script>
@@ -127,9 +127,9 @@
             slideToClickedSlide: true,
             watchOverflow: true,
         });
-       /* $(".category_menu_mobile li").hover(function () {
-            MobileMenuSwiper.slideTo($(this).index());
-        });*/
+        /* $(".category_menu_mobile li").hover(function () {
+             MobileMenuSwiper.slideTo($(this).index());
+         });*/
     });
 </script>
 
@@ -152,73 +152,129 @@
         What makes us different?
     </div>
     <div class="in">
-        <div class="wpcs--items">
-            <div class="wpcs--item item1">
-                <div class="pic">
-                    <img alt="" src="./img/icon-fastship.svg"/>
+        <div class="swiper-container-wrapper">
+            <div class="swiper-container">
+                <div class="wpcs--items swiper-wrapper">
+                    <div class="wpcs--item item1">
+                        <div class="pic">
+                            <img alt="" src="./img/icon-fastship.svg"/>
+                        </div>
+                        <div class="heading">
+                            Fast shipping
+                        </div>
+                        <div class="desc">
+                            4-5 days expedited delivery by DPD
+                            Free delivery on orders over 50£.
+                            <a href="#">more…</a>
+                        </div>
+                    </div>
+                    <div class="wpcs--item item2">
+                        <div class="pic">
+                            <img alt="" src="./img/icon-canvas.svg"/>
+                        </div>
+                        <div class="heading">
+                            Canvas mounted on
+                            <span>wooden frame!</span>
+                        </div>
+                        <div class="desc">
+                            Finished painting is ready to be hanged on the wall.
+                        </div>
+                    </div>
+                    <div class="wpcs--item item3">
+                        <div class="pic">
+                            <img alt="" src="./img/trustpilit.jpg"/>
+                        </div>
+                        <div class="heading">
+                            Strong reputation
+                        </div>
+                        <div class="desc">
+                            Hundreds of trusted reviews.
+                        </div>
+                    </div>
+                    <div class="wpcs--item item4">
+                        <div class="pic">
+                            <img alt="" src="./img/icon-desigs.svg"/>
+                        </div>
+                        <div class="heading">
+                            500+ designs
+                            <span>to choose from</span>
+                        </div>
+                        <div class="desc">
+                            New designs every season.
+                        </div>
+                    </div>
+                    <div class="wpcs--item item5">
+                        <div class="pic">
+                            <img alt="" src="./img/icon-afford.svg"/>
+                        </div>
+                        <div class="heading">
+                            Affordable
+                        </div>
+                        <div class="desc">
+                            We guarantee the best value for paint by numbers sets on wooden frame.
+                            The set under £20 will keep you occupied for dozens of hours!
+                        </div>
+                    </div>
+                    <div class="wpcs--item tablet mobile">
+                        <a href="#">More <br/>about us <br/><span class="ico-arrow"></span></a>
+                    </div>
                 </div>
-                <div class="heading">
-                    Fast shipping
-                </div>
-                <div class="desc">
-                    4-5 days expedited delivery by DPD
-                    Free delivery on orders over 50£.
-                    <a href="#">more…</a>
-                </div>
-            </div>
-            <div class="wpcs--item item2">
-                <div class="pic">
-                    <img alt="" src="./img/icon-canvas.svg"/>
-                </div>
-                <div class="heading">
-                    Canvas mounted on
-                    <span>wooden frame!</span>
-                </div>
-                <div class="desc">
-                    Finished painting is ready to be hanged on the wall.
-                </div>
-            </div>
-            <div class="wpcs--item item3">
-                <div class="pic">
-                    <img alt="" src="./img/trustpilit.jpg"/>
-                </div>
-                <div class="heading">
-                    Strong reputation
-                </div>
-                <div class="desc">
-                    Hundreds of trusted reviews.
-                </div>
-            </div>
-            <div class="wpcs--item item4">
-                <div class="pic">
-                    <img alt="" src="./img/icon-desigs.svg"/>
-                </div>
-                <div class="heading">
-                    500+ designs
-                    <span>to choose from</span>
-                </div>
-                <div class="desc">
-                    New designs every season.
-                </div>
-            </div>
-            <div class="wpcs--item item5">
-                <div class="pic">
-                    <img alt="" src="./img/icon-afford.svg"/>
-                </div>
-                <div class="heading">
-                    Affordable
-                </div>
-                <div class="desc">
-                    We guarantee the best value for paint by numbers sets on wooden frame.
-                    The set under £20 will keep you occupied for dozens of hours!
-                </div>
-            </div>
-            <div class="wpcs--item tablet mobile">
-                <a href="#">More <br/>about us <br/><span class="ico-arrow"></span></a>
             </div>
         </div>
     </div>
+    <!-- Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 </div>
+<script>
+    $('document').ready(function () {
+        let SwiperWPCS = undefined;
+
+        function initSwiperWPCS() {
+            let screenWidth = $(window).width();
+            if(screenWidth < 860 && SwiperWPCS == undefined) {
+                SwiperWPCS  = new Swiper('.mp-wpcs .swiper-container', {
+                    slidesPerView: 2,
+                    slidesPerColumn: 2,
+                    slidesPerColumnFill: 'column',
+                    spaceBetween: 0,
+                    slidesOffsetAfter: 30,
+                    slideToClickedSlide: true,
+                    slideClass: 'wpcs--item',
+                    navigation: {
+                        nextEl: '.mp-wpcs .swiper-button-next',
+                        prevEl: '.mp-wpcs .swiper-button-prev',
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 2,
+                            slidesPerColumn: 2,
+                        },
+                        // when window width is >= 860px
+                        500: {
+                            slidesPerView: 3,
+                            slidesPerColumn: 2,
+                        }
+                    }
+                });
+            } else if (screenWidth > 859 && SwiperWPCS != undefined) {
+                SwiperWPCS.destroy();
+                SwiperWPCS = undefined;
+                jQuery('.mp-wpcs .swiper-wrapper').removeAttr('style');
+                // jQuery('.circles_w .swiper-slide').removeAttr('style');
+            }
+        }
+
+        //Swiper plugin initialization
+        initSwiperWPCS();
+
+        //Swiper plugin initialization on window resize
+        $(window).on('resize', function(){
+            initSwiperWPCS();
+        });
+        //
+    })
+</script>
 <!-- end of main page why people choose us -->
 
 
