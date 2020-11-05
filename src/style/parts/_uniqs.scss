@@ -528,6 +528,10 @@
   }
   .circles_w{
     position: relative;
+    overflow: hidden;
+    .swiper-container{
+      width: 100%;
+    }
   }
   .circles_w .swiper-container-wrapper{
     grid-column: 1 / span 4;
@@ -535,14 +539,20 @@
   }
   .circles{
     margin-top: 24px;
-    grid-column: auto;
-    grid-gap: inherit;
+    grid-column: 1 / span 4;
+    grid-gap: unset;
     height: 380px;
-    width: 100% !important;
+    width: 100%;
+    align-items: center;
   }
   .circle--item{
-    width: 160px !important;
-    height: 160px !important;
+    width: 100%;
+    height: calc((100% - 30px) / 2);
+    margin: 0;
+    max-height: 160px;
+    min-height: 160px;
+    max-width: 160px;
+    min-width: 160px;
   }
   .circle--item .desc{
     font-size: 13px;

@@ -28,6 +28,8 @@ $(document).ready(function () {
             $('body').removeClass("tablet");
             jQuery('.cm-level-1 .swiper-wrapper').removeAttr('style');
             jQuery('.cm-level-1 .swiper-slide').removeAttr('style');
+            $(".footer .line1 .col1 .ul, .footer .line1 .col2 .ul, .footer .line1 .col3 .ul").slideDown();
+            $(".footer .line1 .col1 .title, .footer .line1 .col2 .title, .footer .line1 .col3 .title").removeClass("active");
         }
     }
 
@@ -266,7 +268,17 @@ $(document).ready(function () {
 
     $(".spoiler_href").on('click', function () {
         $(this).next(".spoiler_desc").slideToggle().toggleClass("active");
+    });
+
+    $(".footer .line1 .col1 .title, .footer .line1 .col2 .title, .footer .line1 .col3 .title").on("click", function () {
+        if($("body").hasClass("tablet")){
+            $(this).toggleClass("active").next(".ul").slideToggle();
+            return false;
+        } else {
+            return true;
+        }
     })
+
 });
 
 

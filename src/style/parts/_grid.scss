@@ -17,6 +17,9 @@
 .container > * {
   grid-column: 1 /span 12;
 }
+.in>.swiper-container-wrapper{
+  grid-column: 1 / span 12;
+}
 
 @media (min-width: 1440px) and (max-width: 1659px) {
   .in, .megamenu{
@@ -24,6 +27,9 @@
     padding: 0 19px;
     max-width: 1440px;
     margin: 0 auto;
+  }
+  .in>.swiper-container-wrapper{
+    grid-column: 1 / span 10;
   }
 }
 
@@ -33,6 +39,9 @@
     padding: 0 19px;
     max-width: 1140px;
     margin: 0 auto;
+  }
+  .in>.swiper-container-wrapper{
+    grid-column: 1 / span 8;
   }
 }
 
@@ -55,4 +64,8 @@
     min-width: 320px;
     margin: 0 auto;
   }
+  .in>.swiper-container-wrapper{
+    grid-column: 1 / span 4;
+  }
+
 }

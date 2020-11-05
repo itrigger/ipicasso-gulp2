@@ -712,6 +712,9 @@ body.sidemenu--open {
 
 
 @media (max-width: 859px) {
+  body.sidemenu--open{
+    margin-right: 0;
+  }
   .category_menu, .megamenu{
     display: none;
   }
