@@ -8,83 +8,130 @@
         Huge paint by numbers selection from our most popular collections
     </div>
 
-    <div class="in circles_w">
+    <div class="circles_w">
+        <div class="in">
         <div class="swiper-container-wrapper">
             <div class="swiper-container">
                 <div class="circles swiper-wrapper">
-                    <a class="circle--item ci1" href="#" style='background: url("../img/circ1.jpg") 0 0 no-repeat;'>
-                        <div class="desc">Images of people</div>
-                    </a>
-                    <a class="circle--item ci2" href="#" style='background: url("../img/circ2.jpg") 0 0 no-repeat;'>
-                        <div class="desc">Raccoons</div>
-                    </a>
-                    <a class="circle--item ci3" href="#" style='background: url("../img/circ3.jpg") 0 0 no-repeat;'>
-                        <div class="desc">Two lines text for example</div>
-                    </a>
-                    <a class="circle--item ci4" href="#" style='background: url("../img/circ4.jpg") 0 0 no-repeat;'>
-                        <div class="desc">Deers</div>
-                    </a>
-                    <a class="circle--item ci5" href="#" style='background: url("../img/circ5.jpg") 0 0 no-repeat;'>
-                        <div class="desc">Birds</div>
-                    </a>
-                    <a class="circle--item ci6" href="#" style='background: url("../img/circ6.jpg") 0 0 no-repeat;'>
-                        <div class="desc">Flowers</div>
-                    </a>
-                    <a class="circle--item ci7" href="#" style='background: url("../img/circ7.jpg") 0 0 no-repeat;'>
-                        <div class="desc">Cars</div>
-                    </a>
-                    <a class="circle--item ci8" href="#" style='background: url("../img/circ8.jpg") 0 0 no-repeat;'>
-                        <div class="desc">People and Animals</div>
-                    </a>
-                    <a class="circle--item view-more" href="#">
-                        <div class="desc">View <br>All Collections <br><span class="ico-arrow"></span></div>
-                    </a>
+
+                        <a class="circle--item ci1" href="#">
+                            <div style='background: url("../img/circ1.jpg") 0 0 no-repeat;'>
+                                <div class="desc">Images of people</div>
+                            </div>
+                        </a>
+
+                        <a class="circle--item ci2" href="#">
+                            <div style='background: url("../img/circ2.jpg") 0 0 no-repeat;'>
+                                <div class="desc">Raccoons</div>
+                            </div>
+                        </a>
+
+                        <a class="circle--item ci3" href="#">
+                            <div style='background: url("../img/circ3.jpg") 0 0 no-repeat;'>
+                                <div class="desc">Two lines text for example</div>
+                            </div>
+                        </a>
+
+                        <a class="circle--item ci4" href="#">
+                            <div style='background: url("../img/circ4.jpg") 0 0 no-repeat;'>
+                                <div class="desc">Deers</div>
+                            </div>
+                        </a>
+
+                        <a class="circle--item ci5" href="#">
+                            <div style='background: url("../img/circ5.jpg") 0 0 no-repeat;'>
+                                <div class="desc">Birds</div>
+                            </div>
+                        </a>
+
+                        <a class="circle--item ci6" href="#">
+                            <div style='background: url("../img/circ6.jpg") 0 0 no-repeat;'>
+                                <div class="desc">Flowers</div>
+                            </div>
+                        </a>
+
+                        <a class="circle--item ci7" href="#">
+                            <div style='background: url("../img/circ7.jpg") 0 0 no-repeat;'>
+                                <div class="desc">Cars</div>
+                            </div>
+                        </a>
+
+                        <a class="circle--item ci8" href="#">
+                            <div style='background: url("../img/circ8.jpg") 0 0 no-repeat;'>
+                                <div class="desc">People and Animals</div>
+                            </div>
+                        </a>
+
                 </div>
+
             </div>
 
-        </div>
-        <!-- Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
 
-        <script>
-            $('document').ready(function () {
-                let SwiperCollection = undefined;
+            <script>
+                $('document').ready(function () {
+                    let SwiperCollection = undefined;
 
-                function initSwiperCollection() {
-                    let screenWidth = $(window).width();
-                    if(screenWidth < 860 && SwiperCollection == undefined) {
-                        SwiperCollection  = new Swiper('.circles_w .swiper-container', {
-                            slidesPerView: 2,
-                            slidesPerColumn: 2,
-                            slidesPerColumnFill: 'column',
-                            spaceBetween: 20,
-                            slidesOffsetAfter: 30,
-                            slideToClickedSlide: true,
-                            //watchOverflow: true,
-                            slideClass: 'circle--item',
-                            navigation: {
-                                nextEl: '.circles_w .swiper-button-next',
-                                prevEl: '.circles_w .swiper-button-prev',
-                            },
-                        });
-                    } else if (screenWidth > 859 && SwiperCollection != undefined) {
-                        SwiperCollection.destroy();
-                        SwiperCollection = undefined;
-                        jQuery('.circles_w .swiper-wrapper').removeAttr('style');
-                       // jQuery('.circles_w .swiper-slide').removeAttr('style');
+                    function initSwiperCollection() {
+                        let screenWidth = $(window).width();
+                        if (screenWidth < 860 && SwiperCollection == undefined) {
+                            jQuery(".circles").find(".circle--item.view-more").remove();
+                            jQuery(".circles_w .in").append("<a class=\"circle--item view-more appended\" href=\"#\">\n" +
+                                "                            <div><div class=\"desc\">View <br>All Collections <br><span class=\"ico-arrow\"></span></div></div>\n" +
+                                "                        </a>");
+
+                            SwiperCollection = new Swiper('.circles_w .swiper-container', {
+                                slidesPerView: 2,
+                                slidesPerColumn: 2,
+                                slidesPerColumnFill: 'column',
+                                spaceBetween: 20,
+                                slidesOffsetAfter: 30,
+                                slideToClickedSlide: true,
+                                slideClass: 'circle--item',
+                                navigation: {
+                                    nextEl: '.circles_w .swiper-button-next',
+                                    prevEl: '.circles_w .swiper-button-prev',
+                                },
+                                breakpoints: {
+                                    320: {
+                                        slidesPerView: 2,
+                                        slidesPerColumn: 2,
+                                        spaceBetween: 20
+                                    },
+                                    540: {
+                                        slidesPerView: 3,
+                                        slidesPerColumn: 2,
+                                        spaceBetween: 20
+                                    },
+                                }
+                            });
+                        } else if (screenWidth > 859 && SwiperCollection != undefined) {
+                            SwiperCollection.destroy();
+                            SwiperCollection = undefined;
+                            if(jQuery(".circles .view-more").length < 1){
+                                jQuery(".circles_w").find(".appended").remove();
+                                jQuery(".circles").append("<a class=\"circle--item view-more\" href=\"#\">\n" +
+                                    "                            <div><div class=\"desc\">View <br>All Collections <br><span class=\"ico-arrow\"></span></div></div>\n" +
+                                    "                        </a>");
+                            }
+                            jQuery('.circles_w .swiper-wrapper').removeAttr('style');
+                            // jQuery('.circles_w .swiper-slide').removeAttr('style');
+                        }
                     }
-                }
 
-                //Swiper plugin initialization
-                initSwiperCollection();
-
-                //Swiper plugin initialization on window resize
-                $(window).on('resize', function(){
+                    //Swiper plugin initialization
                     initSwiperCollection();
-                });
-                //
-            })
-        </script>
+
+                    //Swiper plugin initialization on window resize
+                    $(window).on('resize', function () {
+                        initSwiperCollection();
+                    });
+                    //
+                })
+            </script>
+        </div>
+            <!-- Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+    </div>
     </div>
 </div>

@@ -102,7 +102,17 @@
     top: 50%;
     margin-top: -15px;
   }
+}
 
+.mobile_search_block{
+  display: none;
+  grid-column: -1;
+  a{
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+  }
 }
 
 @media (min-width: 1440px) and (max-width: 1659px) {
@@ -154,6 +164,7 @@
     position: absolute;
     left: 50%;
     margin-left: -60px;
+    top: 9px;
   }
   .logo{
     width: 127px;
@@ -167,5 +178,8 @@
     width: 24px;
     height: 24px;
     background-size: contain;
+  }
+  .mobile_search_block{
+    display: block;
   }
 }
