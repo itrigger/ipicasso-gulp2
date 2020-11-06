@@ -20,6 +20,9 @@
 .in>.swiper-container-wrapper{
   grid-column: 1 / span 12;
 }
+.mobile{
+  display: none;
+}
 
 @media (min-width: 1440px) and (max-width: 1659px) {
   .in, .megamenu{

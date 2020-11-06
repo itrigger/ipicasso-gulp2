@@ -73,11 +73,24 @@
 
                     function initSwiperCollection() {
                         let screenWidth = $(window).width();
+                        if(screenWidth < 860){
+                            if(!jQuery(".circle--item").is(".appended")) {
+                                jQuery(".circles").find(".circle--item.view-more").remove();
+                                jQuery(".circles_w .in").append("<a class=\"circle--item view-more appended\" href=\"#\">\n" +
+                                    "                            <div><div class=\"desc\">View <br>All Collections <br><span class=\"ico-arrow\"></span></div></div>\n" +
+                                    "                        </a>");
+                            }
+                        } else {
+                            if((jQuery(".circle--item").is(".appended") || (!jQuery(".circle--item").is(".view-more")))){
+                                jQuery(".circles_w").find(".circle--item.appended").remove();
+                                jQuery(".circles").append("<a class=\"circle--item view-more\" href=\"#\">\n" +
+                                    "                            <div><div class=\"desc\">View <br>All Collections <br><span class=\"ico-arrow\"></span></div></div>\n" +
+                                    "                        </a>");
+                            } else {
+
+                            }
+                        }
                         if (screenWidth < 860 && SwiperCollection == undefined) {
-                            jQuery(".circles").find(".circle--item.view-more").remove();
-                            jQuery(".circles_w .in").append("<a class=\"circle--item view-more appended\" href=\"#\">\n" +
-                                "                            <div><div class=\"desc\">View <br>All Collections <br><span class=\"ico-arrow\"></span></div></div>\n" +
-                                "                        </a>");
 
                             SwiperCollection = new Swiper('.circles_w .swiper-container', {
                                 slidesPerView: 2,
@@ -107,12 +120,8 @@
                         } else if (screenWidth > 859 && SwiperCollection != undefined) {
                             SwiperCollection.destroy();
                             SwiperCollection = undefined;
-                            if(jQuery(".circles .view-more").length < 1){
-                                jQuery(".circles_w").find(".appended").remove();
-                                jQuery(".circles").append("<a class=\"circle--item view-more\" href=\"#\">\n" +
-                                    "                            <div><div class=\"desc\">View <br>All Collections <br><span class=\"ico-arrow\"></span></div></div>\n" +
-                                    "                        </a>");
-                            }
+
+
                             jQuery('.circles_w .swiper-wrapper').removeAttr('style');
                             // jQuery('.circles_w .swiper-slide').removeAttr('style');
                         }

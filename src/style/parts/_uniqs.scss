@@ -21,7 +21,7 @@
 }
 
 .circles_w .swiper-container-wrapper{
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
   //width: calc(100% + 16px);
 }
 .circles{
@@ -256,8 +256,9 @@
 
 
 @media (min-width: 1440px) and (max-width: 1659px) {
-  .circles{
+  .circles_w .swiper-container-wrapper{
     grid-column: 1 / span 10;
+    //width: calc(100% + 16px);
   }
   .yellow_promo{
     margin-top: 0;
@@ -293,6 +294,9 @@
   .circle--item>div{
     width: 201px;
     height: 201px;
+  }
+  .circles_w .swiper-container-wrapper {
+    grid-column: 1 / -1;
   }
   .mp-wpcs .wpcs--items{
     grid-column: span 8;
@@ -343,6 +347,9 @@
   .circles{
     grid-column: 1 / span 6;
     grid-gap: 20px;
+  }
+  .circles_w .swiper-container-wrapper {
+    grid-column: 1 / -1;
   }
   .circle--item>div{
     width: 186px;
