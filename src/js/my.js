@@ -75,6 +75,7 @@ $(document).ready(function () {
         swiperName.appendSlide(temp_array);
         swiperName.update();
         swiperName.slideTo(0, 0);
+        swiperName.lazy.load();;
     });
 
 
