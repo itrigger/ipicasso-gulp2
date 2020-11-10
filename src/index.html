@@ -16,8 +16,8 @@
         <ul class="ul ul-level-1">
             <li class="hasChild active" data-menu-id="1000"><a href="javascript:void(0);">Творчество</a></li>
             <li data-menu-id="2000"><a href="javascript:void(0);">Радиоуправляемые модели</a></li>
-            <li class="hasChild" data-menu-id="3000"><a href="javascript:void(0);">Конструкторы</a></li>
-            <li data-menu-id="600"><a class="red bold" href="javascript:void(0);">SALE</a></li>
+            <li class="hasChild"><a href="javascript:void(0);">Конструкторы</a></li>
+            <li><a class="red bold" href="javascript:void(0);">SALE</a></li>
             <li class="search"><a class="ico-search" href="javascript:void(0);"></a></li>
         </ul>
     </div>
@@ -28,9 +28,8 @@
 <div class="in">
     <div class="category_menu cm-level-1" id="category_menu">
         <div class="swiper-container-wrapper">
-            <div class="swiper-container">
-
-                <ul class="ul ul-level-1 swiper-wrapper">
+            <div class="swiper-container active">
+                <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="1000">
                     <li class="mm--item hasChild" data-menu-id="100"><a href="javascript:void(0);">Malowanie po
                         numerach</a></li>
                     <li class="mm--item" data-menu-id="200"><a href="javascript:void(0);">Ramy do obrazow</a></li>
@@ -42,12 +41,21 @@
                     <!--<li data-menu-id="600"><a class="red" href="javascript:void(0);">SALE</a></li>
                     <li class="search"><a class="ico-search" href="javascript:void(0);"></a></li>-->
                 </ul>
-
+            </div>
+        </div>
+        <div class="swiper-container-wrapper">
+            <div class="swiper-container">
+                <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="2000">
+                    <li class="mm--item hasChild" data-menu-id="2100"><a href="javascript:void(0);">Радиоуправляемые игрушки</a></li>
+                    <li class="mm--item" data-menu-id="2200"><a href="javascript:void(0);">Квадрокоптеры</a></li>
+                    <li class="mm--item hasChild" data-menu-id="2300"><a href="javascript:void(0);">Экшн-камеры</a></li>
+                    <li class="mm--item hasChild" data-menu-id="2400"><a href="javascript:void(0);">Прочее</a></li>
+                </ul>
             </div>
         </div>
         <!-- Arrows -->
-        <div class="swiper-button-prev swiper-button-disabled"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev megamenu-swiper-button swiper-button-disabled"></div>
+        <div class="swiper-button-next megamenu-swiper-button"></div>
     </div>
 </div>
 <!-- end of main category menu -->

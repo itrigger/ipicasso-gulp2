@@ -104,7 +104,12 @@
   }
 }
 
-
+.cm-level-1 .swiper-container .ul-level-1{
+  display: none;
+}
+.cm-level-1 .swiper-container.active .ul-level-1{
+  display: flex;
+}
 
 .ul-level-1 {
   margin: 0 8px 0 16px;
