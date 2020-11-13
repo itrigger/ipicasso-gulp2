@@ -149,23 +149,24 @@ $(document).ready(function () {
     });
 
 
-    $("#category_menu_0 li").hover(function () {
+    $("#category_menu_0 li").hoverIntent(function () {
         $(".cm-level-1 .swiper-container").removeClass("active");
         $(".megamenu-swiper-button").css("display","none");
         if(MenuSwiper != undefined) {
             MenuSwiper.destroy();
             MenuSwiper = undefined;
         }
-        jQuery('.cm-level-1 .swiper-wrapper').removeAttr('style');
-        jQuery('.cm-level-1 .swiper-container .swiper-slide').removeAttr('style');
 
+        $('.cm-level-1 .swiper-wrapper').removeAttr('style');
+        $('.cm-level-1 .swiper-container .swiper-slide').removeAttr('style');
 
+        $('.cm-level-1').removeClass('active');
         $(".cm-level-1 .ul-level-1 li").removeClass("active");
         $(".megamenu").removeClass("active");
         $(this).addClass("active");
         let catId = $(this).attr("data-menu-id");
         if(catId != undefined) {
-            $(".cm-level-1 .ul-level-1[data-menu-id=" + catId + "]").parent().addClass("active");
+            $(".cm-level-1 .ul-level-1[data-menu-id=" + catId + "]").parent().addClass("active").parent().parent().addClass("active");
             $(".megamenu-swiper-button").css("display","block");
             MenuSwiper  = new Swiper('.cm-level-1 .swiper-container.active', {
                 slidesPerView: 'auto',
@@ -188,7 +189,7 @@ $(document).ready(function () {
        // MenuSwiper.update();
     });
 
-    $("#category_menu li").hover(function () {
+    $("#category_menu li").hoverIntent(function () {
         $(".megamenu").removeClass("active");
         $(".mm-popup").removeClass("active");
         $(this).addClass("active");
@@ -197,16 +198,33 @@ $(document).ready(function () {
         $(".mm-popup[data-itemid=" + catId + "]").addClass("active");
     });
 
-    $(".megamenu-inner").mouseleave(function () {
+    /*скрытие меню*/
+   /* $(".megamenu-inner").mouseleave(function () {
         $(".megamenu").removeClass("active");
         $(".cm-level-1 li").removeClass("active");
+        //$(".cm-level-0 li").removeClass("active");
+        //$(".category_menu.cm-level-1").removeClass("active");
+        //$(".category_menu.cm-level-1 .swiper-container").removeClass("active");
         $(".megamenu--catalog li:not(.viewall-margin)").removeClass("active");
     });
     $("#header").hover(function () {
         $(".cm-level-1 li").removeClass("active");
+        $(".cm-level-0 li").removeClass("active");
+        $(".category_menu.cm-level-1").removeClass("active");
+        $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
+        $(".megamenu").removeClass("active");
+        $("#megamenu--catalog li:not(.viewall-margin)").removeClass("active");
+    });*/
+    /*/////*/
+    $('body *:not(.megamenu-inner a)').on('click', function () {
+        $(".cm-level-1 li").removeClass("active");
+        $(".cm-level-0 li").removeClass("active");
+        $(".category_menu.cm-level-1").removeClass("active");
+        $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
         $(".megamenu").removeClass("active");
         $("#megamenu--catalog li:not(.viewall-margin)").removeClass("active");
     });
+
 
     $(".minicat").hover(function () {
         //mm height 491

@@ -1,12 +1,27 @@
 @import "_utils";
 
-#category_menu {
-  border-top: 1px solid $borderGrey;
-  border-bottom: 1px solid $borderGrey;
+.category_menu_w{
+  position: relative;
 }
+.cm-level-1-w{
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  z-index: 3;
+}
+
+.category_menu.cm-level-1{
+  border-top: 1px solid $borderGrey;
+  position: relative;
+  &.active{
+    border-bottom: 1px solid $borderGrey;
+  }
+}
+
 #category_menu_0{
   border-top: 1px solid $borderGrey;
 }
+
 .category_menu_mobile{
   display: none;
   grid-column: 1 / span 4;
