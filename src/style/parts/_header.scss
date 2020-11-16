@@ -88,6 +88,10 @@
   position: relative;
   padding-right: 36px;
   white-space: nowrap;
+  font-weight: 800;
+  span{
+    font-weight: normal;
+  }
   &:after{
     content: "";
     display: block;
