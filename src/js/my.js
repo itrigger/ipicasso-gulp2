@@ -167,6 +167,14 @@ $(document).ready(function () {
         let catId = $(this).attr("data-menu-id");
         if(catId != undefined) {
             $(".cm-level-1 .ul-level-1[data-menu-id=" + catId + "]").parent().addClass("active").parent().parent().addClass("active");
+            //открываем первый пункт подменю
+            let subcatId = $(".cm-level-1 .ul-level-1[data-menu-id=" + catId + "]").find('li.mm--item:first-child').attr('data-menu-id');
+            $(".megamenu").removeClass("active");
+            $(".mm-popup").removeClass("active");
+            $(".cm-level-1 .ul-level-1[data-menu-id=" + catId + "]").find('li.mm--item:first-child').addClass("active");
+            $(".megamenu[data-id=" + subcatId + "]").addClass("active");
+            $(".mm-popup[data-itemid=" + subcatId + "]").addClass("active");
+            //\\
             $(".megamenu-swiper-button").css("display","block");
             MenuSwiper  = new Swiper('.cm-level-1 .swiper-container.active', {
                 slidesPerView: 'auto',
