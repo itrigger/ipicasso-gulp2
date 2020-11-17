@@ -118,6 +118,7 @@ $(document).ready(function () {
     let MenuSwiper = undefined;
 
     function initSwiper() {
+
         let screenWidth = $(window).width();
         if ($('.cm-level-1 .swiper-container.active').length) {
             if (screenWidth < 1140 && MenuSwiper == undefined) {
@@ -127,8 +128,6 @@ $(document).ready(function () {
                 $(".cm-level-1 .swiper-container.active ul li").each(function() {
                     ulWidth = ulWidth + $(this).width() + 30
                 });
-
-                console.log(baseWidth + '--' + ulWidth);
 
                 if((ulWidth+80) > baseWidth) {
                     $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","block");
@@ -154,15 +153,20 @@ $(document).ready(function () {
                 } else {
                     $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","none");
                     $(".cm-level-1").css("padding","0 16px");
-                    MenuSwiper.destroy();
-                    MenuSwiper = undefined;
+                    if (MenuSwiper != undefined) {
+                        MenuSwiper.destroy();
+                        MenuSwiper = undefined;
+                    }
+                    $('.cm-level-1 li.mm--item').css("marginRight","30px");
                     $('.cm-level-1 .swiper-wrapper').removeAttr('style');
                     $('.cm-level-1 .swiper-container .swiper-slide').removeAttr('style');
                 }
             } else if (screenWidth > 1139 && MenuSwiper != undefined) {
-
-                MenuSwiper.destroy();
-                MenuSwiper = undefined;
+                if (MenuSwiper != undefined) {
+                    MenuSwiper.destroy();
+                    MenuSwiper = undefined;
+                    $(".cm-level-1").css("padding","0");
+                }
                 $(".spoiler_desc").removeAttr('style');
                 $('body').removeClass("tablet");
                 $('.cm-level-1 .swiper-wrapper').removeAttr('style');
@@ -248,7 +252,9 @@ $(document).ready(function () {
                         },
                     });
                     $(".tablet .cm-level-1 .swiper-container.active li").hover(function () {
-                        MenuSwiper.slideTo($(this).index());
+                        if (MenuSwiper != undefined) {
+                            MenuSwiper.slideTo($(this).index());
+                        }
                     });
                 } else {
                     $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","none");
@@ -270,9 +276,7 @@ $(document).ready(function () {
 
         }
     });
-    $("#category_menu_0 li").mouseenter(function () {
-        // MenuSwiper.update();
-    });
+
 
     $("#category_menu li").hoverIntent(function () {
         $("#category_menu li").removeClass('active');
@@ -284,26 +288,9 @@ $(document).ready(function () {
         $(".mm-popup[data-itemid=" + catId + "]").addClass("active");
     });
 
-    /*скрытие меню*/
-    /* $(".megamenu-inner").mouseleave(function () {
-         $(".megamenu").removeClass("active");
-         $(".cm-level-1 li").removeClass("active");
-         //$(".cm-level-0 li").removeClass("active");
-         //$(".category_menu.cm-level-1").removeClass("active");
-         //$(".category_menu.cm-level-1 .swiper-container").removeClass("active");
-         $(".megamenu--catalog li:not(.viewall-margin)").removeClass("active");
-     });
-     $("#header").hover(function () {
-         $(".cm-level-1 li").removeClass("active");
-         $(".cm-level-0 li").removeClass("active");
-         $(".category_menu.cm-level-1").removeClass("active");
-         $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
-         $(".megamenu").removeClass("active");
-         $("#megamenu--catalog li:not(.viewall-margin)").removeClass("active");
-     });*/
-    /*/////*/
+
     $(document).click(function (e) { // событие клика по веб-документу
-        let div = $(".category_menu"); // тут указываем ID элемента
+        let div = $(".category_menu, .scroll-element_outer"); // тут указываем ID элемента
         if (!div.is(e.target) // если клик был не по нашему блоку
             && div.has(e.target).length === 0) { // и не по его дочерним элементам
             $(".category_menu.cm-level-1").removeClass("active");
