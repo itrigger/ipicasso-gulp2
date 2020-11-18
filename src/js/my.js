@@ -214,6 +214,8 @@ $(document).ready(function () {
         $(this).addClass("active");
         let catId = $(this).attr("data-menu-id");
         if (catId != undefined) {
+
+
             $(".cm-level-1 .ul-level-1[data-menu-id=" + catId + "]").parent().addClass("active").parent().parent().addClass("active");
             $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","block");
 
@@ -224,6 +226,7 @@ $(document).ready(function () {
             $(".cm-level-1 .ul-level-1[data-menu-id=" + catId + "]").find('li.mm--item:first-child').addClass("active");
             $(".megamenu[data-id=" + subcatId + "]").addClass("active");
             $(".mm-popup[data-itemid=" + subcatId + "]").addClass("active");
+            loadHiResImg(subcatId);
             //\\
             $(".megamenu-swiper-button").css("display", "block");
             let screenWidth = $(window).width();
@@ -278,6 +281,19 @@ $(document).ready(function () {
     });
 
 
+    const loadHiResImg = function(subMenuId){
+        $(".megamenu[data-id=" + subMenuId + "] .minicats-flex-wrap .minicat").each(function () {
+            let $pic = $(this).find('.pic');
+            let $img = $pic.find('img');
+            let datasrcbig = $img.attr('data-src-big');
+            let datasrc = $img.attr('data-src');
+            if(datasrc != undefined){
+                $pic.attr("style","background: url("+datasrcbig+") no-repeat center;");
+                $img.attr('src', datasrc);
+            }
+        });
+    };
+
     $("#category_menu li").hoverIntent(function () {
         $("#category_menu li").removeClass('active');
         $(".megamenu").removeClass("active");
@@ -286,6 +302,7 @@ $(document).ready(function () {
         let catId = $(this).attr("data-menu-id");
         $(".megamenu[data-id=" + catId + "]").addClass("active");
         $(".mm-popup[data-itemid=" + catId + "]").addClass("active");
+        loadHiResImg(catId);
     });
 
 
@@ -302,6 +319,8 @@ $(document).ready(function () {
             $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","none");
         }
     });
+
+
 
 
     $(".minicat").hover(function () {
