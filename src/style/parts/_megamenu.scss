@@ -19,6 +19,14 @@
     transition: all 0.3s;
   }
 }
+.standalone_menu{
+  .megamenu{
+    margin: 49px auto 0;
+  }
+  .ul-level-1 a{
+    padding: 17px 0 12px;
+  }
+}
 .megamenu-inner{
   position: relative;
   margin: 0 auto;

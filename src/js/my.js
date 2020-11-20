@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-
-    //
-
-
     /*tabs*/
     $(".tabs li").on("click", function () {
         let tabId = $(this).parents(".tabs").attr("data-tabid");
@@ -310,8 +306,10 @@ $(document).ready(function () {
         let div = $(".category_menu, .scroll-element_outer"); // тут указываем ID элемента
         if (!div.is(e.target) // если клик был не по нашему блоку
             && div.has(e.target).length === 0) { // и не по его дочерним элементам
-            $(".category_menu.cm-level-1").removeClass("active");
-            $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
+            if(!($("body").hasClass('standalone_menu'))){
+                $(".category_menu.cm-level-1").removeClass("active");
+                $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
+            }
             $(".cm-level-1 li").removeClass("active");
             $(".cm-level-0 li").removeClass("active");
             $(".megamenu").removeClass("active");
