@@ -1,0 +1,43 @@
+.breadcrumb_w{
+  margin-top: 16px;
+}
+.breadcrumb{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  li{
+    list-style: none;
+    font-weight: 800;
+    color: #404142;
+    font-size: 14px;
+    line-height: 18px;
+    white-space: nowrap;
+    padding-right: 5px;
+    margin-right: 5px;
+    a{
+      color: #404142;
+      position: relative;
+      font-weight: normal;
+      &:after{
+        content: '';
+        display: block;
+        height: 12px;
+        width: 1px;
+        background: #404142;
+        position: absolute;
+        right: -5px;
+        top: 3px;
+      }
+    }
+    &.home{
+      a{
+        display: inline-block;
+        background: url('../img/breadcrumb_home.png') 0 0 no-repeat;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
