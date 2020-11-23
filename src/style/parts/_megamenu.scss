@@ -21,7 +21,7 @@
 }
 .standalone_menu{
   .megamenu{
-    margin: 49px auto 0;
+    margin: -1px auto 0;
   }
   .ul-level-1 a{
     padding: 17px 0 12px;
@@ -695,6 +695,12 @@
   width: 335px;
   height: 352px;
   background-size: contain;
+}
+
+@media (min-width: 1400px) and (max-width: 1722px) {
+  .mm-category-png{
+    right: -24px;
+  }
 }
 
 @media (min-width: 1440px) and (max-width: 1659px) {

@@ -1,0 +1,31 @@
+.mod_subcats{
+  grid-column: 1 / -1;
+  position: relative;
+  .minicats-flex-wrap{
+    grid-column: 1 / -1;
+    padding-right: 0;
+    grid-template-columns: repeat(12, 1fr);
+    .minicat.hidden{
+      display: none;
+    }
+  }
+}
+
+
+@media (min-width: 1440px) and (max-width: 1659px) {
+  .mod_subcats .minicats-flex-wrap{
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1439px) {
+  .mod_subcats .minicats-flex-wrap{
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (min-width: 860px) and (max-width: 1139px) {
+  .mod_subcats .minicats-flex-wrap{
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
