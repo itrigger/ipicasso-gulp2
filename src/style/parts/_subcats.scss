@@ -1,6 +1,8 @@
 .mod_subcats{
   grid-column: 1 / -1;
   position: relative;
+  border-bottom: 1px solid #CDCECF;
+  padding-bottom: 14px;
   .minicats-flex-wrap{
     grid-column: 1 / -1;
     padding-right: 0;
@@ -11,6 +13,47 @@
   }
 }
 
+.show_more,
+.show_less{
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 40px;
+  color: #404142;
+  font-size: 14px;
+  line-height: 18px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 800;
+  span{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icons-arrow-next-normal.svg) center center no-repeat;
+    transform: rotate(90deg);
+  }
+}
+
+.show_more{
+
+}
+.show_less{
+  span{
+    transform: rotate(-90deg);
+  }
+}
+
+@media (min-width: 860px){
+  .mod_subcats{
+    .swiper-container{
+      overflow: visible;
+    }
+    .swiper-container-wrapper{
+      overflow: visible;
+    }
+  }
+}
 
 @media (min-width: 1440px) and (max-width: 1659px) {
   .mod_subcats .minicats-flex-wrap{
@@ -27,5 +70,24 @@
 @media (min-width: 860px) and (max-width: 1139px) {
   .mod_subcats .minicats-flex-wrap{
     grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width:859px) {
+  .mod_subcats{
+    padding-bottom: 5px;
+  }
+  .mod_subcats .minicats-flex-wrap{
+    grid-template-columns: none;
+    display: flex;
+    grid-gap: 0;
+    .minicat.hasChild .name span:after{
+      display: none;
+    }
+    .minicat{
+      width: 100px;
+      min-width: 100px;
+      max-width: 100px;
+    }
   }
 }

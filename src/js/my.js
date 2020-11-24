@@ -321,14 +321,11 @@ $(document).ready(function () {
 
 
 
-    $(".minicat").hover(function () {
+    $(".mm-popup .minicat").hover(function () {
         //mm height 491
         let containerHeight;
-        if($('body').hasClass('catalog')){
-            containerHeight = $(".mod_subcats").height();
-        } else {
-            containerHeight = $(".megamenu-inner").height() - 45;
-        }
+
+        containerHeight = $(".megamenu-inner").height() - 45;
 
         let nameHeight = $(this).find(".name").height();
         let imgHeight = $(this).find("img").height();

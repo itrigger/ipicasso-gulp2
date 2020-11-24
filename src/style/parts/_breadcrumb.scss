@@ -42,3 +42,35 @@
     }
   }
 }
+
+@media (max-width: 859px) {
+  .breadcrumb_w{
+    margin-top: 8px;
+  }
+  .breadcrumb{
+    align-items: center;
+  }
+  .breadcrumb li{
+    display: none;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: normal;
+    &.home{
+      display: block;
+      margin-left: 4px;
+      line-height: 0;
+      a{
+        background: url(../img/icon-arrow-go-normal.svg) center center no-repeat;
+        width: 24px;
+        height: 24px;
+        transform: rotate(180deg);
+      }
+      a:after{
+        display: none;
+      }
+    }
+    &:last-child{
+      display: block;
+    }
+  }
+}

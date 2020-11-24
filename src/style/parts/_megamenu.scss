@@ -697,12 +697,11 @@
   background-size: contain;
 }
 
-@media (min-width: 1400px) and (max-width: 1722px) {
+@media (min-width: 1660px) and (max-width: 1748px) {
   .mm-category-png{
-    right: -24px;
+    right: 0;
   }
 }
-
 @media (min-width: 1440px) and (max-width: 1659px) {
   .megamenu-inner{
     grid-template-columns: repeat(10, 1fr);
