@@ -1,3 +1,11 @@
+.category_in{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 1660px;
+  grid-gap: 0 20px;
+  margin: 0 auto;
+}
+
 .catalog-heading{
   grid-column: 1 / -1;
   font-size: 28px;
@@ -11,6 +19,39 @@
   font-size: 12px;
   line-height: 15px;
 }
+
+.filter_w{
+  grid-column: 1 / span 1;
+}
+.category_content{
+  grid-column: 2 / span 5;
+}
+
+.category_content_items{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0 20px;
+  .card:hover{
+    z-index: 999;
+  }
+  .card{
+    padding-bottom: 46px;
+    .shover{
+      background: #fff;
+      z-index: -1;
+      top: -1px;
+    }
+    .additions {
+      bottom: -49px;
+      width: 100%;
+      padding-bottom: 20px;
+    }
+  }
+  &.cci-4{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 
 @media (max-width:859px) {
   .catalog-heading{

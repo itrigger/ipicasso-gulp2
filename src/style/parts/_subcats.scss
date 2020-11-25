@@ -1,6 +1,7 @@
 .mod_subcats{
   grid-column: 1 / -1;
   position: relative;
+  z-index: 99;
   border-bottom: 1px solid #CDCECF;
   padding-bottom: 14px;
   .minicats-flex-wrap{
