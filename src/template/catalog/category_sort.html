@@ -1,14 +1,53 @@
 <div class="category_sort_w">
     category sort
-    <ul id="select_count">
-        <li><a href="javascript:void(0);" data-count="4">4</a></li>
-        <li><a href="javascript:void(0);" data-count="5">5</a></li>
-    </ul>
+    <div class="select_counter">
+        Items:
+        <ul id="select_count">
+            <li><a href="javascript:void(0);" data-count="4">4</a></li>
+            <li><a class="active" href="javascript:void(0);" data-count="5">5</a></li>
+        </ul>
+    </div>
 </div>
 
 
 <script>
     $('document').ready(function () {
-        $('#select_count')
+        $('#select_count a').on('click', function () {
+            $("#select_count a").removeClass("active");
+            let count = $(this).attr('data-count');
+            $(this).addClass("active");
+            let $wrapper = $(".category_content_items");
+            if(count == 4){
+                $wrapper.removeClass("cci-5, cci-4").addClass("cci-4");
+            }
+            if(count == 5){
+                $wrapper.removeClass("cci-5, cci-4").addClass("cci-5");
+            }
+        });
+
+     /*   function reScale(count){
+            if(count === 4) {
+                $(".category_content_items .category--item").each(function () {
+                    let $pic = $(this).find('.pic');
+                    let $img = $pic.find('img');
+                    let datasrcbig = $img.attr('data-big');
+                    if (datasrcbig !== undefined) {
+                        $img.attr('src', datasrcbig);
+                    }
+                    $img.removeClass("reloading");
+                });
+            } else if(count === 5){
+                $(".category_content_items .category--item").each(function () {
+                    let $pic = $(this).find('.pic');
+                    let $img = $pic.find('img');
+                    let datasrcmedium = $img.attr('data-medium');
+                    if (datasrcmedium !== undefined) {
+                        $img.attr('src', datasrcmedium);
+                    }
+                    $img.removeClass("reloading");
+                });
+            }
+        }*/
+
     });
 </script>

@@ -1,7 +1,3 @@
-body:not(.home) .header{
-  border-bottom: 1px solid #CDCECF;
-}
-
 .header{
   padding-top: 25px;
   padding-bottom: 28px;
@@ -156,6 +152,9 @@ body:not(.home) .header{
 }
 
 @media (max-width: 859px) {
+  body:not(.home) .header{
+    border-bottom: 1px solid #CDCECF;
+  }
   .header{
     padding-top: 16px;
     padding-bottom: 16px;
