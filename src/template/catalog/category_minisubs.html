@@ -1,3 +1,55 @@
 <div class="category_minisubs_w">
-    category subcats
+    <div class="mod_minisubcats">
+        <div class="swiper-container-wrapper">
+            <div class="swiper-container">
+                <div class="mod_minisubcats-flex-wrap swiper-wrapper">
+                    <div class="minisubcat hidden"><a href="">Птички</a></div>
+                    <div class="minisubcat hidden"><a href="">Рыбки</a></div>
+                    <div class="minisubcat hidden"><a href="">Котики</a></div>
+                    <div class="minisubcat hidden"><a href="">Собачки</a></div>
+                    <div class="minisubcat hidden"><a href="">Львята</a></div>
+                    <div class="minisubcat hidden"><a href="">Синички</a></div>
+                    <div class="minisubcat hidden"><a href="">Воробушки</a></div>
+                    <div class="minisubcat hidden"><a href="">Верблюжата</a></div>
+                    <div class="minisubcat hidden"><a href="">Жеребята</a></div>
+                    <div class="minisubcat hidden"><a href="">Канарейки</a></div>
+                    <div class="minisubcat hidden"><a href="">Котята</a></div>
+                    <div class="minisubcat hidden"><a href="">Собачки</a></div>
+                    <div class="minisubcat hidden"><a href="">Рыбки</a></div>
+                    <div class="minisubcat hidden"><a href="">Коняшки</a></div>
+                    <div class="minisubcat hidden"><a href="">Мухи</a></div>
+                    <div class="minisubcat hidden"><a href="">Змейки</a></div>
+                    <div class="minisubcat hidden"><a href="">Щенята</a></div>
+                    <div class="minisubcat hidden"><a href="">Ящерки</a></div>
+                    <div class="minisubcat hidden"><a href="">Птички</a></div>
+                    <div class="show_btn btn_show_more">Show more</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    $('document').ready(function () {
+        let MSlength = $(".mod_minisubcats-flex-wrap").width();
+        let MSshowBtnWidth = $(".mod_minisubcats-flex-wrap .show_btn").width() + 16;
+        let temp = 0;
+        $(".mod_minisubcats-flex-wrap .minisubcat").each(function (e) {
+            temp += $(this).width() + 16;
+            if(temp < MSlength - MSshowBtnWidth){
+                $(this).removeClass('hidden');
+            } else {
+                return false;
+            }
+        });
+
+        $(".show_btn").on('click', function () {
+            if($(this).hasClass("btn_show_more")){
+                $(".mod_minisubcats-flex-wrap .minisubcat").each(function (e) {
+                    $(this).removeClass('hidden');
+                })
+            }
+        });
+
+    });
+</script>
