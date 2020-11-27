@@ -47,6 +47,7 @@ a{
 }
 
 
+@import "parts/vendor/_nice-select";
 @import "parts/_scrollbar";
 @import "parts/_breadcrumb";
 @import "parts/_grid";
@@ -59,7 +60,7 @@ a{
 @import "parts/_mod_carousel";
 @import "parts/_category_card";
 
-@import "parts/_subcats";
+@import "parts/_mod_subcats";
 @import "parts/_catalog";
 
 @import "parts/_uniqs";

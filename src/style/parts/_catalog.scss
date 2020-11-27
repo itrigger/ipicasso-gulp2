@@ -75,7 +75,10 @@
 .category_sort_w{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding-top: 25px;
+  padding-top: 24px;
+}
+.category_sort{
+  margin-left: -16px;
 }
 .select_counter{
   grid-column: -1 / span 1;
@@ -84,9 +87,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-right: 9px;
 }
 #select_count{
-  margin: 0 0 0 10px;
+  margin: 0 0 0 13px;
   padding: 0;
   display: flex;
   grid-gap: 0 10px;

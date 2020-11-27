@@ -306,7 +306,7 @@ $(document).ready(function () {
         let div = $(".category_menu, .scroll-element_outer"); // тут указываем ID элемента
         if (!div.is(e.target) // если клик был не по нашему блоку
             && div.has(e.target).length === 0) { // и не по его дочерним элементам
-            if(!($("body").hasClass('standalone_menu'))){
+            if(!($(".category_menu_w").hasClass('standalone_menu'))){
                 $(".category_menu.cm-level-1").removeClass("active");
                 $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
             }
@@ -437,6 +437,9 @@ $(document).ready(function () {
             return true;
         }
     })
+
+
+    $('select').niceSelect();
 
 });
 
