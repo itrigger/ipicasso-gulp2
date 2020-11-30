@@ -32,3 +32,13 @@
     }
   }
 }
+.show_btn.hidden{
+  opacity: 0;
+}
+
+@media (max-width: 860px){
+  .mod_minisubcats-flex-wrap{
+    flex-wrap: nowrap;
+    grid-gap: 0;
+  }
+}

@@ -1,5 +1,5 @@
 <div class="category_minisubs_w">
-    <div class="mod_minisubcats">
+    <div class="mod_minisubcats collapsed">
         <div class="swiper-container-wrapper">
             <div class="swiper-container">
                 <div class="mod_minisubcats-flex-wrap swiper-wrapper">
@@ -31,25 +31,119 @@
 
 <script>
     $('document').ready(function () {
-        let MSlength = $(".mod_minisubcats-flex-wrap").width();
-        let MSshowBtnWidth = $(".mod_minisubcats-flex-wrap .show_btn").width() + 16;
-        let temp = 0;
-        $(".mod_minisubcats-flex-wrap .minisubcat").each(function (e) {
-            temp += $(this).width() + 16;
-            if(temp < MSlength - MSshowBtnWidth){
-                $(this).removeClass('hidden');
+
+        const lang_btn_show_more_text = "Show more";
+        const lang_btn_show_less_text = "Show less";
+
+        $(".show_btn").on('click', function () {
+            let $object = $(".mod_minisubcats");
+
+            if ($object.hasClass("collapsed")) {
+                $(this).removeClass("btn_show_more").addClass("btn_show_less");
+                $object.removeClass("collapsed");
+                $object.addClass("expanded");
+                categoryMinisubsRecalculate();
             } else {
-                return false;
+                $(this).addClass("btn_show_more").removeClass("btn_show_less");
+                $object.removeClass("expanded");
+                $object.addClass("collapsed");
+                categoryMinisubsRecalculate();
             }
         });
 
-        $(".show_btn").on('click', function () {
-            if($(this).hasClass("btn_show_more")){
-                $(".mod_minisubcats-flex-wrap .minisubcat").each(function (e) {
+        let MiniSubsSwiper = undefined;
+
+        function categoryMinisubsRecalculate() {
+            let MSlength = $(".mod_minisubcats-flex-wrap").width();
+            let MSshowBtnWidth = $(".mod_minisubcats-flex-wrap .show_btn").width() + 16;
+            let temp = 0;
+            let allChildLength = 0;
+            let $object = $(".mod_minisubcats");
+
+            let screenWidth = $(window).width();
+
+            if (screenWidth > 859) {
+
+                if (MiniSubsSwiper != undefined) {
+                    MiniSubsSwiper.destroy();
+                    MiniSubsSwiper = undefined;
+                }
+
+                $('.mod_minisubcats .swiper-wrapper').removeAttr('style');
+                $('.mod_minisubcats .swiper-container .swiper-slide').removeAttr('style');
+
+                $($object.find(".minisubcat")).each(function () {
+                    allChildLength += $(this).width() + 16;
+                });
+
+                if (allChildLength > MSlength) {
+                    if ($object.hasClass("collapsed")) {
+                        temp = 0;
+                        $($object.find(".minisubcat")).each(function () {
+                            temp += $(this).width() + 17;
+                            if (temp < MSlength - MSshowBtnWidth) {
+                                $(this).removeClass('hidden');
+                                console.log(1);
+                                if (temp < MSlength) {
+                                    $object.find(".show_btn").addClass("hidden");
+                                }
+                            } else {
+                                $(this).addClass('hidden');
+                                console.log(2);
+                                $object.find(".show_btn").removeClass("hidden");
+                            }
+                        });
+                        $object.find(".show_btn").removeClass("btn_show_less").addClass("btn_show_more").text(lang_btn_show_more_text);
+                        MSshowBtnWidth = $(".mod_minisubcats-flex-wrap .show_btn").width() + 16;
+                        if (temp < MSlength - MSshowBtnWidth) {
+                            $object.find(".show_btn").addClass("hidden");
+                        } else {
+                            $object.find(".show_btn").removeClass("hidden");
+                        }
+                    } else if ($object.hasClass("expanded")) {
+                        temp = 0;
+                        $($object.find(".minisubcat")).each(function () {
+                            temp += $(this).width() + 17;
+                            $(this).removeClass('hidden');
+                        });
+                        $object.find(".show_btn").removeClass("btn_show_more").addClass("btn_show_less").text(lang_btn_show_less_text);
+                        MSshowBtnWidth = $(".mod_minisubcats-flex-wrap .show_btn").width() + 16;
+                        if (temp < MSlength - MSshowBtnWidth) {
+                            $object.find(".show_btn").addClass("hidden");
+                        } else {
+                            $object.find(".show_btn").removeClass("hidden");
+                        }
+                    }
+                } else {
+                    $($object.find(".minisubcat")).each(function () {
+                        $(this).removeClass('hidden');
+                        $object.find(".show_btn").addClass("hidden");
+                    });
+                }
+
+            } else if (screenWidth < 860 && MiniSubsSwiper == undefined){
+                $(".show_btn").addClass("hidden");
+                $($object.find(".minisubcat")).each(function () {
                     $(this).removeClass('hidden');
-                })
+                });
+                MiniSubsSwiper = new Swiper('.mod_minisubcats .swiper-container', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 16,
+                    //slidesOffsetAfter: 10,
+                    slideClass: 'minisubcat',
+                    //slideToClickedSlide: true,
+                    watchOverflow: true,
+                });
             }
+        }
+
+        categoryMinisubsRecalculate();
+
+        $(window).on('resize', function () {
+            categoryMinisubsRecalculate();
         });
 
     });
+
+
 </script>
