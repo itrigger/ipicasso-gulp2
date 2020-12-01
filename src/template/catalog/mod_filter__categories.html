@@ -1,0 +1,38 @@
+<div class="filter_categories">
+    <div class="heading">Category</div>
+    <ul class="left_side_cat_menu">
+        <li class="back"><a href="/">Main page</a></li>
+        <li class="back"><a href="#">Malowanie po numerach</a></li>
+        <li class="active"><a href="#">Zwierzeta</a>
+            <ul>
+                <li><a href="#">Собачки</a></li>
+                <li><a href="#">Кошечки</a></li>
+                <li><a href="#">Рыбки</a></li>
+            </ul>
+        </li>
+
+        <li class="active hasSiblings expanded"><a href="#">Birds</a>
+            <ul>
+                <li><a href="#">Cats</a></li>
+                <li><a href="#">Dogs</a></li>
+                <li class="active"><a href="#">Birds</a></li>
+                <li><a href="#">Horses</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $('document').ready(function () {
+        $(".left_side_cat_menu li.hasSiblings").on('click', function (e) {
+            e.preventDefault();
+            if($(this).hasClass("expanded")){
+                $(this).find("ul").slideUp('fast');
+                $(this).removeClass("expanded").addClass("collapsed");
+            } else {
+                $(this).find("ul").slideDown('fast');
+                $(this).removeClass("collapsed").addClass("expanded");
+            }
+        });
+    });
+</script>

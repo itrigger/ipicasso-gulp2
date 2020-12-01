@@ -24,6 +24,30 @@
     padding: 0 12px;
     background: #fff;
     border-radius: 16px;
+    position: relative;
+  }
+  &.active{
+    a{
+      background: $blue;
+      border-color: $blue;
+      color: #fff !important;
+      padding-right: 36px;
+      &:after{
+        display: block;
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        right: 4px;
+        top: 3px;
+        background: url('../img/icon-close-black.svg') center center no-repeat #fff;
+        background-size: 18px 18px;
+      }
+      &:hover{
+        color: #fff;
+      }
+    }
   }
   &:hover{
     a{
@@ -32,9 +56,41 @@
     }
   }
 }
-.show_btn.hidden{
-  opacity: 0;
+.show_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: #404142;
+  font-weight: 800;
+  cursor: pointer;
+  padding-right: 18px;
+  position: relative;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 7px;
+    background: url(../img/side-main-arr.jpg) center center no-repeat;
+    width: 18px;
+    height: 18px;
+  }
+  &.btn_show_less{
+    padding-right: 0;
+    padding-left: 18px;
+    &:before{
+      right: auto;
+      left: 0;
+      transform: rotate(180deg);
+    }
+  }
+  &.hidden{
+    opacity: 0;
+  }
 }
+
 
 @media (max-width: 860px){
   .mod_minisubcats-flex-wrap{

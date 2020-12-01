@@ -104,6 +104,7 @@
   font-size: 14px;
   line-height: 23px;
   color: #8A8B8C;
+  transition: 0.11s all;
   &.active{
     font-size: 18px;
     line-height: 23px;
@@ -113,6 +114,7 @@
     font-size: 18px;
     line-height: 23px;
     color: #1782E9;
+    transition: 0.11s all;
   }
 }
 

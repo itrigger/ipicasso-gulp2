@@ -1,0 +1,108 @@
+.filter_categories{
+  padding-top: 35px;
+  padding-right: 20px;
+  .heading{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+  }
+}
+
+.left_side_cat_menu{
+  margin: 0;
+  padding: 0;
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  & > li{
+    &.back a{
+      padding-left: 24px;
+      position: relative;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 7px;
+        background: url(../img/side-main-arr.jpg) center center no-repeat;
+        background-size: 6px 9px;
+        width: 16px;
+        height: 16px;
+        transform: rotate(180deg);
+      }
+    }
+    &.active{
+      padding-right: 0;
+      &:after{display: none;}
+      &>a{
+        padding-left: 8px;
+        background: rgba(#1782E9, 0.1);
+        border-radius: 4px;
+        font-weight: 800;
+        position: relative;
+        &:hover{
+          background: #D2E6F9;
+          color: inherit;
+        }
+      }
+      ul{
+        margin-left: 8px;
+        li.active{
+          a{
+            font-weight: 800;
+            color: $blue;
+            position: relative;
+            &:after{
+              display: block;
+              content: '';
+              width: 14px;
+              height: 10px;
+              position: absolute;
+              right: 11px;
+              top: 10px;
+              background: url(/img/check_small.png) 0 0 no-repeat;
+            }
+          }
+        }
+      }
+      &.hasSiblings{
+        &>a{
+          &:after{
+            margin-top: -4px;
+            pointer-events: none;
+            position: absolute;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            transition: all 0.15s ease-in-out;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            top: 8px;
+            background: url(../img/icon-dropdown-bottom-normal.svg) center center no-repeat;
+            background-size: contain;
+            right: 8px;
+          }
+        }
+        &.collapsed>a:after{
+          transform: rotate(180deg);
+        }
+
+      }
+    }
+
+
+  }
+  li{
+    list-style: none;
+    a{
+      font-size: 14px;
+      line-height: 18px;
+      padding: 4px 0;
+      display: block;
+    }
+  }
+}
