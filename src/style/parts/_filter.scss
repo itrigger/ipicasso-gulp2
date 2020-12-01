@@ -1,0 +1,22 @@
+.main_filter{
+  margin-top: 35px;
+  .heading{
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.option_name{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  span{
+    text-transform: none;
+  }
+}
+
+.option_box{
+  margin-bottom: 24px;
+}

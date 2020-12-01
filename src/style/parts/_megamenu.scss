@@ -6,7 +6,7 @@
   margin: 43px auto 0;
   height: 520px;
   opacity: 0;
-  transition: all 0.5s;
+  transition: opacity 0.5s;
   left: 0;
   right: 0;
   .j-megamenu-scrollbar-wrapper{
@@ -16,7 +16,7 @@
   &.active{
     z-index: 111;
     opacity: 1;
-    transition: all 0.3s;
+    transition: opacity 0.2s;
   }
 }
 .standalone_menu{

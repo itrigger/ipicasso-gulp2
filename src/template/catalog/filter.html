@@ -2,4 +2,555 @@
 
     //= ../catalog/mod_filter__categories.html
 
+    <div class="main_filter">
+        <div class="heading">Filters</div>
+
+        <div class="option_box">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name">Cena, <span>zł</span></div>
+            <div class="price_slider collapsible">
+                <table width="100%">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="min_price2" value="39" name="min_price2" class="price_limit">
+                        </td>
+                        <td align="center" width="20" style="text-align: center;">
+                            <label class="tire"></label>
+                        </td>
+                        <td align="right">
+                            <input type="text" id="max_price2" value="139" name="max_price2" class="price_limit">
+                        </td>
+                        <input type="hidden" id="min_price" value="39" name="min_price" class="price_limit">
+                        <input type="hidden" id="max_price" value="99" name="max_price" class="price_limit price-active"></tr>
+                    </tbody>
+                </table>
+                <table width="100%">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div id="showmin">39</div>
+                        </td>
+                        <td align="right">
+                            <div id="showmax">159</div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
+                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 37.5%;"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="option_box"><a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name">Seria:</div>
+            <div id="manufacturer-box" class="collapsible" style="display: block;">
+                <table width="100%" class="table-manufactur">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="pict-size">
+                                <input id="manufacturer_41" class="manufacturer_value filtered checkbox" type="checkbox"
+                                       name="manufacturer[]" value="41">
+                                <label for="manufacturer_41">Classic <span>52</span></label></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="option_box">
+            <a href="#" class="aclearfilter " style="display: none;"></a>
+            <div class="option_name">Rozmiar obrazu, cm</div>
+            <div class="collapsible attribute_box option_box"
+                 style="padding-left: 0px; padding-right: 0px; display: block;">
+
+                <div
+                        class="collapsible">
+                    <div class="pict-size-block">
+                        <div class="catname">OBRAZY POJEDYNCZE</div>
+                        <div class="pict-size-w" data="5">
+                            <input class="filtered a_name checkbox2" id="attribute_value_1010" type="checkbox"
+                                   name="attribute_value[101][]" at_v_i="101_30x30" value="30x30">
+                            <label for="attribute_value_1010" at_v_t="101_30x30" data-value="30x30" value="30x30">30x30
+                                <span>5</span></label></div>
+                        <div class="pict-size-w" data="47">
+                            <input class="filtered a_name checkbox2" id="attribute_value_1011" type="checkbox"
+                                   name="attribute_value[101][]" at_v_i="101_30x40" value="30x40">
+                            <label for="attribute_value_1011" at_v_t="101_30x40" data-value="30x40" value="30x40">30x40
+                                <span>47</span></label></div>
+                        <div class="pict-size-w disabled" data="0">
+                            <input class="filtered a_name checkbox2" id="attribute_value_1012" type="checkbox"
+                                   name="attribute_value[101][]" at_v_i="101_40x50" value="40x50" disabled="disabled">
+                            <label for="attribute_value_1012" at_v_t="101_40x50" data-value="40x50"
+                                   value="40x50">40x50</label></div>
+                        <div class="pict-size-w disabled" data="0">
+                            <input class="filtered a_name checkbox2" id="attribute_value_1013" type="checkbox"
+                                   name="attribute_value[101][]" at_v_i="101_50x65" value="50x65" disabled="disabled">
+                            <label for="attribute_value_1013" at_v_t="101_50x65" data-value="50x65"
+                                   value="50x65">50x65</label></div>
+                    </div>
+                    <div class="pict-size-block">
+                        <div class="clear"></div>
+                        <div class="catname">OBRAZY MODUŁOWE</div>
+                        <div class="pict-size-w disabled" data="0">
+                            <input class="filtered a_name checkbox2" id="attribute_value_1014" type="checkbox"
+                                   name="attribute_value[101][]" at_v_i="101_40x150" value="40x150" disabled="disabled">
+                            <label for="attribute_value_1014" at_v_t="101_40x150" data-value="40x150" value="40x150">40x150</label>
+                        </div>
+                        <div class="pict-size-w disabled" data="0">
+                            <input class="filtered a_name checkbox2" id="attribute_value_1015" type="checkbox"
+                                   name="attribute_value[101][]" at_v_i="101_50x120" value="50x120" disabled="disabled">
+                            <label for="attribute_value_1015" at_v_t="101_50x120" data-value="50x120" value="50x120">50x120</label>
+                        </div>
+                        <div class="pict-size-w disabled" data="0">
+                            <input class="filtered a_name checkbox2" id="attribute_value_1016" type="checkbox"
+                                   name="attribute_value[101][]" at_v_i="101_50x150" value="50x150" disabled="disabled">
+                            <label for="attribute_value_1016" at_v_t="101_50x150" data-value="50x150" value="50x150">50x150</label>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="attribute_box option_box" id="pic-size4">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name  ">Format obrazu</div>
+            <div class="collapsible">
+                <table width="100%" class="table-pict-size">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="pict-size" data="52">
+                                <input class="filtered a_name checkbox" id="attribute_value_1020" type="checkbox"
+                                       name="attribute_value[102][]" at_v_i="102_Pojedynczy obraz"
+                                       value="Pojedynczy obraz">
+                                <label for="attribute_value_1020" at_v_t="102_Pojedynczy_obraz"
+                                       data-value="Pojedynczy obraz" value="Pojedynczy obraz">Pojedynczy obraz
+                                    <span>52</span></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1021" type="checkbox"
+                                       name="attribute_value[102][]" at_v_i="102_Potrójny obraz" value="Potrójny obraz"
+                                       disabled="disabled">
+                                <label for="attribute_value_1021" at_v_t="102_Potrójny_obraz"
+                                       data-value="Potrójny obraz" value="Potrójny obraz">Potrójny obraz</label></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="option_box" id="pic-size2">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name ">Fabuła</div>
+            <div class="collapsible attribute_box option_box">
+                <div class="collapsible">
+                    <div id="wn2" tabindex="0">
+                        <div id="lyr2" style="">
+                            <div class="pict-size" data="2">
+                                <input class="filtered a_name checkbox" id="attribute_value_1060" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Abstrakcja" value="Abstrakcja">
+                                <label for="attribute_value_1060" at_v_t="106_Abstrakcja" data-value="Abstrakcja"
+                                       value="Abstrakcja">Abstrakcja <span>2</span></label></div>
+                            <div class="pict-size" data="12">
+                                <input class="filtered a_name checkbox" id="attribute_value_1061" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Do pokoju dziecięcego"
+                                       value="Do pokoju dziecięcego">
+                                <label for="attribute_value_1061" at_v_t="106_Do_pokoju_dziecięcego"
+                                       data-value="Do pokoju dziecięcego" value="Do pokoju dziecięcego">Do pokoju
+                                    dziecięcego <span>12</span></label></div>
+                            <div class="pict-size" data="6">
+                                <input class="filtered a_name checkbox" id="attribute_value_1064" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Kwiaty" value="Kwiaty">
+                                <label for="attribute_value_1064" at_v_t="106_Kwiaty" data-value="Kwiaty"
+                                       value="Kwiaty">Kwiaty <span>6</span></label></div>
+                            <div class="pict-size" data="3">
+                                <input class="filtered a_name checkbox" id="attribute_value_1066" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Miejskie krajobrazy"
+                                       value="Miejskie krajobrazy">
+                                <label for="attribute_value_1066" at_v_t="106_Miejskie_krajobrazy"
+                                       data-value="Miejskie krajobrazy" value="Miejskie krajobrazy">Miejskie krajobrazy
+                                    <span>3</span></label></div>
+                            <div class="pict-size" data="1">
+                                <input class="filtered a_name checkbox" id="attribute_value_10611" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Romans" value="Romans">
+                                <label for="attribute_value_10611" at_v_t="106_Romans" data-value="Romans"
+                                       value="Romans">Romans <span>1</span></label></div>
+                            <div class="pict-size" data="28">
+                                <input class="filtered a_name checkbox" id="attribute_value_10613" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Zwierzęta" value="Zwierzęta">
+                                <label for="attribute_value_10613" at_v_t="106_Zwierzęta" data-value="Zwierzęta"
+                                       value="Zwierzęta">Zwierzęta <span>28</span></label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1062" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Inne" value="Inne" disabled="disabled">
+                                <label for="attribute_value_1062" at_v_t="106_Inne" data-value="Inne"
+                                       value="Inne">Inne</label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1063" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Kosmos" value="Kosmos"
+                                       disabled="disabled">
+                                <label for="attribute_value_1063" at_v_t="106_Kosmos" data-value="Kosmos"
+                                       value="Kosmos">Kosmos</label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1065" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Martwa natura" value="Martwa natura"
+                                       disabled="disabled">
+                                <label for="attribute_value_1065" at_v_t="106_Martwa_natura" data-value="Martwa natura"
+                                       value="Martwa natura">Martwa natura</label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1067" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Morskie krajobrazy"
+                                       value="Morskie krajobrazy" disabled="disabled">
+                                <label for="attribute_value_1067" at_v_t="106_Morskie_krajobrazy"
+                                       data-value="Morskie krajobrazy" value="Morskie krajobrazy">Morskie
+                                    krajobrazy</label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1068" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Obrazy ludzi" value="Obrazy ludzi"
+                                       disabled="disabled">
+                                <label for="attribute_value_1068" at_v_t="106_Obrazy_ludzi" data-value="Obrazy ludzi"
+                                       value="Obrazy ludzi">Obrazy ludzi</label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1069" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Ptaki" value="Ptaki"
+                                       disabled="disabled">
+                                <label for="attribute_value_1069" at_v_t="106_Ptaki" data-value="Ptaki" value="Ptaki">Ptaki</label>
+                            </div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_10610" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Religia" value="Religia"
+                                       disabled="disabled">
+                                <label for="attribute_value_10610" at_v_t="106_Religia" data-value="Religia"
+                                       value="Religia">Religia</label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_10612" type="checkbox"
+                                       name="attribute_value[106][]" at_v_i="106_Wiejskie krajobrazy"
+                                       value="Wiejskie krajobrazy" disabled="disabled">
+                                <label for="attribute_value_10612" at_v_t="106_Wiejskie_krajobrazy"
+                                       data-value="Wiejskie krajobrazy" value="Wiejskie krajobrazy">Wiejskie
+                                    krajobrazy</label></div>
+                        </div>
+                        <div id="scrollbar2" style="visibility: visible;">
+                            <div id="wn2_up" class="up"></div>
+                            <div id="wn2_track" class="track" tabindex="0">
+                                <div id="wn2_dragBar" class="dragBar" style="left: 0px; top: 0px; height: 82px;"
+                                     tabindex="0"></div>
+                            </div>
+                            <div id="wn2_down" class="down"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="attribute_box option_box hided" id="pic-size4">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name">Orientacja</div>
+            <div class="collapsible" style="">
+                <table width="100%" class="table-pict-size">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="pict-size" data="25">
+                                <input class="filtered a_name checkbox" id="attribute_value_1461" type="checkbox"
+                                       name="attribute_value[146][]" at_v_i="146_Pionowa" value="Pionowa">
+                                <label for="attribute_value_1461" at_v_t="146_Pionowa" data-value="Pionowa"
+                                       value="Pionowa">Pionowa <span>25</span></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pict-size" data="22">
+                                <input class="filtered a_name checkbox" id="attribute_value_1462" type="checkbox"
+                                       name="attribute_value[146][]" at_v_i="146_Pozioma" value="Pozioma">
+                                <label for="attribute_value_1462" at_v_t="146_Pozioma" data-value="Pozioma"
+                                       value="Pozioma">Pozioma <span>22</span></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pict-size" data="5">
+                                <input class="filtered a_name checkbox" id="attribute_value_1460" type="checkbox"
+                                       name="attribute_value[146][]" at_v_i="146_Kwadrat" value="Kwadrat">
+                                <label for="attribute_value_1460" at_v_t="146_Kwadrat" data-value="Kwadrat"
+                                       value="Kwadrat">Kwadrat <span>5</span></label></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="option_box" id="pic-size2">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name ">Pory roku</div>
+            <div class="collapsible attribute_box option_box">
+                <div class="collapsible">
+                    <div>
+                        <div id="lyr2">
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1420" type="checkbox"
+                                       name="attribute_value[142][]" at_v_i="142_Jesień" value="Jesień"
+                                       disabled="disabled">
+                                <label for="attribute_value_1420" at_v_t="142_Jesień" data-value="Jesień"
+                                       value="Jesień">Jesień</label></div>
+                            <div class="pict-size" data="2">
+                                <input class="filtered a_name checkbox" id="attribute_value_1421" type="checkbox"
+                                       name="attribute_value[142][]" at_v_i="142_Lato" value="Lato">
+                                <label for="attribute_value_1421" at_v_t="142_Lato" data-value="Lato" value="Lato">Lato
+                                    <span>2</span></label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1422" type="checkbox"
+                                       name="attribute_value[142][]" at_v_i="142_Wiosna" value="Wiosna"
+                                       disabled="disabled">
+                                <label for="attribute_value_1422" at_v_t="142_Wiosna" data-value="Wiosna"
+                                       value="Wiosna">Wiosna</label></div>
+                            <div class="pict-size disabled" data="0">
+                                <input class="filtered a_name checkbox" id="attribute_value_1423" type="checkbox"
+                                       name="attribute_value[142][]" at_v_i="142_Zima" value="Zima" disabled="disabled">
+                                <label for="attribute_value_1423" at_v_t="142_Zima" data-value="Zima"
+                                       value="Zima">Zima</label></div>
+                        </div>
+                        <div id="scrollbar2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="option_box" id="pic-size3">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name   longname" x="">Trudność ( od 1 do 5)</div>
+            <div class="collapsible attribute_box option_box">
+                <div class="collapsible">
+                    <div class="wn1"></div>
+                    <div class="pict-size" data="32">
+                        <input class="filtered a_name checkbox" id="attribute_value_1080" type="checkbox"
+                               name="attribute_value[108][]" at_v_i="108_2" value="2">
+                        <label for="attribute_value_1080" at_v_t="108_2" data-value="" value="2" class="diflbl2"> <span>32</span></label>
+                    </div>
+                    <div class="pict-size" data="19">
+                        <input class="filtered a_name checkbox" id="attribute_value_1081" type="checkbox"
+                               name="attribute_value[108][]" at_v_i="108_3" value="3">
+                        <label for="attribute_value_1081" at_v_t="108_3" data-value="" value="3" class="diflbl3"> <span>19</span></label>
+                    </div>
+                    <div class="pict-size" data="1">
+                        <input class="filtered a_name checkbox" id="attribute_value_1082" type="checkbox"
+                               name="attribute_value[108][]" at_v_i="108_4" value="4">
+                        <label for="attribute_value_1082" at_v_t="108_4" data-value="" value="4" class="diflbl4"> <span>1</span></label>
+                    </div>
+                    <div class="pict-size disabled" data="0">
+                        <input class="filtered a_name checkbox" id="attribute_value_1083" type="checkbox"
+                               name="attribute_value[108][]" at_v_i="108_5" value="5" disabled="disabled">
+                        <label for="attribute_value_1083" at_v_t="108_5" data-value="" value="5"
+                               class="diflbl5"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="attribute_box option_box" id="pic-size4">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name  longname">Ilość kolorów w zestawie, szt</div>
+            <div class="collapsible" style="display: block;">
+                <table style="width:100%">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="attribute_label_109_min" value="12" class="limit109">
+                            <input type="hidden" id="attribute_value_109_min" name="attr_slider[109][min]" value="">
+                            <input type="hidden" id="attribute_value_109_min_start"
+                                   name="attr_slider_start[109][min_start]" value="12"></td>
+                        <td align="center" width="20" style="text-align: center;"><label class="tire"></label></td>
+                        <td align="right">
+                            <input type="text" id="attribute_label_109_max" value="44" class="limit109">
+                            <input type="hidden" id="attribute_value_109_max" name="attr_slider[109][max]" value="">
+                            <input type="hidden" id="attribute_value_109_max_start"
+                                   name="attr_slider_start[109][max_start]" value="44"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table width="100%" style="margin-bottom: 48px;">
+                    <tbody>
+                    <tr>
+                        <td align="left" width="50%">
+                            <div class="attrsign_left" id="attrsign_109_min">12</div>
+                        </td>
+                        <td align="right">
+                            <div class="attrsign_right" id="attrsign_109_max">44</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="slider-range-109" style="margin-left: 5px;margin-right: 5px;"
+                                 class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"
+                                      style="left: 0%;"></span><span tabindex="0"
+                                                                     class="ui-slider-handle ui-corner-all ui-state-default"
+                                                                     style="left: 62.069%;"></span></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <script>
+
+                    var attr_arr_109 = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 43, 44];
+                $('#slider-range-109').slider({
+                    range: true,
+                    min: 0,
+                    max: 29,
+                    values: [0, 29],
+                    slide: function (a, b) {
+                        console.log('attr_arr_' + b.values[0]);
+                        var min = attr_arr_109[b.values[0]];
+                        var max = attr_arr_109[b.values[1]];
+                        if (min == 0 || min == '')
+                            min = '-';
+                        $("#attribute_label_109_min").val(min + '');
+                        $("#attribute_label_109_max").val(max + '');
+                    },
+                    stop: function (a, b) {
+                        var min = attr_arr_109[b.values[0]];
+                        var max = attr_arr_109[b.values[1]];
+                        $("#attribute_value_109_min").val(min);
+                        $("#attribute_value_109_max").val(max);
+                        //iF()
+                    }
+                });
+                $("input#attribute_label_109_min").on("change", function () {
+                    $("#attribute_value_109_min").val(this.value);
+                    $("#slider-range-109").slider("values", 0, this.value);
+                });
+                $("input#attribute_label_109_max").on("change", function () {
+                    $("#attribute_value_109_max").val(this.value);
+                    $("#slider-range-109").slider("values", 1, this.value);
+                });
+                $(".limit109").on("change", (function () {
+                    console.log();
+                    //var b = parseFloat($("#attribute_value_109_min").val());
+                    //	var a = parseFloat($("#attribute_value_109_max").val());
+                    //$("#slider-range-109").slider("values", [b, a]);
+                    iF()
+                }));</script>
+            </div>
+        </div>
+
+        <div class="attribute_box option_box">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="option_name  ">Dostępność</div>
+            <div class="collapsible">
+                <table width="100%" class="table-pict-size">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="pict-size">
+                                <input type="checkbox" class="filtered checkbox" name="instock" id="instock">
+                                <label for="instock">Dostępne</label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pict-size">
+                                <input type="checkbox" class="filtered checkbox" name="filter_available"
+                                       id="filter_available">
+                                <label for="filter_available">Wkrótce w sprzedaży</label></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
 </div>
+
+
+
+<script>
+var price_range = [39,49,55,59,69,79,99,149,159];
+    $(function () {
+
+
+        $("#slider-range").slider({range:true, min:0, max:(price_range.length-1), values:[0,  99],
+            slide:function (a, b) {
+                console.log(  b  );
+                console.log('price_range slide'+ price_range[b.values[0]] );
+                $("#min_price").val(price_range[b.values[0]]);
+                $("#max_price").val(price_range[b.values[1]]);
+                $("#min_price2").val(price_range[b.values[0]]);
+                $("#max_price2").val(price_range[b.values[1]]);
+            },
+            stop:function (a, b) {
+                //iF();
+                console.log('price_range stop'+price_range[b.values[1]]);
+                if ($("#min_price").val() != price_start_min)
+                    $("#min_price").addClass('price-active');
+                else
+                    $("#min_price").removeClass('price-active');
+
+                if ($("#max_price").val() != price_start_max)
+                    $("#max_price").addClass('price-active');
+                else
+                    $("#max_price").removeClass('price-active');
+
+            }});
+
+        $("#min_price").val($("#slider-range").slider("values", 0));
+
+        $("#max_price").val($("#slider-range").slider("values", 1));
+
+        $("input#min_price2").on("change", function () {
+
+            console.log(price_range.indexOf(parseFloat(this.value)));
+            if(parseFloat(this.value) > parseFloat($("#showmin").text()) && parseFloat(this.value) <= parseFloat($("input#max_price2").val())) {
+                console.log('minimal'+this.value);
+                if (!price_range.includes(parseFloat(this.value))) {
+                    price_range.push(parseFloat(this.value));
+                    price_range.sort(function(a, b){return a-b});
+                    // price_range.sort();
+                }
+                console.log('price_range change ' + price_range);
+                $("#min_price").val(parseFloat(this.value));
+                console.log('min_price2 change ' + price_range.indexOf(parseFloat(this.value)));
+                $("#slider-range").slider("option", {
+                    min: 0,
+                    max: price_range.length - 1,
+                    values: [price_range.indexOf(parseFloat(this.value)), price_range.length - 1]
+                });
+                // $("#slider-range" ).slider( "values",0, price_range.indexOf(parseFloat(this.value)) );
+            }
+
+
+        });
+        $("input#max_price2").on("change", function () {
+            console.log('new value5-'+this.value);
+            if(parseFloat(this.value) >= $("input#min_price2").val() && parseFloat(this.value) < $("#showmax").text()) {
+                if (!price_range.includes(parseFloat(this.value))) {
+                    price_range.push(parseFloat(this.value));
+                    price_range.sort(function(a, b){return a-b});
+                }
+                $("#max_price").val(parseFloat(this.value));
+                console.log('max_price2 change ' + price_range.indexOf(parseFloat(this.value)));
+                $("#slider-range").slider("option", {min: 0, max: price_range.length - 1});
+                $("#slider-range").slider("values", 1, price_range.indexOf(parseFloat(this.value)));
+            }
+        });
+
+    });
+
+</script>
