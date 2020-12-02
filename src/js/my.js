@@ -17,6 +17,12 @@ $(document).ready(function () {
                 for (const [i, arr] of array.entries()) {
                     temp_array.push(arr['html'])
                 }
+            } else if(slug === 'selected'){
+                for (const [i, arr] of array.entries()) {
+                    if (arr['selected'] === slug) {
+                        temp_array.push(arr['html'])
+                    }
+                }
             } else {
                 for (const [i, arr] of array.entries()) {
                     if (arr['slug'] === slug) {
