@@ -11,7 +11,6 @@ $(document).ready(function () {
 
         let temp_array = [];
 
-
         if (array) {
             if (slug === 'all') {
                 for (const [i, arr] of array.entries()) {
@@ -39,7 +38,6 @@ $(document).ready(function () {
         swiperName.update();
         swiperName.slideTo(0, 0);
         swiperName.lazy.load();
-        ;
     });
 
 
