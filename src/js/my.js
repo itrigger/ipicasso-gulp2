@@ -386,8 +386,8 @@ $(document).ready(function () {
 
     $(".card").hover(function () {
         let addHeight = $(this).find(".additions").height();
-        $(this).find(".shover").css({"height": $(this).height() + addHeight * 2});
-        //$(this).css({"paddingBottom": addHeight * 2});
+        $(this).find(".shover").css({"height": $(this).height() + addHeight + 55});
+        $(this).find(".additions").css({"bottom": -addHeight});
     }, function () {
         $(this).find(".shover").removeAttr("style");
         //$(this).css({"paddingBottom": "20px"});

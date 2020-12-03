@@ -8,7 +8,6 @@
                         <div class="swiper-container">
                             <ul class="ul swiper-wrapper">
                                 <li class="cm--item active" data-slug="all">All</li>
-                                <li class="cm--item" data-slug="selected">All</li>
                                 <li class="cm--item" data-slug="cat1">Malowanie po numerach</li>
                                 <li class="cm--item" data-slug="cat2">Ramy do obrazow</li>
                                 <li class="cm--item" data-slug="cat3">Diamentowa Mozaika</li>
@@ -54,43 +53,82 @@
     actions_default_slides_array = [
         {
             slug: 'cat1',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">10.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-10%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card">\n' +
+                '                                    <div class="shover"></div>\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="price_w">\n' +
+                '                                        <div class="price">80.00 <span>zł</span></div>\n' +
+                '                                        <div class="cart_btn_w">\n' +
+                '                                            <div class="cart_btn__like tooltipstered like" title="Добавить в избранное" onclick="addToWishList(\'2965\',this);"></div>\n' +
+                '                                            <div class="cart_btn__incart hasItems">\n' +
+                '                                                <div class="notify">1</div>\n' +
+                '                                                <a class="cart_btn__hover">В корзину</a>\n' +
+                '                                                <div class="add_delete_w">\n' +
+                '                                                    <a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity">−</a>\n' +
+                '                                                    <input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" />\n' +
+                '                                                    <a href="#" class="btn-increase" data-onclick="increaseProductQuantity">+</a>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="labels"><span class="label label--new">new</span></div>\n' +
+                '                                    <div class="cat">Paint by numbers</div>\n' +
+                '                                    <div class="name">Zwierciadło duszy</div>\n' +
+                '                                    <div class="attrs">\n' +
+                '                                        <div class="rating">\n' +
+                '                                            <div class="rating-star">\n' +
+                '                                                <div class="stars star-1"></div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                        <a class="comments" href="#">2</a>\n' +
+                '                                        <a class="pics" href="#">2</a>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="additions">\n' +
+                '                                        <div class="colors">18 colors\n' +
+                '                                                <div class="brushes">\n' +
+                '                                                    <div class="brush brush-4"></div>\n' +
+                '                                                </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                </div>'
         },
         {
             slug: 'cat1',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">20.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-20%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">20.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-20%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat1',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">30.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-30%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">30.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-30%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat1',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">40.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-40%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">40.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-40%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat1',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">50.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-50%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">50.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-50%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat2',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">60.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-60%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">60.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-60%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat2',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">70.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-70%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">70.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-70%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat2',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">80.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-80%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">80.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-80%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat2',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">90.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-90%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">90.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-90%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         },
         {
             slug: 'cat3',
-            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" src="/img/00000004813-460x347.jpg"></div><div class="price price--discount">100.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-100%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
+            html: '<div class="swiper-slide module_carousel--item card"><div class="pic"><img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"></div><div class="price price--discount">100.00 <span>zł</span></div><div class="labels"><span class="label label--discount">-100%</span> 609.00 <span>zł</span></div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div>\<div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-2"></div></div></div><a class="comments" href="#">12</a><a class="pics" href="#">21</a></div></div>'
         }
     ];
 
@@ -109,6 +147,11 @@
             navigation: {
                 nextEl: '.module-mp-cat-actions .tabs_content .swiper-button-next',
                 prevEl: '.module-mp-cat-actions .tabs_content .swiper-button-prev',
+            },
+            // Enable lazy loading
+            lazy: {
+                loadPrevNext: true,
+                loadPrevNextAmount: 1
             },
             breakpoints: {
                 // when window width is >= 860px

@@ -1,7 +1,7 @@
 .card {
   position: relative;
   padding-top: 16px;
-  padding-bottom: 90px;
+  padding-bottom: 20px;
   z-index: 10;
   background: #fff;
   .pic{
@@ -126,7 +126,7 @@
   .additions{
     display: none;
     position: absolute;
-    bottom: 15px;
+    bottom: 0px;
   }
     .sizes{
       display: flex;
