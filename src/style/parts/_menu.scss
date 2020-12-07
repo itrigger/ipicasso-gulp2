@@ -6,13 +6,14 @@
 .cm-level-1-w{
   position: absolute;
   width: 100%;
-  background: #fff;
+ // background: #fff;
   z-index: 3;
 }
 
 .category_menu.cm-level-1{
   border-top: 1px solid $borderGrey;
   position: relative;
+  background: #fff;
   &.active{
     border-bottom: 1px solid $borderGrey;
   }
@@ -124,6 +125,7 @@
 }
 .cm-level-1 .swiper-container.active .ul-level-1{
   display: flex;
+  opacity: 1 !important;
 }
 
 .ul-level-1 {

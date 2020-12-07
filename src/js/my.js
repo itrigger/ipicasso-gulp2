@@ -104,7 +104,7 @@ $(document).ready(function () {
         $("body").removeClass("sidemenu--open");
         $("#sidemenu").removeClass("open");
         $(".burger--btn").removeClass("opened");
-    })
+    });
 
 
     let screenWidth = $(window).width();
@@ -196,9 +196,14 @@ $(document).ready(function () {
     $("#category_menu_0 li").hoverIntent(function () {
         $(".category_menu li").removeClass("active");
 
-        $(".cm-level-1 .swiper-container").removeClass("active");
+        $(".cm-level-1 .swiper-container").removeClass("active").removeAttr("style");
         $(".megamenu-swiper-button").css("display", "none");
 
+/*        $( ".category_menu.cm-level-1 .swiper-container" ).animate({
+            opacity: 0
+        }, 200, function() {
+            $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
+        });*/
 
         if (MenuSwiper != undefined) {
             MenuSwiper.destroy();
@@ -210,6 +215,7 @@ $(document).ready(function () {
 
         $('.cm-level-1').removeClass('active');
         $(".cm-level-1 .ul-level-1 li").removeClass("active");
+
         $(".megamenu").removeClass("active");
         $(this).addClass("active");
         let catId = $(this).attr("data-menu-id");
@@ -280,7 +286,6 @@ $(document).ready(function () {
         }
     });
 
-
     const loadHiResImg = function(subMenuId){
         $(".megamenu[data-id=" + subMenuId + "] .minicats-flex-wrap .minicat").each(function () {
             let $pic = $(this).find('.pic');
@@ -306,25 +311,46 @@ $(document).ready(function () {
     });
 
 
-    $(document).click(function (e) { // событие клика по веб-документу
-        let div = $(".category_menu, .scroll-element_outer"); // тут указываем ID элемента
+
+    $(document).mouseover(function (e) { // событие клика по веб-документу
+        let div = $(".category_menu, .megamenu-inner"); // тут указываем ID элемента
+
         if (!div.is(e.target) // если клик был не по нашему блоку
             && div.has(e.target).length === 0) { // и не по его дочерним элементам
             if(!($(".category_menu_w").hasClass('standalone_menu'))){
                 $(".category_menu.cm-level-1").removeClass("active");
                 $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
+              /*  $( ".category_menu.cm-level-1 .swiper-container" ).animate({
+                    opacity: 0
+                }, 200, function() {
+                    $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
+                });*/
+
             }
             $(".cm-level-1 li").removeClass("active");
             $(".cm-level-0 li").removeClass("active");
             $(".megamenu").removeClass("active");
             $("#megamenu--catalog li:not(.viewall-margin)").removeClass("active");
             $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","none");
+
         }
     });
 
-
-
-
+    /*    $(document).click(function (e) { // событие клика по веб-документу
+            let div = $(".category_menu, .scroll-element_outer"); // тут указываем ID элемента
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                if(!($(".category_menu_w").hasClass('standalone_menu'))){
+                    $(".category_menu.cm-level-1").removeClass("active");
+                    $(".category_menu.cm-level-1 .swiper-container").removeClass("active");
+                }
+                $(".cm-level-1 li").removeClass("active");
+                $(".cm-level-0 li").removeClass("active");
+                $(".megamenu").removeClass("active");
+                $("#megamenu--catalog li:not(.viewall-margin)").removeClass("active");
+                $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","none");
+            }
+        });*/
     $(".mm-popup .minicat").hover(function () {
         //mm height 491
         let containerHeight;
