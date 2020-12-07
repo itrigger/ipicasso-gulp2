@@ -465,7 +465,7 @@ body.sidemenu--open {
     cursor: pointer;
     width: 32px;
     height: 32px;
-    margin: 0 15px 16px 12px;
+    margin: 0 11px 16px 12px;
     background: url("../img/icon-close-white.svg") center center no-repeat;
   }
   .sign-line{
@@ -475,7 +475,20 @@ body.sidemenu--open {
 }
 
 .sidemenu--catalog {
-  padding: 12px 0 0 16px;
+  padding: 11px 0 0 16px;
+}
+
+.sidemenu--catalog_block2{
+  margin-top: 9px;
+  border-top: 1px solid #CDCECF;
+  padding: 7px 0 9px 16px;
+  .sidemenu--catalog_ul{
+    margin-top: 0;
+    overflow: visible;
+    li:after{
+      display: none;
+    }
+  }
 }
 
 .sidemenu--catalog_heading {
@@ -493,10 +506,10 @@ body.sidemenu--open {
     height: 40px;
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0;
     line-height: 16px;
-    padding-left: 31px;
+    padding-left: 32px;
     position: relative;
 
     a {
@@ -517,7 +530,7 @@ body.sidemenu--open {
       content: "";
       position: absolute;
       background: url("../img/icons-arrow-next-normal.svg") center center no-repeat;
-      right: 10px;
+      right: 11px;
       top: 11px;
       width: 18px;
       height: 18px;
@@ -547,8 +560,11 @@ body.sidemenu--open {
 
 .mediacenter--contacts {
   margin-top: 12px;
-
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   li {
+    flex-basis: 39%;
     margin-left: 33px;
     margin-bottom: 0;
     font-size: 14px;
@@ -561,6 +577,45 @@ body.sidemenu--open {
   }
 }
 
+.sidemenu--ico-sale2{
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 24px;
+    background: url("../img/icl_left--sale.png") 0 0 no-repeat;
+    left: -2px;
+    top: 9px;
+  }
+}
+.sidemenu--ico-new{
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 24px;
+    background: url("../img/icl_left--new.png") 0 0 no-repeat;
+    left: -2px;
+    top: 9px;
+  }
+}
+.sidemenu--ico-soon{
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 24px;
+    background: url("../img/icl_left--soon.png") 0 0 no-repeat;
+    left: -2px;
+    top: 9px;
+  }
+}
 .ico-sidebar-phone {
   position: relative;
 
@@ -590,7 +645,20 @@ body.sidemenu--open {
     top: 3px;
   }
 }
+.ico-sidebar-clock {
+  position: relative;
 
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("../img/side-clock.png") 0 0 no-repeat;
+    left: -30px;
+    top: 3px;
+  }
+}
 .mediacenter--socials {
   margin-top: 23px;
   margin-left: 2px;
@@ -634,46 +702,46 @@ body.sidemenu--open {
 
 .sidemenu--ico-113:before {
   background: url(../img/icon-paint.svg) 0 0 no-repeat;
-  left: 3px;
-  top: 11px;
-  width: 20px;
-  height: 20px;
+  left: 2px;
+  top: 10px;
+  width: 21px;
+  height: 21px;
   background-size: contain;
 }
 
 .sidemenu--ico-116:before {
   background: url(../img/icon-frame.svg) 0 0 no-repeat;
-  left: 3px;
-  top: 11px;
-  width: 20px;
-  height: 20px;
+  left: 2px;
+  top: 10px;
+  width: 21px;
+  height: 21px;
   background-size: contain;
 }
 
 .sidemenu--ico-115:before {
   background: url(../img/icon-diamond.svg) 0 0 no-repeat;
-  left: 3px;
-  top: 11px;
-  width: 20px;
-  height: 20px;
+  left: 1px;
+  top: 10px;
+  width: 23px;
+  height: 23px;
   background-size: contain;
 }
 
 .sidemenu--ico-165:before {
   background: url(../img/icon-3d.svg) 0 0 no-repeat;
-  left: 3px;
+  left: 1px;
   top: 11px;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
   background-size: contain;
 }
 
 .sidemenu--ico-164:before {
   background: url(../img/icon-gobeliny.svg) 0 0 no-repeat;
-  left: 3px;
-  top: 11px;
-  width: 20px;
-  height: 20px;
+  left: 2px;
+  top: 10px;
+  width: 21px;
+  height: 21px;
   background-size: contain;
 }
 
@@ -686,9 +754,11 @@ body.sidemenu--open {
   background-size: contain;
 }
 .sidemenu--social{
-  margin-top: 21px;
+  margin-top: 31px;
+  display: flex;
+  align-items: center;
   li{
-    margin-right: 5px;
+    margin-right: 28px;
   }
 }
 //(min-width: 860px) and
