@@ -11,7 +11,7 @@
 <!-- side menu -->
 //= template/sidemenu.html
 <!-- end of side menu -->
-<div class="category_menu_w standalone_menu">
+<div class="category_menu_w standalone_menu"><!-- добавить класс standalone если нулевого уровня меню не будет -->
     <!-- level 0 main category menu -->
     <!--  <div class="in">
             <div class="category_menu cm-level-0" id="category_menu_0">
@@ -27,7 +27,7 @@
     <!-- end of level 0 main category menu -->
 
     <!-- main category menu -->
-    <div class="cm-level-1-w"> <!-- добавить класс standalone если это меню само по себе самого верхнего уровня -->
+    <div class="cm-level-1-w">
         <div class="in">
             <div class="category_menu cm-level-1 active" id="category_menu">
                 <div class="swiper-container-wrapper">
@@ -70,8 +70,9 @@
         </div>
     </div>
     <!-- end of main category menu -->
+    //= template/megamenu.html
 </div>
-//= template/megamenu.html
+
 
 //= template/breadcrumb.html
 
