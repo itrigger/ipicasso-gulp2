@@ -7,7 +7,7 @@
                     <div class="swiper-container-wrapper">
                         <div class="swiper-container">
                             <ul class="ul swiper-wrapper">
-                                <li class="cm--item active" data-slug="all">All</li>
+                                <li class="cm--item active" data-slug="selected">All</li>
                                 <li class="cm--item" data-slug="cat1">Malowanie po numerach</li>
                                 <li class="cm--item" data-slug="cat2">Ramy do obrazow</li>
                                 <li class="cm--item" data-slug="cat3">Diamentowa Mozaika</li>
@@ -152,20 +152,16 @@
             }
 
             function funcA(){
-                console.log("Func A started");
                 for (const [i, arr] of actions_default_slides_array.entries()) {
                     if (arr['slug'] === 'selected') {
                         actions_all_slides_array.push(arr['html'])
                     }
                 }
-                console.log(actions_all_slides_array);
             }
             function funcB(){
-                console.log("Func B started");
                 for (const [i, arr] of actions_default_slides_array.entries()) {
                     actions_all_slides_array.push(arr['html'])
                 }
-                console.log(actions_all_slides_array);
             }
 
         }

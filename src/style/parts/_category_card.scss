@@ -118,6 +118,8 @@
   &:hover{
     .shover{
       display: block;
+      background: #fff;
+      z-index: -1;
     }
     .additions{
       display: block;
@@ -304,6 +306,10 @@
   }
 }
 
+.swiper-container.hovered{
+  z-index: 4;
+}
+
 @media (max-width: 859px) {
   .card .pic {
     height: 168px;
@@ -317,8 +323,11 @@
   .card{
     padding-bottom: 0;
   }
-  .shover, .additions, .cart_btn_w{
+  .shover, .additions, .card .cart_btn__like, .card .cart_btn__hover, .card .add_delete_w{
     display: none !important;
+  }
+  .card .cart_btn_w{
+    opacity: 1;
   }
   .card .labels{
     font-size: 0;

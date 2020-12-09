@@ -18,7 +18,7 @@ $(document).ready(function () {
                 }
             } else if(slug === 'selected'){
                 for (const [i, arr] of array.entries()) {
-                    if (arr['selected'] === slug) {
+                    if (arr['slug'] === slug) {
                         temp_array.push(arr['html'])
                     }
                 }
@@ -410,15 +410,24 @@ $(document).ready(function () {
     });
 
 
-    $(".card").hover(function () {
+    $(document).on("mouseenter", ".card", function() {
         let addHeight = $(this).find(".additions").height();
+        $(this).parent().parent().addClass("hovered");
         $(this).find(".shover").css({"height": $(this).height() + addHeight + 55});
         $(this).find(".additions").css({"bottom": -addHeight});
-    }, function () {
+    });
+
+    $(document).on("mouseleave", ".card", function() {
         $(this).find(".shover").removeAttr("style");
+        $(this).parent().parent().removeClass("hovered");
         //$(this).css({"paddingBottom": "20px"});
     });
 
+
+
+  /*  $(document).on("mouseleave", ".shover", function() {
+        $(".swiper-container").removeClass("hovered");
+    });*/
 
     /*мини-карточка товара*/
     $("body").on("click", ".btn-increase", function (e) {
@@ -441,11 +450,25 @@ $(document).ready(function () {
             $(this).parent().parent().removeClass("hasItems");
         }
     });
+
+    $("body").on("click", ".cart_btn__incart", function (e) {
+        if($(window).width()<860) {
+            e.preventDefault();
+            $(this).addClass("hasItems");
+            let cur = parseInt($(this).parent().find("input").val());
+            $(this).parent().find("input").val(cur + 1);
+            $(this).parent().parent().find(".notify").removeClass("notify--empty").text(cur + 1);
+        }
+    });
+
     $("body").on("click", ".cart_btn__hover", function () {
         $(this).parent().addClass("hasItems");
         $(this).parent().find(".add_delete_w input").val("1");
         $(this).parent().parent().find(".notify").removeClass("notify--empty").text("1");
-    })
+    });
+
+
+
 
     $('.tooltipstered').tooltipster();
 

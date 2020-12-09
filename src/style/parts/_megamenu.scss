@@ -1040,3 +1040,30 @@
     display: grid;
   }
 }
+
+.megamenu[data-id="113"]{
+  .mmcpng1{
+    background: url(../img/woman.png) 0 0 no-repeat;
+    width: 331px;
+    height: 350px;
+    background-size: contain;
+  }
+}
+
+.megamenu[data-id="165"]{
+  .mmcpng1{
+    background: url(../img/3dpaper.png) 0 0 no-repeat;
+    width: 256px;
+    height: 320px;
+    background-size: contain;
+  }
+}
+
+.megamenu[data-id="115"]{
+  .mmcpng1{
+    background: url(../img/diamond.png) 0 0 no-repeat;
+    width: 333px;
+    height: 166px;
+    background-size: contain;
+  }
+}
