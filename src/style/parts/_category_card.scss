@@ -49,6 +49,7 @@
   }
   .attrs{
     display: flex;
+    align-items: flex-end;
     .rating{
       margin-right: 10px;
     }
@@ -91,6 +92,13 @@
         top: 1px;
       }
     }
+    .card_code{
+      display: none;
+      font-size: 12px;
+      line-height: 15px;
+      color: #8A8B8C;
+      margin-left: 7px;
+    }
   }
   .title{
     font-size: 20px;
@@ -123,6 +131,9 @@
     }
     .additions{
       display: block;
+    }
+    .card_code{
+      display: inline-block;
     }
   }
   .additions{
