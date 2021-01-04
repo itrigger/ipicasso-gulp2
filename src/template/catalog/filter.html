@@ -5,6 +5,40 @@
     <div class="main_filter">
         <div class="heading">Filters</div>
 
+        <div class="attribute_box option_box">
+            <a href="#" class="aclearfilter" style="display: none;"></a>
+            <div class="colored-ckb">
+
+                            <div class="pict-size">
+                                <label for="instock">Dostępne</label>
+                                <input type="checkbox" class="filtered" name="instock" id="instock" style="display: none;">
+                                <label for="instock" class="toggle"><span></span></label>
+                            </div>
+
+                            <div class="pict-size">
+                                <label for="filter_coming">Coming soon <span class="date">(20.01.2021)</span></label>
+                                <input type="checkbox" class="filtered checkbox" name="filter_coming"
+                                       id="filter_coming" style="display: none;">
+                                <label for="filter_coming" class="toggle"><span></span></label>
+                            </div>
+
+                            <div class="pict-size">
+                                <label for="filter_new">Nowości</label>
+                                <input type="checkbox" class="filtered checkbox" name="filter_new"
+                                       id="filter_new" style="display: none;">
+                            <label for="filter_new" class="toggle"><span></span></label>
+                            </div>
+
+                            <div class="pict-size">
+                                <label for="filter_sale" class="red">Towary ze zniżką %</label>
+                                <input type="checkbox" class="filtered checkbox" name="filter_sale"
+                                       id="filter_sale" style="display: none;">
+                            <label for="filter_sale" class="toggle"><span></span></label>
+                            </div>
+
+            </div>
+        </div>
+
         <div class="option_box">
             <a href="#" class="aclearfilter" style="display: none;"></a>
             <div class="option_name">Cena, <span>zł</span></div>
@@ -448,31 +482,7 @@
             </div>
         </div>
 
-        <div class="attribute_box option_box">
-            <a href="#" class="aclearfilter" style="display: none;"></a>
-            <div class="option_name  ">Dostępność</div>
-            <div class="collapsible">
-                <table width="100%" class="table-pict-size">
-                    <tbody>
-                    <tr>
-                        <td>
-                            <div class="pict-size">
-                                <input type="checkbox" class="filtered checkbox" name="instock" id="instock">
-                                <label for="instock">Dostępne</label></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="pict-size">
-                                <input type="checkbox" class="filtered checkbox" name="filter_available"
-                                       id="filter_available">
-                                <label for="filter_available">Wkrótce w sprzedaży</label></div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
 
 
     </div>
