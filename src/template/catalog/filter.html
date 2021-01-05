@@ -8,34 +8,32 @@
         <div class="attribute_box option_box">
             <a href="#" class="aclearfilter" style="display: none;"></a>
             <div class="colored-ckb">
+                <div class="pict-size">
+                    <label for="instock">Dostępne</label>
+                    <input type="checkbox" class="filtered" name="instock" id="instock" style="display: none;">
+                    <label for="instock" class="toggle"><span></span></label>
+                </div>
 
-                            <div class="pict-size">
-                                <label for="instock">Dostępne</label>
-                                <input type="checkbox" class="filtered" name="instock" id="instock" style="display: none;">
-                                <label for="instock" class="toggle"><span></span></label>
-                            </div>
+                <div class="pict-size">
+                    <label for="filter_coming">Coming soon <span class="date">(20.01.2021)</span></label>
+                    <input type="checkbox" class="filtered checkbox" name="filter_coming"
+                           id="filter_coming" style="display: none;">
+                    <label for="filter_coming" class="toggle"><span></span></label>
+                </div>
 
-                            <div class="pict-size">
-                                <label for="filter_coming">Coming soon <span class="date">(20.01.2021)</span></label>
-                                <input type="checkbox" class="filtered checkbox" name="filter_coming"
-                                       id="filter_coming" style="display: none;">
-                                <label for="filter_coming" class="toggle"><span></span></label>
-                            </div>
+                <div class="pict-size">
+                    <label for="filter_new">Nowości</label>
+                    <input type="checkbox" class="filtered checkbox" name="filter_new"
+                           id="filter_new" style="display: none;">
+                <label for="filter_new" class="toggle"><span></span></label>
+                </div>
 
-                            <div class="pict-size">
-                                <label for="filter_new">Nowości</label>
-                                <input type="checkbox" class="filtered checkbox" name="filter_new"
-                                       id="filter_new" style="display: none;">
-                            <label for="filter_new" class="toggle"><span></span></label>
-                            </div>
-
-                            <div class="pict-size">
-                                <label for="filter_sale" class="red">Towary ze zniżką %</label>
-                                <input type="checkbox" class="filtered checkbox" name="filter_sale"
-                                       id="filter_sale" style="display: none;">
-                            <label for="filter_sale" class="toggle"><span></span></label>
-                            </div>
-
+                <div class="pict-size">
+                    <label for="filter_sale" class="red">Towary ze zniżką %</label>
+                    <input type="checkbox" class="filtered checkbox" name="filter_sale"
+                           id="filter_sale" style="display: none;">
+                    <label for="filter_sale" class="toggle"><span></span></label>
+                </div>
             </div>
         </div>
 
@@ -43,37 +41,17 @@
             <a href="#" class="aclearfilter" style="display: none;"></a>
             <div class="option_name">Cena, <span>zł</span></div>
             <div class="price_slider collapsible">
-                <table width="100%">
-                    <tbody>
-                    <tr>
-                        <td>
-                            <input type="text" id="min_price2" value="39" name="min_price2" class="price_limit">
-                        </td>
-                        <td align="center" width="20" style="text-align: center;">
-                            <label class="tire"></label>
-                        </td>
-                        <td align="right">
-                            <input type="text" id="max_price2" value="139" name="max_price2" class="price_limit">
-                        </td>
-                        <input type="hidden" id="min_price" value="39" name="min_price" class="price_limit">
-                        <input type="hidden" id="max_price" value="99" name="max_price" class="price_limit price-active"></tr>
-                    </tbody>
-                </table>
-                <table width="100%">
-                    <tbody>
-                    <tr>
-                        <td>
-                            <div id="showmin">39</div>
-                        </td>
-                        <td align="right">
-                            <div id="showmax">159</div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+               <div class="flex-space-between">
+                   <input type="text" id="min_price2" value="39" name="min_price2" class="price_limit">
+                   <input type="text" id="max_price2" value="159" name="max_price2" class="price_limit">
+               </div>
+                <input type="hidden" id="min_price" value="39" name="min_price" class="price_limit">
+                <input type="hidden" id="max_price" value="159" name="max_price" class="price_limit price-active">
+                <div id="showmin" style="display: none;">39</div>
+                <div id="showmax" style="display: none;">159</div>
                 <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
                     <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
-                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 37.5%;"></span>
+                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default ui-slider-handle-right" style="left: 37.5%;"></span>
                 </div>
             </div>
         </div>
@@ -370,27 +348,50 @@
             <div class="option_name   longname" x="">Trudność ( od 1 do 5)</div>
             <div class="collapsible attribute_box option_box">
                 <div class="collapsible">
-                    <div class="wn1"></div>
+                    <div class="pict-size" data="32">
+                        <input class="filtered a_name checkbox" id="attribute_value_80" type="checkbox"
+                               name="attribute_value[108][]" at_v_i="108_2" value="2">
+                        <label for="attribute_value_80" at_v_t="108_2" data-value="" value="2" >
+                        <span class="brushes">
+                            <span class="brush brush-1"></span>
+                        </span>
+                        </label>
+                    </div>
                     <div class="pict-size" data="32">
                         <input class="filtered a_name checkbox" id="attribute_value_1080" type="checkbox"
                                name="attribute_value[108][]" at_v_i="108_2" value="2">
-                        <label for="attribute_value_1080" at_v_t="108_2" data-value="" value="2" class="diflbl2"> <span>32</span></label>
+                        <label for="attribute_value_1080" at_v_t="108_2" data-value="" value="2" >
+                        <span class="brushes">
+                            <span class="brush brush-2"></span>
+                        </span>
+                        </label>
                     </div>
                     <div class="pict-size" data="19">
                         <input class="filtered a_name checkbox" id="attribute_value_1081" type="checkbox"
                                name="attribute_value[108][]" at_v_i="108_3" value="3">
-                        <label for="attribute_value_1081" at_v_t="108_3" data-value="" value="3" class="diflbl3"> <span>19</span></label>
+                        <label for="attribute_value_1081" at_v_t="108_3" data-value="" value="3">
+                        <span class="brushes">
+                            <span class="brush brush-3"></span>
+                        </span>
+                        </label>
                     </div>
                     <div class="pict-size" data="1">
                         <input class="filtered a_name checkbox" id="attribute_value_1082" type="checkbox"
                                name="attribute_value[108][]" at_v_i="108_4" value="4">
-                        <label for="attribute_value_1082" at_v_t="108_4" data-value="" value="4" class="diflbl4"> <span>1</span></label>
+                        <label for="attribute_value_1082" at_v_t="108_4" data-value="" value="4">
+                            <span class="brushes">
+                                <span class="brush brush-4"></span>
+                            </span>
+                        </label>
                     </div>
                     <div class="pict-size disabled" data="0">
                         <input class="filtered a_name checkbox" id="attribute_value_1083" type="checkbox"
                                name="attribute_value[108][]" at_v_i="108_5" value="5" disabled="disabled">
-                        <label for="attribute_value_1083" at_v_t="108_5" data-value="" value="5"
-                               class="diflbl5"></label></div>
+                        <label for="attribute_value_1083" at_v_t="108_5" data-value="" value="5">
+                            <span class="brushes">
+                            <span class="brush brush-5"></span>
+                        </span>
+                        </label></div>
                 </div>
             </div>
         </div>
@@ -398,50 +399,33 @@
         <div class="attribute_box option_box" id="pic-size4">
             <a href="#" class="aclearfilter" style="display: none;"></a>
             <div class="option_name  longname">Ilość kolorów w zestawie, szt</div>
-            <div class="collapsible" style="display: block;">
-                <table style="width:100%">
-                    <tbody>
-                    <tr>
-                        <td>
-                            <input type="text" id="attribute_label_109_min" value="12" class="limit109">
-                            <input type="hidden" id="attribute_value_109_min" name="attr_slider[109][min]" value="">
-                            <input type="hidden" id="attribute_value_109_min_start"
-                                   name="attr_slider_start[109][min_start]" value="12"></td>
-                        <td align="center" width="20" style="text-align: center;"><label class="tire"></label></td>
-                        <td align="right">
-                            <input type="text" id="attribute_label_109_max" value="44" class="limit109">
-                            <input type="hidden" id="attribute_value_109_max" name="attr_slider[109][max]" value="">
-                            <input type="hidden" id="attribute_value_109_max_start"
-                                   name="attr_slider_start[109][max_start]" value="44"></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <table width="100%" style="margin-bottom: 48px;">
-                    <tbody>
-                    <tr>
-                        <td align="left" width="50%">
-                            <div class="attrsign_left" id="attrsign_109_min">12</div>
-                        </td>
-                        <td align="right">
-                            <div class="attrsign_right" id="attrsign_109_max">44</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div id="slider-range-109" style="margin-left: 5px;margin-right: 5px;"
+            <div class="price_slider collapsible" style="display: block;">
+                    <div class="flex-space-between">
+                      <input type="text" id="attribute_label_109_min" value="12" class="limit109 price_limit">
+                      <input type="text" id="attribute_label_109_max" value="44" class="limit109 price_limit">
+                    </div>
+                <input type="hidden" id="attribute_value_109_min" name="attr_slider[109][min]" value="">
+                <input type="hidden" id="attribute_value_109_min_start"
+                       name="attr_slider_start[109][min_start]" value="12">
+                <input type="hidden" id="attribute_value_109_max" name="attr_slider[109][max]" value="">
+                <input type="hidden" id="attribute_value_109_max_start"
+                       name="attr_slider_start[109][max_start]" value="44">
+
+
+                            <div class="attrsign_left" id="attrsign_109_min" style="display: none;">12</div>
+
+                            <div class="attrsign_right" id="attrsign_109_max" style="display: none;">44</div>
+
+                            <div id="slider-range-109"
                                  class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
 
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"
-                                      style="left: 0%;"></span><span tabindex="0"
-                                                                     class="ui-slider-handle ui-corner-all ui-state-default"
-                                                                     style="left: 62.069%;"></span></div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                                      style="left: 0%;"></span>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default ui-slider-handle-right" style="left: 62.069%;"></span></div>
+
                 <script>
 
-                    var attr_arr_109 = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 43, 44];
+                var attr_arr_109 = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 43, 44];
                 $('#slider-range-109').slider({
                     range: true,
                     min: 0,
@@ -474,10 +458,7 @@
                 });
                 $(".limit109").on("change", (function () {
                     console.log();
-                    //var b = parseFloat($("#attribute_value_109_min").val());
-                    //	var a = parseFloat($("#attribute_value_109_max").val());
-                    //$("#slider-range-109").slider("values", [b, a]);
-                    iF()
+                   // iF()
                 }));</script>
             </div>
         </div>
@@ -498,8 +479,6 @@ var price_range = [39,49,55,59,69,79,99,149,159];
 
         $("#slider-range").slider({range:true, min:0, max:(price_range.length-1), values:[0,  99],
             slide:function (a, b) {
-                console.log(  b  );
-                console.log('price_range slide'+ price_range[b.values[0]] );
                 $("#min_price").val(price_range[b.values[0]]);
                 $("#max_price").val(price_range[b.values[1]]);
                 $("#min_price2").val(price_range[b.values[0]]);
@@ -507,7 +486,6 @@ var price_range = [39,49,55,59,69,79,99,149,159];
             },
             stop:function (a, b) {
                 //iF();
-                console.log('price_range stop'+price_range[b.values[1]]);
                 if ($("#min_price").val() != price_start_min)
                     $("#min_price").addClass('price-active');
                 else
@@ -519,43 +497,30 @@ var price_range = [39,49,55,59,69,79,99,149,159];
                     $("#max_price").removeClass('price-active');
 
             }});
-
         $("#min_price").val($("#slider-range").slider("values", 0));
-
         $("#max_price").val($("#slider-range").slider("values", 1));
 
         $("input#min_price2").on("change", function () {
-
-            console.log(price_range.indexOf(parseFloat(this.value)));
             if(parseFloat(this.value) > parseFloat($("#showmin").text()) && parseFloat(this.value) <= parseFloat($("input#max_price2").val())) {
-                console.log('minimal'+this.value);
                 if (!price_range.includes(parseFloat(this.value))) {
                     price_range.push(parseFloat(this.value));
                     price_range.sort(function(a, b){return a-b});
-                    // price_range.sort();
                 }
-                console.log('price_range change ' + price_range);
                 $("#min_price").val(parseFloat(this.value));
-                console.log('min_price2 change ' + price_range.indexOf(parseFloat(this.value)));
                 $("#slider-range").slider("option", {
                     min: 0,
                     max: price_range.length - 1,
                     values: [price_range.indexOf(parseFloat(this.value)), price_range.length - 1]
                 });
-                // $("#slider-range" ).slider( "values",0, price_range.indexOf(parseFloat(this.value)) );
             }
-
-
         });
         $("input#max_price2").on("change", function () {
-            console.log('new value5-'+this.value);
             if(parseFloat(this.value) >= $("input#min_price2").val() && parseFloat(this.value) < $("#showmax").text()) {
                 if (!price_range.includes(parseFloat(this.value))) {
                     price_range.push(parseFloat(this.value));
                     price_range.sort(function(a, b){return a-b});
                 }
                 $("#max_price").val(parseFloat(this.value));
-                console.log('max_price2 change ' + price_range.indexOf(parseFloat(this.value)));
                 $("#slider-range").slider("option", {min: 0, max: price_range.length - 1});
                 $("#slider-range").slider("values", 1, price_range.indexOf(parseFloat(this.value)));
             }
