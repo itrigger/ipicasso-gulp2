@@ -1146,10 +1146,13 @@ $(document).ready(function () {
         $cookie = $.cookie;
     }
 
-    $(".option_box .option_name").click(function () {
-        $(this).siblings(".collapsible").toggle();
-        $(this).toggleClass("hided");
-        $(this).parent().toggleClass("hided")
+    $(".option_box .option_name").click(function (e) {
+        let div = $(".aclearfilter"); // тут указываем ID элемента
+        if (!div.is(e.target) && div.has(e.target).length === 0) {
+            $(this).siblings(".collapsible").toggle();
+            $(this).toggleClass("hided");
+            $(this).parent().toggleClass("hided");
+        }
     });
 
 

@@ -10,7 +10,7 @@
             <div class="colored-ckb">
                 <div class="pict-size">
                     <label for="instock">Dostępne</label>
-                    <input type="checkbox" class="filtered" name="instock" id="instock" style="display: none;">
+                    <input type="checkbox" class="filtered checkbox" name="instock" id="instock" style="display: none;">
                     <label for="instock" class="toggle"><span></span></label>
                 </div>
 
@@ -38,8 +38,11 @@
         </div>
 
         <div class="option_box">
-            <a href="#" class="aclearfilter" style="display: none;"></a>
-            <div class="option_name">Cena, <span>zł</span></div>
+
+            <div class="option_name flex-space-between">
+                <div class="option_name_title">Cena, <span>zł</span></div>
+                <div class="aclear_w"><a href="#" class="aclearfilter">Clear</a></div>
+            </div>
             <div class="price_slider collapsible">
                <div class="flex-space-between">
                    <input type="text" id="min_price2" value="39" name="min_price2" class="price_limit">
@@ -84,7 +87,7 @@
                 <div
                         class="collapsible">
                     <div class="pict-size-block">
-                        <div class="catname">OBRAZY POJEDYNCZE</div>
+                        <div class="catname">Obrazy pojedyncze</div>
                         <div class="pict-size-w" data="5">
                             <input class="filtered a_name checkbox2" id="attribute_value_1010" type="checkbox"
                                    name="attribute_value[101][]" at_v_i="101_30x30" value="30x30">
@@ -108,7 +111,7 @@
                     </div>
                     <div class="pict-size-block">
                         <div class="clear"></div>
-                        <div class="catname">OBRAZY MODUŁOWE</div>
+                        <div class="catname">Obrazy modułowe</div>
                         <div class="pict-size-w disabled" data="0">
                             <input class="filtered a_name checkbox2" id="attribute_value_1014" type="checkbox"
                                    name="attribute_value[101][]" at_v_i="101_40x150" value="40x150" disabled="disabled">
@@ -315,11 +318,12 @@
                     <div>
                         <div id="lyr2">
                             <div class="pict-size disabled" data="0">
-                                <input class="filtered a_name checkbox" id="attribute_value_1420" type="checkbox"
-                                       name="attribute_value[142][]" at_v_i="142_Jesień" value="Jesień"
-                                       disabled="disabled">
-                                <label for="attribute_value_1420" at_v_t="142_Jesień" data-value="Jesień"
-                                       value="Jesień">Jesień</label></div>
+
+                                <input class="filtered a_name checkbox" id="attribute_value_1421" type="checkbox"
+                                       name="attribute_value[142][]" at_v_i="142_Lato" value="Lato">
+                                <label for="attribute_value_1421" at_v_t="142_Lato" data-value="Lato" value="Lato">Lato
+                                    <span>2</span></label>
+                            </div>
                             <div class="pict-size" data="2">
                                 <input class="filtered a_name checkbox" id="attribute_value_1421" type="checkbox"
                                        name="attribute_value[142][]" at_v_i="142_Lato" value="Lato">
