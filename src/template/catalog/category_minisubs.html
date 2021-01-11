@@ -32,8 +32,6 @@
 <script>
     $('document').ready(function () {
 
-        const lang_btn_show_more_text = "Show more";
-        const lang_btn_show_less_text = "Show less";
 
         $(".show_btn").on('click', function () {
             let $object = $(".mod_minisubcats");
@@ -93,7 +91,7 @@
                                 $object.find(".show_btn").removeClass("hidden");
                             }
                         });
-                        $object.find(".show_btn").removeClass("btn_show_less").addClass("btn_show_more").text(lang_btn_show_more_text);
+                        $object.find(".show_btn").removeClass("btn_show_less").addClass("btn_show_more").text(TEXT_MORE);
                         MSshowBtnWidth = $(".mod_minisubcats-flex-wrap .show_btn").width() + 16;
                         if (temp < MSlength - MSshowBtnWidth) {
                             $object.find(".show_btn").addClass("hidden");
@@ -106,7 +104,7 @@
                             temp += $(this).width() + 17;
                             $(this).removeClass('hidden');
                         });
-                        $object.find(".show_btn").removeClass("btn_show_more").addClass("btn_show_less").text(lang_btn_show_less_text);
+                        $object.find(".show_btn").removeClass("btn_show_more").addClass("btn_show_less").text(TEXT_LESS);
                         MSshowBtnWidth = $(".mod_minisubcats-flex-wrap .show_btn").width() + 16;
                         if (temp < MSlength - MSshowBtnWidth) {
                             $object.find(".show_btn").addClass("hidden");
@@ -140,6 +138,10 @@
         categoryMinisubsRecalculate();
 
         $(window).on('resize', function () {
+            categoryMinisubsRecalculate();
+        });
+
+        $(".toggle_filter_btn").on('click', function () {
             categoryMinisubsRecalculate();
         });
 

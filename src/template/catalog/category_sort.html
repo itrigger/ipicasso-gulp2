@@ -1,5 +1,7 @@
 <div class="category_sort_w">
+
     <div class="category_sort">
+        <div class="toggle_filter_btn show">Show filter</div>
         <!--https://jqueryniceselect.hernansartorio.com/ -->
         <select>
             <option value="Najpopularniejsze" data-display="Najpierw Najpopularniejsze">Najpopularniejsze</option>
@@ -12,6 +14,7 @@
     <div class="select_counter">
         Items:
         <ul id="select_count">
+            <li><a href="javascript:void(0);" data-count="3">3</a></li>
             <li><a href="javascript:void(0);" data-count="4">4</a></li>
             <li><a class="active" href="javascript:void(0);" data-count="5">5</a></li>
         </ul>
@@ -21,42 +24,55 @@
 
 <script>
     $('document').ready(function () {
+
         $('#select_count a').on('click', function () {
             $("#select_count a").removeClass("active");
             let count = $(this).attr('data-count');
             $(this).addClass("active");
             let $wrapper = $(".category_content_items");
+            if(count == 3){
+                $wrapper.removeClass("cci-5 cci-4 cci-3").addClass("cci-3");
+            }
             if(count == 4){
-                $wrapper.removeClass("cci-5, cci-4").addClass("cci-4");
+                $wrapper.removeClass("cci-5 cci-4 cci-3").addClass("cci-4");
             }
             if(count == 5){
-                $wrapper.removeClass("cci-5, cci-4").addClass("cci-5");
+                $wrapper.removeClass("cci-5 cci-4 cci-3").addClass("cci-5");
             }
+
         });
 
-     /*   function reScale(count){
-            if(count === 4) {
-                $(".category_content_items .category--item").each(function () {
-                    let $pic = $(this).find('.pic');
-                    let $img = $pic.find('img');
-                    let datasrcbig = $img.attr('data-big');
-                    if (datasrcbig !== undefined) {
-                        $img.attr('src', datasrcbig);
-                    }
-                    $img.removeClass("reloading");
-                });
-            } else if(count === 5){
-                $(".category_content_items .category--item").each(function () {
-                    let $pic = $(this).find('.pic');
-                    let $img = $pic.find('img');
-                    let datasrcmedium = $img.attr('data-medium');
-                    if (datasrcmedium !== undefined) {
-                        $img.attr('src', datasrcmedium);
-                    }
-                    $img.removeClass("reloading");
-                });
+        $(".toggle_filter_btn").on('click', function () {
+            filter_status();
+        });
+
+        function filter_status() {
+            let $toggleBtn = $(".toggle_filter_btn");
+
+            if($(".category_in").hasClass("filter-opened")){
+                $(".category_in").removeClass("filter-opened");
+                /*$toggleBtn.removeClass("hide");
+                $toggleBtn.addClass("show").html(SHOW_FILTER);*/
+            } else {
+                $(".category_in").addClass("filter-opened");
+                /*$toggleBtn.removeClass("show");
+                $toggleBtn.addClass("hide").html(HIDE_FILTER);*/
             }
-        }*/
+        }
+
+        function filter_status_btn() {
+            let $toggleBtn = $(".toggle_filter_btn");
+            if ($(".category_in").hasClass("filter-opened")) {
+               /* $toggleBtn.removeClass("show");
+                $toggleBtn.addClass("hide").html(HIDE_FILTER);*/
+            } else {
+                /*$toggleBtn.removeClass("hide");
+                $toggleBtn.addClass("show").html(SHOW_FILTER);*/
+            }
+        }
+
+        filter_status_btn();
+
 
     });
 </script>

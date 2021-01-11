@@ -311,8 +311,7 @@
 
         let currentPageColumns = getGridData().gridColumnCount;
         let countMinicats = $(".mod_subcats .minicat").length; //общее кол-во плиток
-        const textMore = 'Показать больше'; //local
-        const textLess = 'Show less'; //local
+       
 
         $(".mod_subcats .minicat").hover(function () {
 
@@ -397,7 +396,7 @@
 
             } else {
                 if ($(".show_more").length == 0) {
-                    $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_more\">" + textMore + " <span></span></div>");
+                    $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_more\">" + TEXT_MORE + " <span></span></div>");
                 }
             }
         };
@@ -425,7 +424,7 @@
                     } else {
                         $(".show_less").remove();
                         if ($(".show_more").length == 0) {
-                            $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_more\">" + textMore + "<span></span></div>");
+                            $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_more\">" + TEXT_MORE + "<span></span></div>");
                         }
                     }
 
@@ -437,7 +436,7 @@
                     } else {
                         $(".show_more").remove();
                         if ($(".show_less").length == 0) {
-                            $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_less\">" + textLess + "<span></span></div>");
+                            $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_less\">" + TEXT_LESS + "<span></span></div>");
                         }
                     }
 
@@ -451,7 +450,7 @@
         $("body").on('click', '.show_more', function () {
             $(this).remove();
             $(".mod_subcats").addClass('full');
-            $(".mod_subcats .minicats-flex-wrap").append("<div class=\"show_less\">" + textLess + "<span></span></div>");
+            $(".mod_subcats .minicats-flex-wrap").append("<div class=\"show_less\">" + TEXT_LESS + "<span></span></div>");
             for (let i = 0; i < countMinicats; i++) {
                 $(".mod_subcats .minicat").eq(i).removeClass('hidden');
             }
@@ -465,7 +464,7 @@
                 $(".mod_subcats").removeClass('full');
                 let pageColumns = getGridData().gridColumnCount - 1;
                 if ($(".show_more").length == 0) {
-                    $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_more\">" + textMore + "<span></span></div>");
+                    $(".mod_subcats .minicat").eq(pageColumns - 1).after("<div class=\"show_more\">" + TEXT_MORE + "<span></span></div>");
                 }
                 for (let i = 0; i < countMinicats; i++) {
                     if (i >= pageColumns) {
