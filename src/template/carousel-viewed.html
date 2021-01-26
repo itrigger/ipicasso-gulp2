@@ -1,0 +1,337 @@
+<div class="module-mp-cat-viewed">
+    <div class="in">
+        <div class="module_carousel">
+            <div class="module--heading">Вы недавно просмотривали</div>
+
+            <!-- swiper -->
+            <div class="tabs_content_wrapper">
+                <div class="tabs_content active">
+                    <div class="swiper-container-wrapper">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+
+
+                            </div>
+                        </div>
+                        <div class="btn-wrapper mobile tablet">
+                            <a class="btn btn-bordered btn-arrowed" href="#">
+                                All News <span class="arrow"></span>
+                            </a>
+                        </div>
+                        <!-- end of swiper -->
+                    </div>
+                    <!-- Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev swiper-button-disabled"></div>
+                </div>
+
+            </div>
+
+
+        </div> <!-- module carousel -->
+    </div>
+
+</div>
+
+<script>
+    let viewed_default_slides_array = [];
+    let viewedSwiper;
+    viewed_default_slides_array = [
+        {
+            slug: 'malowanie-po-numerach',
+            html: '<div class="swiper-slide module_carousel--item card">\n' +
+                '                                    <div class="shover"></div>\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" data-src="/img/00000004813-460x347.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="price_w">\n' +
+                '                                        <div class="price">80.00 <span>zł</span></div>\n' +
+                '                                        <div class="cart_btn_w">\n' +
+                '                                            <div class="cart_btn__like tooltipstered like" title="Добавить в избранное" onclick="addToWishList(\'2965\',this);"></div>\n' +
+                '                                            <div class="cart_btn__incart hasItems">\n' +
+                '                                                <div class="notify">1</div>\n' +
+                '                                                <a class="cart_btn__hover">В корзину</a>\n' +
+                '                                                <div class="add_delete_w">\n' +
+                '                                                    <a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity">−</a>\n' +
+                '                                                    <input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" />\n' +
+                '                                                    <a href="#" class="btn-increase" data-onclick="increaseProductQuantity">+</a>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="labels"><span class="label label--new">new</span></div>\n' +
+                '                                    <div class="cat">Paint by numbers</div>\n' +
+                '                                    <div class="name">Zwierciadło duszy</div>\n' +
+                '                                    <div class="attrs">\n' +
+                '                                        <div class="rating">\n' +
+                '                                            <div class="rating-star">\n' +
+                '                                                <div class="stars star-1"></div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                        <a class="comments" href="#">2</a>\n' +
+                '                                        <a class="pics" href="#">2</a><span class="card_code">kod: <b>5031</b></span>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="additions">\n' +
+                '                                        <div class="colors">18 colors\n' +
+                '                                                <div class="brushes">\n' +
+                '                                                    <div class="brush brush-4"></div>\n' +
+                '                                                </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'malowanie-po-numerach',
+            html: '<div class="swiper-slide module_carousel--item card">\n' +
+                '                                    <div class="shover"></div>\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" data-src="/img/00000005503-460x347.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="price_w">\n' +
+                '                                        <div class="price price--discount">80.00 <span>zł</span></div>\n' +
+                '                                        <div class="cart_btn_w">\n' +
+                '                                            <div class="cart_btn__like tooltipstered like" title="Добавить в избранное" onclick="addToWishList(\'2965\',this);"></div>\n' +
+                '                                            <div class="cart_btn__incart">\n' +
+                '                                                <div class="notify notify--empty">+</div>\n' +
+                '                                                <a onclick="" class="cart_btn__hover">В корзину</a>\n' +
+                '                                                <div class="add_delete_w">\n' +
+                '                                                    <a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a>\n' +
+                '                                                    <input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" />\n' +
+                '                                                    <a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="labels"><span class="label label--discount">-10%</span> 609.00 <span>zł</span></div>\n' +
+                '                                    <div class="cat">Paint by numbers</div>\n' +
+                '                                    <div class="name">Zachód słońca nad polem\n' +
+                '                                        lawendy Zachód słońca\n' +
+                '                                    </div>\n' +
+                '                                    <div class="attrs">\n' +
+                '                                        <div class="rating">\n' +
+                '                                            <div class="rating-star">\n' +
+                '                                                <div class="stars star-2"></div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                        <a class="comments" href="#">12</a>\n' +
+                '                                        <a class="pics" href="#">52</a>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="additions">\n' +
+                '                                        <div class="sizes">\n' +
+                '                                            Size, cm\n' +
+                '                                            <ul class="filter--ul">\n' +
+                '                                                <li><a href="#">30x30</a></li>\n' +
+                '                                                <li><a href="#">30x40</a></li>\n' +
+                '                                                <li><a href="#">30x50</a></li>\n' +
+                '                                            </ul>\n' +
+                '                                        </div>\n' +
+                '                                        <div class="colors">18 colors\n' +
+                '                                                <div class="brushes">\n' +
+                '                                                    <div class="brush brush-1"></div>\n' +
+                '                                                </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'malowanie-po-numerach',
+            html: '<div class="swiper-slide module_carousel--item card">\n' +
+                '                                    <div class="shover"></div>\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" data-src="/img/00000005508-460x347.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>\n' +
+                '                                    <div class="price_w">\n' +
+                '                                        <div class="price">80.00 <span>zł</span></div>\n' +
+                '                                        <div class="cart_btn_w">\n' +
+                '                                            <div class="cart_btn__like tooltipstered like" title="Добавить в избранное" onclick="addToWishList(\'2965\',this);"></div>\n' +
+                '                                            <div class="cart_btn__incart">\n' +
+                '                                                <div class="notify notify--empty">+</div>\n' +
+                '                                                <a onclick="" class="cart_btn__hover">В корзину</a>\n' +
+                '                                                <div class="add_delete_w">\n' +
+                '                                                    <a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a>\n' +
+                '                                                    <input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" />\n' +
+                '                                                    <a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div>\n' +
+                '                                    <div class="cat">Paint by numbers</div>\n' +
+                '                                    <div class="name">Zwierciadło duszy</div>\n' +
+                '                                    <div class="attrs">\n' +
+                '                                        <div class="rating">\n' +
+                '                                            <div class="rating-star">\n' +
+                '                                                <div class="stars star-4"></div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                        <a class="comments" href="#">12</a>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="additions">\n' +
+                '                                        <div class="sizes">\n' +
+                '                                            Size, cm\n' +
+                '                                            <ul class="filter--ul">\n' +
+                '                                                <li><a href="#">30x30</a></li>\n' +
+                '                                                <li><a href="#">30x40</a></li>\n' +
+                '                                                <li><a href="#">30x50</a></li>\n' +
+                '                                            </ul>\n' +
+                '                                        </div>\n' +
+                '                                        <div class="colors">18 colors\n' +
+                '                                               <div class="brushes">\n' +
+                '                                                    <div class="brush brush-2"></div>\n' +
+                '                                                </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'malowanie-po-numerach',
+            html: '<div class="swiper-slide module_carousel--item card">\n' +
+                '                                    <div class="shover"></div>\n' +
+                '                                    <div class="pic">\n' +
+                '                                        <img alt="" data-src="/img/00000005510-460x347.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>\n' +
+                '                                    <div class="price_w">\n' +
+                '                                        <div class="price">80.00 <span>zł</span></div>\n' +
+                '                                       <div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" title="Добавить в избранное" onclick="addToWishList(\'2965\',this);"></div><div class="cart_notifyme tooltipstered active" title="Напомнить"></div></div></div>\n' +
+                '                                    <div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div>\n' +
+                '                                    <div class="cat">Paint by numbers</div>\n' +
+                '                                    <div class="name">Zwierciadło duszy</div>\n' +
+                '                                    <div class="attrs">\n' +
+                '                                        <div class="rating">\n' +
+                '                                            <div class="rating-star">\n' +
+                '                                                <div class="stars star-4"></div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                        <a class="comments" href="#">12</a>\n' +
+                '                                    </div>\n' +
+                '                                    <div class="additions">\n' +
+                '                                        <div class="sizes">\n' +
+                '                                            Size, cm\n' +
+                '                                            <ul class="filter--ul">\n' +
+                '                                                <li><a href="#">30x30</a></li>\n' +
+                '                                                <li><a href="#">30x40</a></li>\n' +
+                '                                                <li><a href="#">30x50</a></li>\n' +
+                '                                            </ul>\n' +
+                '                                        </div>\n' +
+                '                                        <div class="colors">18 colors\n' +
+                '                                            <div class="difficult">\n' +
+                '                                              <div class="brushes">\n' +
+                '                                                    <div class="brush brush-3"></div>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                </div>'
+        },
+        {
+            slug: 'malowanie-po-numerach',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'malowanie-po-numerach',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005510-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'ramy-do-obrazow',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'ramy-do-obrazow',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'ramy-do-obrazow',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'ramy-do-obrazow',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'ramy-do-obrazow',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'ramy-do-obrazow',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'ramy-do-obrazow',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'diamentowa-mozaika',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt=""  class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'diamentowa-mozaika',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'diamentowa-mozaika',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'diamentowa-mozaika',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt=""  class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'diamentowa-mozaika',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+        {
+            slug: 'diamentowa-mozaika',
+            html: '<div class="swiper-slide module_carousel--item card"><div class="shover"></div><div class="pic"><img alt="" class="swiper-lazy" data-src="/img/00000005503-460x347.jpg"><div class="swiper-lazy-preloader"></div></div><div class="price_w"><div class="price">80.00 <span>zł</span></div><div class="cart_btn_w"><div class="cart_btn__like tooltipstered hint like" onclick="addToWishList(\'2965\',this);"></div><div class="cart_btn__incart"><div class="notify notify--empty">+</div><a onclick="" class="cart_btn__hover">В корзину</a><div class="add_delete_w"><a href="#" class="btn-decrease" data-onclick="decreaseProductQuantity"></a><input type="text" data-onchange="changeProductQuantity" name="quantity[3835:YTowOnt9:czowOiIiOw==:czowOiIiOw==:]" value="1" size="1" /><a href="#" class="btn-increase" data-onclick="increaseProductQuantity"></a></div></div></div></div><div class="labels"><span class="label label--soon">coming soon</span> from 31.05.2020</div><div class="cat">Paint by numbers</div><div class="name">Zwierciadło duszy</div><div class="attrs"><div class="rating"><div class="rating-star"><div class="stars star-4"></div></div></div><a class="comments" href="#">12</a></div><div class="additions"><div class="sizes">Size, cm<ul class="filter--ul"><li><a href="#">30x30</a></li><li><a href="#">30x40</a></li><li><a href="#">30x50</a></li></ul></div><div class="colors">18 colors<div class="difficult"><div class="difficult-brush"><div class="brushes brush-4"></div></div></div></div></div></div>'
+        },
+    ];
+
+    $(document).ready(function () {
+        const viewed_all_slides_array = [];
+        if (viewed_default_slides_array.length > 0) {
+            for (const [i, arr] of viewed_default_slides_array.entries()) {
+                viewed_all_slides_array.push(arr['html'])
+            }
+        }
+        viewedSwiper = new Swiper('.module-mp-cat-viewed .tabs_content .swiper-container', {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            // Disable preloading of all images
+            preloadImages: false,
+            // Enable lazy loading
+            lazy: {
+                loadPrevNext: true,
+                loadPrevNextAmount: 1
+            },
+            watchSlidesVisibility: true,
+            navigation: {
+                nextEl: '.module-mp-cat-news .tabs_content .swiper-button-next',
+                prevEl: '.module-mp-cat-news .tabs_content .swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 8
+                },
+                // when window width is >= 860px
+                600: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                // when window width is >= 1140px
+                1140: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+                // when window width is >= 1440px
+                1440: {
+                    slidesPerView: 5,
+                    spaceBetween: 20
+                }
+            }
+        });
+        viewedSwiper.appendSlide(viewed_all_slides_array);
+        viewedSwiper.lazy.load();
+
+
+
+
+    })
+</script>

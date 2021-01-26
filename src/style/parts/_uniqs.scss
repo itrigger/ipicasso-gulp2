@@ -267,6 +267,11 @@
     display: none;
   }
 }
+
+.spoiler_href.active{
+  display: inline-block;
+}
+
 @media (min-width: 1440px){
   .category_menu.cm-level-1{
     .swiper-button-prev,

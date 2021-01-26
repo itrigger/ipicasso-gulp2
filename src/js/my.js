@@ -481,6 +481,10 @@ $(document).ready(function () {
     $(".spoiler_href").on('click', function () {
         $(this).next(".spoiler_desc").slideToggle().toggleClass("active");
     });
+    $(".spoilered_text .spoiler_href").on('click', function () {
+        $(this).parent().parent().find(".spoiler_desc").slideToggle().toggleClass("active");
+    });
+
 
     $(".footer .line1 .col1 .title, .footer .line1 .col2 .title, .footer .line1 .col3 .title").on("click", function () {
         if ($("body").hasClass("tablet")) {
