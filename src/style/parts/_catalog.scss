@@ -161,6 +161,35 @@
   }
 }
 
+.pagination{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .btn{
+    margin-bottom: 20px;
+    width: 344px;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    span{
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: url(../img/icons-arrow-next-normal.svg) center center no-repeat;
+      transform: rotate(90deg);
+      margin-left: 4px;
+    }
+    &:hover span{
+      background: url(../img/icons-arrow-next-focus.svg) center center no-repeat;
+    }
+  }
+}
+
+
 @media (max-width:859px) {
   .catalog-heading{
     font-size: 20px;
