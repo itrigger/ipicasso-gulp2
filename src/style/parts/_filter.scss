@@ -509,6 +509,49 @@ $gray: #9A9999;
   }
 }
 
+.pseudolabel{
+  cursor: pointer;
+  &.sHover{
+        .obraz.obraz-1{
+          border: 2px solid #1782e9;
+        }
+        .obraz.obraz-2 span{
+          border: 2px solid #1782e9;
+        }
+        .obraz.obraz-3{
+          border: 2px solid #1782e9;
+        }
+        .obraz.obraz-4{
+          border: 2px solid #1782e9;
+        }
+        .obraz.obraz-5{
+          border: 2px solid #1782e9;
+        }
+    }
+  &.sChecked{
+      .obraz.obraz-1{
+        border: 2px solid #1782e9;
+        background: #1782e9;
+      }
+      .obraz.obraz-2 span{
+        border: 2px solid #1782e9;
+        background: #1782e9;
+      }
+      .obraz.obraz-3{
+        border: 2px solid #1782e9;
+        background: #1782e9;
+      }
+      .obraz.obraz-4{
+        border: 2px solid #1782e9;
+        background: #1782e9;
+      }
+      .obraz.obraz-5{
+        border: 2px solid #1782e9;
+        background: #1782e9;
+      }
+  }
+}
+
 .obraz{
   display: block;
   margin-bottom: 12px;

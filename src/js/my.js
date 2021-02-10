@@ -498,6 +498,26 @@ $(document).ready(function () {
 
     $('select').niceSelect();
 
+    $('body').on('click', '.pseudolabel', function () {
+        let itemId = $(this).attr('data-input');
+        let $cb = $('input#'+itemId);
+        if(!($cb.attr("disabled"))){
+            $cb.prop("checked", !$cb.prop("checked"));
+            $(this).addClass("sChecked");
+        } else {
+            $(this).removeClass("sChecked");
+        }
+    });
+    $('.pseudolabel').hover(function () {
+        let itemId = $(this).attr('data-input');
+        let $cb = $('input#'+itemId);
+        if(!($cb.attr("disabled"))){
+            $(this).addClass("sHover");
+        }
+    }, function () {
+        $(this).removeClass("sHover");
+    });
+
 });
 
 
