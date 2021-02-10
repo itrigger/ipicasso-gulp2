@@ -495,9 +495,9 @@ $gray: #9A9999;
 }
 
 .j-filter-scrollbar-wrapper{
-  height: 176px;
+  max-height: 176px;
   .scrollbar-inner{
-    height: 176px;
+    max-height: 176px;
     margin-left: -20px;
     padding-left: 20px !important;
   }
