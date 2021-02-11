@@ -527,6 +527,12 @@ $gray: #9A9999;
         .obraz.obraz-5{
           border: 2px solid #1782e9;
         }
+      .brushes .brush{
+        background: url("../img/brush-fill-active.svg") 0 0;
+      }
+      .checkbox:not(checked)+label:before{
+        background: url("../img/cb-hover.png");
+      }
     }
   &.sChecked{
       .obraz.obraz-1{
@@ -549,9 +555,17 @@ $gray: #9A9999;
         border: 2px solid #1782e9;
         background: #1782e9;
       }
+    .brushes .brush{
+      background: url("../img/brush-fill-active.svg") 0 0;
+    }
+    .checkbox:checked+label:before, .checkbox:checked+label:before {
+      background: url("../img/cb-active.png");
+    }
   }
 }
-
+.pseudolabel-brush .checkbox + label{
+  padding-right: 0px;
+}
 .obraz{
   display: block;
   margin-bottom: 12px;
