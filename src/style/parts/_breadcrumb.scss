@@ -15,21 +15,27 @@
     font-size: 14px;
     line-height: 18px;
     white-space: nowrap;
-    padding-right: 5px;
-    margin-right: 5px;
+    margin-right: 9px;
     a{
       color: #404142;
       position: relative;
       font-weight: normal;
-      &:after{
+      padding-left: 9px;
+      &:before{
         content: '';
+        background: url("../img/bc_normal.png") 0 0 no-repeat;
         display: block;
-        height: 12px;
-        width: 1px;
-        background: #404142;
+        height: 10px;
+        width: 6px;
         position: absolute;
-        right: -5px;
-        top: 3px;
+        left: -2px;
+        top: 4px;
+      }
+      &:hover{
+        color: $blue;
+        &:before{
+          background: url("../img/bc_hover.png") 0 0 no-repeat;
+        }
       }
     }
     &.home{
@@ -38,6 +44,22 @@
         background: url('../img/breadcrumb_home.png') 0 0 no-repeat;
         width: 16px;
         height: 16px;
+        &:before{
+          display: none;
+        }
+      }
+    }
+    &:last-child{
+      position: relative;
+      &:before{
+        content: '';
+        background: #000;
+        display: block;
+        height: 12px;
+        width: 1px;
+        position: absolute;
+        left: -5px;
+        top: 3px;
       }
     }
   }
