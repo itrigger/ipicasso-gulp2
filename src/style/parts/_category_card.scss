@@ -180,6 +180,8 @@
     height: 20px;
     cursor: pointer;
     margin-right: 15px;
+    &:hover{background: url("../img/card-ico-heart-hover.jpg") 0 0 no-repeat;}
+    &.active{background: url("../img/card-ico-heart-active.jpg") 0 0 no-repeat;}
   }
 
   .cart_btn__incart {
@@ -286,6 +288,16 @@
     background: url("../img/card-ico-alert.jpg") 0 0 no-repeat;
     background-size: contain;
     cursor: pointer;
+    &:hover{
+      background: url("../img/card-ico-alert-hover.jpg") 0 0 no-repeat;
+    }
+    &.active{
+      background: url("../img/card-ico-alert-active.jpg") 0 0 no-repeat;
+      width: 27px;
+      &:hover{
+        background: url("../img/card-ico-alert-active.jpg") 0 0 no-repeat;
+      }
+    }
   }
 
   .additionals{
