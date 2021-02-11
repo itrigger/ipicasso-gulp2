@@ -137,7 +137,7 @@ $gray: #9A9999;
     }
   }
 }
-#filter_new:checked + .toggle {
+#filter_latest:checked + .toggle {
   &:before {
     background: $primary-light3;
   }
@@ -154,7 +154,7 @@ $gray: #9A9999;
     }
   }
 }
-#filter_sale:checked + .toggle {
+#filer_special:checked + .toggle {
   &:before {
     background: $primary-light4;
   }
