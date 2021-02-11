@@ -503,7 +503,13 @@ $(document).ready(function () {
         let $cb = $('input#'+itemId);
         if(!($cb.attr("disabled"))){
             $cb.prop("checked", !$cb.prop("checked"));
-            $(this).addClass("sChecked");
+            if(!$cb.prop("checked")){
+                $(this).removeClass("sChecked");
+            } else {
+                $(this).addClass("sChecked");
+
+            }
+
         } else {
             $(this).removeClass("sChecked");
         }
