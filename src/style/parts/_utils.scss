@@ -65,6 +65,10 @@ body{
     background: $red;
     color: #fff;
   }
+  &.label--outofstock{
+    background: #404142;
+    color: #fff;
+  }
 }
 
 .price{
