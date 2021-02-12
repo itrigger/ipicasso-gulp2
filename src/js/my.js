@@ -524,6 +524,29 @@ $(document).ready(function () {
         $(this).removeClass("sHover");
     });
 
+
+    let showhideFilter = function (){
+        let windowWidth = $(this).width();
+        let $wrapper = $(".category_content_items");
+        console.log(windowWidth);
+        console.log($wrapper);
+        if((windowWidth < 1440) && $wrapper.hasClass("cci-5")){
+            $wrapper.removeClass("cci-5").addClass("cci-4");
+            $("#select_count li a").removeClass("active");
+            $("#select_count li[data-count='4'] a").addClass("active");
+        } else if(windowWidth >= 1440){
+
+        }
+    }
+
+    showhideFilter();
+
+    $(window).resize(function (){
+        showhideFilter();
+    });
+
+
+
 });
 
 
