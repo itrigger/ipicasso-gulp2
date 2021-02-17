@@ -353,6 +353,7 @@
         let carousel_new_menu = undefined;
 
         function initCarouselNewMenu() {
+            console.log(carousel_new_menu);
             var screenWidth = $(window).width();
             if(screenWidth < 860 && carousel_new_menu == undefined) {
                 carousel_new_menu  = new Swiper('.module-mp-cat-news .tabs .swiper-container', {

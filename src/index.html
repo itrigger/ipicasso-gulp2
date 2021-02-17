@@ -249,6 +249,7 @@
         let SwiperWPCS = undefined;
 
         function initSwiperWPCS() {
+            console.log(SwiperWPCS);
             let screenWidth = $(window).width();
             if (screenWidth < 860 && SwiperWPCS == undefined) {
                 SwiperWPCS = new Swiper('.mp-wpcs .swiper-container', {
