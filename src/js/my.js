@@ -293,7 +293,7 @@ $(document).ready(function () {
             let datasrcbig = $img.attr('data-src-big');
             let datasrc = $img.attr('data-src');
             if(datasrc != undefined){
-                $pic.attr("style","background: url("+datasrcbig+") no-repeat center;");
+                $pic.attr("style","background-image: url("+datasrcbig+");");
                 $img.attr('src', datasrc);
             }
         });
