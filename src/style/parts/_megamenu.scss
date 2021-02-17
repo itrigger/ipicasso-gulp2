@@ -565,8 +565,13 @@
     align-items: center;
     justify-content: center;
     image-rendering: optimizeQuality;
+    background-position: center center;
+    background-size: 0 0;
+    border-radius: 3px;
     img{
       max-width: 100%;
+      overflow: hidden;
+      border-radius: 3px;
     }
   }
   .name{
@@ -601,6 +606,7 @@
       width: 120px;
       margin-left: -10px;
       margin-top: -10px;
+      background-size: auto;
       img{
         opacity: 0;
 
