@@ -120,7 +120,7 @@ $gray: #9A9999;
     }
   }
 }
-#filter_coming:checked + .toggle {
+#filter_available:checked + .toggle {
   &:before {
     background: $primary-light2;
   }
