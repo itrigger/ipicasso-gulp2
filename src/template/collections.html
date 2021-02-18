@@ -73,6 +73,7 @@
 
                     function initSwiperCollection() {
                         let screenWidth = $(window).width();
+
                         if(screenWidth < 860){
                             if(!jQuery(".circle--item").is(".appended")) {
                                 jQuery(".circles").find(".circle--item.view-more").remove();
@@ -90,7 +91,7 @@
 
                             }
                         }
-                        if (screenWidth < 860 && SwiperCollection == undefined) {
+                        if (screenWidth < 860 && SwiperCollection === undefined) {
 
                             SwiperCollection = new Swiper('.circles_w .swiper-container', {
                                 slidesPerView: 2,
@@ -117,10 +118,9 @@
                                     },
                                 }
                             });
-                        } else if (screenWidth > 859 && SwiperCollection != undefined) {
+                        } else if (screenWidth > 859 && SwiperCollection !== undefined) {
                             SwiperCollection.destroy();
                             SwiperCollection = undefined;
-
 
                             jQuery('.circles_w .swiper-wrapper').removeAttr('style');
                             // jQuery('.circles_w .swiper-slide').removeAttr('style');

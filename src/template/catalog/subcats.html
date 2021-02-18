@@ -480,13 +480,13 @@
 
 
         /**/
-        let SubcatsSwiper = undefined;
+        let SubcatsSwiper;
 
         function initSubcatSwiper() {
 
             let screenWidth = $(window).width();
 
-            if (screenWidth < 860 && SubcatsSwiper == undefined) {
+            if (screenWidth < 860 && typeof SubcatsSwiper === 'undefined') {
 
                 $(".show_more").remove();
                 $(".show_less").remove();
@@ -500,18 +500,20 @@
                     slideClass: 'minicat',
                     //slideToClickedSlide: true,
                     watchOverflow: true,
+                    observer: true,
                     navigation: {
                         nextEl: '.cm-level-1 .swiper-button-next',
                         prevEl: '.cm-level-1 .swiper-button-prev',
                     },
                 });
 
+            } else if (typeof SubcatsSwiper !== 'undefined') {
 
-            } else if (screenWidth > 859 && SubcatsSwiper != undefined) {
-                if (SubcatsSwiper != undefined) {
-                    SubcatsSwiper.destroy();
-                    SubcatsSwiper = undefined;
-                }
+                SubcatsSwiper.destroy();
+                SubcatsSwiper = undefined;
+                jQuery('.mod_subcats .swiper-wrapper').removeAttr('style');
+                jQuery('.mod_subcats .swiper-slide').removeAttr('style');
+
 
                 showMoreCalc();
 

@@ -528,8 +528,8 @@ $(document).ready(function () {
     let showhideFilter = function (){
         let windowWidth = $(this).width();
         let $wrapper = $(".category_content_items");
-        console.log(windowWidth);
-        console.log($wrapper);
+       // console.log(windowWidth);
+       // console.log($wrapper);
         if((windowWidth < 1440) && $wrapper.hasClass("cci-5")){
             $wrapper.removeClass("cci-5").addClass("cci-4");
             $("#select_count li a").removeClass("active");

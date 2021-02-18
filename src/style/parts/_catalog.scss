@@ -190,7 +190,7 @@
   width: 344px;
   text-align: center;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   cursor: pointer;
   span{
@@ -230,6 +230,9 @@
   }
 }
 
+.circles_w2{
+  position: relative;
+}
 
 
 
@@ -326,6 +329,9 @@
   .category_sort{
     grid-column: 1 / span 3;
   }
+  .category_seo{
+    margin-top: 40px;
+  }
   .category_in {
     max-width: 860px;
     padding: 0 19px;
@@ -355,6 +361,9 @@
   }
   .category_content{
     grid-column: 3 / span 4;
+  }
+  .category_seo .text{
+    grid-column: 1 / -1;
   }
 }
 @media (max-width:859px) {
