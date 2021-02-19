@@ -89,7 +89,7 @@ $(document).ready(function () {
     myScroll2();
 
     /*Открытие / закрытие бокового меню*/
-    $(".burger--btn").click(function () {
+    $(".burger--btn, .ico-footmenu-catalog").click(function () {
         if ($(this).hasClass('opened')) {
             $("body").removeClass("sidemenu--open");
             $("#sidemenu").removeClass("open");

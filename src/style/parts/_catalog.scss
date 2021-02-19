@@ -429,4 +429,31 @@
       display: none;
     }
   }
+  .category_in {
+    max-width: 860px;
+    padding: 0 19px;
+    .filter_w{
+      display: none;
+    }
+    .category_content{
+      grid-column: 1 / span 6;
+    }
+    .category_content_items.cci-3{grid-template-columns: repeat(2, 1fr);}
+    .category_content_items.cci-4{grid-template-columns: repeat(2, 1fr);}
+    .category_content_items.cci-5{grid-template-columns: repeat(2, 1fr);}
+    &.filter-opened{
+      .filter_w{
+        display: block;
+      }
+      .category_content{
+        grid-column: 1 / -1;
+      }
+      .category_content_items.cci-3{grid-template-columns: repeat(2, 1fr);}
+      .category_content_items.cci-4{grid-template-columns: repeat(2, 1fr);}
+      .category_content_items.cci-5{grid-template-columns: repeat(2, 1fr);}
+    }
+  }
+  .category_content_items.cci-4 .card .pic{
+    min-height: 170px;
+  }
 }

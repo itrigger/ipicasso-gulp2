@@ -485,10 +485,9 @@
         function initSubcatSwiper() {
 
             let screenWidth = $(window).width();
-            console.log(typeof SubcatsSwiper);
-            console.log(screenWidth);
+
             if (screenWidth < 860) {
-                console.log('cond 1 <860 undef');
+
                 $(".show_more").remove();
                 $(".show_less").remove();
                 for (let i = 0; i < countMinicats; i++) {
@@ -511,7 +510,7 @@
                 }
 
             } else {
-                console.log('cond 1 >860 !==undef');
+
                 if (SubcatsSwiper !== undefined) {
                     SubcatsSwiper.destroy();
                     SubcatsSwiper = undefined;
