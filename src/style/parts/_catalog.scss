@@ -434,6 +434,16 @@
     padding: 0 19px;
     .filter_w{
       display: none;
+      grid-column: 1 / -1;
+      position: fixed;
+      z-index: 999;
+      background: #fff;
+      overflow: scroll;
+      top: 0;
+      left: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      width: 100%;
     }
     .category_content{
       grid-column: 1 / span 6;
