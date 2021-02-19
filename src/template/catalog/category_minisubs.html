@@ -49,7 +49,7 @@
             }
         });
 
-        let MiniSubsSwiper = undefined;
+        let MiniSubsSwiper;
 
         function categoryMinisubsRecalculate() {
             let MSlength = $(".mod_minisubcats-flex-wrap").width();
@@ -59,10 +59,10 @@
             let $object = $(".mod_minisubcats");
 
             let screenWidth = $(window).width();
-
+            console.log(screenWidth);
+            console.log(typeof MiniSubsSwiper);
             if (screenWidth > 859) {
-
-                if (MiniSubsSwiper != undefined) {
+                if (MiniSubsSwiper !== undefined) {
                     MiniSubsSwiper.destroy();
                     MiniSubsSwiper = undefined;
                 }
@@ -119,7 +119,8 @@
                     });
                 }
 
-            } else if (screenWidth < 860 && MiniSubsSwiper == undefined){
+            } else if (screenWidth < 860 && MiniSubsSwiper === undefined){
+
                 $(".show_btn").addClass("hidden");
                 $($object.find(".minisubcat")).each(function () {
                     $(this).removeClass('hidden');
@@ -138,6 +139,7 @@
         categoryMinisubsRecalculate();
 
         $(window).on('resize', function () {
+
             categoryMinisubsRecalculate();
         });
 

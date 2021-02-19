@@ -159,7 +159,9 @@
             function initSwiperCollectionCat() {
                 let screenWidth = $(window).width();
 
-                if (screenWidth < 860 && SwiperCollectionCat === undefined) {
+                if (screenWidth < 1140) {
+
+                if(SwiperCollectionCat === undefined){
 
                     SwiperCollectionCat = new Swiper('.circles_w2 .swiper-container', {
                         slidesPerView: 2,
@@ -177,22 +179,25 @@
                                 spaceBetween: 20
                             },
                             540: {
-                                slidesPerView: 2,
+                                slidesPerView: 3,
                                 spaceBetween: 20
                             },
                             859: {
-                                slidesPerView: 3,
+                                slidesPerView: 4,
                                 spaceBetween: 20
                             },
                         }
                     });
-                } else if (screenWidth > 859 && SwiperCollectionCat !== undefined) {
-                    SwiperCollectionCat.destroy();
-                    SwiperCollectionCat = undefined;
+                }
+                } else if (screenWidth > 1139) {
+                    if(SwiperCollectionCat !== undefined) {
+                        SwiperCollectionCat.destroy();
+                        SwiperCollectionCat = undefined;
+                        jQuery('.circles_w2 .swiper-wrapper').removeAttr('style');
+                        jQuery('.circles_w2 .swiper-slide').removeAttr('style');
+                    }
 
 
-                    jQuery('.circles_w2 .swiper-wrapper').removeAttr('style');
-                    // jQuery('.circles_w .swiper-slide').removeAttr('style');
                 }
             }
 

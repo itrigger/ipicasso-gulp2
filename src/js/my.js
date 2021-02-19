@@ -121,7 +121,7 @@ $(document).ready(function () {
 
         let screenWidth = $(window).width();
         if ($('.cm-level-1 .swiper-container.active').length) {
-            if (screenWidth < 1140 && MenuSwiper == undefined) {
+            if (screenWidth < 1140 && MenuSwiper === undefined) {
 
                 let baseWidth = $('.cm-level-1 .swiper-container.active').width();
                 let ulWidth = 0;
@@ -146,14 +146,14 @@ $(document).ready(function () {
                     });
 
                     $(".tablet .cm-level-1 .swiper-container.active li").hover(function () {
-                        if (MenuSwiper != undefined) {
+                        if (MenuSwiper !== undefined) {
                             MenuSwiper.slideTo($(this).index());
                         }
                     });
                 } else {
                     $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","none");
                     $(".cm-level-1").css("padding","0 16px");
-                    if (MenuSwiper != undefined) {
+                    if (MenuSwiper !== undefined) {
                         MenuSwiper.destroy();
                         MenuSwiper = undefined;
                     }
@@ -161,12 +161,13 @@ $(document).ready(function () {
                     $('.cm-level-1 .swiper-wrapper').removeAttr('style');
                     $('.cm-level-1 .swiper-container .swiper-slide').removeAttr('style');
                 }
-            } else if (screenWidth > 1139 && MenuSwiper != undefined) {
-                if (MenuSwiper != undefined) {
+            } else if (screenWidth > 1139) {
+                if (MenuSwiper !== undefined) {
                     MenuSwiper.destroy();
                     MenuSwiper = undefined;
-                    $(".cm-level-1").css("padding","0");
+
                 }
+                $(".cm-level-1").css("padding","0");
                 $(".spoiler_desc").removeAttr('style');
                 $('body').removeClass("tablet");
                 $('.cm-level-1 .swiper-wrapper').removeAttr('style');

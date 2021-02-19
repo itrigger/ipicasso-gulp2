@@ -443,7 +443,7 @@
                     currentPageColumns = getGridData().gridColumnCount;
                 }
             }
-            console.log(pageColumns);
+           // console.log(pageColumns);
         };
 
 
@@ -485,35 +485,40 @@
         function initSubcatSwiper() {
 
             let screenWidth = $(window).width();
-
-            if (screenWidth < 860 && typeof SubcatsSwiper === 'undefined') {
-
+            console.log(typeof SubcatsSwiper);
+            console.log(screenWidth);
+            if (screenWidth < 860) {
+                console.log('cond 1 <860 undef');
                 $(".show_more").remove();
                 $(".show_less").remove();
                 for (let i = 0; i < countMinicats; i++) {
                     $(".mod_subcats .minicat").eq(i).removeClass('hidden');
                 }
-                SubcatsSwiper = new Swiper('.mod_subcats .swiper-container', {
-                    slidesPerView: 'auto',
-                    spaceBetween: 20,
-                    //slidesOffsetAfter: 10,
-                    slideClass: 'minicat',
-                    //slideToClickedSlide: true,
-                    watchOverflow: true,
-                    observer: true,
-                    navigation: {
-                        nextEl: '.cm-level-1 .swiper-button-next',
-                        prevEl: '.cm-level-1 .swiper-button-prev',
-                    },
-                });
+                if (SubcatsSwiper === undefined) {
+                    SubcatsSwiper = new Swiper('.mod_subcats .swiper-container', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 20,
+                        //slidesOffsetAfter: 10,
+                        slideClass: 'minicat',
+                        //slideToClickedSlide: true,
+                        watchOverflow: true,
+                        observer: true,
+                        navigation: {
+                            nextEl: '.cm-level-1 .swiper-button-next',
+                            prevEl: '.cm-level-1 .swiper-button-prev',
+                        },
+                    });
+                }
 
-            } else if (typeof SubcatsSwiper !== 'undefined') {
+            } else {
+                console.log('cond 1 >860 !==undef');
+                if (SubcatsSwiper !== undefined) {
+                    SubcatsSwiper.destroy();
+                    SubcatsSwiper = undefined;
+                }
 
-                SubcatsSwiper.destroy();
-                SubcatsSwiper = undefined;
                 jQuery('.mod_subcats .swiper-wrapper').removeAttr('style');
                 jQuery('.mod_subcats .swiper-slide').removeAttr('style');
-
 
                 showMoreCalc();
 
