@@ -474,8 +474,27 @@ body.sidemenu--open {
   }
 }
 
+.sidemenu.catalogonly{
+  .sidemenu--catalog_block2,
+  .sidemenu--accordion,
+  .heading
+  {
+    display: none;
+  }
+  .sidemenu--catalog_ul > li:before{
+    display: none;
+  }
+  .sidemenu--catalog_ul > li{
+    padding-left: 0;
+  }
+  .zeynep .submenu{
+    top: 44px;
+  }
+}
+
 .sidemenu--catalog {
   padding: 11px 0 0 16px;
+
 }
 
 .sidemenu--catalog_block2{

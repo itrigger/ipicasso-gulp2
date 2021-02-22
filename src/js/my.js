@@ -89,13 +89,15 @@ $(document).ready(function () {
     myScroll2();
 
     /*Открытие / закрытие бокового меню*/
-    $(".burger--btn, .ico-footmenu-catalog").click(function () {
+    $(".burger--btn").click(function () {
         if ($(this).hasClass('opened')) {
             $("body").removeClass("sidemenu--open");
-            $("#sidemenu").removeClass("open");
+            $("#sidemenu").removeClass("open catalogonly");
             $(this).removeClass("opened");
+            $(".ico-footmenu-catalog").removeClass("opened");
         } else {
             $("body").addClass("sidemenu--open");
+            $("#sidemenu").removeClass("catalogonly");
             $("#sidemenu").addClass("open");
             $(this).addClass("opened");
         }
@@ -103,8 +105,22 @@ $(document).ready(function () {
     $("#sidemenu .close, .body_overlay").click(function () {
         $("body").removeClass("sidemenu--open");
         $("#sidemenu").removeClass("open");
+        $("#sidemenu").removeClass("catalogonly");
         $(".burger--btn").removeClass("opened");
+        $(".ico-footmenu-catalog").removeClass("opened");
     });
+    $(".ico-footmenu-catalog").click(function (){
+        if ($(this).hasClass('opened')) {
+            $("body").removeClass("sidemenu--open");
+            $("#sidemenu").removeClass("open catalogonly");
+            $(this).removeClass("opened");
+            $(".burger--btn").removeClass("opened");
+        } else {
+            $("body").addClass("sidemenu--open");
+            $("#sidemenu").addClass("open catalogonly");
+            $(this).addClass("opened");
+        }
+    })
 
 
     let screenWidth = $(window).width();
