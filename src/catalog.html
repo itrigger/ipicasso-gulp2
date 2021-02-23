@@ -147,9 +147,7 @@
 
 
             </div>
-            <!-- Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+
         </div>
     </div>
     <script>
@@ -164,15 +162,16 @@
                 if(SwiperCollectionCat === undefined){
 
                     SwiperCollectionCat = new Swiper('.circles_w2 .swiper-container', {
-                        slidesPerView: 2,
                         spaceBetween: 20,
+                        slidesPerView: 'auto',
                         slidesOffsetAfter: 30,
                         slideToClickedSlide: true,
+                        watchOverflow: true,
                         slideClass: 'circle--item',
-                        navigation: {
+                       /* navigation: {
                             nextEl: '.circles_w2 .swiper-button-next',
                             prevEl: '.circles_w2 .swiper-button-prev',
-                        },
+                        },*/
                         breakpoints: {
                             320: {
                                 slidesPerSlide: 'auto',

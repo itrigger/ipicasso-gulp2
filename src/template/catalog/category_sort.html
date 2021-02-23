@@ -1,7 +1,7 @@
 <div class="category_sort_w">
 
     <div class="category_sort">
-        <div class="toggle_filter_btn show">Show filter</div>
+        <div class="toggle_filter_btn show"><span>Show</span> filter</div>
         <!--https://jqueryniceselect.hernansartorio.com/ -->
         <select>
             <option value="Najpopularniejsze" data-display="Najpierw Najpopularniejsze">Najpopularniejsze</option>
@@ -53,10 +53,12 @@
 
             if($(".category_in").hasClass("filter-opened")){
                 $(".category_in").removeClass("filter-opened");
+                $("body").removeClass("body--filter-opened");
                 /*$toggleBtn.removeClass("hide");
                 $toggleBtn.addClass("show").html(SHOW_FILTER);*/
             } else {
                 $(".category_in").addClass("filter-opened");
+                $("body").addClass("body--filter-opened");
                 /*$toggleBtn.removeClass("show");
                 $toggleBtn.addClass("hide").html(HIDE_FILTER);*/
             }

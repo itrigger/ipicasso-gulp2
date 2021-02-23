@@ -397,6 +397,12 @@
   }
 }
 @media (max-width:859px) {
+  .category_sort{
+    grid-column: 1 / -1;
+  }
+  .nice-select{
+    margin-left: auto;
+  }
   .circles_w2{
     margin-bottom: 50px;
   }
@@ -437,7 +443,7 @@
   }
   .category_in {
     max-width: 860px;
-    padding: 0 19px;
+    padding: 0 10px;
     .filter_w{
       display: none;
       grid-column: 1 / -1;
@@ -474,5 +480,12 @@
   }
   .category_content_items .card{
     padding-bottom: 20px;
+    max-width: 220px;
+  }
+  .toggle_filter_btn{
+    text-transform: capitalize;
+    span{
+      display: none;
+    }
   }
 }

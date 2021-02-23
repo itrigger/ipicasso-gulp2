@@ -514,10 +514,14 @@ body.sidemenu--open {
       position: absolute;
       right: 2px;
       top: 4px;
+      cursor: pointer;
     }
   }
   .zeynep .submenu.opened{
     left: 0;
+  }
+  .toggle_filter_btn.hide{
+    display: none;
   }
 }
 
@@ -861,13 +865,16 @@ body.sidemenu--open {
   .category_menu_mobile{
     display: block;
   }
-/*
-icon-paint
-icon-frame
-icon-diamond
-icon-3d
-icon-gobeliny
-icon-sale
+  body.body--filter-opened{
+    overflow: hidden;
+  }
+  body.sidemenu--open,
+  body.body--filter-opened
+  {
+    .footer--pan{
+      transform: translateY(56px);
+      transition: 0.3s all;
+    }
+  }
 
-*/
 }
