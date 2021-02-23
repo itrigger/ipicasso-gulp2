@@ -95,6 +95,7 @@ $(document).ready(function () {
             $("#sidemenu").removeClass("open catalogonly");
             $(this).removeClass("opened");
             $(".ico-footmenu-catalog").removeClass("opened");
+            $(".sidemenu--catalog_heading").find(".ico-close").remove();
         } else {
             $("body").addClass("sidemenu--open");
             $("#sidemenu").removeClass("catalogonly");
@@ -108,6 +109,7 @@ $(document).ready(function () {
         $("#sidemenu").removeClass("catalogonly");
         $(".burger--btn").removeClass("opened");
         $(".ico-footmenu-catalog").removeClass("opened");
+        $(".sidemenu--catalog_heading").find(".ico-close").remove();
     });
     $(".ico-footmenu-catalog").click(function (){
         if ($(this).hasClass('opened')) {
@@ -115,13 +117,22 @@ $(document).ready(function () {
             $("#sidemenu").removeClass("open catalogonly");
             $(this).removeClass("opened");
             $(".burger--btn").removeClass("opened");
+            $(".sidemenu--catalog_heading").find(".ico-close").remove();
         } else {
             $("body").addClass("sidemenu--open");
             $("#sidemenu").addClass("open catalogonly");
             $(this).addClass("opened");
+            $("#sidemenu .sidemenu--catalog_heading").append("<div class='ico-close'></div>");
         }
     })
 
+    $(".sidemenu--catalog_heading").on('click','.ico-close', function (){
+        $(".ico-footmenu-catalog").removeClass("opened");
+        $("body").removeClass("sidemenu--open");
+        $("#sidemenu").removeClass("open catalogonly");
+        $(".burger--btn").removeClass("opened");
+        $(".sidemenu--catalog_heading").find(".ico-close").remove();
+    });
 
     let screenWidth = $(window).width();
     if (screenWidth < 1140) {

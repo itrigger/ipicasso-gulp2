@@ -416,7 +416,13 @@
   .circles_w2 .swiper-button-next
   {
     display: block;
-    top: 50%;
+    top: 58%;
+  }
+  .circles_w2 .swiper-button-prev{
+    left: 0;
+  }
+  .circles_w2 .swiper-button-next{
+    right: 0;
   }
   .circles_w2 .circle--item{
     flex-shrink: 0;
@@ -465,5 +471,8 @@
   }
   .category_content_items.cci-4 .card .pic{
     min-height: 170px;
+  }
+  .category_content_items .card{
+    padding-bottom: 20px;
   }
 }
