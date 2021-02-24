@@ -450,12 +450,42 @@
       position: fixed;
       z-index: 999;
       background: #fff;
-      overflow: scroll;
+      overflow: auto;
+      height: 100%;
       top: 0;
       left: 0;
-      padding: 10px;
+      padding: 10px 10px 60px;
       box-sizing: border-box;
       width: 100%;
+    }
+    .filter_categories{
+      display: none;
+    }
+    .toggle_filter_btn.hide{
+      display: none;
+    }
+    .main_filter{
+      margin-top: 0;
+    }
+    .main_filter .heading{
+      flex-direction: row-reverse;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      .title{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .ico-close{
+          background: url("../img/icon-close-black.svg") center center no-repeat;
+          background-size: 75% 75%;
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+
+      }
     }
     .category_content{
       grid-column: 1 / span 6;
@@ -487,5 +517,8 @@
     span{
       display: none;
     }
+  }
+  .filter .mobile-btn-show-filter-items{
+    display: flex;
   }
 }
