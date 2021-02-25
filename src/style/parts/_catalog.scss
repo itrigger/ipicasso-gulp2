@@ -518,7 +518,12 @@
       display: none;
     }
   }
+  .toggle_filter_btn.show{
+    width: auto;
+    padding-right: 13px;
+  }
   .filter .mobile-btn-show-filter-items{
     display: flex;
   }
+
 }

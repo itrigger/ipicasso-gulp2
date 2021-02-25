@@ -67,18 +67,63 @@
 
 @media (max-width: 859px) {
   .breadcrumb_w{
-    margin-top: 8px;
+    margin-top: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+    position: relative;
+    .ico-toggle{
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      &:before{
+        display: block;
+        content:'';
+        position: absolute;
+        width: 14px;
+        height: 2px;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #000;
+      }
+      &:after{
+        display: block;
+        content:'';
+        position: absolute;
+        width: 2px;
+        height: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5px;
+        background: #000;
+        transition: 0.3s all;
+      }
+    }
+    &.active .ico-toggle{
+      &:after{
+        transition: 0.3s all;
+        transform: rotate(90deg);
+      }
+    }
   }
   .breadcrumb{
     align-items: center;
+    flex-direction: column;
   }
   .breadcrumb li{
     display: none;
     font-size: 16px;
     line-height: 16px;
     font-weight: normal;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-right: 0;
+    align-items: center;
     &.home{
-      display: block;
+      //display: block;
       margin-left: 4px;
       line-height: 0;
       a{
@@ -91,8 +136,50 @@
         display: none;
       }
     }
+    &:nth-last-of-type(-n+2){
+      display: flex;
+      a{
+        padding-left: 35px;
+        &:before{
+          background: url(../img/icon-arrow-go-normal.svg) center center no-repeat;
+          width: 24px;
+          height: 24px;
+          transform: rotate(180deg);
+          left: 5px;
+          top: -3px;
+        }
+      }
+    }
     &:last-child{
-      display: block;
+      display: none;
+    }
+  }
+  .breadcrumb_w.active .breadcrumb{
+    flex-direction: column;
+    li.home, li:last-child{
+      display: none;
+    }
+    li{
+      width: 100%;
+      display: flex;
+      height: 40px;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      margin-right: 0;
+      a{
+        padding-left: 35px;
+        &:before{
+          background: url(../img/icon-arrow-go-normal.svg) center center no-repeat;
+          width: 24px;
+          height: 24px;
+          transform: rotate(180deg);
+          left: 5px;
+          top: -3px;
+        }
+      }
+      &:last-child{
+        padding-left: 35px;
+      }
     }
   }
 }

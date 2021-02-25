@@ -573,7 +573,9 @@ $(document).ready(function () {
         showhideFilter();
     });
 
-
+    $(".ico-toggle").click(function (){
+       $(".breadcrumb_w").hasClass("active") ? $(".breadcrumb_w").removeClass("active") : $(".breadcrumb_w").addClass("active");
+    });
 
 });
 

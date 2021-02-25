@@ -44,9 +44,11 @@
 
         });
 
-        $(".toggle_filter_btn").on('click', function () {
+        $(".toggle_filter_btn, .filter .ico-close").on('click', function () {
             filter_status();
         });
+
+
 
         function filter_status() {
             let $toggleBtn = $(".toggle_filter_btn");
