@@ -526,4 +526,58 @@
     display: flex;
   }
 
+  .head-dd-w{
+    border-bottom: 1px solid #ccc;
+    margin: 0 -8px;
+    padding: 0 8px;
+    .head-dd-title{
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+    }
+    .accordion_arrow{
+      display: inline-block;
+      transition: all 0.3s ease;
+      width: 24px;
+      height: 24px;
+      background: url(../img/icon-dropdown-bottom-normal.svg) center center no-repeat;
+    }
+    ul{
+      height: 0;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      li{
+        min-height: 40px;
+        padding-left: 8px;
+        display: flex;
+        align-items: center;
+        &.active{
+          background: url("../img/check_big.png") right 14px no-repeat;
+          a{
+            color: $blue;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    &.active{
+      .accordion_arrow{
+        transform: rotate(180deg);
+      }
+      ul{
+
+        height: 100%;
+        opacity: 1;
+        transform-origin: top;
+        transform: scaleY(1);
+      }
+    }
+  }
+
 }

@@ -576,6 +576,10 @@ $(document).ready(function () {
     $(".ico-toggle").click(function (){
        $(".breadcrumb_w").hasClass("active") ? $(".breadcrumb_w").removeClass("active") : $(".breadcrumb_w").addClass("active");
     });
+    $(".head-dd-title").click(function (){
+        $(".head-dd-w").hasClass("active") ? $(".head-dd-w").removeClass("active") : $(".head-dd-w").addClass("active");
+    });
+
 
 });
 

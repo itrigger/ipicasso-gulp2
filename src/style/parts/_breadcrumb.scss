@@ -119,7 +119,7 @@
     font-weight: normal;
     height: 40px;
     width: 100%;
-    border-bottom: 1px solid #ccc;
+
     margin-right: 0;
     align-items: center;
     &.home{
@@ -138,6 +138,7 @@
     }
     &:nth-last-of-type(-n+2){
       display: flex;
+      border-bottom: none !important;
       a{
         padding-left: 35px;
         &:before{

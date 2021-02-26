@@ -74,6 +74,14 @@ a{
 @import "parts/_footer";
 
 
+@media (max-width: 859px){
+  .desktop{
+    display: none;
+  }
+  .mobile{
+    display: inherit;
+  }
+}
 
 
 
