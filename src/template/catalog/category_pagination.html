@@ -1,7 +1,8 @@
 <div id="button_more_ajax">
     <a href="#" class="btn btn-bordered btn-arrowed">Show more <span class=""></span></a>
 </div>
-<div class="pagination">
+<!-- +++desktop -->
+<div class="pagination desktop">
     <div class="pagination_ul">
         <ul>
             <li><a class="p-prev" href="#"></a></li>
@@ -18,3 +19,54 @@
         </ul>
     </div>
 </div>
+<!-- ---desktop -->
+
+<!-- +++mobile -->
+<div class="pagination mobile">
+    <div class="pagination_ul">
+        <div class="swiper-container-wrapper">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="pg-item"><a href="#">1</a></li>
+                    <li class="pg-item"><a href="#">2</a></li>
+                    <li class="pg-item"><a href="#">3</a></li>
+                    <li class="pg-item"><a href="#">4</a></li>
+                    <li class="pg-item"><a href="#">5</a></li>
+                    <li class="pg-item"><a href="#">6</a></li>
+                    <li class="pg-item"><a href="#">7</a></li>
+                    <li class="pg-item"><a href="#">8</a></li>
+                    <li class="pg-item"><a href="#">9</a></li>
+                    <li class="pg-item"><a href="#">10</a></li>
+                    <li class="pg-item"><a href="#">11</a></li>
+                    <li class="active pg-item"><a href="#">12</a></li>
+                    <li class="pg-item"><a href="#">13</a></li>
+                    <li class="pg-item"><a href="#">14</a></li>
+                    <li class="pg-item"><a href="#">15</a></li>
+                    <li class="pg-item"><a href="#">16</a></li>
+                    <li class="pg-item"><a href="#">17</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pg-label">1/100</div>
+</div>
+
+<script>
+    SwiperPaginator = new Swiper('.pagination_ul .swiper-container', {
+        spaceBetween: 5,
+        slidesPerView: 'auto',
+        slidesOffsetBefore: 100,
+        slidesOffsetAfter: 10,
+        slideToClickedSlide: true,
+        watchOverflow: true,
+        slideClass: 'pg-item',
+    });
+    $(".pg-label").click(function (){
+        $(".pagination.mobile").hasClass("active") ? $(".pagination.mobile").removeClass("active") : $(".pagination.mobile").addClass("active");
+        SwiperPaginator.update();
+        SwiperPaginator.slideTo($(".pagination_ul li.active").index());
+    });
+
+</script>
+
+<!-- ---mobile -->
