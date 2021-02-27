@@ -266,6 +266,27 @@ $(document).on("change", ".price_limit", (function () {
     ////iF()
 }));
 
+$('body').on('click', '.pseudolabel', function () {
+    let itemId = $(this).attr('data-input');
+    let $cb = $('input#'+itemId);
+
+    if(!($cb.attr("disabled"))){
+
+        $cb.prop("checked", !$cb.prop("checked"));
+        //iF();
+        if(!$cb.prop("checked")){
+            $(this).removeClass("sChecked");
+        } else {
+            $(this).addClass("sChecked");
+
+        }
+
+    } else {
+        $(this).removeClass("sChecked");
+    }
+});
+
+
 function synchronizeImgCheckboxes() {
     $("#filterpro input.filtered[type=\"checkbox\"]").each(function () {
         var $img = $(this).next('img');
