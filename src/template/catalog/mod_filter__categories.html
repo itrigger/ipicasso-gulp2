@@ -1,9 +1,9 @@
-<div class="filter_categories">
+<!--<div class="filter_categories">
     <div class="heading">Category</div>
     <ul class="left_side_cat_menu">
         <li class="back"><a href="/">Main page</a></li>
         <li class="back"><a href="#">Malowanie po numerach</a></li>
-        <!-- Вариация с последним открытом пунктом -->
+        &lt;!&ndash; Вариация с последним открытом пунктом &ndash;&gt;
         <li class="active"><a href="#">Zwierzeta</a>
             <ul>
                 <li><a href="#">Собачки</a></li>
@@ -11,7 +11,7 @@
                 <li><a href="#">Рыбки</a></li>
             </ul>
         </li>
-        <!-- Вариация с подпунктами открытом пунктом -->
+        &lt;!&ndash; Вариация с подпунктами открытом пунктом &ndash;&gt;
         <li class="active hasSiblings expanded"><a href="#">Birds</a>
             <ul>
                 <li><a href="#">Cats</a></li>
@@ -21,13 +21,43 @@
             </ul>
         </li>
     </ul>
-</div>
+</div>-->
+<div class="filter_categories">
+    <div class="heading">Category</div>
+    <ul class="left_side_cat_menu">
+        <li class="back"><a href="http://test.ipicasso.pl/malowanie-po-numerach/">2Malowanie po numerach</a>
+            <ul>
 
+                <li class="active  hasSiblings expanded "><a
+                        href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/">1Obrazy ludzi</a>
+                    <ul>
+                        <li>
+                            <a href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/baletnice/">5Baletnice</a>
+                        </li>
+                        <li><a href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/dzieci/">5Dzieci </a>
+                        </li>
+                        <li><a href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/gwiazdy/">5Gwiazdy</a>
+                        </li>
+                        <li><a href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/kobiety/">5Kobiety</a>
+                        </li>
+                        <li>
+                            <a href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/mezczyzni/">5Mężczyźni </a>
+                        </li>
+                        <li><a href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/pary/">5Pary</a></li>
+                        <li><a href="http://test.ipicasso.pl/malowanie-po-numerach/obrazy-ludzi/podazaj-za-mna/">5Podążaj
+                            za mną</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+</div>
 <script>
     $('document').ready(function () {
         $(".left_side_cat_menu li.hasSiblings").on('click', function (e) {
             e.preventDefault();
-            if($(this).hasClass("expanded")){
+            if ($(this).hasClass("expanded")) {
                 $(this).find("ul").slideUp('fast');
                 $(this).removeClass("expanded").addClass("collapsed");
             } else {
