@@ -16,7 +16,7 @@
     margin: 0;
     padding: 0;
   }
-  & > li{
+  li{
     &.back>a{
       padding-left: 24px;
       position: relative;
@@ -33,7 +33,7 @@
         transform: rotate(180deg);
       }
     }
-    &>ul>li.active{
+    &.active{
       padding-right: 0;
       &:after{display: none;}
       &>a{
