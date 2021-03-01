@@ -120,6 +120,16 @@ $gray: #9A9999;
     }
   }
 }
+#instock:disabled + .toggle{
+  opacity: 0.33;
+  &:before{
+    background: #9A9999;
+  }
+  span{
+    transform: translateX(0px);
+  }
+}
+
 #filter_available:checked + .toggle {
   &:before {
     background: $primary-light2;
@@ -137,6 +147,17 @@ $gray: #9A9999;
     }
   }
 }
+#filter_available:disabled + .toggle{
+  opacity: 0.33;
+  &:before{
+    background: #9A9999;
+  }
+  span{
+    transform: translateX(0px);
+  }
+}
+
+
 #filter_latest:checked + .toggle {
   &:before {
     background: $primary-light3;
@@ -154,6 +175,16 @@ $gray: #9A9999;
     }
   }
 }
+#filter_latest:disabled + .toggle{
+  opacity: 0.33;
+  &:before{
+    background: #9A9999;
+  }
+  span{
+    transform: translateX(0px);
+  }
+}
+
 #filer_special:checked + .toggle {
   &:before {
     background: $primary-light4;
@@ -169,6 +200,15 @@ $gray: #9A9999;
       transition: all .4s ease;
       background: rgba($primary-light4, .5);
     }
+  }
+}
+#filer_special:disabled + .toggle{
+  opacity: 0.33;
+  &:before{
+    background: #9A9999;
+  }
+  span{
+    transform: translateX(0px);
   }
 }
 
