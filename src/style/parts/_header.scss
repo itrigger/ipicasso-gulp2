@@ -159,10 +159,13 @@
     padding-top: 16px;
     padding-bottom: 16px;
     .sign-block{
-      //display: none;
+      display: none;
     }
     .header--cart_block{
       display: none;
+    }
+    .signmenu .sign-block{
+      display: inherit;
     }
   }
   .logo-wrapper {
