@@ -877,12 +877,12 @@ body.sidemenu--open {
     }
   }
   .j-sidemenu-scrollbar-wrapper {
-    height: calc(100vh - 44px);
+    height: calc(100vh - 104px);
   }
 
   .j-sidemenu-scrollbar-wrapper .scrollbar-inner {
-    height: calc(100vh - 44px);
-    max-height: calc(100vh - 44px);
+    height: calc(100vh - 104px);
+    max-height: calc(100vh - 104px);
   }
   .breadcrumb li:last-child:before{
     display: none;
