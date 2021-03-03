@@ -240,7 +240,9 @@
 {
   display: none;
 }
-
+.category_in .main_filter .heading .ico-close{
+  display: none;
+}
 
 
 @media (max-width: 1659px) and (min-width: 1440px){
@@ -485,7 +487,7 @@
           width: 32px;
           height: 32px;
           cursor: pointer;
-
+          display: block;
       }
     }
     .category_content{
