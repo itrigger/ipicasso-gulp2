@@ -94,12 +94,12 @@
     $('document').ready(function () {
         $(".left_side_cat_menu li.hasSiblings>a").on('click', function (e) {
             e.preventDefault();
-            if ($(this).hasClass("expanded")) {
-                $(this).find("ul").slideUp('fast');
-                $(this).removeClass("expanded").addClass("collapsed");
+            if ($(this).parent().hasClass("expanded")) {
+                $(this).parent().find("ul").slideUp('fast');
+                $(this).parent().removeClass("expanded").addClass("collapsed");
             } else {
-                $(this).find("ul").slideDown('fast');
-                $(this).removeClass("collapsed").addClass("expanded");
+                $(this).parent().find("ul").slideDown('fast');
+                $(this).parent().removeClass("collapsed").addClass("expanded");
             }
         });
     });
