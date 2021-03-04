@@ -62,7 +62,7 @@
         watchOverflow: true,
         slideClass: 'pg-item',
     });
-    $(".pg-label").click(function (){
+    $('body').on('click','.pg-label', function (){
         $(".pagination.mobile").hasClass("active") ? $(".pagination.mobile").removeClass("active") : $(".pagination.mobile").addClass("active");
         SwiperPaginator.update();
         SwiperPaginator.slideTo($(".pagination_ul li.active").index());
