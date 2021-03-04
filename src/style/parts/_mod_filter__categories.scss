@@ -48,7 +48,7 @@
         }
       }
       ul{
-        margin-left: 8px;
+        margin-left: 25px;
         li.active{
           a{
             font-weight: 800;
@@ -89,7 +89,10 @@
         &.collapsed>a:after{
           transform: rotate(180deg);
         }
-
+        li.active a{
+          background: #fff;
+          padding-left: 0;
+        }
       }
     }
 
@@ -103,5 +106,8 @@
       padding: 4px 0;
       display: block;
     }
+  }
+  li.active ul{
+
   }
 }
