@@ -586,15 +586,23 @@
     position: fixed;
     bottom: 100px;
     left: 0;
-    z-index: 98;
+    z-index: 9998;
     display: flex;
-
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    &.sticky{
+      transition: opacity 0.3s;
+      opacity: 1;
+      pointer-events: all;
+    }
   }
   .pagination.mobile .pagination_ul{
     width: 100%;
     box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.24);
     display: flex;
-
+    border-radius: 0 20px 20px 0;
   }
   .pagination.mobile .pagination_ul ul {
     display: none;
@@ -606,6 +614,10 @@
     width: 24px;
     height: 24px;
     margin: 4px 2px;
+    &.active{
+      background: #1782E9;
+      color: #fff;
+    }
   }
   .pagination.mobile .pagination_ul ul li a{
     font-size: 16px;
