@@ -32,6 +32,13 @@ body{
   border: none;
 }
 
+/*helpers*/
+.d_f    {display: flex;}
+.fd_c   {flex-direction: column;}
+.ai_c   {align-items: center;}
+.jc_c   {justify-content: center;}
+.jc_sb  {justify-content: space-between;}
+.ai_end {align-items: flex-end;}
 /*marks*/
 .ul{
   padding: 0;
