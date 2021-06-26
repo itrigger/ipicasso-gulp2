@@ -1,11 +1,45 @@
 /*start at 92h30m at work*/
+/*start at 4h00m at home*/
 body.product {
   background: url('../img/temp_prod.png') center top no-repeat;
 }
 
 .product_img {
   grid-column: span 4;
-  padding-top: 33px;
+  padding-top: 25px;
+}
+
+.product_img--image{
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+
+
+#gallery{
+  .swiper-container{
+    padding: 0 10px;
+    .swiper-slide{
+      a{
+        display: flex;
+        width: 98px;
+        height: 98px;
+        padding: 3px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        img{
+          border-radius: 4px;
+        }
+      }
+      a.selected{
+          border: 1px solid $blue;
+      }
+    }
+  }
 }
 
 .product_desc {
@@ -214,3 +248,65 @@ body.product {
   font-size: 14px;
   line-height: 20px;
 }
+
+.pi_btns{
+  margin-top: 32px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #CDCECF;
+}
+
+.pi_like_w{
+  width: 64px;
+  height: 48px;
+}
+.pi_like {
+  background: url("../img/like_big.png") 0 0 no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 27px;
+  cursor: pointer;
+  margin-right: 15px;
+  &:hover{background: url("../img/card-ico-heart-hover.jpg") 0 0 no-repeat;}
+  &.active{background: url("../img/card-ico-heart-active.jpg") 0 0 no-repeat;}
+}
+
+/*Delivery block*/
+.pi_delivery_block{
+  margin-top: 35px;
+}
+.pi_deliv_item{
+  margin-bottom: 25px;
+}
+.pid_img{
+  width: 64px;
+  padding-right: 15px;
+}
+.pid_title{
+  font-size: 16px;
+  font-weight: bold;
+}
+.pid_link{
+  font-size: 14px;
+  color: $blue;
+}
+.pid_info{
+  font-size: 14px;
+  color: #9E9FA0;
+  margin-bottom: 4px;
+}
+.pid_price_h{
+  margin-left: auto;
+  text-align: right;
+}
+  .pid_time{
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    color: #02A246;
+  }
+  .pid_price{
+    color: #404142;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+  }
