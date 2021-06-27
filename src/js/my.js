@@ -575,6 +575,13 @@ $(document).ready(function () {
     });
 
 
+    $('.tabs_head li').on('click', function (){
+        var tab_c = $(this).attr('data-tab-content');
+        $(this).parent().find('li').removeClass('active');
+        $(this).addClass('active');
+        $(`.tab_content[data-tab=${tab_c}]`).parent().find('.tab_content').css('display','none');
+        $(`.tab_content[data-tab=${tab_c}]`).css('display','block');
+    })
 
 });
 
