@@ -158,7 +158,10 @@
             <div class="rev_comment_wall" id="2">
                 <div class="rev_form">
                     <div class="cw_name">Lera</div>
-                    <input type="text" class="cw_input" placeholder="Оставить комментарий" />
+                    <form action="">
+                        <input type="text" class="cw_input" placeholder="Оставить комментарий" />
+                        <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
+                    </form>
                 </div>
                 <div class="rev_comment">
                     <div class="d_f">
@@ -171,4 +174,80 @@
             </div>
         </div>
     </div>
+
+    <!-- Вариант с двумя фотками, комментом и формой -->
+    <div class="review_item" style="margin-top: 47px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="3" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="3">
+                <div class="rev_form">
+                    <div class="cw_name">Lera</div>
+                    <form action="" class="cw_form">
+                        <input type="text" class="cw_input" placeholder="Оставить комментарий" />
+                        <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
+                        <button class="send_comment" >Отправить</button>
+                    </form>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script>
+    $('document').ready(function (){
+        var characters_Limit = 400;
+        $('.cw_input').keyup(function() {
+            if ($(this).val().length > characters_Limit) {
+                $(this).val($(this).val().substr(0, characters_Limit));
+            }
+            $(this).parent().find('.input_counter span').text(characters_Limit - this.value.replace(/{.*}/g, '').length);
+        });
+    });
+</script>

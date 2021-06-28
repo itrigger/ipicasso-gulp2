@@ -227,7 +227,7 @@
   opacity: 0;
 }
 .rev_form{
-  margin-bottom: 40px;
+  margin-bottom: 18px;
   .cw_name{
     margin-bottom: 5px;
   }
@@ -243,4 +243,38 @@
   &:focus, &:active{
     outline: none;
   }
+}
+
+.cw_form{
+  position: relative;
+}
+
+.send_comment{
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  background: $blue;
+  border-radius: 20px;
+  padding: 7px 24px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  &.active{
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.input_counter{
+  color: #9FA0A0;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: right;
+  margin-top: 4px;
 }
