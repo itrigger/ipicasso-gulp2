@@ -84,3 +84,18 @@
 a:hover .arrow{
   background: url('../img/icon-arrow-go-focus.svg') center center no-repeat;
 }
+
+.ico{
+  display: inline-block;
+}
+.ico-like{
+  width: 22px;
+  height: 20px;
+  background: url('../img/ico-like.jpg') 0 0 no-repeat;
+}
+
+.ico-comment{
+  width: 21px;
+  height: 18px;
+  background: url('../img/ico-comment.jpg') 0 0 no-repeat;
+}

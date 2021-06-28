@@ -580,7 +580,7 @@ $(document).ready(function () {
         $(this).parent().find('li').removeClass('active');
         $(this).addClass('active');
         $(`.tab_content[data-tab=${tab_c}]`).parent().find('.tab_content').css('display','none');
-        $(`.tab_content[data-tab=${tab_c}]`).css('display','block');
+        $(`.tab_content[data-tab=${tab_c}]`).css('display','grid');
     })
 
 });
