@@ -1,7 +1,5 @@
 /node_modules
 /.vscode
 /.idea
-/build/
-/build
 /build/index.html
 /build/
