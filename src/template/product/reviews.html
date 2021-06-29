@@ -158,9 +158,12 @@
             <div class="rev_comment_wall" id="2">
                 <div class="rev_form">
                     <div class="cw_name">Lera</div>
-                    <form action="">
-                        <input type="text" class="cw_input" placeholder="Оставить комментарий" />
-                        <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
+                    <form action="" class="cw_form">
+                        <div class="d_f fd_c pos_r">
+                            <input type="text" class="cw_input cw_input_comment" placeholder="Оставить комментарий"/>
+                            <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
+                            <button class="send_comment">Отправить</button>
+                        </div>
                     </form>
                 </div>
                 <div class="rev_comment">
@@ -221,9 +224,11 @@
                 <div class="rev_form">
                     <div class="cw_name">Lera</div>
                     <form action="" class="cw_form">
-                        <input type="text" class="cw_input" placeholder="Оставить комментарий" />
-                        <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
-                        <button class="send_comment" >Отправить</button>
+                        <div class="d_f fd_c pos_r">
+                            <input type="text" class="cw_input cw_input_comment" placeholder="Оставить комментарий"/>
+                            <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
+                            <button class="send_comment">Отправить</button>
+                        </div>
                     </form>
                 </div>
                 <div class="rev_comment">
@@ -238,16 +243,693 @@
         </div>
     </div>
 
+    <!-- Вариант коммента для неавторизованного -->
+    <div class="review_item" style="margin-top: 47px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="4" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="4">
+                <div class="rev_form_unauth">
+
+                    <form action="" class="cw_form">
+                        <div class="d_f ai_end | first_line">
+                            <input type="text" class="cw_input cw_input_name" placeholder="Имя">
+                            <input type="text" class="cw_input cw_input_email" placeholder="Email">
+                            <div class="cw_login_hint">
+                                <span>Jesteś już zarejestrowany?</span>
+                                <a href="/login">Zaloguj</a> się i zostawiaj komentarze pod swoim imieniem.
+                            </div>
+                        </div>
+                        <div class="d_f fd_c pos_r">
+                            <input type="text" class="cw_input cw_input_comment" placeholder="Оставить комментарий"/>
+                            <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
+                            <button class="send_comment">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вариант с несколькими комментами -->
+    <div class="review_item" style="margin-top: 47px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="5" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="5">
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вариант с несколькими комментами -->
+    <div class="review_item" style="margin-top: 47px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="6" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="6">
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Mickey</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вариант с несколькими комментами и ответом на коммент -->
+    <div class="review_item" style="margin-top: 47px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="7" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="7">
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_form">
+                    <div class="cw_name">Sergey</div>
+                    <form action="" class="cw_form">
+                        <div class="d_f fd_c pos_r">
+                            <div class="d_f">
+                                <div class="cw_input cw_quote">Vasili,</div>
+                                <input type="text" class="cw_input cw_input_comment" placeholder="Оставить комментарий"/>
+                            </div>
+                            <div class="d_f jc_end | input_counter"><span>400</span>&nbsp;символов</div>
+                            <button class="send_comment">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Mickey</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вариант с несколькими комментами -->
+    <div class="review_item" style="margin-top: 47px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="8" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="8">
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вариант с несколькими комментами -->
+    <div class="review_item" style="margin-top: 47px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="9" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="9">
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <a href="javascript:;" class="show_hidden_comments">Показать еще <span>3</span> комментария</a>
+                <div class="rev_comment hidden">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment hidden">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment hidden">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вариант с несколькими комментами -->
+    <div class="review_item" style="margin-top: 74px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="9" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="9">
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <a href="javascript:;" class="show_hidden_comments">Показать еще <span>3</span> комментария</a>
+                <div class="rev_comment hidden">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment hidden">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment hidden">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вариант с несколькими комментами -->
+    <div class="review_item" style="margin-top: 74px;">
+        <div class="d_f jc_sb | rev_name_w">
+            <div class="rev_name">Weronika</div>
+            <div class="rev_date">05.05.2021</div>
+        </div>
+        <div class="d_f jc_sb | rev_stars_w">
+            <div class="rating-star">
+                <div class="stars star-4"></div>
+            </div>
+
+        </div>
+        <div class="d_f | rev_desc">
+            Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)
+        </div>
+        <div class="rev_posneg_w">
+            <div class="rev_posneg">
+                <div class="rev_pos">
+                    <div class="rev_pos--title">Достоинства</div>
+                    <div class="rev_pos--text">Wszystko OK!Akryle szybko schna ale pare kropel z pedzla, zamieszac i "swierze". Szybka dostawa.</div>
+                </div>
+                <div class="rev_neg">
+                    <div class="rev_neg--title">Недостатки</div>
+                    <div class="rev_neg--text">Słabo napigmentowane farby - zbyt ciepłe kolory</div>
+                </div>
+                <div class="rev_like_comment d_f">
+                    <a href="javascript:;" class="d_f ai_c">
+                        <span class="ico ico-like"></span>
+                        <span class="count">3</span>
+                    </a>
+                    <a href="javascript:;" data-commentwall="9" class="d_f ai_c">
+                        <span class="ico ico-comment"></span>
+                        <span class="title">Komentowac</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rev_imgs">
+                <div class="rev_img">
+                    <a href="#"><img src="../img/product/review_img.jpg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="rev_comment_wall" id="9">
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Vasili</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment ">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment ">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+                <div class="rev_comment ">
+                    <div class="d_f">
+                        <div class="cw_name">Lera</div>
+                        <div class="cw_date">05.10.2020</div>
+                    </div>
+                    <div class="cw_text">Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</div>
+                    <div class="cw_btn">Ответить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rev_bottom">
+        <div class="d_f jc_sb">
+            <div class="rev_bottom--title">Поделитесь своим мнением о товаре.</div>
+            <a href="javascript:;" class="btn rev_write">Написать отзыв</a>
+        </div>
+    </div>
+
 </div>
 
 <script>
-    $('document').ready(function (){
+    $('document').ready(function () {
         var characters_Limit = 400;
-        $('.cw_input').keyup(function() {
+        $('.cw_input_comment').keyup(function () {
+            if ($(this).val().length > 0) {
+                $(this).parent().parent().find('.send_comment').addClass('active');
+            } else {
+                $(this).parent().parent().find('.send_comment').removeClass('active');
+            }
             if ($(this).val().length > characters_Limit) {
                 $(this).val($(this).val().substr(0, characters_Limit));
             }
-            $(this).parent().find('.input_counter span').text(characters_Limit - this.value.replace(/{.*}/g, '').length);
+            $(this).parent().parent().find('.input_counter span').text(characters_Limit - this.value.replace(/{.*}/g, '').length);
         });
+
+        $('.show_hidden_comments').on('click', function (){
+            $(this).parent().find('.rev_comment').each(function (){
+                $(this).removeClass('hidden');
+            })
+            $(this).remove();
+        });
+
     });
 </script>

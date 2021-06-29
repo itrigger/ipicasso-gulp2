@@ -1,7 +1,7 @@
 /*start at 92h30m at work*/
 /*start at 4h00m at home*/
 body.product {
-  background: url('../img/temp_prod.png') center top no-repeat;
+ // background: url('../img/temp_prod.png') center top no-repeat;
 }
 
 .product_img {
@@ -452,5 +452,7 @@ body.product {
   box-shadow: 0 12px 16px -8px rgba(0,0,0,0.24);
   &:hover{
     color: #fff;
+    background: #0E64B7;
+    transition: .2s all;
   }
 }
