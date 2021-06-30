@@ -577,9 +577,9 @@
         <div class="p_tabs">
             <div class="tabs_head">
                 <ul>
-                    <li class="active" data-tab-content="1">Description</li>
+                    <li data-tab-content="1">Description</li>
                     <li data-tab-content="2">Reviews (3)</li>
-                    <li data-tab-content="3">Related products</li>
+                    <li class="active" data-tab-content="3">Related products</li>
                 </ul>
             </div>
             <div class="tabs_content_w">
@@ -673,10 +673,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab_content" data-tab="2" style="display: grid;">
+                <div class="tab_content" data-tab="2" style="display: none;">
                     //= template/product/reviews.html
                 </div>
-                <div class="tab_content" data-tab="3" style="display: none;">tab 3</div>
+                <div class="tab_content" data-tab="3" style="display: grid;">
+                    //= template/product/related.html
+                </div>
             </div>
         </div>
 

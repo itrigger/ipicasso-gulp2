@@ -456,3 +456,17 @@ body.product {
     transition: .2s all;
   }
 }
+
+.tab_in{
+  grid-column: 1 / -1;
+}
+
+.tab_content{
+  h2{
+    margin: 0;
+  }
+  .tabs_w{
+    margin-top: 20px;
+    padding: 0;
+  }
+}
