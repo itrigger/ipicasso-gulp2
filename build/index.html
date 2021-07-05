@@ -29,6 +29,13 @@
             crossorigin="anonymous"></script>
     <script src="js/vendor/swiper-bundle.min.js"></script>
     
+    
+    <link
+            rel="stylesheet"
+            href="libs/fancybox.min.css"
+    />
+    
+    
     <title>Home</title>
     
     <script>
@@ -2527,7 +2534,7 @@
     $(document).ready(function () {
         const media_all_slides_array = []; //все слайды карусельки с акциями
 
-        /*карусель для модуля медиацентр на главно��*/
+        /*карусель для модуля медиацентр на главной*/
         if (media_default_slides_array.length > 0) {
             for (const [i, arr] of media_default_slides_array.entries()) {
                 media_all_slides_array.push(arr['html'])
@@ -2679,6 +2686,7 @@
 <script src="/js/vendor/hoverintent.js"></script>
 <script src="/js/vendor/scrollbar.min.js"></script>
 <script src="/js/vendor/tooltipster.bundle.min.js"></script>
+<script src="/js/vendor/fancybox3.min.js"></script>
 
 <script src="js/my.js"></script>
 </body>

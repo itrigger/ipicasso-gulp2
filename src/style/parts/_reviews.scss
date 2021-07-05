@@ -370,3 +370,109 @@
   line-height: 24px;
   margin-top: 10px;
 }
+
+.rev_comment_link{
+  position: relative;
+  padding-right: 20px;
+  &:after{
+    content: '';
+    display: block;
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('../img/comment_arr.jpg') 0 0 no-repeat;
+    opacity: 0;
+  }
+  &:hover, &.active {
+    &:after{
+      opacity: 1;
+    }
+    .title{
+      color: $blue;
+    }
+    .ico-comment {
+      background: url('../img/ic-comment-active.svg') 0 0 no-repeat;
+    }
+  }
+}
+
+.rev_like_link{
+  &:hover, &.active {
+    .title{
+      color: $blue;
+    }
+    .ico-like {
+      background: url('../img/ic-like-active.svg') 0 0 no-repeat;
+    }
+  }
+}
+
+
+.textarea {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 33px;
+  line-height: 20px;
+  cursor: text;
+  border-bottom: 1px solid #ccc;
+  &:focus, &:active{
+    outline: none;
+  }
+}
+
+.textarea[contenteditable]:empty::before {
+  color: gray;
+}
+
+#add_reivew_form_w.fancybox-content{
+  padding: 0;
+}
+
+.review_form{
+  width: 620px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
+  grid-gap: 20px;
+  form{
+    grid-column: span 4;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    display: grid;
+  }
+  h3{
+    grid-column: span 4;
+  }
+}
+
+.rev_form_comment{
+  grid-column: 1 / -1;
+}
+
+.rev_form_pos{
+  grid-column: 1 / span 2;
+  .title{
+    color: #00A246;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-bottom: 16px;
+  }
+}
+.rev_form_neg{
+  grid-column: 3 / span 2;
+  .title{
+    color: #F44436;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-bottom: 16px;
+  }
+}

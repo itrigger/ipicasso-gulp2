@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="19px" viewBox="0 0 21 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic-comment-normal</title>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Product-page-2" transform="translate(-345.000000, -1765.000000)">
+            <g id="ic-comment-normal" transform="translate(346.000000, 1765.000000)">
+                <rect id="Rectangle" stroke="#404142" stroke-width="2" x="1" y="1" width="18" height="14" rx="7"></rect>
+                <polygon id="Path-4" fill="#FFFFFF" points="3.21766282 9 1.37864492 11.0042074 0.358117531 15.4766545 0.724629664 17.0297289 5.84178349 14.2496476 9.41219953 10.4992952"></polygon>
+                <polyline id="Path-3" stroke="#404142" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="1.55477154 10.4992952 3.63797881e-12 17.0297289 5.84178349 14.5760457"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
