@@ -914,54 +914,84 @@
     <div class="review_form">
         <h3>Ваш отзыв о товаре:</h3>
         <form action="">
-                <div class="rev_form_comment">
-                    <span class="textarea | rev_form_text" role="textbox" data-length="100" contenteditable></span>
-                    <div class="d_f jc_end | input_counter"><span>100</span>&nbsp;символов</div>
+            <div class="rev_form_comment">
+                <span class="textarea | rev_form_text" role="textbox" data-length="100" contenteditable></span>
+                <div class="d_f jc_end | input_counter"><span>100</span>&nbsp;символов</div>
+            </div>
+            <div class="rev_form_pos">
+                <div class="title">Достоинства</div>
+                <span class="textarea | rev_form_pos" role="textbox" data-length="100" contenteditable></span>
+                <div class="d_f jc_end | input_counter"><span>100</span>&nbsp;символов</div>
+            </div>
+            <div class="rev_form_neg">
+                <div class="title">Недостатки</div>
+                <span class="textarea | rev_form_neg" role="textbox" data-length="100" contenteditable></span>
+                <div class="d_f jc_end | input_counter"><span>100</span>&nbsp;символов</div>
+            </div>
+            <div class="rev_form_rating">
+                <div class="title">Рейтинг</div>
+                <div class="rating-star rating-selectable">
+                    <div class="stars star-0"></div>
                 </div>
-                <div class="rev_form_pos">
-                    <div class="title">Достоинства</div>
-                    <span class="textarea | rev_form_pos" role="textbox" data-length="100" contenteditable></span>
-                    <div class="d_f jc_end | input_counter"><span>100</span>&nbsp;символов</div>
-                </div>
-                <div class="rev_form_neg">
-                    <div class="title">Недостатки</div>
-                    <span class="textarea | rev_form_neg" role="textbox" data-length="100" contenteditable></span>
-                    <div class="d_f jc_end | input_counter"><span>100</span>&nbsp;символов</div>
-                </div>
-                <div class="rev_form_rating">
-                    <div class="title">Рейтинг</div>
-                    <div class="star">
+            </div>
+            <div class="rev_form_photoblock">
 
-                    </div>
-                </div>
-                <div class="rev_form_photoblock">
-
-                </div>
+            </div>
 
         </form>
     </div>
 </div>
 
 <style>
-    .rev_form_text[contenteditable]:empty::before { content: "Поделитесь своим мнением о товаре"; }
-    .rev_form_pos[contenteditable]:empty::before { content: "Опишите плюсы товара"; }
-    .rev_form_neg[contenteditable]:empty::before { content: "Опишите минусы товара"; }
+    .rev_form_text[contenteditable]:empty::before {
+        content: "Поделитесь своим мнением о товаре";
+    }
+
+    .rev_form_pos[contenteditable]:empty::before {
+        content: "Опишите плюсы товара";
+    }
+
+    .rev_form_neg[contenteditable]:empty::before {
+        content: "Опишите минусы товара";
+    }
 </style>
 
 <script>
     $('document').ready(function () {
 
-        $(".rev_write").on('click', function (){
+        $(".rating-selectable").on('click', function (e) {
+            let parentOffset = $(this).offset();
+            let relX = e.pageX - parentOffset.left;
+            console.log(relX)
+            if (relX > 0 && relX < 29) {
+                $(this).find('.stars').removeClass();
+                $(this).find('div').addClass('stars star-1')
+            } else if(relX > 28 && relX < 57){
+                $(this).find('.stars').removeClass();
+                $(this).find('div').addClass('stars star-2')
+            } else if(relX > 57 && relX < 85){
+                $(this).find('.stars').removeClass();
+                $(this).find('div').addClass('stars star-3')
+            } else if(relX > 85 && relX < 113){
+                $(this).find('.stars').removeClass();
+                $(this).find('div').addClass('stars star-4')
+            } else if(relX > 113 && relX < 141){
+                $(this).find('.stars').removeClass();
+                $(this).find('div').addClass('stars star-5')
+            }
+
+        });
+
+        $(".rev_write").on('click', function () {
             $.fancybox.open({
-                src  : '#add_reivew_form_w',
-                type : 'inline',
-                opts : {
+                src: '#add_reivew_form_w',
+                type: 'inline',
+                opts: {
                     touch: false,
                     keyboard: false
                 },
             });
         })
-
 
 
         $('.cw_input_comment').keyup(function () {
@@ -977,8 +1007,8 @@
             $(this).parent().parent().find('.input_counter span').text(characters_Limit - this.value.replace(/{.*}/g, '').length);
         });
 
-        $('.show_hidden_comments').on('click', function (){
-            $(this).parent().find('.rev_comment').each(function (){
+        $('.show_hidden_comments').on('click', function () {
+            $(this).parent().find('.rev_comment').each(function () {
                 $(this).removeClass('hidden');
             })
             $(this).remove();

@@ -476,3 +476,20 @@
     margin-bottom: 16px;
   }
 }
+
+.rev_form_rating{
+  .title{
+    margin-bottom: 10px;
+    font-weight: 800;
+  }
+  .rating-star{
+    width: 140px;
+    height: 28px;
+    background-size: 140px 28px;
+    cursor: pointer;
+    .stars{
+      background-size: 140px 28px;
+      height: 28px;
+    }
+  }
+}
