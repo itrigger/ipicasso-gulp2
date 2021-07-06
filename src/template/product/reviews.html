@@ -912,6 +912,7 @@
 
 <div id="add_reivew_form_w" style="display:none;">
     <div class="review_form">
+        <div class="rev_form_quest"></div>
         <h3>Ваш отзыв о товаре:</h3>
         <form action="">
             <div class="rev_form_comment">
@@ -935,7 +936,27 @@
                 </div>
             </div>
             <div class="rev_form_photoblock">
+                <div class="title">Прикрепите фото:</div>
+                <div class="d_f ai_c col-2">
+                    <div class="rev_form_photo_target">
+                        <span class="ico ico-add-photo"></span>
+                    </div>
+                    <div class="rev_form_photoblock_desc">
+                        <div class="desc">Нажмите на кнопку, <span>чтобы добавить фото</span></div>
+                        <div class="hint">до 5 изоображений <span>в формате PNG, JPEG</span></div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="rev_form_irecommend col-4">
+                <label for="irecommend">
+                    <input type="checkbox" id="irecommend">
+                    Я рекомендую этот товар
+                </label>
+            </div>
+
+            <div class="rev_form_btn col-4">
+                <a href="javascript:;" class="btn btn-big">Отправить отзыв</a>
             </div>
 
         </form>
@@ -958,6 +979,28 @@
 
 <script>
     $('document').ready(function () {
+
+        $('.rev_form_quest').tooltipster({
+            animation: 'fade',
+            animationDuration: 150,
+            multiple: true,
+            interactive: true,
+            side: 'left',
+            maxWidth: 380,
+            trigger: ('ontouchstart' in window) ? 'click' : 'hover',
+            content: $('<p>Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</p>\n' +
+                '\n' +
+                '<p>Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</p>\n' +
+                '\n' +
+                '<p>Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</p>\n' +
+                '\n' +
+                '<p>Obraz przepiękny!!! Wymagający ze względu na ilość kolorów i szczegóły (dałabym mu poziom trudności 4), ale dający dużo satysfakcji :)</p>'),
+            functionPosition: function(instance, helper, position){
+                position.coord.top += 10;
+                position.coord.left += 10;
+                return position;
+            }
+        });
 
         $(".rating-selectable").on('click', function (e) {
             let parentOffset = $(this).offset();

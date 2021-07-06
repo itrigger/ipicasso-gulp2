@@ -431,14 +431,20 @@
 
 #add_reivew_form_w.fancybox-content{
   padding: 0;
+  border-radius: 8px;
+  .fancybox-close-small{
+    right: 20px;
+    top: 20px;
+  }
 }
 
 .review_form{
   width: 620px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 20px;
+  padding: 30px 40px 40px;
   grid-gap: 20px;
+  border-radius: 8px;
   form{
     grid-column: span 4;
     grid-template-columns: repeat(4, 1fr);
@@ -447,6 +453,10 @@
   }
   h3{
     grid-column: span 4;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0;
   }
 }
 
@@ -478,6 +488,7 @@
 }
 
 .rev_form_rating{
+  grid-column: 1 / -1;
   .title{
     margin-bottom: 10px;
     font-weight: 800;
@@ -492,4 +503,64 @@
       height: 28px;
     }
   }
+}
+
+.rev_form_photoblock{
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  display: grid;
+  .title{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 20px;
+    margin-bottom: 10px;
+    grid-column: 1 / -1;
+  }
+}
+
+.rev_form_photo_target{
+  cursor: pointer;
+  width: 102px;
+  min-width: 102px;
+  height: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #CDCECF;
+  border-radius: 4px;
+  margin-right: 15px;
+  &:hover{
+    .ico-add-photo{
+      background: url('../img/ic-add-photo-active.svg') 0 0 no-repeat;
+    }
+  }
+}
+
+.rev_form_photoblock_desc{
+  .desc{
+    font-size: 14px;
+    line-height: 18px;
+    span{
+      display: block;
+    }
+  }
+  .hint{
+    color: #9FA0A0;
+    font-size: 12px;
+    line-height: 16px;
+    span{
+      display: block;
+    }
+  }
+}
+
+.rev_form_quest{
+  width: 24px;
+  height: 24px;
+  background: url("../img/ic-help.svg") 0 0 no-repeat;
+  position: absolute;
+  right: 70px;
+  top: 30px;
+  cursor: pointer;
 }
