@@ -564,3 +564,63 @@
   top: 30px;
   cursor: pointer;
 }
+
+
+.irecommend + label{
+  color: #404142;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  span{
+    font-size: 11px;
+    color: #9E9FA0;
+  }
+}
+.irecommend:checked+label{
+
+}
+
+.irecommend:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.irecommend:not(checked)+label {
+  padding: 0 10px 0 44px;
+  position: relative;
+}
+.irecommend:not(checked)+label:before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+.irecommend+label:before{
+  border: 1px solid #404142;
+}
+.irecommend:checked+label:hover:before, .irecommend:checked+label:before {
+  background: url("../img/cb-active.png");
+}
+.irecommend:not(checked)+label:hover:before{
+  border: 1px solid #00A246;
+}
+.irecommend:disabled:checked+label:hover:before{
+  background: url("../img/cb-active.png");
+  opacity: 0.5;
+}
+.irecommend:disabled+label {
+  color: #a4a4a4 !important;
+  cursor: default;
+}
+.irecommend:disabled:checked+label:before {
+  background: url("../img/cb-active.png");
+  opacity: 0.5;
+}
+.irecommend:disabled+label:before, .irecommend:disabled+label:hover:before{
+  border: 1px solid #404142;
+  opacity: 0.8;
+}
