@@ -88,14 +88,26 @@ a:hover .arrow{
 .ico{
   display: inline-block;
 }
+.ico-left{
+  margin-right: 5px;
+}
 .ico-like{
-  width: 22px;
-  height: 20px;
-  background: url('../img/ico-like.jpg') 0 0 no-repeat;
+  width: 24px;
+  height: 24px;
+  background: url('../img/ic-like-normal.svg') 0 0 no-repeat;
 }
 
 .ico-comment{
   width: 21px;
   height: 18px;
-  background: url('../img/ico-comment.jpg') 0 0 no-repeat;
+  background: url('../img/ic-comment-normal.svg') 0 0 no-repeat;
+  &:hover, &.active{
+    background: url('../img/ic-comment-active.svg') 0 0 no-repeat;
+  }
+}
+
+.ico-recommend{
+  width: 24px;
+  height: 24px;
+  background: url('../img/ic-verified.svg') 0 0 no-repeat;
 }
