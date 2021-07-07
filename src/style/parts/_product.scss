@@ -18,12 +18,13 @@ body.product {
 }
 .image-additional{
   position: relative;
+
 }
 
 
 #gallery{
+  padding: 0 18px;
   .swiper-container{
-    padding: 0 10px;
     .swiper-slide{
       a{
         display: flex;
@@ -41,6 +42,22 @@ body.product {
           border: 1px solid $blue;
       }
     }
+  }
+  .swiper-button-prev,
+  .swiper-button-next
+  {
+    width: 16px;
+    height: 16px;
+    background: url("../img/pp_slide_arr.png") 0 0 no-repeat;
+  }
+  .swiper-button-prev{
+    top: 65%;
+    left: 0;
+  }
+  .swiper-button-next{
+    top: 65%;
+    right: 0;
+    transform: rotate(180deg);
   }
 }
 
@@ -234,7 +251,9 @@ body.product {
 
 
 .product_info{
-
+  .labels{
+    margin: 10px 0 20px;
+  }
 }
 
 .pi_price{
@@ -244,11 +263,24 @@ body.product {
     font-size: 24px;
     font-weight: normal;
   }
+  .new-price{
+    color: #F44436;
+  }
+  .old-price{
+    font-weight: normal;
+    color: rgba(#404142,.5);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-decoration: line-through;
+  }
 }
+
 
 .pi_stock{
   font-size: 14px;
   line-height: 20px;
+  padding-top: 13px;
 }
 
 .pi_btns{
@@ -262,14 +294,13 @@ body.product {
   height: 48px;
 }
 .pi_like {
-  background: url("../img/like_big.png") 0 0 no-repeat;
+  background: url("../img/ic-heartbig-normal.svg") 0 0 no-repeat;
   background-size: contain;
-  width: 30px;
-  height: 27px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-  margin-right: 15px;
-  &:hover{background: url("../img/card-ico-heart-hover.jpg") 0 0 no-repeat;}
-  &.active{background: url("../img/card-ico-heart-active.jpg") 0 0 no-repeat;}
+  &:hover{background: url("../img/ic-heartbig-focused.svg") 0 0 no-repeat;}
+  &.active{background: url("../img/ic-heartbig-selected.svg") 0 0 no-repeat;}
 }
 
 /*Delivery block*/

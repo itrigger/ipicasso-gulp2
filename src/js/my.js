@@ -583,7 +583,15 @@ $(document).ready(function () {
         $(`.tab_content[data-tab=${tab_c}]`).css('display','grid');
     })
 
-});
+    // common scroll to script
+    // чтобы сделать якорь, нужно создать тег "а", указать ему класс scrollto, а в атрибут href вписать id целевого элемента (включая решетку #)
+    $(".scrollto").on('click', function (e){
+        e.preventDefault();
+        var target = $(this).attr('href');
+        $("html").animate({scrollTop: $($(target)).offset().top},800);
+    })
+
+}); //document ready
 
 
 //https://github.com/hsynlms/zeynepjs

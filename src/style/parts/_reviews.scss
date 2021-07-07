@@ -452,7 +452,6 @@
     display: grid;
   }
   h3{
-    grid-column: span 4;
     font-size: 24px;
     font-weight: bold;
     line-height: 30px;
@@ -489,6 +488,7 @@
 
 .rev_form_rating{
   grid-column: 1 / -1;
+  margin-bottom: 15px;
   .title{
     margin-bottom: 10px;
     font-weight: 800;
@@ -517,6 +517,14 @@
     margin-bottom: 10px;
     grid-column: 1 / -1;
   }
+}
+
+.rev_form_photo_counter{
+  color: #9FA0A0;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-align: right;
 }
 
 .rev_form_photo_target{
@@ -565,6 +573,9 @@
   cursor: pointer;
 }
 
+.rev_form_irecommend{
+  margin: 10px 0;
+}
 
 .irecommend + label{
   color: #404142;
@@ -603,13 +614,15 @@
   border: 1px solid #404142;
 }
 .irecommend:checked+label:hover:before, .irecommend:checked+label:before {
-  background: url("../img/cb-active.png");
+  background: url("../img/irecom-cb.png");
+  border: 1px solid #00A246;
 }
 .irecommend:not(checked)+label:hover:before{
   border: 1px solid #00A246;
 }
 .irecommend:disabled:checked+label:hover:before{
-  background: url("../img/cb-active.png");
+  background: url("../img/irecom-cb.png");
+  border: 1px solid #00A246;
   opacity: 0.5;
 }
 .irecommend:disabled+label {
@@ -617,7 +630,8 @@
   cursor: default;
 }
 .irecommend:disabled:checked+label:before {
-  background: url("../img/cb-active.png");
+  background: url("../img/irecom-cb.png");
+  border: 1px solid #00A246;
   opacity: 0.5;
 }
 .irecommend:disabled+label:before, .irecommend:disabled+label:hover:before{

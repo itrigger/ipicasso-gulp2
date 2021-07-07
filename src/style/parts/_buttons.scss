@@ -25,6 +25,15 @@
       transition: .2s all;
     }
   }
+  &.btn-yellow{
+    background: #FFC31A;
+    color: #404142;
+    transition: .2s all;
+    &:hover{
+      background: #f3b80d;
+      transition: .2s all;
+    }
+  }
 }
 .btn-bordered{
   border: 1px solid $borderGrey;
@@ -34,6 +43,7 @@
   font-weight: bold;
   line-height: 20px;
 }
+
 
 
 

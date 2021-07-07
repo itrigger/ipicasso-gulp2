@@ -253,24 +253,94 @@
         </div>
 
         <div class="pd_detailed_specification">
-            <a href="#detailed_specification" class="title">Detailed specification</a>
+            <a href="#detailed_specification" class="title scrollto">Detailed specification</a>
         </div>
 
     </div>
     <div class="product_info">
-        <div class="d_f jc_sb ai_end">
+
+        <!-- -->
+        <!-- Вариант 1. Базовый. Товар без ярлыков. В наличии -->
+        <!--
+
+        <div class="d_f jc_sb">
             <div class="pi_price">90.00 <span>zt</span></div>
-            <div class="pi_stock instock">in stock</div>
+            <div class="d_f ai_top | pi_stock"><span class="ico ico-left ico-instock"></span>In stock</div>
         </div>
-        <!--<div class="d_f jc_sb">
+
+         -->
+        <!-- -->
+        <!-- -->
+
+        <!-- -->
+        <!-- Вариант 2. С ярлыками. В наличии -->
+        <!--
+
+        <div class="labels">
+            <span class="label label--new">new</span>
+            <span class="label label--outofstock">out of stock</span>
+        </div>
+        <div class="d_f jc_sb">
+            <div class="pi_price">90.00 <span>zt</span></div>
+            <div class="d_f ai_top | pi_stock"><span class="ico ico-left ico-instock"></span>In stock</div>
+        </div>
+
+        -->
+        <!-- -->
+        <!-- -->
+
+        <!-- -->
+        <!-- Вариант 3. С ярлыками. С дисконтом -->
+        <!--
+
+        <div class="labels">
+            <span class="label label--new">new</span>
+            <span class="label label--discount">-10%</span>
+        </div>
+        <div class="d_f jc_sb">
             <div class="pi_price">
-                <div class="label label&#45;&#45;new">new</div>
-                90.00 <span>zt</span>
+                <div class="new-price">90.00 <span>zt</span></div>
+                <div class="old-price">99.00 zt</div>
             </div>
-            <div class="pi_stock">Available from 31.05.2021</div>
-        </div>-->
+            <div class="d_f ai_top | pi_stock"><span class="ico ico-left ico-instock"></span>In stock</div>
+        </div>
+
+          -->
+        <!-- -->
+        <!-- -->
+
+
+        <!-- -->
+        <!-- Вариант 4. Ожидается поступление -->
+        <!-- -->
+
+        <div class="labels">
+            <span class="label label--discount">-10%</span>
+            <span class="label label--soon">coming soon</span>
+        </div>
+        <div class="d_f jc_sb">
+            <div class="pi_price">
+                <div class="new-price">90.00 <span>zt</span></div>
+                <div class="old-price">99.00 zt</div>
+            </div>
+            <div class="d_f ai_top | pi_stock">Available from 06.09.2021</div>
+        </div>
+
+        <!-- -->
+        <!-- -->
+        <!-- -->
+
         <div class="pi_btns d_f">
+            <div class="cartbutton"><div class="newcartbtn_w" style="display: none;">
+                <a href="/cart/" class="newcartbtn">W koszyku <span><i>0</i> szt.</span><div class="getcarthint">PRZEJŹ DO KOSZYKA</div></a><div class="plusone hint tooltipstered">+1</div></div>
+                <a type="button" title="Do Koszyka" id="button-cart" class="btn btn-big "> Do Koszyka</a></div>
+
+            <!--
             <a href="#" class="btn btn-big">В корзину</a>
+            -->
+            <!--
+            <a href="#" class="btn btn-big btn-yellow">Сообщить о поступлении</a>
+            -->
             <div class="pi_like_w d_f jc_c ai_c">
                 <div class="pi_like"></div>
             </div>
@@ -574,16 +644,16 @@
             <div class="swiper-button-next"></div>
         </div>
 
-        <div class="p_tabs">
+        <div class="p_tabs" id="detailed_specification">
             <div class="tabs_head">
                 <ul>
-                    <li data-tab-content="1">Description</li>
-                    <li class="active" data-tab-content="2">Reviews (3)</li>
+                    <li class="active" data-tab-content="1">Description</li>
+                    <li data-tab-content="2">Reviews (3)</li>
                     <li data-tab-content="3">Related products</li>
                 </ul>
             </div>
             <div class="tabs_content_w">
-                <div class="tab_content" data-tab="1" style="display: none;">
+                <div class="tab_content" data-tab="1" style="display: grid;">
                     <div class="p_desc_w">
                         <h2>Zwierciadło duszy</h2>
                         <p>Nie ma bardziej obrazowego i barwnego rodzaju wyrażania emocji oraz uczuć niż malarstwo.
@@ -673,7 +743,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab_content" data-tab="2" style="display: grid;">
+                <div class="tab_content" data-tab="2" style="display: none;">
                     //= template/product/reviews.html
                 </div>
                 <div class="tab_content" data-tab="3" style="display: none;">
@@ -687,7 +757,7 @@
 
 <script>
     $('document').ready(function () {
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('#gallery .swiper-container', {
             slidesPerView: 5,
             speed: 400,
             navigation: {
