@@ -26,6 +26,9 @@ a{
   &:hover{
     color: $blue;
   }
+  &:focus, &:active{
+    outline: none;
+  }
 }
 
 /*Хаотичная разметка по дизайну*/

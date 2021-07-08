@@ -575,7 +575,7 @@ $(document).ready(function () {
     });
 
 
-    $('.tabs_head li').on('click', function (){
+    $('li').on('click', function (){
         var tab_c = $(this).attr('data-tab-content');
         $(this).parent().find('li').removeClass('active');
         $(this).addClass('active');

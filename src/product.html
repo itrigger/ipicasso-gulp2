@@ -64,7 +64,7 @@
 
 
 <div class="in">
-    <div class="product_img">
+    <div class="product_img col-4 l-col-4">
         <div class="product_img--image">
             <a href="../img/product/00000005031-800x800.jpg" class="colorbox"
                id="zoom_link1">
@@ -205,7 +205,7 @@
             </div>
         </div>
     </div>
-    <div class="product_desc">
+    <div class="product_desc col-4 l-col-3">
         <div class="pd_title">Mirror of the soul</div>
         <div class="pd_title_code_w d_f">
             <div class="grey">PC5065062</div>
@@ -219,6 +219,61 @@
             </div>
             <div class="pd_review_count"><a href="#">14 reviews</a></div>
             <div class="pd_share"></div>
+        </div>
+
+        <div class="pd_new_sale">
+            <ul class="tab_btns">
+                <li data-tab-content="11" class="active">Новые</li>
+                <li data-tab-content="12">Уцененные</li>
+            </ul>
+            <div class="tabs_content_w">
+                <div class="tab_content" data-tab="11" style="display: grid;"></div>
+                <div class="tab_content" data-tab="12" style="display: none;">
+                    <ul class="sale_ul">
+                        <li class="active">
+                            <div class="desc">
+                                Краткое описание уцененного товара, основные
+                                дефекты и так далее.
+                                <div class="link_more">Подробнее</div>
+                            </div>
+                            <div class="price">80.00 <span>zt</span></div>
+                        </li>
+                        <li>
+                            <div class="desc">
+                                Краткое описание уцененного товара, основные
+                                дефекты и так далее.
+                                <div class="link_more">Подробнее</div>
+                            </div>
+                            <div class="price">85.00 <span>zt</span></div>
+                        </li>
+                        <li class="hidden">
+                            <div class="desc">
+                                Краткое описание уцененного товара, основные
+                                дефекты и так далее.
+                                <div class="link_more">Подробнее</div>
+                            </div>
+                            <div class="price">85.00 <span>zt</span></div>
+                        </li>
+                        <li class="hidden">
+                            <div class="desc">
+                                Краткое описание уцененного товара, основные
+                                дефекты и так далее.
+                                <div class="link_more">Подробнее</div>
+                            </div>
+                            <div class="price">85.00 <span>zt</span></div>
+                        </li>
+                        <li class="hidden">
+                            <div class="desc">
+                                Краткое описание уцененного товара, основные
+                                дефекты и так далее.
+                                <div class="link_more">Подробнее</div>
+                            </div>
+                            <div class="price">85.00 <span>zt</span></div>
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="show_hidden_saleitems col-4">еще <span>3</span> товара</a>
+                </div>
+            </div>
         </div>
 
         <div class="pd_specification">
@@ -257,7 +312,7 @@
         </div>
 
     </div>
-    <div class="product_info">
+    <div class="product_info col-4 l-col-3">
 
         <!-- -->
         <!-- Вариант 1. Базовый. Товар без ярлыков. В наличии -->
@@ -331,13 +386,17 @@
         <!-- -->
 
         <div class="pi_btns d_f">
-            <div class="cartbutton"><div class="newcartbtn_w" style="display: none;">
-                <a href="/cart/" class="newcartbtn">W koszyku <span><i>0</i> szt.</span><div class="getcarthint">PRZEJŹ DO KOSZYKA</div></a><div class="plusone hint tooltipstered">+1</div></div>
-                <a type="button" title="Do Koszyka" id="button-cart" class="btn btn-big "> Do Koszyka</a></div>
+            <div class="cartbutton">
+                <div class="newcartbtn_w" style="display: none;">
+                    <div class="plusone hint tooltipstered">+1</div>
+                    <a href="/cart/" class="newcartbtn btn-big">
+                        <div class="getcarthint">В корзине <span><i>1</i> шт.</span></div>
+                        Оформить заказ
+                    </a>
+                </div>
+                <a type="button" title="Do Koszyka" id="button-cart" class="btn btn-big">В корзину</a>
+            </div>
 
-            <!--
-            <a href="#" class="btn btn-big">В корзину</a>
-            -->
             <!--
             <a href="#" class="btn btn-big btn-yellow">Сообщить о поступлении</a>
             -->
@@ -755,8 +814,112 @@
     </div>
 </div>
 
+<div id="popup_sale_item" style="display: none;">
+    <div class="review_form">
+        <div class="col-4">
+            <h3>Информация об уцененном товаре<br> Mirror of the soul</h3>
+        </div>
+
+        <div class="col-4">
+            <div class="psi-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+        </div>
+
+        <div class="pd_specification col-4">
+            <ul class="pd_specification_ul">
+                <li>
+                    <span class="text">Brand</span>
+                    <span class="page"><a href="#">Picasso</a></span>
+                </li>
+                <li>
+                    <span class="text">Subject</span>
+                    <span class="page">People and Animals</span>
+                </li>
+                <li>
+                    <span class="text">Number of colors</span>
+                    <span class="page">42</span>
+                </li>
+                <li>
+                    <span class="text">Picture format</span>
+                    <span class="page">Single</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="psi_mini_gallery col-4">
+            <a href="https://ipicasso.pl/image/cache/data/goods/00000005031_2-800x800.jpg"
+                    title="Zwierciadło duszy"
+                    data="https://ipicasso.pl/image/cache/data/goods/00000005031_2-94x76.jpg"
+                    data-image="https://ipicasso.pl/image/cache/data/goods/00000005031_2-460x347.jpg"
+                    data-zoom-image="">
+                <img src="../img/product/00000005031_2-94x76.jpg"
+                     title="Zwierciadło duszy malowanie po numerach"
+                     alt="Zwierciadło duszy malowanie po numerach">
+            </a>
+            <a href="https://ipicasso.pl/image/cache/data/goods/00000005031_3-800x800.jpg"
+                    title="Zwierciadło duszy"
+                    data="https://ipicasso.pl/image/cache/data/goods/00000005031_3-94x76.jpg"
+                    data-image="https://ipicasso.pl/image/cache/data/goods/00000005031_3-460x347.jpg"
+                    data-zoom-image="">
+                <img src="../img/product/00000005031_3-94x76.jpg"
+                     title="Zwierciadło duszy malowanie po numerach"
+                     alt="Zwierciadło duszy malowanie po numerach">
+            </a>
+            <a href="../img/product/00000005031_4-800x800.jpg"
+                    title="Zwierciadło duszy"
+                    data="../img/product/00000005031_4-94x76.jpg"
+                    data-image="../img/product/00000005031_4-460x347.jpg"
+                    data-zoom-image="">
+                <img src="../img/product/00000005031_4-94x76.jpg"
+                     title="Zwierciadło duszy malowanie po numerach"
+                     alt="Zwierciadło duszy malowanie po numerach">
+            </a>
+            <a href="../img/product/00000005031_5-800x800.jpg"
+                    title="Zwierciadło duszy"
+                    data="../img/product/00000005031_5-94x76.jpg"
+                    data-image="../img/product/00000005031_5-460x347.jpg"
+                    data-zoom-image="">
+                <img src="../img/product/00000005031_5-94x76.jpg"
+                     title="Zwierciadło duszy malowanie po numerach"
+                     alt="Zwierciadło duszy malowanie po numerach">
+            </a>
+            <a href="https://ipicasso.pl/image/cache/data/goods/00000005031_3-800x800.jpg"
+               title="Zwierciadło duszy"
+               data="https://ipicasso.pl/image/cache/data/goods/00000005031_3-94x76.jpg"
+               data-image="https://ipicasso.pl/image/cache/data/goods/00000005031_3-460x347.jpg"
+               data-zoom-image="">
+                <img src="../img/product/00000005031_3-94x76.jpg"
+                     title="Zwierciadło duszy malowanie po numerach"
+                     alt="Zwierciadło duszy malowanie po numerach">
+            </a>
+        </div>
+
+        <div class="col-4 | psi_btn_w">
+            <a type="button" title="Do Koszyka" id="button-cart" class="btn btn-big">В корзину</a>
+        </div>
+
+    </div>
+
+</div>
+
 <script>
     $('document').ready(function () {
+
+        var sale_btn_spoiler_text = "";
+        var sale_btn_spoiler_status = 0;
+
+        $(".sale_ul li").on('click', function () {
+            $.fancybox.open({
+                src: '#popup_sale_item',
+                type: 'inline',
+                opts: {
+                    touch: false,
+                    keyboard: false
+                },
+            });
+        })
+
         var swiper = new Swiper('#gallery .swiper-container', {
             slidesPerView: 5,
             speed: 400,
@@ -806,6 +969,25 @@
             $("#zoom_link1 img").attr("src", m2);
         });
 
+        $('.show_hidden_saleitems').on('click', function () {
+            if(sale_btn_spoiler_status === 0){
+                sale_btn_spoiler_text = $(this).text();
+                $(this).parent().find('.sale_ul li').each(function () {
+                    $(this).removeClass('hidden');
+                })
+                $(this).text("свернуть");
+                sale_btn_spoiler_status = 1;
+            } else {
+                $(this).parent().find('.sale_ul li').each(function () {
+                    if($(this).index() !== 0 && $(this).index() !== 1) {
+                        $(this).addClass('hidden');
+                    }
+                })
+                $(this).text(sale_btn_spoiler_text);
+                sale_btn_spoiler_status = 0;
+            }
+
+        });
 
     });
 </script>
