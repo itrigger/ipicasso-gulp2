@@ -63,8 +63,8 @@
 //= template/breadcrumb.html
 
 
-<div class="in">
-    <div class="product_img col-4 l-col-4">
+<div class="in pd_grid">
+    <div class="product_img col-4 l-col-4 m-col-5">
         <div class="product_img--image">
             <a href="../img/product/00000005031-800x800.jpg" class="colorbox"
                id="zoom_link1">
@@ -205,7 +205,7 @@
             </div>
         </div>
     </div>
-    <div class="product_desc col-4 l-col-3">
+    <div class="product_desc col-4 l-col-3 m-col-3">
         <div class="pd_title">Mirror of the soul</div>
         <div class="pd_title_code_w d_f">
             <div class="grey">PC5065062</div>
@@ -312,7 +312,11 @@
         </div>
 
     </div>
-    <div class="product_info col-4 l-col-3">
+    <div class="labels m-col-8">
+        <span class="label label--discount">-10%</span>
+        <span class="label label--soon">coming soon</span>
+    </div>
+    <div class="product_info col-4 l-col-3 m-col-8">
 
         <!-- -->
         <!-- Вариант 1. Базовый. Товар без ярлыков. В наличии -->
@@ -369,10 +373,7 @@
         <!-- Вариант 4. Ожидается поступление -->
         <!-- -->
 
-        <div class="labels">
-            <span class="label label--discount">-10%</span>
-            <span class="label label--soon">coming soon</span>
-        </div>
+
         <div class="d_f jc_sb">
             <div class="pi_price">
                 <div class="new-price">90.00 <span>zt</span></div>
@@ -942,6 +943,17 @@
                 nextEl: '.customers_works .swiper-button-next',
                 prevEl: '.customers_works .swiper-button-prev',
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2
+                },
+                1140: {
+                    slidesPerView: 6
+                },
+                1440: {
+                    slidesPerView: 7
+                }
+            }
         });
 
 
