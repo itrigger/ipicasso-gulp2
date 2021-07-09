@@ -638,3 +638,10 @@
   border: 1px solid #404142;
   opacity: 0.8;
 }
+
+
+@media (min-width: 860px) and (max-width: 1139px) {
+  .last_review_w{
+    grid-column: 1 / -1;
+  }
+}
