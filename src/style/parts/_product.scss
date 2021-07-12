@@ -766,15 +766,14 @@ body.product {
   grid-gap: 0 20px;
   grid-template-areas:
             "img img img img   desc   desc   desc   desc    hd    hd    hd    hd"
-            "img img img img   desc   desc   desc   desc    price    price    status    status"
-            "img img img img   desc   desc   desc   desc    price    price    status    status"
-            "img img img img   desc   desc   desc   desc    info  info  info  info"
-            "img img img img   desc   desc   desc   desc    info  info  info  info"
-            "img img img img   desc   desc   desc   desc     ft    ft    ft    ft";
+            "img img img img   desc   desc   desc   desc    hd    hd    hd    hd"
+            "img img img img   desc   desc   desc   desc    hd    hd    hd    hd"
+            "img img img img   desc   desc   desc   desc    hd  hd  hd  hd"
+            "img img img img   desc   desc   desc   desc    hd  hd  hd  hd"
+            "img img img img   desc   desc   desc   desc     hd    hd    hd    hd";
 }
-.test{
-  grid-area: desc;
-}
+.test{  grid-area: desc;}
+.test2{  grid-area: hd;}
   .pi_price_w{
     grid-area: price;
     padding-left: 40px;
