@@ -767,8 +767,13 @@ body.product {
   grid-template-areas:
             "img img img img   desc   desc   desc   desc    hd    hd    hd    hd"
             "img img img img   desc   desc   desc   desc    price    price    status    status"
+            "img img img img   desc   desc   desc   desc    price    price    status    status"
+            "img img img img   desc   desc   desc   desc    info  info  info  info"
             "img img img img   desc   desc   desc   desc    info  info  info  info"
             "img img img img   desc   desc   desc   desc     ft    ft    ft    ft";
+}
+.test{
+  grid-area: desc;
 }
   .pi_price_w{
     grid-area: price;
@@ -827,7 +832,10 @@ body.product {
             "img img img img   desc   desc   desc       btn  btn  btn  "
             "img img img img   desc   desc   desc       info  info  info  ";
   }
-  .pd_title{
+  .test{
+    grid-area: desc;
+  }
+ /* .pd_title{
     padding-left: 20px;
     grid-area: desc;
   }
@@ -838,7 +846,7 @@ body.product {
   .rating-star-w{
     padding-left: 20px;
     grid-area: desc;
-  }
+  }*/
   .pi_price_w{
     grid-area: price;
     padding-left: 0;
@@ -908,6 +916,9 @@ body.product {
             "img img img img   img   desc   desc  desc"
             "price  btn  btn  btn    btn     btn     btn      btn"
             "ft  ft  ft  ft    ft     ft     ft      ft";
+  }
+  .test{
+    display: contents;
   }
   .pd_title{
     padding-left: 20px;
@@ -1050,7 +1061,9 @@ body.product {
              "price  btn  btn  btn    btn  btn"
             "desc   desc  desc info info info";
   }
-
+  .test{
+    display: contents;
+  }
   .product_img{
     grid-area: img;
     display: flex;
@@ -1078,7 +1091,7 @@ body.product {
     grid-area: label;
     padding-right: 0;
     justify-content: flex-end;
-    padding-top: 40px;
+    padding-top: 0px;
   }
   .pi_price_w{
     grid-area: price;
@@ -1087,7 +1100,17 @@ body.product {
   .pd_grid .labels {
     grid-area: label;
     padding-left: 20px;
-    margin-bottom: 15px;
+    padding-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    span{
+      display: block;
+      height: 15px;
+    }
+    .label{
+      padding: 7px 5px;
+    }
   }
   .product_info{
     grid-area: btn;
@@ -1097,10 +1120,13 @@ body.product {
   }
   .pd_title_code_w{
     grid-area: code;
+    margin-bottom: 0;
   }
+
   .rating-star-w{
     grid-area: rate;
   }
+
 }
 
 @media (max-width: 859px) {
