@@ -282,7 +282,7 @@ body.product {
 .pi_price {
   font-size: 32px;
   font-weight: bold;
-  margin-top: 20px;
+
   span {
     font-size: 24px;
     font-weight: normal;
@@ -761,48 +761,25 @@ body.product {
   margin-top: 10px;
 }
 
-.pd_grid {
-  grid-auto-rows: max-content max-content auto auto;
-  grid-gap: 0 20px;
-  grid-template-areas:
-            "img img img img   desc   desc   desc   desc    hd    hd    hd    hd"
-            "img img img img   desc   desc   desc   desc    hd    hd    hd    hd"
-            "img img img img   desc   desc   desc   desc    hd    hd    hd    hd"
-            "img img img img   desc   desc   desc   desc    hd  hd  hd  hd"
-            "img img img img   desc   desc   desc   desc    hd  hd  hd  hd"
-            "img img img img   desc   desc   desc   desc     hd    hd    hd    hd";
-}
-.test{  grid-area: desc;}
-.test2{  grid-area: hd;}
-  .pi_price_w{
-    grid-area: price;
-    padding-left: 40px;
-  }
+
   .product_img{
     grid-column: span 4;
-    grid-area: img;
   }
   .pd_grid .labels {
-    grid-area: hd;
-    padding-left: 40px;
     padding-top: 40px;
   }
   .product_desc{
     grid-column: span 4;
-    grid-area: desc;
   }
-  .product_info{
-    grid-area: info;
-  }
+
   .pi_stock{
-    grid-area: status;
-    padding-right: 40px;
     justify-content: flex-end;
   }
-.pi_delivery_block{
-  grid-area: ft;
-  padding-left: 40px;
-  padding-right: 40px;
+
+.product_desc{
+  .labels, .pi_stock{
+    display: none;
+  }
 }
 
 @media (min-width: 1440px) and (max-width: 1659px) {
@@ -905,32 +882,49 @@ body.product {
   .p_desc_w {
     grid-column: 1 / span 7;
   }
+  .product_desc{
+    .labels{
+      display: block;
+    }
+    .pi_stock{
+      display: block;
+    }
+  }
+  .product_info{
+    .labels, .pi_stock{
+      display: none;
+    }
+    grid-template-columns: repeat(8, 1fr);
+    display: grid;
+    grid-auto-rows: max-content max-content;
+    grid-template-areas:
+            "price btn btn btn btn btn btn btn"
+            "info info info info info info info info";
+  }
+  .pi_price{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .pd_title{
+    margin-top: 13px;
+  }
+  .pi_price_w{
+    grid-area: price;
+  }
+  .pi_btns{
+    grid-area: btn;
+  }
+  .pi_delivery_block{
+    grid-area: info;
+  }
   .pd_grid {
     grid-auto-rows: max-content max-content auto auto;
     grid-template-areas:
-            "img img img img   img   label  label label"
-            "img img img img   img   title  title  title"
-            "img img img img   img   code   code  code"
-            "img img img img   img   star   star  star"
-            "img img img img   img   desc   desc  desc"
-            "price  btn  btn  btn    btn     btn     btn      btn"
-            "ft  ft  ft  ft    ft     ft     ft      ft";
+            "img img img img   img   desc  desc desc"
+            "info info info info info info info info";
   }
-  .test{
-    display: contents;
-  }
-  .pd_title{
-    padding-left: 20px;
-    grid-area: title;
-  }
-  .pd_title_code_w{
-    padding-left: 20px;
-    grid-area: code;
-  }
-  .rating-star-w{
-    padding-left: 20px;
-    grid-area: star;
-  }
+
   .product_img{
     grid-area: img;
     display: flex;
@@ -944,20 +938,16 @@ body.product {
       height: 508px;
     }
   }
-  .pd_grid .labels {
-    grid-area: label;
-    padding-left: 20px;
-    margin-bottom: 15px;
-  }
+
   .product_desc{
     padding-top: 0;
     grid-area: desc;
   }
   .product_info{
-    grid-area: btn;
+    grid-area: info;
   }
   .pi_stock{
-    grid-area: label;
+
     padding-right: 0;
     justify-content: flex-end;
     padding-top: 40px;
@@ -967,7 +957,7 @@ body.product {
     padding-left: 0;
   }
   .pi_delivery_block{
-    grid-area: ft;
+
     padding-left: 0;
     padding-right: 0;
   }
