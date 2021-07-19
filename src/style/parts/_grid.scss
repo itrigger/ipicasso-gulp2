@@ -182,6 +182,19 @@
   .in>.swiper-container-wrapper{
     grid-column: 1 / span 6;
   }
+  .s-col-1{grid-column: span 1;}
+  .s-col-2{grid-column: span 2;}
+  .s-col-3{grid-column: span 3;}
+  .s-col-4{grid-column: span 4;}
+  .s-col-5{grid-column: span 5;}
+  .s-col-6{grid-column: span 6;}
+  .s-col-7{grid-column: span 7;}
+  .s-col-8{grid-column: span 8;}
+  .s-col-9{grid-column: span 9;}
+  .s-col-10{grid-column: span 10;}
+  .s-col-11{grid-column: span 11;}
+  .s-col-12{grid-column: span 12;}
+  .s-col-del{display: none;}
 }
 @media (max-width: 859px) {
   .in{

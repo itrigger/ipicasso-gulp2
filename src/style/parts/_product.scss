@@ -769,7 +769,7 @@ body.product {
     padding-top: 40px;
   }
   .product_desc{
-    grid-column: span 4;
+
   }
 
   .pi_stock{
@@ -780,6 +780,11 @@ body.product {
   .labels, .pi_stock{
     display: none;
   }
+}
+
+.pd_title_860{
+  margin-top: 20px;
+  display: none;
 }
 
 @media (min-width: 1440px) and (max-width: 1659px) {
@@ -987,6 +992,12 @@ body.product {
 }
 
 @media (min-width: 860px) and (max-width: 1139px) {
+  .labels_min{
+    display: none;
+  }
+  .pd_title_860{
+    display: block;
+  }
   .product_body_w{
     border-top: 0;
     padding-top: 0;
@@ -994,6 +1005,12 @@ body.product {
   }
   .product_desc {
     padding-left: 20px;
+    .pd_title,
+    .pd_title_code_w,
+    .rating-star-w
+    {
+      display: none;
+    }
   }
   .product_info {
     padding-left: 0;
@@ -1047,11 +1064,12 @@ body.product {
             "name name name label label label"
             "rate rate rate rate code code"
             "img img img img img img"
-             "price  btn  btn  btn    btn  btn"
-            "desc   desc  desc info info info";
+            "desc   desc  desc desc desc desc";
   }
-  .test{
-    display: contents;
+  .pd_wrap_860_2{
+    grid-area: desc;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
   }
   .product_img{
     grid-area: img;
@@ -1069,7 +1087,7 @@ body.product {
   .product_desc{
     padding-top: 0;
     padding-left: 0;
-    grid-area: desc;
+
   }
   .pi_delivery_block{
     grid-area: info;
@@ -1102,7 +1120,7 @@ body.product {
     }
   }
   .product_info{
-    grid-area: btn;
+
   }
   .pd_title{
     grid-area: name;
