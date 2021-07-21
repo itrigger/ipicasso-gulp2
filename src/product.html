@@ -65,7 +65,14 @@
 
 <div class="in pd_grid">
     <div class="pd_title_860 s-col-6">
-        <div class="pd_title">Mirror of the soul</div>
+        <div class="d_f jc_sb">
+            <div class="pd_title">Mirror of the soul</div>
+            <div class="labels ml_auto">
+                <span class="label label--discount">-10%</span>
+                <span class="label label--soon">coming soon</span>
+            </div>
+            <div class="d_f ai_top | pi_stock">Available from 06.09.2021</div>
+        </div>
         <div class="d_f jc_sb">
             <div class="d_f rating-star-w">
                 <div class="rating-star">
@@ -1065,11 +1072,15 @@
     var wrapPd = function (state) {
         if (state === 1) {
             $('.product_desc').wrap("<div class='pd_wrap_860_2 s-col-6'></div>");
-            $(".pd_wrap_860_2").append($('.product_info'))
+            $(".pd_wrap_860_2").append($('.product_info'));
+            $(".pd_wrap_860_2").prepend($('.product_info .pi_btns'));
+            $(".pd_wrap_860_2").prepend($('.product_info .pi_price_w'));
+
             Start_state = 0;
         } else {
             $('.product_desc').insertAfter(".product_img");
             $('.product_info').insertAfter(".product_desc");
+            $(".pi_btns, .pi_price_w").insertAfter($('.product_info .labels'));
             $(".pd_wrap_860_2").remove()
             Start_state = 1;
         }

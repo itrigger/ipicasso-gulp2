@@ -1070,6 +1070,25 @@ body.product {
     grid-area: desc;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: max-content max-content;
+    grid-template-areas:
+            "price btn btn btn btn btn"
+            "left left left right right right";
+    .labels, .pi_stock{
+      display: none !important;
+    }
+  }
+    .pi_price_w{
+      grid-area: price;
+    }
+    .pi_btns{
+      grid-area: btn;
+    }
+  .product_desc{
+    grid-area: left;
+  }
+  .product_info{
+    grid-area: right;
   }
   .product_img{
     grid-area: img;
@@ -1119,9 +1138,7 @@ body.product {
       padding: 7px 5px;
     }
   }
-  .product_info{
 
-  }
   .pd_title{
     grid-area: name;
   }
