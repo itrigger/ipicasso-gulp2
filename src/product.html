@@ -98,6 +98,9 @@
                      title="Zwierciadło duszy malowanie po numerach" alt="Zwierciadło duszy malowanie po numerach"
                      data-zoom-image="../img/product/00000005031-800x800.jpg">
             </a>
+            <div class="product_img--image-btn btn-left"></div>
+            <div class="product_img--image-btn btn-right"></div>
+            <div class="product_img--image-counter"></div>
         </div>
         <div class="hidden" id="duplicate_of_thumbs">
             <a href="https://ipicasso.pl/image/cache/data/goods/00000004831-800x800.jpg"
@@ -972,12 +975,18 @@
                 nextEl: '#gallery .swiper-button-next',
                 prevEl: '#gallery .swiper-button-prev',
             },
+            on: {
+                slideChange: function () {
+                    $("#gallery").find(".swiper-slide-active").click();
+                    console.log(swiper.activeIndex)
+                }
+            },
             breakpoints: {
                 320: {
-                    direction: 'vertical'
+                    direction: 'vertical',
                 },
-                890: {
-                    direction: 'vertical'
+                860: {
+                    direction: 'vertical',
                 },
                 1140: {
                     direction: 'vertical',
@@ -1009,7 +1018,7 @@
                 860: {
                     slidesPerView: 'auto',
                     spaceBetween: 20,
-                    navigation: false
+                    navigation: false,
                 },
                 1140: {
                     slidesPerView: 6
@@ -1020,6 +1029,9 @@
             }
         });
 
+        var SlidesCount = $("#gallery .swiper-wrapper .swiper-slide").length;
+        var myCurSlideIndex = 0;
+        $(".product_img--image-counter").text("1/"+SlidesCount);
 
         $("#gallery .swiper-slide a").click(function (e) {
 
@@ -1027,14 +1039,16 @@
                 $(this).removeClass("selected");
             });
             $(this).addClass("selected");
+            myCurSlideIndex = $(this).parent().index();
+
+            $(".product_img--image-counter").text(myCurSlideIndex+1+"/"+SlidesCount);
 
             e.preventDefault();
             var temp1 = $(this).attr("href");
 
 
-            $("#duplicate_of_thumbs a").removeClass("selected");
-            $("#duplicate_of_thumbs a").each(function () {
-                if ($(this).attr("href") == temp1) {
+            $("#duplicate_of_thumbs a").removeClass("selected").each(function () {
+                if ($(this).attr("href") === temp1) {
                     $(this).addClass("selected");
                 }
             });
@@ -1044,6 +1058,25 @@
             $("#zoom_link1").attr("href", m1);
             $("#zoom_link1 img").attr("src", m2);
         });
+
+
+        console.log(SlidesCount)
+        $(".product_img--image-btn.btn-left").on("click", function () {
+            console.log(myCurSlideIndex)
+            if (!($(this).hasClass("disabled"))) {
+                if(myCurSlideIndex > 0){
+                    $("#gallery .swiper-slide").eq(myCurSlideIndex-1).find("a").click();
+                }
+            }
+        })
+        $(".product_img--image-btn.btn-right").on("click", function () {
+            if (!($(this).hasClass("disabled"))) {
+                if(myCurSlideIndex < SlidesCount){
+                    $("#gallery .swiper-slide").eq(myCurSlideIndex+1).find("a").click();
+                }
+            }
+        })
+
 
         $('.show_hidden_saleitems').on('click', function () {
             if (sale_btn_spoiler_status === 0) {
@@ -1075,20 +1108,21 @@
             $(".pd_wrap_860_2").append($('.product_info'));
             $(".pd_wrap_860_2").prepend($('.product_info .pi_btns'));
             $(".pd_wrap_860_2").prepend($('.product_info .pi_price_w'));
-
+            $(".product_img--image").prepend($(".pi_like_w"));
             Start_state = 0;
         } else {
             $('.product_desc').insertAfter(".product_img");
             $('.product_info').insertAfter(".product_desc");
             $(".pi_btns, .pi_price_w").insertAfter($('.product_info .labels'));
+            $(".pi_like_w").insertAfter($(".pi_btns .cartbutton"));
             $(".pd_wrap_860_2").remove()
             Start_state = 1;
         }
     }
 
-    $('document').ready(function (){
+    $('document').ready(function () {
         var windowWidth = $(window).width();
-        if(windowWidth < 1140){
+        if (windowWidth < 1140) {
             wrapPd(1);
             Start_state = 0;
         } else {
@@ -1100,14 +1134,14 @@
 
     $(window).resize(function () {
         var windowWidth = $(this).width();
-        if(Start_state === 1 && windowWidth < 1140){
+        if (Start_state === 1 && windowWidth < 1140) {
             wrapPd(1);
             Start_state = 0;
-        } else if(Start_state === 1 && windowWidth > 1139) {
+        } else if (Start_state === 1 && windowWidth > 1139) {
 
-        } else if(Start_state === 0 && windowWidth < 1140){
+        } else if (Start_state === 0 && windowWidth < 1140) {
 
-        } else if(Start_state === 0 && windowWidth > 1139){
+        } else if (Start_state === 0 && windowWidth > 1139) {
             wrapPd(0);
         }
     });
