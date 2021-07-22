@@ -64,7 +64,7 @@
 
 
 <div class="in pd_grid">
-    <div class="pd_title_860 s-col-6">
+    <div class="pd_title_860 s-col-6 xs-col-4">
         <div class="d_f jc_sb">
             <div class="pd_title">Mirror of the soul</div>
             <div class="labels ml_auto">
@@ -89,7 +89,7 @@
             </div>
         </div>
     </div>
-    <div class="product_img col-4 l-col-4 m-col-5">
+    <div class="product_img col-4 l-col-4 m-col-5 xs-col-4">
         <div class="product_img--image">
             <a href="../img/product/00000005031-800x800.jpg" class="colorbox"
                id="zoom_link1">
@@ -233,7 +233,7 @@
             </div>
         </div>
     </div>
-    <div class="product_desc col-4 l-col-3 m-col-3 s-col-3">
+    <div class="product_desc col-4 l-col-3 m-col-3 s-col-3  xs-col-4">
         <div class="labels_min d_f jc_sb">
             <div class="labels">
                 <span class="label label--discount">-10%</span>
@@ -350,7 +350,7 @@
 
 
     </div>
-    <div class="product_info col-4 l-col-3 m-col-8 s-col-3">
+    <div class="product_info col-4 l-col-3 m-col-8 s-col-3  xs-col-4">
         <div class="labels">
             <span class="label label--discount">-10%</span>
             <span class="label label--soon">coming soon</span>
@@ -951,6 +951,7 @@
 
 </div>
 
+<script src="js/vendor/jquery.touchSwipe.min.js"></script>
 <script>
     $('document').ready(function () {
 
@@ -1013,7 +1014,9 @@
             },
             breakpoints: {
                 320: {
-                    slidesPerView: 2
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    navigation: false,
                 },
                 860: {
                     slidesPerView: 'auto',
@@ -1060,9 +1063,8 @@
         });
 
 
-        console.log(SlidesCount)
+
         $(".product_img--image-btn.btn-left").on("click", function () {
-            console.log(myCurSlideIndex)
             if (!($(this).hasClass("disabled"))) {
                 if(myCurSlideIndex > 0){
                     $("#gallery .swiper-slide").eq(myCurSlideIndex-1).find("a").click();
@@ -1076,6 +1078,26 @@
                 }
             }
         })
+
+
+        $(".product_img--image a.colorbox").swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+               if(direction === "left"){
+                   if(myCurSlideIndex < SlidesCount){
+                       $("#gallery .swiper-slide").eq(myCurSlideIndex+1).find("a").click();
+                   }
+               } else if(direction === "right"){
+                   if(myCurSlideIndex > 0){
+                       $("#gallery .swiper-slide").eq(myCurSlideIndex-1).find("a").click();
+                   }
+               }
+            }
+        });
+
+        //Set some options later
+        $("#test").swipe( {fingers:2} );
+
 
 
         $('.show_hidden_saleitems').on('click', function () {
