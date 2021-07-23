@@ -71,7 +71,7 @@
                 <span class="label label--discount">-10%</span>
                 <span class="label label--soon">coming soon</span>
             </div>
-            <div class="d_f ai_top | pi_stock">Available from 06.09.2021</div>
+            <div class="d_f ai_top | pi_stock"><span>Available from</span> 06.09.2021</div>
         </div>
         <div class="d_f jc_sb">
             <div class="d_f rating-star-w">
@@ -109,10 +109,10 @@
                data-image="https://ipicasso.pl/image/cache/data/goods/00000004831-460x347.jpg"
                data-zoom-image="https://ipicasso.pl/image/cache/data/goods/00000004831-800x800.jpg"
                rel="prettyPhoto[pp_gal1]"></a>
-            <a href="https://ipicasso.pl/image/cache/data/goods/00000004831_1-800x800.jpg"
+            <a href="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg"
                title="Zachód słońca nad polem lawendy malowanie po numerach"
-               data="https://ipicasso.pl/image/cache/data/goods/00000004831_1-94x76.jpg" class=""
-               data-image="https://ipicasso.pl/image/cache/data/goods/00000004831_1-460x347.jpg" data-zoom-image=""
+               data="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg" class=""
+               data-image="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg" data-zoom-image=""
                rel="prettyPhoto[pp_gal1]">
             </a>
             <a href="https://ipicasso.pl/image/cache/data/goods/00000004831_2-800x800.jpg"
@@ -165,12 +165,12 @@
                         </div>
                         <div class="swiper-slide">
                             <a
-                                    href="https://ipicasso.pl/image/cache/data/goods/00000005031-800x800.jpg"
+                                    href="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg"
                                     title="Zwierciadło duszy malowanie po numerach"
-                                    data="https://ipicasso.pl/image/cache/data/goods/00000005031-460x347.jpg"
-                                    data-image="https://ipicasso.pl/image/cache/data/goods/00000005031-460x347.jpg"
-                                    data-zoom-image="https://ipicasso.pl/image/cache/data/goods/00000005031-800x800.jpg">
-                                <img src="../img/product/00000005031-94x76.jpg"
+                                    data="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg"
+                                    data-image="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg"
+                                    data-zoom-image="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg">
+                                <img src="https://ipicasso.pl/image/cache/data/goods/00000005811-800x800.jpg"
                                      title="Zwierciadło duszy malowanie po numerach"
                                      alt="Zwierciadło duszy malowanie po numerach">
                             </a>
@@ -312,9 +312,10 @@
                 </div>
             </div>
         </div>
-
+        <div class="pd_specification_title active">Specifications <span class="ico ico-arr_dd"></span></div>
+        <div class="pd_spec_w">
         <div class="pd_specification">
-            <div class="pd_specification_title">Specifications</div>
+
             <ul class="pd_specification_ul">
                 <li>
                     <span class="text">Brand</span>
@@ -347,10 +348,11 @@
         <div class="pd_detailed_specification">
             <a href="#detailed_specification" class="title scrollto">Detailed specification</a>
         </div>
-
+        </div>
 
     </div>
     <div class="product_info col-4 l-col-3 m-col-8 s-col-3  xs-col-4">
+        <div class="spoiler_title">Delivery <span class="ico ico-arr_dd"></span></div>
         <div class="labels">
             <span class="label label--discount">-10%</span>
             <span class="label label--soon">coming soon</span>
@@ -360,7 +362,7 @@
                 <div class="new-price">90.00 <span>zt</span></div>
                 <div class="old-price">99.00 zt</div>
             </div>
-            <div class="d_f ai_top | pi_stock">Available from 06.09.2021</div>
+            <div class="d_f ai_top | pi_stock"><span>Available from</span> 06.09.2021</div>
         </div>
 
 
@@ -953,6 +955,42 @@
 
 <script src="js/vendor/jquery.touchSwipe.min.js"></script>
 <script>
+    var Start_state = 1; // 1 - max, 0 - min
+    var myCurSlideIndex = 0;
+
+    // костыль для перемещения блоков по странице
+    var wrapPd = function (state) {
+        var SlidesCount = $("#gallery .swiper-wrapper .swiper-slide").length;
+        if (state === 1) {
+            $('.product_desc').wrap("<div class='pd_wrap_860_2 s-col-6'></div>");
+            $(".pd_wrap_860_2").append($('.product_info'));
+            $(".pd_wrap_860_2").prepend($('.product_info .pi_btns'));
+            $(".pd_wrap_860_2").prepend($('.product_info .pi_price_w'));
+            $(".product_img--image").prepend($(".pi_like_w"));
+            Start_state = 0;
+            $(".product_img--image a.colorbox").swipe( {
+                swipeLeft:function(event, direction, distance, duration, fingerCount) {
+                    if(myCurSlideIndex < SlidesCount){
+                        $("#gallery .swiper-slide").eq(myCurSlideIndex+1).find("a").click();
+                    }
+                },
+                swipeRight:function(event, direction, distance, duration, fingerCount) {
+                    if(myCurSlideIndex > 0){
+                        $("#gallery .swiper-slide").eq(myCurSlideIndex-1).find("a").click();
+                    }
+                }
+
+            });
+        } else {
+            $('.product_desc').insertAfter(".product_img");
+            $('.product_info').insertAfter(".product_desc");
+            $(".pi_btns, .pi_price_w").insertAfter($('.product_info .labels'));
+            $(".pi_like_w").insertAfter($(".pi_btns .cartbutton"));
+            $(".pd_wrap_860_2").remove()
+            Start_state = 1;
+        }
+    }
+
     $('document').ready(function () {
 
         var sale_btn_spoiler_text = "";
@@ -1015,7 +1053,7 @@
             breakpoints: {
                 320: {
                     slidesPerView: 'auto',
-                    spaceBetween: 20,
+                    spaceBetween: 17,
                     navigation: false,
                 },
                 860: {
@@ -1032,8 +1070,11 @@
             }
         });
 
+
+
+
         var SlidesCount = $("#gallery .swiper-wrapper .swiper-slide").length;
-        var myCurSlideIndex = 0;
+
         $(".product_img--image-counter").text("1/"+SlidesCount);
 
         $("#gallery .swiper-slide a").click(function (e) {
@@ -1064,6 +1105,7 @@
 
 
 
+
         $(".product_img--image-btn.btn-left").on("click", function () {
             if (!($(this).hasClass("disabled"))) {
                 if(myCurSlideIndex > 0){
@@ -1081,22 +1123,18 @@
 
 
         $(".product_img--image a.colorbox").swipe( {
-            //Generic swipe handler for all directions
-            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-               if(direction === "left"){
-                   if(myCurSlideIndex < SlidesCount){
-                       $("#gallery .swiper-slide").eq(myCurSlideIndex+1).find("a").click();
-                   }
-               } else if(direction === "right"){
-                   if(myCurSlideIndex > 0){
-                       $("#gallery .swiper-slide").eq(myCurSlideIndex-1).find("a").click();
-                   }
-               }
+            swipeLeft:function(event, direction, distance, duration, fingerCount) {
+                if(myCurSlideIndex < SlidesCount){
+                    $("#gallery .swiper-slide").eq(myCurSlideIndex+1).find("a").click();
+                }
+            },
+            swipeRight:function(event, direction, distance, duration, fingerCount) {
+                if(myCurSlideIndex > 0){
+                    $("#gallery .swiper-slide").eq(myCurSlideIndex-1).find("a").click();
+                }
             }
-        });
 
-        //Set some options later
-        $("#test").swipe( {fingers:2} );
+        });
 
 
 
@@ -1120,29 +1158,27 @@
 
         });
 
-    });
+        $(".spoiler_title").on("click", function () {
+            if ($("body").hasClass("tablet")) {
+                $(this).toggleClass("active")
+                $(".pi_delivery_block").slideToggle();
+                return false;
+            } else {
+                return true;
+            }
+        });
 
-    var Start_state = 1; // 1 - max, 0 - min
+        $(".pd_specification_title").on("click", function () {
+            if ($("body").hasClass("tablet")) {
+                $(this).toggleClass("active")
+                $(".pd_spec_w").slideToggle();
+                return false;
+            } else {
+                return true;
+            }
+        })
 
-    var wrapPd = function (state) {
-        if (state === 1) {
-            $('.product_desc').wrap("<div class='pd_wrap_860_2 s-col-6'></div>");
-            $(".pd_wrap_860_2").append($('.product_info'));
-            $(".pd_wrap_860_2").prepend($('.product_info .pi_btns'));
-            $(".pd_wrap_860_2").prepend($('.product_info .pi_price_w'));
-            $(".product_img--image").prepend($(".pi_like_w"));
-            Start_state = 0;
-        } else {
-            $('.product_desc').insertAfter(".product_img");
-            $('.product_info').insertAfter(".product_desc");
-            $(".pi_btns, .pi_price_w").insertAfter($('.product_info .labels'));
-            $(".pi_like_w").insertAfter($(".pi_btns .cartbutton"));
-            $(".pd_wrap_860_2").remove()
-            Start_state = 1;
-        }
-    }
 
-    $('document').ready(function () {
         var windowWidth = $(window).width();
         if (windowWidth < 1140) {
             wrapPd(1);
@@ -1150,6 +1186,12 @@
         } else {
             wrapPd(0);
             Start_state = 1;
+        }
+        if (windowWidth < 860) {
+            $(".pi_delivery_block").slideUp();
+        } else {
+            $(".pi_delivery_block").slideDown();
+            $(".pd_spec_w").slideDown();
         }
     })
 
@@ -1165,6 +1207,12 @@
 
         } else if (Start_state === 0 && windowWidth > 1139) {
             wrapPd(0);
+        }
+        if (windowWidth < 860) {
+            $(".pi_delivery_block").slideUp();
+        } else {
+            $(".pi_delivery_block").slideDown();
+            $(".pd_spec_w").slideDown();
         }
     });
 </script>

@@ -645,3 +645,12 @@
     grid-column: 1 / -1;
   }
 }
+
+@media (max-width: 859px){
+  .rev_posneg, .rev_imgs{
+    grid-column: 1 / -1;
+  }
+  .rev_img{
+    justify-content: flex-start;
+  }
+}
