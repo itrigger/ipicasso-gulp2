@@ -744,13 +744,19 @@
             <div class="swiper-button-next"></div>
         </div>
 
+<!--        <div class="tabs_head swiper-container-wrapper">
+            <div class="swiper-container">
+                <ul class="ul swiper-wrapper">-->
+
         <div class="p_tabs" id="detailed_specification">
-            <div class="tabs_head">
-                <ul>
-                    <li class="active" data-tab-content="1">Description</li>
-                    <li data-tab-content="2">Reviews (3)</li>
-                    <li data-tab-content="3">Related products</li>
+            <div class="tabs_head swiper-container-wrapper">
+                <div class="swiper-container">
+                    <ul class="ul swiper-wrapper">
+                    <li class="active swiper-slide" data-tab-content="1">Description</li>
+                    <li class=" swiper-slide" data-tab-content="2">Reviews (3)</li>
+                    <li class=" swiper-slide" data-tab-content="3">Related products</li>
                 </ul>
+            </div>
             </div>
             <div class="tabs_content_w">
                 <div class="tab_content" data-tab="1" style="display: grid;">
@@ -1070,6 +1076,24 @@
             }
         });
 
+        var pp_tabs_ul = new Swiper('#detailed_specification .swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            speed: 400,
+            slidesOffsetAfter: 0,
+            slideToClickedSlide: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 'auto',
+                    allowTouchMove: true,
+                    watchOverflow: true,
+                },
+                860: {
+                    allowTouchMove: false,
+                    slideToClickedSlide: false,
+                }
+            }
+        });
 
 
 
