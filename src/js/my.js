@@ -495,8 +495,42 @@ $(document).ready(function () {
         $(this).parent().parent().find(".notify").removeClass("notify--empty").text("1");
     });
 
-
-
+    $('[data-fancybox^="gal"]').fancybox({
+        lang: "ru",
+        i18n:{
+            ru: {
+                CLOSE: "Закрыть",
+                NEXT: "Next",
+                PREV: "Previous",
+                ERROR: "The requested content cannot be loaded. <br/> Please try again later.",
+                PLAY_START: "Start slideshow",
+                PLAY_STOP: "Pause slideshow",
+                FULL_SCREEN: "Full screen",
+                THUMBS: "Thumbnails",
+                DOWNLOAD: "Download",
+                SHARE: "Share",
+                ZOOM: "Zoom"
+            },
+        }
+    });
+/*    Fancybox.show(gallery, {
+        Image: {
+            l10n: {
+                CLOSE: "Закрыть",
+                NEXT: "Next",
+                PREV: "Previous",
+                MODAL: "You can close this modal content with the ESC key",
+                ERROR: "Something Went Wrong, Please Try Again Later",
+                IMAGE_ERROR: "Image Not Found",
+                ELEMENT_NOT_FOUND: "HTML Element Not Found",
+                AJAX_NOT_FOUND: "Error Loading AJAX : Not Found",
+                AJAX_FORBIDDEN: "Error Loading AJAX : Forbidden",
+                IFRAME_ERROR: "Error Loading Page",
+            }
+            // Image-specific options go here, for example:
+            // click: 'close'
+        },
+    });*/
 
     $('.tooltipstered').tooltipster();
 
