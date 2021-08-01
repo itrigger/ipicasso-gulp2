@@ -34,6 +34,11 @@ body.product {
 
 }
 
+.product_img--image-btn,
+.product_img--image-counter
+{
+  display: none;
+}
 
 #gallery {
   padding: 0 18px;
@@ -1207,6 +1212,11 @@ body.product {
       top: 0;
     }
   }
+  .product_img--image-btn,
+  .product_img--image-counter
+  {
+    display: block;
+  }
 }
 
 @media (max-width: 859px) {
@@ -1236,7 +1246,12 @@ body.product {
   }
   .product_desc {
     padding-left: 20px;
+  }
 
+  .product_img--image-btn,
+  .product_img--image-counter
+  {
+    display: block;
   }
 
   .product_body {
