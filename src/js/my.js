@@ -511,7 +511,39 @@ $(document).ready(function () {
                 SHARE: "Share",
                 ZOOM: "Zoom"
             },
-        }
+        },
+        buttons: [
+            //"zoom",
+            //"share",
+            //"slideShow",
+            //"fullScreen",
+            //"download",
+           //"thumbs",
+            "close"
+        ],
+        baseTpl:
+            '<div class="fancybox-container" role="dialog" tabindex="-1">' +
+            '<div class="fancybox-bg"></div>' +
+            '<div class="fancybox-inner">' +
+            '<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
+
+            '<div class="fancybox-navigation">{{arrows}}</div>' +
+            '<div class="fancybox-stage-w">' +
+            '<div class="fancybox-toolbar">{{buttons}}</div>' +
+            '<div class="fancybox-stage"></div>' +
+            '</div>' +
+            '<div class="fancybox-caption"><div class="fancybox-caption__body"></div></div>' +
+            '</div>' +
+            '</div>',
+        thumbs: {
+            autoStart: true, // Display thumbnails on opening
+            hideOnClose: true, // Hide thumbnail grid when closing animation starts
+            parentEl: ".fancybox-stage-w", // Container is injected into this element
+            axis: "x" // Vertical (y) or horizontal (x) scrolling
+        },
+        animationEffect: "fade",
+        arrows: false,
+        toolbar: true,
     });
 /*    Fancybox.show(gallery, {
         Image: {
