@@ -1,11 +1,10 @@
-/*start at 92h30m at work*/
-/*start at 4h00m at home*/
+/*start at 92h30m at work  26h */
+/*start at 4h00m at home  11h */
 body.product {
   // background: url('../img/temp_prod.png') center top no-repeat;
 }
 
 .product_img {
-
   padding-top: 25px;
 }
 
@@ -1631,13 +1630,13 @@ body.product {
   opacity: 0.32 !important;
 }
 .fancybox-toolbar {
-  right: -43px;
-  top: -15px;
-  opacity: 1;
-  visibility: visible;
-  background: transparent;
+  right: -43px !important;
+  top: -15px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
 }
 .fancybox-button, .fancybox-button:link, .fancybox-button:visited{
-  color: #fff;
-  background: transparent;
+  color: #fff !important;
+  background: transparent !important;
 }
