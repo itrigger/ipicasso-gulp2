@@ -145,7 +145,7 @@
 
 #minicart{
   position: absolute;
-  right: -10px;
+  right: -12px;
   top: 60px;
   width: 540px;
   border: 1px solid #8A8B8C;
@@ -176,6 +176,8 @@
   flex-direction: column;
   padding-left: 16px;
   font-size: 14px;
+  padding-right: 20px;
+  width: 100%;
 }
 .mc_price{
   span{
@@ -184,12 +186,20 @@
   }
 }
 .mc_total_price{
-  width: 80px;
+  width: 100px;
+  text-align: right;
   margin-left: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .mc_del{
   margin-left: 16px;
   width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 @media (min-width: 1440px) and (max-width: 1659px) {
   
