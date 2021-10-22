@@ -1,0 +1,120 @@
+
+.steps_line{
+  margin-top: 68px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 11px;
+    right: 11px;
+    top: 3px;
+
+    border-top: 2px dashed #CDCECF;
+  }
+}
+
+.step_ico{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  line-height: 19px;
+  color: #404142;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-position: 0 0;
+    top: -30px;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  &.si_1:before{
+    left: 0;
+    width: 22px;
+    height: 16px;
+    background-image: url('../img/order_step1.png');
+  }
+  &.si_2:before{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 20px;
+    background-image: url('../img/order_step2.png');
+  }
+  &.si_3:before{
+    right: 3px;
+    width: 15px;
+    height: 17px;
+    background-image: url('../img/order_step3.png');
+  }
+  &.si_1{
+    padding-left: 7px;
+  }
+  &.si_2{
+    grid-column: 4 / span 2;
+    align-items: center;
+  }
+  &.si_3{
+    grid-column: 8 / span 1;
+    align-items: end;
+    padding-right: 7px;
+  }
+  span{
+    width: 8px;
+    height: 8px;
+    background: #CDCECF;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 21px;
+    position: relative;
+  }
+  &.active{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  &.active span{
+    background: $blue;
+    position: relative;
+    margin-bottom: 18px;
+    &:before{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      left: -3px;
+      top: -3px;
+      border-radius: 50%;
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.order_steps_content{
+  margin-top: 65px;
+}
+.order_steps_content_desc{
+  font-size: 16px;
+  line-height: 24px;
+}
+.order_steps_content_desc_cart{
+  margin-top: 20px;
+}
+
+.cart{
+  .row{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #CDCECF;
+    padding: 8px 0;
+    justify-content: space-between;
+  }
+}
