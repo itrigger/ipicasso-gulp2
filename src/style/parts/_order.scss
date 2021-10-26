@@ -1,4 +1,4 @@
-
+//start at 120 at work
 .steps_line{
   margin-top: 68px;
   position: relative;
@@ -116,7 +116,7 @@
 .cart{
   .row{
     width: 100%;
-    height: 136px;
+    min-height: 134px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 0 20px;
@@ -142,9 +142,8 @@
       padding-top: 20px;
       display: flex;
       flex-wrap: nowrap;
-      .left{
-
-      }
+      padding-bottom: 25px;
+      position: relative;
       .right{
         margin-left: auto;
         text-align: right;
@@ -162,6 +161,18 @@
       .labels{
         margin-top: 7px;
       }
+      .limit_txt{
+        position: absolute;
+        bottom: 0;
+        color: #F44436;
+        font-size: 14px;
+        line-height: 16px;
+        opacity: 0;
+        &.active{
+          opacity: 1;
+          transition: .2s all;
+        }
+      }
     }
     .ct_price{
       color: #8A8B8C;
@@ -174,6 +185,11 @@
       justify-content: center;
       align-items: flex-start;
       padding-top: 17px;
+      .high_limit{
+        input{
+          color: #F44436 !important;
+        }
+      }
     }
     .ct_total{
       grid-column: 6 / span 1;
@@ -266,3 +282,165 @@
     }
   }
 }
+
+.order_steps_content_desc_cart_footer{
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0 20px;
+  .promocode_form{
+    grid-column: 1 / span 2;
+  }
+  .cart_total_label{
+    grid-column: 4 / span 2;
+    justify-content: flex-end;
+  }
+  .cart_total_price{
+    grid-column: 6 / span 1;
+  }
+}
+
+.cart-footer{
+  .promocode_form{
+    position: relative;
+    .label{
+      position: absolute;
+      top: -11px;
+      left: 0;
+      color: #404142;
+      font-size: 12px;
+      text-transform: none;
+      line-height: 16px;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+    }
+    &:hover input{
+      border-bottom-color: #404142;
+    }
+    input{
+      width: 100%;
+      padding-left: 0;
+      padding-right: 25px;
+      height: 38px;
+
+      &:focus{
+        border-bottom-color: #1782E9;
+      }
+    }
+    &.active{
+      .clear_input{
+        opacity: 1;
+        transition: .2s all;
+      }
+      .label{
+        opacity: 0.5;
+        transition: .2s all;
+      }
+    }
+    .error_msg{
+      position: absolute;
+      left: 0;
+      bottom: -18px;
+      color: #F44436;
+      font-size: 14px;
+      line-height: 16px;
+      opacity: 0;
+    }
+    &.error{
+      input{
+        color: #F44436;
+      }
+      .error_msg{
+        opacity: 1;
+        transition: .2s all;
+      }
+    }
+    &.success{
+      input{
+        color: #02A246;
+        font-weight: bold;
+      }
+    }
+  }
+  .cart_total_label{
+    padding-top: 3px;
+    padding-right: 19px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #404142;
+    text-align: right;
+    .promo_ok_label{
+      color: #8A8B8C;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 7px;
+    }
+  }
+  .cart_total_price{
+    text-align: right;
+    height: 68px;
+    .price_promo{
+      color: #02A246;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+    .price{
+      color: #404142;
+      font-weight: bold;
+      font-size: 20px;
+      span{
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    .old_price{
+      text-decoration: line-through;
+      color: #8A8B8C;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+.clear_input{
+  position: absolute;
+  background: url('../img/ico-clear.png') center center no-repeat;
+  background-size: 10px 10px;
+  width: 20px;
+  height: 20px;
+  right: 6px;
+  top: 7px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.order_steps_content_desc_cart_agreement{
+  margin-top: 31px;
+  margin-bottom: 30px;
+}
+
+#agreement_checkbox{
+  label{
+    font-weight: normal;
+    line-height: 20px;
+    display: block;
+    padding-left: 32px;
+  }
+  .checkbox:not(checked) + label:before{
+    width: 20px;
+    height: 20px;
+  }
+  .checkbox + label:before {
+    background: url(../img/cb-big-normal.png);
+  }
+  .checkbox:not(checked) + label:hover:before {
+    background: url(../img/cb-big-hover.png);
+  }
+  .checkbox:checked + label:hover:before, .checkbox:checked + label:before {
+    background: url(../img/cb-big-active.png);
+  }
+}
+

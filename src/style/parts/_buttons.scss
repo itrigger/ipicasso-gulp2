@@ -25,6 +25,13 @@
       background: #0E64B7;
       transition: .2s all;
     }
+    &.disabled{
+      opacity: .5;
+      cursor: default;
+      &:hover{
+        background: $blue;
+      }
+    }
   }
   &.btn-yellow{
     background: #FFC31A;

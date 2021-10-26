@@ -31,6 +31,11 @@ a{
   }
 }
 
+a.default-link{
+  color: $blue;
+  text-decoration: underline;
+}
+
 /*Хаотичная разметка по дизайну*/
 #banners{
   margin-bottom: 61px;
@@ -92,7 +97,9 @@ a{
 }
 
 
-
+.fancybox-button.fancybox-close-small svg path{
+  fill: #000 !important;
+}
 /*
 ToDo 1) Баг в файрфокс с каруселью, надо указать ширину контейнера
  */

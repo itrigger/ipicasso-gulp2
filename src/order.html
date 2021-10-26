@@ -98,7 +98,7 @@
                 <div class="ct_image">
                     <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">
                         <img src="../img/temp/order_1.png" alt="Słoń - symbol spokoju"
-                                                                                               title="Słoń - symbol spokoju">
+                             title="Słoń - symbol spokoju">
                     </a>
                 </div>
                 <div class="ct_name">
@@ -106,7 +106,7 @@
                         <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">Zwierciadło duszy</a>
                         <div class="code">PC5065062</div>
 
-                        <div class="options"></div>
+                        <div class="limit_txt"><sup>*</sup>Для оптового заказа свяжитесь с менеджером</div>
                     </div>
                     <div class="right">
                         <div class="ct_price">
@@ -142,7 +142,7 @@
                     <div class="left">
                         <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">Zachód słońca nad polem as bin lawendy in de o słońca nad polem as bin lawendy stonca nad pole</a>
                         <div class="code">PC5065062</div>
-                        <div class="options"></div>
+                        <div class="limit_txt"><sup>*</sup>Для оптового заказа свяжитесь с менеджером</div>
                     </div>
                     <div class="right">
                         <div class="ct_price">
@@ -154,7 +154,7 @@
                 <div class="ct_input">
                     <div class="inputNumber">
                         <a href="javascript:;" class="inputNumber_control ic_minus" data-onclick="decreaseProductQuantity"></a>
-                        <input type="text" data-onchange="changeProductQuantity" name="" value="3" size="1" disabled/>
+                        <input type="text" data-onchange="changeProductQuantity" name="" value="19" size="1" disabled/>
                         <a href="javascript:;" class="inputNumber_control ic_plus" data-onclick="increaseProductQuantity"></a>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
                         <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">Zwierciadło duszy</a>
                         <div class="code">PC5065062</div>
                         <div class="labels"><span class="label label--discount">-10%</span></div>
-                        <div class="options"></div>
+                        <div class="limit_txt"><sup>*</sup>Для оптового заказа свяжитесь с менеджером</div>
                     </div>
                     <div class="right">
                         <div class="ct_price">
@@ -196,7 +196,7 @@
                     </div>
                 </div>
                 <div class="ct_total">
-                    76.50<span>  zł</span>
+                    76.50<span> zł</span>
                     <div class="ct_btns">
                         <a href="#" class="remP">В избранное</a>
                         <a href="#" class="remP">Удалить</a>
@@ -206,9 +206,35 @@
             </div>
 
         </div>
-        <!--https://ipicasso.pl/image/cache/data/goods/00000004197-126x100.jpg
-        https://ipicasso.pl/image/cache/data/goods/00000004936-126x100.jpg
-        https://ipicasso.pl/image/cache/data/goods/00000005730-126x100.jpg-->
+        <div class="order_steps_content_desc_cart_footer cart-footer">
+            <div class="promocode_form success"> <!-- Добавить класс error, если промокод не верный -->
+                <div class="label">Промокод</div>
+                <input type="text" placeholder="Введите промокод..." class="input_bb cw_input"/>
+                <div class="clear_input"></div>
+                <div class="error_msg">Неверный промокод</div>
+            </div>
+            <div class="cart_total_label">
+                <div class="promo_ok_label">Скидка по промокоду:</div>
+                Cart total:
+            </div>
+            <div class="cart_total_price">
+                <div class="price_promo">6.00 zt</div>
+                <div class="price">316.00 <span>zt</span></div>
+                <div class="old_price">326.00 <span>zt</span></div>
+            </div>
+        </div>
+
+        <div class="order_steps_content_desc_cart_agreement">
+            <span id="agreement_checkbox">
+                <input type="checkbox" class="checkbox" id="agree" name="agreement" value="1" >
+                <label class="paymentNotice" for="agree">
+                Akceptuję <a class="agree-color1 default-link" href="/rozdzial-informacyjny/ipicassopl/regulamin-sklepu/" target="_blank">Regulamin</a> sklepu Ipicasso.pl oraz
+                <a class="agree-color1 default-link" href="/rozdzial-informacyjny/ipicassopl/regulamin-sklepu/#4" target="_blank">politykę prywatności</a>.
+                Naciskając przycisk «ZŁOŻ ZAMÓWIENIE», wyrażam zgodę na wykorzystanie moich danych osobowych przez iPicasso Sp. z o.o na podstawie przepisów ustawy o ochronie danych osobowych oraz Regulaminu sklepu iPicasso.pl.  Zostałem/am poinformowany/a o przysługującym mi prawie dostępu do treści tych danych oraz możliwości ich poprawiania.
+                </label>
+            </span>
+        </div>
+        <a href="/order_2.html" id="order_btn_next" class="btn btn-big disabled">Перейти к оформлению заказа</a>
 
     </div>
     <div class="col-3"></div>
@@ -219,15 +245,32 @@
 <script>
 
     //Изменение значения кол-ва в поле ввода
-    function inputChange(target, state){
-        if(state === 'plus'){
+    function inputChange(target, state) {
+        const limit = 20
+        if (state === 'plus') {
             let num = parseInt(target.val()) + 1;
+            if(num > limit){
+                num = num + '*';
+                target.parent().addClass('high_limit')
+                target.parent().parent().parent().find('.limit_txt').addClass('active');
+            }
             target.val(num).parent().find('.ic_minus').removeClass('disabled');
         } else {
-            if(parseInt(target.val()) > 1){
+            if (parseInt(target.val()) > 1) {
                 let num = parseInt(target.val()) - 1;
+
+                if(num > limit){
+                    num = num + '*';
+                    target.parent().addClass('high_limit')
+                } else {
+                    target.parent().removeClass('high_limit')
+                    target.parent().parent().parent().find('.limit_txt').removeClass('active');
+                }
                 target.val(num)
-                if(num === 1){target.parent().find('.ic_minus').addClass('disabled')}
+                if (num === 1) {
+                    target.parent().find('.ic_minus').addClass('disabled')
+                }
+
             } else {
                 target.parent().find('.ic_minus').addClass('disabled');
             }
@@ -235,21 +278,58 @@
     }
 
     $('document').ready(function () {
-        $('.inputNumber').each(function (){
-            if($(this).find('input').val() === "1"){
+
+        //ToDo: блокировать кнопку Оформить заказ, пока не нажата галочка соглашения
+
+        $('#agreement_checkbox').click(function (){
+            if($("#agree").prop('checked') === true){
+                $('#order_btn_next').removeClass('disabled')
+            } else {
+                $('#order_btn_next').addClass('disabled')
+            }
+        })
+
+        $(document).on('click', 'a.disabled', function (e){
+            e.preventDefault()
+        })
+
+
+        $('.inputNumber').each(function () {
+            if ($(this).find('input').val() === "1") {
                 $(this).find('.ic_minus').addClass('disabled');
             }
         })
-        $('.ic_plus').click(function (){
+        $('.ic_plus').click(function () {
             let $target = $(this).parent().find('input');
             inputChange($target, 'plus');
         })
-        $('.ic_minus').click(function (){
+        $('.ic_minus').click(function () {
             let $target = $(this).parent().find('input');
             inputChange($target, 'minus');
         })
 
-        //temp
+        $('.promocode_form .clear_input').click(function (){
+            $(this).parent().removeClass('active').find('input').val('');
+        })
+
+        if($('.promocode_form input').val() !== ''){
+            $('.promocode_form').addClass('active');
+        } else {
+            $('.promocode_form').removeClass('active');
+        }
+
+        $('.promocode_form input').on('input', function (){
+            if($(this).val() !== ''){
+                $('.promocode_form').addClass('active');
+            } else {
+                $('.promocode_form').removeClass('active');
+            }
+        })
+
+
+
+
+        /////////////////////////////////////////temp
         var getUrlParameter = function getUrlParameter(sParam) {
             var sPageURL = window.location.search.substring(1),
                 sURLVariables = sPageURL.split('&'),
@@ -267,11 +347,12 @@
         };
 
         var debug = getUrlParameter('debug');
-        if(debug === '1'){
+        if (debug === '1') {
             $('body').addClass('debug')
         }
+        /////////////////////////////////temp end
 
-        ////temp end
+
 
     })
 
