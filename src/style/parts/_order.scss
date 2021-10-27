@@ -11,8 +11,18 @@
     left: 11px;
     right: 11px;
     top: 3px;
-
     border-top: 2px dashed #CDCECF;
+  }
+  &.step2{
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 11px;
+      width: calc(50% - 11px);
+      top: 3px;
+      border-top: 2px solid $blue;
+    }
   }
 }
 
@@ -79,6 +89,14 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 23px;
+    &.si_2{
+      &:before{
+
+        width: 22px;
+        height: 16px;
+        background-image: url('../img/order_step1.png');
+      }
+    }
   }
   &.active span{
     background: $blue;
@@ -94,6 +112,18 @@
       top: -3px;
       border-radius: 50%;
       border: 1px solid $blue;
+    }
+  }
+  &.done{
+    font-weight: bold;
+    &:before{
+      left: 3px;
+      width: 18px;
+      height: 14px;
+      background-image: url('../img/order_step_done.png');
+    }
+    span{
+      background: $blue;
     }
   }
 }

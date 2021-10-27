@@ -513,3 +513,204 @@ body{
     }
   }
 }
+
+
+//drop down
+
+
+.drop-down {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  margin-top: 0;
+  font-family: 'PT Sans', sans-serif;
+  float: left;
+  z-index: 99
+}
+
+.drop-down select {
+  display: none
+}
+
+.drop-down .select-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin-top: 43px;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid transparent;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px
+}
+
+.drop-down .select-list.active {
+  border: 1px solid #ccc
+}
+
+.dd_w .tel-input {
+  float: left;
+  width: 420px
+}
+
+.dd_w input[type=text] {
+  border: 1px solid #a4a4a4;
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  background: #fff;
+  height: 40px;
+  padding: 0;
+  text-indent: 15px;
+  margin-left: -1px;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'PT Sans', sans-serif
+}
+
+.dd_w input[type=text]:focus {
+  outline: 0
+}
+
+.drop-down .ddbutton {
+  border: 1px solid #a4a4a4;
+  -moz-border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+  background: #fff;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px 0 0 5px;
+  cursor: pointer
+}
+
+.drop-down .ddbutton span {
+  padding-left: 21px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  float: left;
+  display: block;
+  width: 1px;
+  height: 20px
+}
+
+.drop-down .select-list-link {
+  font-size: 0;
+  width: 23px;
+  height: 21px;
+  background: url(https://ipicasso.pl/catalog/view/theme/ava/img/arrow-down.png) no-repeat center center;
+  display: block;
+  float: left;
+  margin-left: 3px
+}
+
+.drop-down .select-list li {
+  display: none;
+  background-color: #fff
+}
+
+.drop-down .select-list li span {
+  display: inline-block;
+  min-height: 35px;
+  min-width: 100px;
+  width: 100%;
+  padding: 5px 40px 5px 31px;
+  background-color: transparent;
+  background-position: left 6px center;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+  color: #000;
+  box-sizing: border-box;
+  white-space: nowrap
+}
+
+.drop-down .select-list li:hover, .drop-down .select-list li:focus {
+  background: #f1f1f1;
+  cursor: pointer
+}
+
+.drop-down .select-list {
+  max-height: 210px;
+  overflow-y: scroll;
+  opacity: 0;
+  width: 100%;
+}
+
+.drop-down .select-list.active {
+  z-index: 1;
+  opacity: 1
+}
+
+.flag_w {
+  position: relative
+}
+
+.flag_w input {
+  padding-left: 23px
+}
+
+.flaged {
+  position: absolute;
+  width: 20px;
+  z-index: 22;
+  height: 10px;
+  top: 40px;
+  left: 10px
+}
+
+.page_head .left .image img {
+  width: 100%
+}
+
+
+.dd_w {
+  margin-bottom: 2px
+}
+
+.dd_w input[type=text] {
+  height: 40px
+}
+#paymentTown.drop-down {
+  min-width: 480px !important;
+}
+#paymentTown select {
+  width: 480px;
+  border: 1px solid #1782e9;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px
+}
+#paymentTown.drop-down .select-list{
+}
+#paymentTown.drop-down .ddbutton span{
+  width: auto;
+}
+#paymentTown.drop-down .ddbutton{
+  border-radius: 3px;
+}
+#paymentTown.drop-down .select-list-link{
+  margin-left: 10px;
+  margin-right: 6px;
+  float: right;
+}
+#paymentTown.drop-down .ddbutton span{
+  padding-left: 38px;
+}
+#paymentTown.drop-down .select-list li{
+  border-right: 8px solid transparent;
+  min-width: 190px;
+}
+#paymentTown.drop-down .select-list li.active{
+  background: url("https://ipicasso.pl/image/checkkk.png") no-repeat right 9px;
+}
+#paymentTown.drop-down .select-list li span{
+  padding: 5px 40px 5px 43px;
+}
+#paymentTown.drop-down .select-list li.active span{
+  color: #1782e9;
+  font-weight: bold;
+}

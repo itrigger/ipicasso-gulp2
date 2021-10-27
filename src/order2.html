@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Страница Оформления заказа</title>
+    //= template/head.html
+
+</head>
+<body class="product">
+//= template/header.html
+
+<!-- side menu -->
+//= template/sidemenu.html
+<!-- end of side menu -->
+<div class="category_menu_w standalone_menu"><!-- добавить класс standalone если нулевого уровня меню не будет -->
+
+    <!-- main category menu -->
+    <div class="cm-level-1-w">
+        <div class="in">
+            <div class="category_menu cm-level-1 active" id="category_menu">
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container active">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="1000">
+                            <li class="mm--item hasChild" data-menu-id="100"><a href="javascript:void(0);">Malowanie po
+                                numerach</a></li>
+                            <li class="mm--item" data-menu-id="200"><a href="javascript:void(0);">Ramy do obrazow</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="300"><a href="javascript:void(0);">Diamentowa
+                                Mozaika</a></li>
+                            <li class="mm--item hasChild" data-menu-id="400"><a href="javascript:void(0);">Papaercraft
+                                3D
+                                modele</a></li>
+                            <li class="mm--item" data-menu-id="500"><a href="javascript:void(0);">Gobeliny</a></li>
+                            <!--<li data-menu-id="600"><a class="red" href="javascript:void(0);">SALE</a></li>
+                            <li class="search"><a class="ico-search" href="javascript:void(0);"></a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="2000">
+                            <li class="mm--item hasChild" data-menu-id="2100"><a href="javascript:void(0);">Радиоуправляемые
+                                игрушки</a></li>
+                            <li class="mm--item" data-menu-id="2200"><a href="javascript:void(0);">Квадрокоптеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2300"><a
+                                    href="javascript:void(0);">Экшн-камеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2400"><a href="javascript:void(0);">Прочее</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Arrows -->
+                <div class="swiper-button-prev megamenu-swiper-button swiper-button-disabled"></div>
+                <div class="swiper-button-next megamenu-swiper-button"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end of main category menu -->
+    //= template/megamenu.html
+</div>
+
+
+//= template/breadcrumb.html
+
+<div class="in order_steps">
+
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="steps_line step2 d_f jc_sb">
+            <div class="step_ico si_1 done col-1">
+                <span></span>
+                Корзина
+            </div>
+            <div class="step_ico si_2 active col-2">
+                <span></span>
+                Оформление заказа
+            </div>
+            <div class="step_ico si_3 col-1">
+                <span></span>
+                Подтверждение
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+
+</div>
+<div class="in order_steps_content">
+
+    <div class="col-3"></div>
+    <div class="col-6">
+
+        <div class="order_step2_w">
+            <div class="left">
+                <div style="display: none">
+                    <select
+                            name="payment_address[zone_id]"
+                            id="payment_address_zone_id" data-onchange="reloadAll" style="display:none;"><option
+                            value="4000"  data-code="at" >Austria</option><option
+                            value="4001"  data-code="be" >Belgia</option><option
+                            value="4002"  data-code="bg" >Bułgaria</option><option
+                            value="3989"  data-code="cz" >Czechy</option><option
+                            value="4003"  data-code="dk" >Dania</option><option
+                            value="3990"  data-code="ee" >Estonia</option><option
+                            value="3991"  data-code="fr" >Francja</option><option
+                            value="4004"  data-code="gr" >Grecja</option><option
+                            value="3992"  data-code="es" >Hiszpania</option><option
+                            value="4005"  data-code="nl" >Holandia</option><option
+                            value="3994"  data-code="lt" >Litwa</option><option
+                            value="4006"  data-code="lu" >Luksemburg</option><option
+                            value="3988"  data-code="de" >Niemcy</option><option
+                            value="3977" selected="selected" data-code="pl" >Polska</option><option
+                            value="4011"  data-code="pt" >Portugalia</option><option
+                            value="4007"  data-code="ro" >Rumunia</option><option
+                            value="4008"  data-code="se" >Szwecja</option><option
+                            value="3996"  data-code="sk" >Słowacja</option><option
+                            value="3997"  data-code="hu" >Węgry</option><option
+                            value="4009"  data-code="it" >Wlochy</option><option
+                            value="3995"  data-code="lv" >Łotwa</option>
+                    </select>
+                </div>
+                <div id="paymentTown" class="paymentWrapper paymentTown drop-down" ></div>
+            </div>
+            <div class="right">
+                asdf
+            </div>
+        </div>
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <a href="/order3.html" id="order_btn_next" class="btn btn-big disabled">Перейти к оформлению заказа</a>
+
+    </div>
+    <div class="col-3"></div>
+
+</div>
+
+
+<script>
+
+    $('document').ready(function () {
+
+
+
+
+        /////////////////////////////////////////temp
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        };
+
+        var debug = getUrlParameter('debug');
+        if (debug === '1') {
+            $('body').addClass('debug')
+        }
+        /////////////////////////////////temp end
+
+
+    })
+
+
+    $(window).resize(function () {
+        var windowWidth = $(this).width();
+    });
+
+
+    jQuery().ready(function () {
+        /* Custom select design */
+        jQuery('#paymentTown').append('<div class="ddbutton clearfix"></div>');
+        jQuery('#paymentTown').append('<ul class="select-list"></ul>');
+        jQuery('#payment_address_zone_id option').each(function () {
+
+            var bg = 'url("https://ipicasso.pl/image/flags/' + jQuery(this).data('code') + '.png")';
+            jQuery('#paymentTown .select-list').append('<li class="clsAnchor"><span value="' + jQuery(this).val() + '"  style=background-image:' + bg + '>' + jQuery(this).text() + '</span></li>');
+        });
+        jQuery('#paymentTown .ddbutton').html('<span style=background-image:url("https://ipicasso.pl/image/flags/' + jQuery('#payment_address_zone_id').find(':selected').data('code') + '.png">' + $('#payment_address_zone_id').find(':selected').text() + '</span>' + '<a href="javascript:void(0);" class="select-list-link">Arrow</a>');
+        jQuery('#paymentTown ul li').each(function () {
+            if (jQuery(this).find('span').attr('value') == jQuery('#payment_address_zone_id').find(':selected').val()) {
+                $("#shipping_address_zone_id").val(jQuery(this).find('span').attr('value'));
+                jQuery(this).addClass('active');
+
+            }
+        });
+        jQuery('#paymentTown .select-list span').on('click', function () {
+            var dd_text = jQuery(this).text();
+            var dd_img = jQuery(this).css('background-image');
+            var dd_val = jQuery(this).attr('value');
+            jQuery('#paymentTown .ddbutton').html('<span style=background-image:' + dd_img + '>' + dd_text + '</span>' + '<a href="javascript:void(0);" class="select-list-link">Arrow</a>');
+            jQuery('#paymentTown .select-list span').parent().removeClass('active');
+            jQuery(this).parent().addClass('active');
+            $("#shipping_address_zone_id").val(dd_val);
+            $("#payment_address_zone_id>option[value='" + dd_val + "']").attr("selected", "selected");
+            $("#payment_address_zone_id>option[value='" + dd_val + "']").select();
+            $("#shipping_address_zone_id>option[value='" + dd_val + "']").attr("selected", "selected");
+            $("#shipping_address_zone_id>option[value='" + dd_val + "']").select();
+            $("#payment_address_zone_id").val(dd_val);
+            $('#payment_address_zone_id').change();
+            /*  $("#shipping_address_zone_id").val(dd_val);
+             $('#shipping_address_zone_id').change();*/
+            $('#paymentTown .select-list li').slideUp("fast");
+            $('#paymentTown .select-list').removeClass("active");
+
+            // reloadAll();
+        });
+        jQuery('#paymentTown .ddbutton').on('click', function () {
+            jQuery('#paymentTown ul li').slideToggle("fast");
+            jQuery('#paymentTown ul').toggleClass("active");
+        });
+        /* End */
+    });
+
+
+    function createCodeList(dd, ph) {
+        var rgxx = $('#' + dd + ' select').find(':selected').val(), dd_plsh;
+        if ($('#' + dd + " select>option:selected").attr('data-other') == '1') {
+            dd_plsh = '_';
+        } else {
+            dd_plsh = '';
+        }
+
+        $('#' + ph).inputmask({regex: rgxx, placeholder: dd_plsh});
+
+        /* Custom select design */
+        $('#dd-' + ph).html($('#' + dd));
+        $('#' + dd).append('<div class="ddbutton clearfix"></div>');
+        $('#' + dd).append('<ul class="select-list"></ul>');
+        $('#' + dd + '  select option').each(function () {
+            var bg = $(this).css('background-image');
+            if ($(this).is(':selected')) {
+                var act = 'active';
+            } else {
+                var act = '';
+            }
+            $('#' + dd + ' .select-list').append('<li class="clsAnchor ' + act + '"><span value="' + $(this).val() + '" class="' + $(this).attr('class') + '" style=background-image:' + bg + '>  ' + '  <i class="code">  ' + $(this).data("ph") + '</i> <i class="text"> ' + $(this).data("name") + '</i></span></li>');
+        });
+        $('#' + dd + '  .ddbutton').html('<span style=background-image:' + $('#' + dd + '  select').find(':selected').css('background-image') + '></span>' + '<a href="javascript:void(0);" class="select-list-link">Arrow</a>');
+        $('#' + dd + '  ul li').each(function () {
+            if ($(this).find('span').val() == $('#' + dd + '  select').find(':selected').val()) {
+                $(this).addClass('active');
+            }
+        });
+
+        $('#' + dd + '  .select-list span').on('click', function () {
+            $('#' + ph).val('');
+            $('#' + ph).focus();
+            var dd_text = '';
+            var dd_img = $(this).css('background-image');
+            var dd_val = $(this).attr('value');
+            $('#' + dd + '  .ddbutton').html('<span style=background-image:' + dd_img + '>' + dd_text + '</span>' + '<a href="javascript:void(0);" class="select-list-link">Arrow</a>');
+            $('#' + dd + '  .select-list span').parent().removeClass('active');
+            $(this).parent().addClass('active');
+            //if ($('#'+dd+" select>option:selected").attr('data-ph') !='+44') {
+            if ($('#' + dd + " select>option:selected").attr('data-other') == '1') {
+                var dd_plsh = '_';
+            } else {
+                var dd_plsh = '';
+            }
+            $('#' + ph).inputmask({regex: dd_val, placeholder: dd_plsh});
+            $('#' + dd + '  select').val(dd_val);
+            $('#' + dd + '  select[name=options]').val(dd_val);
+            $('#' + dd + " select>option[value='" + dd_val + "']").attr("selected", "selected");
+            $('#' + dd + " select>option[value='" + dd_val + "']").select();
+            $('#' + dd + " select").change();
+            $('#' + dd + '  .select-list li').slideUp("fast");
+            $('#' + dd + '  ul').removeClass("active");
+            $('#' + ph).focus();
+        });
+
+        $('#' + dd + '  .ddbutton').on('click', function () {
+            $('#' + dd + '  ul li').slideToggle("fast");
+            $('#' + dd + '  ul').toggleClass("active");
+        });
+    }
+
+    /* End */
+
+
+</script>
+
+//= template/footer.html
+
+
+</body>
+</html>
