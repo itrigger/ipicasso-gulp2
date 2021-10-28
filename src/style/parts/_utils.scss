@@ -524,7 +524,7 @@ body{
   width: 60px;
   margin-top: 0;
   font-family: 'PT Sans', sans-serif;
-  float: left;
+
   z-index: 99
 }
 
@@ -676,6 +676,7 @@ body{
 }
 #paymentTown.drop-down {
   min-width: 480px !important;
+  width: 100%;
 }
 #paymentTown select {
   width: 480px;
@@ -713,4 +714,8 @@ body{
 #paymentTown.drop-down .select-list li.active span{
   color: #1782e9;
   font-weight: bold;
+}
+
+.hidden{
+  display: none;
 }
