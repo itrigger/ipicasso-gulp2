@@ -164,39 +164,45 @@
                 <div id="paymentTown" class="paymentWrapper paymentTown drop-down"></div>
                 <div class="hint-error">Укажите страну, чтобы увидеть способ доставки</div>
 
-                <div class="simplecheckout-block-content" style="margin-top: 60px;">
+                <div class="simplecheckout-block-content">
+                    <div class="simplecheckout-block-content-header">Выберите способ доставки</div>
 
-                    <div class="niceRadio">
+                    <div class="simple-item">
                         <div class="title">
                             <div class="d_img"><img src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png" alt="dpd" width="49"/></div>
-                            <div class="d_title_name">Kurier DPD <span class="hint-html-top2 lc_what tooltipstered" data-tooltip-content="#lc_ship_head1"></span>
+                            <div class="d_title_name">
+                                <div class="name_text">Kurier DPD <span class="ico-hint hint-html-top2 lc_what" data-tooltip-content="#lc_ship_head3"></span></div>
+
 								<div class="hidden">
-														<div id="lc_ship_head1" class="white-popup" style="width: 280px;">
+														<div id="lc_ship_head3" class="white-popup" style="width: 280px;">
 															<div style="padding:0 10px;">
 																<b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00 do 16.00).<br>
 <br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy może wzrosnąć o 1-2 dni roboczych.<br>
 <br><b>Uwaga</b>: zamówienia są wysyłane tylko po zapłacie.<br>
-<br><b>Termin płatności</b>: nie później niż 3 dni robocze od momentu złożenia zamówienia.<br>
-<br>W przypadku, gdy zaznaczona w zamówieniu kwota nie wpłynie na nasze konto w ciągu 3 dni roboczych , zamówienie zostaje anulowane.<br>
 															</div>
 														</div>
 													</div>
-                                <div class="descFull">Szybka dostawa kurierska po całej Polsce <b>w następnym dniu roboczym po wysyłce</b></div>
+                                <div class="descFull">Szybka dostawa kurierska po całej Polsce w następnym dniu roboczym po wysyłce</div>
 							</div>
                         </div>
                         <div class="right">
                             <div class="d_price"><span class="badgec green">8.00<span> zł</span></span></div>
-                            <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_10" checked="checked">
+                            <label class="niceRadio">
+                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_9" >
+                                <span class="icon"><span></span></span>
+                            </label>
                         </div>
                     </div>
 
 
-                    <div class="niceRadio">
+                    <div class="simple-item">
                         <div class="title">
                             <div class="d_img"><img src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png" alt="dpd" width="49"/></div>
-                            <div class="d_title_name">Kurier DPD <span class="hint-html-top2 lc_what tooltipstered" data-tooltip-content="#lc_ship_head1"></span>
+                            <div class="d_title_name">
+                                <div class="name_text">Курьер DPD za. pobraniem <span class="ico-hint hint-html-top2 lc_what" data-tooltip-content="#lc_ship_head2"></span></div>
+
                                 <div class="hidden">
-                                    <div id="lc_ship_head1" class="white-popup" style="width: 280px;">
+                                    <div id="lc_ship_head2" class="white-popup" style="width: 280px;">
                                         <div style="padding:0 10px;">
                                             <b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00 do 16.00).<br>
                                             <br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy może wzrosnąć o 1-2 dni roboczych.<br>
@@ -206,20 +212,64 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="descFull">Szybka dostawa kurierska po całej Polsce <b>w następnym dniu roboczym po wysyłce</b></div>
+
                             </div>
                         </div>
                         <div class="right">
                             <div class="d_price"><span class="badgec green">FREE</span></div>
-                            <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_10" checked="checked">
-
+                            <label class="niceRadio">
+                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_10" checked="checked">
+                                <span class="icon"><span></span></span>
+                            </label>
                         </div>
                     </div>
 
-                    <div class="niceRadio">
+                    <div class="simple-item">
                         <div class="title">
                             <div class="d_img"><img width="56px" src="https://ipicasso.pl/catalog/view/theme/ava/img/inpost_ico.png"  /></div>
-                            <div class="d_title_name">Paczkomat <span class="hint-html-top2 lc_what tooltipstered" data-tooltip-content="#lc_ship_head1"></span>
+                            <div class="d_title_name">
+                                <div class="name_text">Paczkomat</div>
+                                <div class="descFull">Co najmniej jeden przedmiot przewyższa dozwolone rozmiary w tej opcji dostawy (max 41x38х64 cm)</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="d_price"><span class="badgec green">12.00<span> zł</span></span></div>
+                            <label class="niceRadio">
+                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_11" >
+                                <span class="icon"><span></span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="simplecheckout-block-content">
+                    <div class="simplecheckout-block-content-header">Выберите способ оплаты</div>
+                    <div class="simple-item">
+                        <div class="title">
+                            <div class="d_img"><img src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png" alt="dpd" width="49"/></div>
+                            <div class="d_title_name">
+                                <div class="name_text">Kurier DPD</div>
+                                <span class="hint-html-top2 lc_what " data-tooltip-content="#lc_ship_head1"></span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div></div>
+                            <label class="niceRadio">
+                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_15" >
+                                <span class="icon"><span></span></span>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="simple-item">
+                        <div class="title">
+                            <div class="d_img"><img src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png" alt="dpd" width="49"/></div>
+                            <div class="d_title_name">
+                                <div class="name_text">Курьер DPD za. pobraniemD</div>
+                                <span class="hint-html-top2 lc_what " data-tooltip-content="#lc_ship_head1"></span>
                                 <div class="hidden">
                                     <div id="lc_ship_head1" class="white-popup" style="width: 280px;">
                                         <div style="padding:0 10px;">
@@ -231,16 +281,38 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="descFull">Szybka dostawa kurierska po całej Polsce <b>w następnym dniu roboczym po wysyłce</b></div>
+
                             </div>
                         </div>
                         <div class="right">
-                            <div class="d_price"><span class="badgec green">12.00<span> zł</span></span></div>
-                            <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_10" checked="checked">
+                            <div></div>
+                            <label class="niceRadio">
+                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_16" >
+                                <span class="icon"><span></span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="simple-item">
+                        <div class="title">
+                            <div class="d_img"><img width="56px" src="https://ipicasso.pl/catalog/view/theme/ava/img/inpost_ico.png"   alt=""/></div>
+                            <div class="d_title_name">
+                                <div class="name_text">Paczkomat</div>
+                                <span class="hint-html-top2 lc_what " data-tooltip-content="#lc_ship_head1"></span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div></div>
+                            <label class="niceRadio">
+                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_14" >
+                                <span class="icon"><span></span></span>
+                            </label>
                         </div>
                     </div>
 
                 </div>
+
+
             </div>
             <div class="right">
                 <div class="cart_panel">
@@ -271,31 +343,8 @@
         </div>
 
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
 
-        <a href="/order3.html" id="order_btn_next" class="btn btn-big disabled">Перейти к оформлению заказа</a>
+        <a href="/order3.html" id="order_btn_next" class="btn btn-big">Подтвердить заказ</a>
 
     </div>
     <div class="col-3"></div>
@@ -303,10 +352,44 @@
 </div>
 
 
+
+
+
+
+
 <script>
 
     $('document').ready(function () {
 
+        $('.simple-item').click(function (){
+            $(this).parent().find('.simple-item').removeClass('active')
+           $(this).addClass('active').find('input:radio').prop("checked", true);
+        })
+
+        function checkRadioState(){
+            $('.simple-item').each(function (){
+                if($(this).find("input[type='radio']:checked").length){
+                    $(this).addClass('active')
+                }
+            })
+        }
+
+        checkRadioState()
+
+        $('.hint-html-top2').tooltipster({
+            animation: 'fade',
+            animationDuration: 50,
+            multiple: true,
+            side: 'top',
+            theme: 'tooltipster-light',
+            interactive: true,
+            functionBefore: function(instance, helper){
+                $(helper.origin).addClass('active');
+            },
+            functionAfter: function(){
+                $(".hint-html-top2").removeClass("active");
+            }
+        });
 
         /////////////////////////////////////////temp
         var getUrlParameter = function getUrlParameter(sParam) {
@@ -447,8 +530,6 @@
             $('#' + dd + '  ul').toggleClass("active");
         });
     }
-
-    /* End */
 
 
 </script>
