@@ -173,29 +173,31 @@
                             <div class="d_title_name">
                                 <div class="name_text">Kurier DPD <span class="ico-hint hint-html-top2 lc_what" data-tooltip-content="#lc_ship_head3"></span></div>
 
-								<div class="hidden">
-														<div id="lc_ship_head3" class="white-popup" style="width: 280px;">
-															<div style="padding:0 10px;">
-																<b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00 do 16.00).<br>
-<br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy może wzrosnąć o 1-2 dni roboczych.<br>
-<br><b>Uwaga</b>: zamówienia są wysyłane tylko po zapłacie.<br>
-															</div>
-														</div>
-													</div>
+                                <div class="hidden">
+                                    <div id="lc_ship_head3" class="white-popup" style="width: 280px;">
+                                        <div style="padding:0 10px;">
+                                            <b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00
+                                            do 16.00).<br>
+                                            <br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy
+                                            może wzrosnąć o 1-2 dni roboczych.<br>
+                                            <br><b>Uwaga</b>: zamówienia są wysyłane tylko po zapłacie.<br>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="descFull">Szybka dostawa kurierska po całej Polsce w następnym dniu roboczym po wysyłce</div>
-							</div>
+                            </div>
                         </div>
                         <div class="right">
                             <div class="d_price"><span class="badgec green">8.00<span> zł</span></span></div>
                             <label class="niceRadio">
-                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_9" >
+                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_9">
                                 <span class="icon"><span></span></span>
                             </label>
                         </div>
                     </div>
 
 
-                    <div class="simple-item">
+                    <div class="simple-item no-desc"> <!-- Добавить класс no-desc, если у метода нет описания -->
                         <div class="title">
                             <div class="d_img"><img src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png" alt="dpd" width="49"/></div>
                             <div class="d_title_name">
@@ -204,8 +206,10 @@
                                 <div class="hidden">
                                     <div id="lc_ship_head2" class="white-popup" style="width: 280px;">
                                         <div style="padding:0 10px;">
-                                            <b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00 do 16.00).<br>
-                                            <br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy może wzrosnąć o 1-2 dni roboczych.<br>
+                                            <b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00
+                                            do 16.00).<br>
+                                            <br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy
+                                            może wzrosnąć o 1-2 dni roboczych.<br>
                                             <br><b>Uwaga</b>: zamówienia są wysyłane tylko po zapłacie.<br>
                                             <br><b>Termin płatności</b>: nie później niż 3 dni robocze od momentu złożenia zamówienia.<br>
                                             <br>W przypadku, gdy zaznaczona w zamówieniu kwota nie wpłynie na nasze konto w ciągu 3 dni roboczych , zamówienie zostaje anulowane.<br>
@@ -218,7 +222,7 @@
                         <div class="right">
                             <div class="d_price"><span class="badgec green">FREE</span></div>
                             <label class="niceRadio">
-                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_10" checked="checked">
+                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_10">
                                 <span class="icon"><span></span></span>
                             </label>
                         </div>
@@ -226,31 +230,61 @@
 
                     <div class="simple-item">
                         <div class="title">
-                            <div class="d_img"><img width="56px" src="https://ipicasso.pl/catalog/view/theme/ava/img/inpost_ico.png"  /></div>
+                            <div class="d_img"><img width="56px" src="https://ipicasso.pl/catalog/view/theme/ava/img/inpost_ico.png" alt=""/></div>
                             <div class="d_title_name">
                                 <div class="name_text">Paczkomat</div>
                                 <div class="descFull">Co najmniej jeden przedmiot przewyższa dozwolone rozmiary w tej opcji dostawy (max 41x38х64 cm)</div>
-                                <div class="post_info">
+                                <div class="delivery_post_info">
                                     <span>ZAR12M, Bohaterow Getta 3, 68-200 Zary</span>
-                                    <div class="btn">ZMIEN PACZKOMAT</div>
+                                    <a href="#" class="btn">ZMIEN PACZKOMAT</a>
                                 </div>
                             </div>
                         </div>
                         <div class="right">
                             <div class="d_price"><span class="badgec green">12.00<span> zł</span></span></div>
                             <label class="niceRadio">
-                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_11" >
+                                <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_13" id="by_total_percent.by_total_percent_13">
                                 <span class="icon"><span></span></span>
                             </label>
                         </div>
                     </div>
+
+                    <!-- <div class="simple-item">
+                         <div class="title">
+                             <div class="d_img"><img width="56px" src="https://ipicasso.pl/catalog/view/theme/ava/img/inpost_ico.png" alt=""/></div>
+                             <div class="d_title_name">
+                                 <div class="name_text">Paczkomat</div>
+                                 <div class="descFull">Słoneczna 194, 05-50, Kolonia Lesznowola<br/>
+                                     <a href="#" class="default-link">Посмотреть на карте</a>
+                                 </div>
+                                 <div class="delivery_post_info">
+                                     <span>После оплаты товары будут поставлены в резерв и доступны для самовывоза в следующие дни:</span>
+                                     <dl class="pickup_date">
+                                         <dt>Сегодня, <span>12 марта</span></dt>
+                                        <dd>до 20:00</dd>
+                                         <dt>Завтра, <span>13 марта</span></dt>
+                                         <dd>с 10:00 до 18:00</dd>
+                                         <dt>15 марта</dt>
+                                         <dd>с 9:00 до 20:00</dd>
+                                     </dl>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="right">
+                             <div class="d_price"><span class="badgec green">FREE</span></div>
+                             <label class="niceRadio">
+                                 <input type="radio" data-onchange="reloadAll" name="shipping_method" value="by_total_percent.by_total_percent_21" id="by_total_percent.by_total_percent_21"  checked="checked">
+                                 <span class="icon"><span></span></span>
+                             </label>
+                         </div>
+                     </div> -->
 
                 </div>
 
 
                 <div class="simplecheckout-block-content disabled">
                     <div class="simplecheckout-block-content-header">Выберите способ оплаты</div>
-                    <div class="simple-item">
+                    <div class="simple-item no-desc">
                         <div class="title">
                             <div class="d_img"><img src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png" alt="dpd" width="49"/></div>
                             <div class="d_title_name">
@@ -261,14 +295,14 @@
                         <div class="right">
                             <div></div>
                             <label class="niceRadio">
-                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_15" >
+                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_15">
                                 <span class="icon"><span></span></span>
                             </label>
                         </div>
                     </div>
 
 
-                    <div class="simple-item">
+                    <div class="simple-item no-desc">
                         <div class="title">
                             <div class="d_img"><img src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png" alt="dpd" width="49"/></div>
                             <div class="d_title_name">
@@ -277,8 +311,10 @@
                                 <div class="hidden">
                                     <div id="lc_ship_head1" class="white-popup" style="width: 280px;">
                                         <div style="padding:0 10px;">
-                                            <b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00 do 16.00).<br>
-                                            <br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy może wzrosnąć o 1-2 dni roboczych.<br>
+                                            <b>Standardowy czas dostawy – w następnym dniu roboczym po wysyłce</b> w godzinach od 9.00 do 20.00 (najczęściej przedział czasowy odbioru wynosi od 10.00
+                                            do 16.00).<br>
+                                            <br>W godzinach szczytu (Święta Państwowe, Boże Narodzenie) lub w przypadku siły wyższej (wypadki drogowe, korki, trudne warunki atmosferyczne) czas dostawy
+                                            może wzrosnąć o 1-2 dni roboczych.<br>
                                             <br><b>Uwaga</b>: zamówienia są wysyłane tylko po zapłacie.<br>
                                             <br><b>Termin płatności</b>: nie później niż 3 dni robocze od momentu złożenia zamówienia.<br>
                                             <br>W przypadku, gdy zaznaczona w zamówieniu kwota nie wpłynie na nasze konto w ciągu 3 dni roboczych , zamówienie zostaje anulowane.<br>
@@ -291,31 +327,74 @@
                         <div class="right">
                             <div></div>
                             <label class="niceRadio">
-                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_16" >
+                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_16">
                                 <span class="icon"><span></span></span>
                             </label>
                         </div>
                     </div>
 
-                    <div class="simple-item">
-                        <div class="title">
-                            <div class="d_img"><img width="56px" src="https://ipicasso.pl/catalog/view/theme/ava/img/inpost_ico.png"   alt=""/></div>
-                            <div class="d_title_name">
-                                <div class="name_text">Paczkomat</div>
-                                <span class="hint-html-top2 lc_what " data-tooltip-content="#lc_ship_head1"></span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div></div>
-                            <label class="niceRadio">
-                                <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_14" >
-                                <span class="icon"><span></span></span>
-                            </label>
-                        </div>
-                    </div>
+                    <!-- <div class="simple-item no-desc">
+                         <div class="title">
+                             <div class="d_img"><img width="56px" src="https://ipicasso.pl/catalog/view/theme/ava/img/inpost_ico.png"   alt=""/></div>
+                             <div class="d_title_name">
+                                 <div class="name_text">Paczkomat</div>
+                                 <span class="hint-html-top2 lc_what " data-tooltip-content="#lc_ship_head1"></span>
+                             </div>
+                         </div>
+                         <div class="right">
+                             <div></div>
+                             <label class="niceRadio">
+                                 <input type="radio" data-onchange="reloadAll" name="payment_method" value="by_total_percent.by_total_percent_10" id="by_total_percent.by_total_percent_14" >
+                                 <span class="icon"><span></span></span>
+                             </label>
+                         </div>
+                     </div> -->
 
                 </div>
 
+
+                <div class="simplecheckout-block-content" style="margin-top: -9px;">
+                    <div class="simplecheckout-block-content-header">Данные покупателя</div>
+
+                    <div class="order_tabs">
+                        <div class="tabs_head">
+                            <ul>
+                                <li class="tab_head active" data-tab-content="1">Физическое лицо</li>
+                                <li class="tab_head" data-tab-content="2">Юридическое лицо</li>
+                            </ul>
+                        </div>
+                        <div class="tab_contents">
+                            <div class="tab_content" data-tab="1" style="display: grid;">
+                                <form action="" class="cw_form">
+                                    <div class="grid-c-4">
+                                        <div class="d_f ai_end col-2 | first_line">
+                                            <input type="text" class="cw_input op_input_full" placeholder="Имя"/>
+                                        </div>
+                                        <div class="d_f ai_end col-2 | first_line">
+                                            <input type="text" class="cw_input op_input_full" placeholder="Фамилия"/>
+                                        </div>
+                                        <div class="d_f fd_c pos_r col-4 | first_line">
+                                            <div class="" style="position: relative;">
+                                                <div class="flag_w">
+                                                    <input type="tel" name="telname" id="customer_telephone" value="">
+                                                    <div class="" id="adtel2">
+                                                        <a class="addTel" href="#"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d_f fd_c pos_r col-4 | first_line">
+                                            <input type="text" class="cw_input op_input_full" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab_content" data-tab="2" style="display: none;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="right">
@@ -347,7 +426,6 @@
         </div>
 
 
-
         <a href="/order3.html" id="order_btn_next" class="btn btn-big">Подтвердить заказ</a>
 
     </div>
@@ -356,23 +434,21 @@
 </div>
 
 
-
-
-
-
-
 <script>
 
     $('document').ready(function () {
 
-        $('.simple-item').click(function (){
-            $(this).parent().find('.simple-item').removeClass('active')
-           $(this).addClass('active').find('input:radio').prop("checked", true);
+        $('.simple-item').click(function (e) {
+            let target = e.target.className
+            if (target !== 'btn') {
+                $(this).parent().find('.simple-item').removeClass('active')
+                $(this).addClass('active').find('input:radio').prop("checked", true);
+            }
         })
 
-        function checkRadioState(){
-            $('.simple-item').each(function (){
-                if($(this).find("input[type='radio']:checked").length){
+        function checkRadioState() {
+            $('.simple-item').each(function () {
+                if ($(this).find("input[type='radio']:checked").length) {
                     $(this).addClass('active')
                 }
             })
@@ -387,10 +463,10 @@
             side: 'top',
             theme: 'tooltipster-light',
             interactive: true,
-            functionBefore: function(instance, helper){
+            functionBefore: function (instance, helper) {
                 $(helper.origin).addClass('active');
             },
-            functionAfter: function(){
+            functionAfter: function () {
                 $(".hint-html-top2").removeClass("active");
             }
         });
@@ -535,8 +611,35 @@
         });
     }
 
-
 </script>
+
+
+<link href="https://ipicasso.pl/catalog/view/theme/ava/stylesheet/intlTelInput.css"  rel="stylesheet"/>
+
+
+<script>
+$('document').ready(function(){
+    arr_country_codes = ["at","bg","cz","dk","ee","fr","gr","es","nl","lt","lu","de","pl","pt","ro","se","sk","hu","it","lv"];
+    // createCodeList('dd1','customer_telephone');
+   /* var input = document.querySelector("#customer_telephone");
+    var iti = window.intlTelInput(input, {
+        separateDialCode:true,
+        nationalMode:true,
+        preferredCountries:["pl"],
+        onlyCountries: arr_country_codes,
+        utilsScript: "/libs/intlTelInput/js/utils.js"
+    });*/
+
+    var input = document.querySelector("#customer_telephone");
+    window.intlTelInput(input, {
+        onlyCountries: arr_country_codes,
+    });
+
+
+});
+</script>
+
+
 
 //= template/footer.html
 
