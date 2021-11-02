@@ -376,10 +376,8 @@
                                         <div class="d_f fd_c pos_r col-4 | first_line">
                                             <div class="" style="position: relative;">
                                                 <div class="flag_w">
-                                                    <input type="tel" name="telname" id="customer_telephone" value="">
-                                                    <div class="" id="adtel2">
-                                                        <a class="addTel" href="#"></a>
-                                                    </div>
+                                                    <input type="tel" name="telname_code" class="cw_input" id="customer_telephone_code" value="" placeholder="Телефон">
+                                                    <div id="adtel2"><a class="addTel" href="#"></a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -387,9 +385,95 @@
                                             <input type="text" class="cw_input op_input_full" placeholder="Email">
                                         </div>
                                     </div>
+
+                                    <div class="simple-block | block-receiver">
+                                        <div class="simplecheckout-block-content-header">Получатель</div>
+                                        <ul class="d_f | radio_tabs">
+                                            <li data-tab-content="3" class="active"><label for="rec1" class="niceRadio niceRadio_left"><input type="radio" name="receiver" id="rec1" checked><span
+                                                    class="icon"><span></span></span> Получаю сам</label></li>
+                                            <li data-tab-content="4"><label for="rec2" class="niceRadio niceRadio_left"><input type="radio" name="receiver" id="rec2"><span class="icon"><span></span></span> Получает
+                                                другой человек</label></li>
+                                        </ul>
+                                        <div class="tab_content" style="display: grid" data-tab="3">
+
+                                            <div class="d_f fd_c pos_r col-4 | first_line">
+                                                <input type="text" class="cw_input" placeholder="Комментарий к заказу"/>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab_content" style="display: none" data-tab="4">
+                                            2
+                                        </div>
+                                    </div>
+
+                                    <div class="simple-block | block-delivery_address">
+                                        <div class="simplecheckout-block-content-header">Адрес доставки</div>
+                                        <div class="grid-c-4">
+                                            <div class="d_f ai_end col-2 | first_line">
+                                                <input type="text" class="cw_input op_input_full" placeholder="Почтовый индекс"/>
+                                            </div>
+                                            <div class="d_f ai_end col-2 | first_line">
+                                                <input type="text" class="cw_input op_input_full" placeholder="Населенный пункт"/>
+                                            </div>
+                                            <div class="d_f fd_c pos_r col-4 | first_line">
+                                                <input type="text" class="cw_input op_input_full" placeholder="Улица, номер дома">
+                                            </div>
+                                            <div class="d_f fd_c pos_r col-4 | first_line">
+                                                <input type="text" class="cw_input op_input_full" placeholder="Nr mieszkania, localu itp">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="simple-block | ">
+                                        <div class="received-email">
+                                            <input class="a_name checkbox" id="attribute_value_1066" type="checkbox" name="received_email" >
+                                            <label for="attribute_value_1066">Я хочу получать скидки на день рождения</label>
+                                        </div>
+                                        <div class="received-email_form active">
+                                            <div class="grid-c-4">
+                                                <div class="col-2 d_f fd_c">
+                                                    <div class="received-email_label | input-label">Ваш пол</div>
+                                                    <ul class="d_f | radio_tabs">
+                                                        <li><label for="rec11" class="niceRadio niceRadio_left"><input type="radio" name="receiver" id="rec11" checked><span class="icon"><span></span></span> Мужской</label></li>
+                                                        <li><label for="rec22" class="niceRadio niceRadio_left"><input type="radio" name="receiver" id="rec22"><span class="icon"><span></span></span> Женский</label></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-2 d_f fd_c">
+                                                    <div class="received-email_label | input-label">Дата рождения</div>
+                                                    <div class="d_f">
+                                                        <select name="dob_day" id="dob_day" class="">
+                                                            <option value="01">01</option>
+                                                            <option value="02">02</option>
+                                                        </select>
+                                                        <select name="dob_month" id="dob_month">
+                                                            <option value="01">01</option>
+                                                            <option value="02">02</option>
+                                                        </select>
+                                                        <select name="dob_year" id="dob_year">
+                                                            <option value="1970">1970</option>
+                                                            <option value="1971">1971</option>
+                                                            <option value="1972">1972</option>
+                                                            <option value="1973">1973</option>
+                                                            <option value="1974">1974</option>
+                                                            <option value="1975">1975</option>
+                                                            <option value="1976">1976</option>
+                                                            <option value="1977">1977</option>
+                                                            <option value="1978">1978</option>
+                                                            <option value="1979">1979</option>
+                                                            <option value="1980">1980</option>
+                                                            <option value="1981">1981</option>
+                                                            <option value="1982">1982</option>
+                                                            <option value="1983">1983</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </form>
                             </div>
-                            <div class="tab_content" data-tab="2" style="display: none;">
+                            <div class="tab_content" data-tab="2" style="display: none;"> <!-- Юр лицо -->
 
                             </div>
                         </div>
@@ -614,31 +698,25 @@
 </script>
 
 
-<link href="https://ipicasso.pl/catalog/view/theme/ava/stylesheet/intlTelInput.css"  rel="stylesheet"/>
+<link href="https://ipicasso.pl/catalog/view/theme/ava/stylesheet/intlTelInput.css" rel="stylesheet"/>
 
 
 <script>
-$('document').ready(function(){
-    arr_country_codes = ["at","bg","cz","dk","ee","fr","gr","es","nl","lt","lu","de","pl","pt","ro","se","sk","hu","it","lv"];
-    // createCodeList('dd1','customer_telephone');
-   /* var input = document.querySelector("#customer_telephone");
-    var iti = window.intlTelInput(input, {
-        separateDialCode:true,
-        nationalMode:true,
-        preferredCountries:["pl"],
-        onlyCountries: arr_country_codes,
-        utilsScript: "/libs/intlTelInput/js/utils.js"
-    });*/
+    $('document').ready(function () {
+        arr_country_codes = ["at", "bg", "cz", "dk", "ee", "fr", "gr", "es", "nl", "lt", "lu", "de", "pl", "pt", "ro", "se", "sk", "hu", "it", "lv"];
+        var input = document.querySelector("#customer_telephone_code");
 
-    var input = document.querySelector("#customer_telephone");
-    window.intlTelInput(input, {
-        onlyCountries: arr_country_codes,
+        window.intlTelInput(input, {
+            separateDialCode: true,
+            nationalMode: true,
+            preferredCountries: ["pl"],
+            onlyCountries: arr_country_codes,
+            utilsScript: "/libs/intlTelInput/js/utils.js"
+        });
+
+
     });
-
-
-});
 </script>
-
 
 
 //= template/footer.html

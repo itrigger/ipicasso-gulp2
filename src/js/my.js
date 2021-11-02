@@ -590,7 +590,11 @@ $(document).ready(function () {
     })
 
 
-    $('select').niceSelect();
+    //$('select').niceSelect();
+    $('select').customSelect({
+        includeValue: true
+    });
+    //https://kvlsrg.github.io/jquery-custom-select/
 
 
 
@@ -645,7 +649,7 @@ $(document).ready(function () {
         var tab_c = $(this).attr('data-tab-content');
         $(this).parent().find('li').removeClass('active');
         $(this).addClass('active');
-        $(`.tab_content[data-tab=${tab_c}]`).parent().find('.tab_content').css('display','none');
+        $(`.tab_content[data-tab=${tab_c}]`).parent().children('.tab_content').css('display','none');
         $(`.tab_content[data-tab=${tab_c}]`).css('display','grid');
     })
 
@@ -702,4 +706,27 @@ $(function () {
 });*/
 
 
+//Добавление активного класса полю ввода
+var inpsToMonitor = document.querySelectorAll (
+    "input[type=text]"
+);
+for (var J = inpsToMonitor.length - 1;  J >= 0;  --J) {
+    inpsToMonitor[J].addEventListener ("change",    adjustStyling, false);
+    inpsToMonitor[J].addEventListener ("keyup",     adjustStyling, false);
+    inpsToMonitor[J].addEventListener ("focus",     adjustStyling, false);
+    inpsToMonitor[J].addEventListener ("blur",      adjustStyling, false);
+    inpsToMonitor[J].addEventListener ("mousedown", adjustStyling, false);
 
+    //-- Initial update. note that IE support is NOT needed.
+    var evt = document.createEvent ("HTMLEvents");
+    evt.initEvent ("change", false, true);
+    inpsToMonitor[J].dispatchEvent (evt);
+}
+
+function adjustStyling (zEvent) {
+    var inpVal  = zEvent.target.value;
+    if (inpVal  &&  inpVal.replace (/^\s+|\s+$/g, "") )
+        zEvent.target.classList.add("active");
+    else
+        zEvent.target.classList.remove("active");
+}

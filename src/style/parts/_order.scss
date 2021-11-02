@@ -549,7 +549,7 @@
   font-size: 20px;
   font-weight: bold;
   line-height: 30px;
-  margin-bottom: 22px;
+  margin-bottom: 23px;
 }
 .simple-item{
   display: grid;
@@ -681,11 +681,17 @@ dl.pickup_date{
 }
 
 .order_tabs{
+  .tabs_head{
+    margin-bottom: 33px;
+  }
   .tab_content{
     grid-template-columns: repeat(4, 1fr);
     form{
       grid-column: 1 / -1;
     }
+  }
+  .cw_form .first_line{
+    margin-bottom: 31px;
   }
 }
 
@@ -698,6 +704,56 @@ dl.pickup_date{
 .op_input_full{
   width: 100%;
 }
-.op_input_half{
 
+.simple-block{
+  margin-top: 37px;
+  .simplecheckout-block-content-header{
+    margin-bottom: 24px;
+  }
 }
+
+.radio_tabs{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style: none;
+    margin-right: 25px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.block-receiver{
+  .radio_tabs{
+    margin-bottom: 30px;
+  }
+}
+
+.block-delivery_address{
+  .simplecheckout-block-content-header{
+    margin-bottom: 28px;
+  }
+}
+
+.received-email{
+  label{
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 32px !important;
+  }
+  .checkbox + label:before{
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px !important;
+    background-repeat: no-repeat;
+  }
+}
+
+.received-email_form{
+  margin-top: 22px;
+}
+
+.received-email_label{
+  margin-bottom: 6px;
+}
+

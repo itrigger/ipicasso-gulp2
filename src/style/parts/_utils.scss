@@ -925,7 +925,7 @@ body {
   padding: 2px;
   position: absolute;
   border-radius: 50%;
-  z-index: 99
+  z-index: 9
 }
 
 .niceRadio .icon span {
@@ -973,6 +973,13 @@ body {
   display: none
 }
 
+.niceRadio_left{
+  padding-left: 25px;
+  .icon{
+    left: 0;
+  }
+}
+
 #date_time_block {
   margin-left: 40px
 }
@@ -993,4 +1000,67 @@ body {
 
 .hidden {
   display: none;
+}
+
+.flag_w{
+  .intl-tel-input{
+    display: flex;
+    .flag-container{
+      position: relative;
+      border-bottom: 1px solid #ccc;
+    }
+    .cw_input{
+      width: 100%;
+      margin-left: 20px !important;
+      padding-left: 0 !important;
+    }
+  }
+  .intl-tel-input .flag-container{
+    padding: 0;
+  }
+  .intl-tel-input .selected-flag .iti-flag{
+    left: 27px;
+    margin: 0;
+    top: 9px;
+  }
+  .intl-tel-input.separate-dial-code .selected-dial-code{
+    padding-left: 60px;
+  }
+  .intl-tel-input .selected-flag .iti-arrow{
+    right: auto;
+    left: 5px;
+    margin-top: -1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #555;
+  }
+  .intl-tel-input.allow-dropdown .selected-flag, .intl-tel-input.separate-dial-code .selected-flag{
+    width: 101px;
+  }
+  .intl-tel-input.separate-dial-code .selected-flag{
+    display: flex;
+    align-items: center;
+    height: 33px;
+  }
+}
+
+.addTel{
+  background: url('../img/addtel.png') center center no-repeat;
+  background-size: 12px 12px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.input-label{
+  color: rgba(#404142,.5);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.custom-select__dropdown{
+  max-height: 211px;
+  overflow-y: auto;
 }

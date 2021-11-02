@@ -267,8 +267,9 @@
   font-size: 16px;
   line-height: 24px;
   height: 34px;
-  &:focus, &:active{
+  &:focus, &:active, &.active{
     outline: none;
+    border-bottom-color: #404142;
   }
 }
 .cw_input_comment{
