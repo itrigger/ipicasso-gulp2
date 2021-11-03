@@ -75,7 +75,7 @@ var CustomSelect = function ($) {
     ;
 
     _proto._init = function _init() {
-      this._$element = $("<div class=\"" + this._options.block + "\">\n           <button class=\"" + this._options.block + "__option " + this._options.block + "__option--value\" type=\"button\"></button>\n           <div class=\"" + this._options.block + "__dropdown\" style=\"display: none;\"></div>\n         </div>");
+      this._$element = $("<div class=\"" + this._options.block + "\">\n           <button class=\"" + this._options.block + "__option " + this._options.block + "__option--value\" type=\"button\"></button>\n           <div class=\"" + this._options.block + "__dropdown\" style=\"display: none;\"><div class='j-select-wrapper'><div class='scrollbar-inner scrollbar-inner-in'></div></div></div>\n         </div>");
 
       this._$select.hide().after(this._$element);
 
@@ -84,7 +84,7 @@ var CustomSelect = function ($) {
       }
 
       this._$value = this._$element.find("." + this._options.block + "__option--value");
-      this._$dropdown = this._$element.find("." + this._options.block + "__dropdown");
+      this._$dropdown = this._$element.find("." + this._options.block + "__dropdown .scrollbar-inner-in");
 
       this._fill();
     }
@@ -184,7 +184,7 @@ var CustomSelect = function ($) {
 
       this._$element.addClass(this._activeModifier);
 
-      this._$dropdown.slideDown(this._options.transition, function () {
+      this._$dropdown.parent().parent().parent().slideDown(this._options.transition, function () {
         if (_this2._options.search) {
           _this2._$input.focus();
 
@@ -197,6 +197,7 @@ var CustomSelect = function ($) {
         if (typeof _this2._options.showCallback === 'function') {
           _this2._options.showCallback.call(_this2._$element[0]);
         }
+        console.log(this._$dropdown)
       });
 
       setTimeout(function () {
@@ -233,7 +234,7 @@ var CustomSelect = function ($) {
         this._$wrap.scrollTop(0);
       }
 
-      this._$dropdown.slideUp(this._options.transition, function () {
+      this._$dropdown.parent().parent().parent().slideUp(this._options.transition, function () {
         _this3._$element.removeClass(_this3._activeModifier).removeClass(_this3._dropupModifier); // Close callback
 
 
