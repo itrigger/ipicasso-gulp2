@@ -94,6 +94,33 @@
   grid-column: 1 / span 2;
   display: flex;
   align-items: center;
+  .custom-select{
+    z-index: 9999;
+    .custom-select__option--value{
+      font-size: 14px;
+      line-height: 18px;
+      border-bottom: none;
+    }
+  }
+  .custom-select__dropdown{
+    height: auto;
+    width: 218px;
+  }
+  .j-select-wrapper{
+    height: auto;
+    .scrollbar-inner{
+      height: auto;
+      max-height: none;
+    }
+  }
+  .custom-select--active{
+    .custom-select__option--value{
+      font-weight: bold;
+    }
+  }
+  .custom-select__option.custom-select__option--selected{
+
+  }
 }
 .select_counter{
   grid-column: -1 / span 1;

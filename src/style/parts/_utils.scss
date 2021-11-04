@@ -1060,6 +1060,19 @@ body {
   line-height: 16px;
 }
 
-.custom-select__dropdown{
-
+.custom-label{
+  position: absolute;
+  color: rgba(#404142,.5);
+  font-size: 12px;
+  line-height: 16px;
+  transition: .2s all;
+  top: -10px;
+  left: 0;
+}
+.j-select-wrapper {
+  height: 200px;
+  .scrollbar-inner {
+    height: 190px;
+    max-height: 190px;
+  }
 }

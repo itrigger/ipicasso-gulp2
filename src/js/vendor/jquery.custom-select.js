@@ -184,7 +184,8 @@ var CustomSelect = function ($) {
 
       this._$element.addClass(this._activeModifier);
 
-      this._$dropdown.parent().parent().parent().slideDown(this._options.transition, function () {
+     // this._$dropdown.parent().parent().parent().slideDown(this._options.transition, function () {
+      _this2._$select.next().find('.custom-select__dropdown').slideDown(this._options.transition, function () {
         if (_this2._options.search) {
           _this2._$input.focus();
 
@@ -197,7 +198,7 @@ var CustomSelect = function ($) {
         if (typeof _this2._options.showCallback === 'function') {
           _this2._options.showCallback.call(_this2._$element[0]);
         }
-        console.log(this._$dropdown)
+        //console.log(_this2._$select)
       });
 
       setTimeout(function () {
@@ -234,7 +235,8 @@ var CustomSelect = function ($) {
         this._$wrap.scrollTop(0);
       }
 
-      this._$dropdown.parent().parent().parent().slideUp(this._options.transition, function () {
+      //this._$dropdown.parent().parent().parent().find('.custom-select__dropdown').slideUp(this._options.transition, function () {
+      _this3._$select.next().find('.custom-select__dropdown').slideUp(this._options.transition, function () {
         _this3._$element.removeClass(_this3._activeModifier).removeClass(_this3._dropupModifier); // Close callback
 
 

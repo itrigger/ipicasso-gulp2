@@ -693,12 +693,16 @@ dl.pickup_date{
   .cw_form .first_line{
     margin-bottom: 31px;
   }
+  .cw_form .last_line{
+    margin-bottom: 15px;
+  }
 }
 
 .grid-c-4{
   grid-template-columns: repeat(4, 1fr);
   display: grid;
   grid-gap: 0 20px;
+  width: 100%;
 }
 
 .op_input_full{
@@ -750,9 +754,13 @@ dl.pickup_date{
 }
 
 .received-email_form{
+  display: none;
   margin-top: 22px;
   .custom-select{
     margin-right: 20px;
+  }
+  &.active{
+    display: block;
   }
 }
 
@@ -780,12 +788,12 @@ dl.pickup_date{
   box-shadow: 0 8px 20px 0 rgba(#000, .3);
   border: 1px solid #CDCECF;
   border-radius: 4px;
-  height: 200px;
+  height: 210px;
 }
 .custom-select__dropdown{
   border: 1px solid #CDCECF;
   border-radius: 4px;
-  padding: 10px 2px 10px 10px;
+  padding: 10px 2px 10px 12px;
   margin-left: -8px;
   width: calc(100% + 16px);
 }
@@ -799,10 +807,13 @@ dl.pickup_date{
   font-size: 16px;
   line-height: 24px;
 }
+.custom-select__option--value::after{
+  right: 8px;
+}
 .custom-select__option.custom-select__option--selected{
   font-weight: bold;
   color: $blue;
-  background: url('../img/check_medium.png') calc(100% - 17px) 2px no-repeat;
+  background: url('../img/check_medium.png') calc(100% - 17px) 4px no-repeat;
   background-size: 15px 12px;
 }
 
@@ -814,10 +825,52 @@ dl.pickup_date{
   }
 }
 
-.j-select-wrapper {
-  height: 200px;
-  .scrollbar-inner {
-    height: 200px;
-    max-height: 200px;
+.line_address--text{
+  font-weight: bold;
+}
+
+.line_address {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  &.empty{
+    padding: 21px 0;
+    font-weight: bold;
+    a{
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .ico-w{
+      padding-right: 12px;
+    }
   }
+  &.edit{
+    border-bottom: none;
+    margin-bottom: 20px;
+    .ico-w{
+      padding-right: 12px;
+    }
+  }
+  .title{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.line_address--control{
+  padding-right: 16px;
+  flex: inherit;
+  .niceRadio{
+    flex: inherit;
+    font-size: 12px;
+    line-height: 16px;
+    padding-right: 40px;
+    color: $blue;
+  }
+  .niceRadio .icon{
+    right: 0;
+  }
+}
+
+.edit_form{
+  padding-bottom: 15px;
 }

@@ -708,7 +708,7 @@ $(function () {
 
 //Добавление активного класса полю ввода
 var inpsToMonitor = document.querySelectorAll (
-    "input[type=text]"
+    "input[type=text], input[type=tel], input[type=email]"
 );
 for (var J = inpsToMonitor.length - 1;  J >= 0;  --J) {
     inpsToMonitor[J].addEventListener ("change",    adjustStyling, false);
@@ -725,8 +725,15 @@ for (var J = inpsToMonitor.length - 1;  J >= 0;  --J) {
 
 function adjustStyling (zEvent) {
     var inpVal  = zEvent.target.value;
-    if (inpVal  &&  inpVal.replace (/^\s+|\s+$/g, "") )
+    if (inpVal  &&  inpVal.replace (/^\s+|\s+$/g, "") ) {
         zEvent.target.classList.add("active");
-    else
+
+        if (!($(zEvent.target).parent().find('.custom-label').length)) {
+            $(zEvent.target).parent().prepend(`<div class="custom-label">${zEvent.target.placeholder}</div>`);
+        }
+    } else {
         zEvent.target.classList.remove("active");
+        $(zEvent.target).parent().find('.custom-label').remove()
+    }
 }
+

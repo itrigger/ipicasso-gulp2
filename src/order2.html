@@ -367,21 +367,21 @@
                             <div class="tab_content" data-tab="1" style="display: grid;">
                                 <form action="" class="cw_form">
                                     <div class="grid-c-4">
-                                        <div class="d_f ai_end col-2 | first_line">
+                                        <div class="d_f ai_end col-2 pos_r | first_line">
                                             <input type="text" class="cw_input op_input_full" placeholder="Имя"/>
                                         </div>
-                                        <div class="d_f ai_end col-2 | first_line">
+                                        <div class="d_f ai_end col-2 pos_r | first_line">
                                             <input type="text" class="cw_input op_input_full" placeholder="Фамилия"/>
                                         </div>
                                         <div class="d_f fd_c pos_r col-4 | first_line">
                                             <div class="" style="position: relative;">
-                                                <div class="flag_w">
+                                                <div class="flag_w pos_r">
                                                     <input type="tel" name="telname_code" class="cw_input" id="customer_telephone_code" value="" placeholder="Телефон">
                                                     <div id="adtel2"><a class="addTel" href="#"></a></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="d_f fd_c pos_r col-4 | first_line">
+                                        <div class="d_f fd_c pos_r col-4 pos_r | first_line">
                                             <input type="text" class="cw_input op_input_full" placeholder="Email">
                                         </div>
                                     </div>
@@ -396,23 +396,45 @@
                                         </ul>
                                         <div class="tab_content" style="display: grid" data-tab="3">
 
-                                            <div class="d_f fd_c pos_r col-4 | first_line">
+                                            <div class="d_f fd_c pos_r col-4 pos_r | first_line">
                                                 <input type="text" class="cw_input" placeholder="Комментарий к заказу"/>
                                             </div>
 
                                         </div>
                                         <div class="tab_content" style="display: none" data-tab="4">
-                                            2
+
+                                                <div class="d_f ai_end col-2 pos_r | first_line">
+                                                    <input type="text" class="cw_input op_input_full" placeholder="Имя"/>
+                                                </div>
+                                                <div class="d_f ai_end col-2 pos_r | first_line">
+                                                    <input type="text" class="cw_input op_input_full" placeholder="Фамилия"/>
+                                                </div>
+                                                <div class="d_f fd_c pos_r col-4 | first_line">
+                                                    <div class="" style="position: relative;">
+                                                        <div class="flag_w">
+                                                            <input type="tel" name="telname_code" class="cw_input" id="customer_telephone_code2" value="" placeholder="Телефон">
+                                                            <div id="adtel3"><a class="addTel" href="#"></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d_f fd_c pos_r col-4 | first_line">
+                                                    <input type="text" class="cw_input op_input_full" placeholder="Email">
+                                                </div>
+
                                         </div>
                                     </div>
 
                                     <div class="simple-block | block-delivery_address">
                                         <div class="simplecheckout-block-content-header">Адрес доставки</div>
-                                        <div class="grid-c-4">
-                                            <div class="d_f ai_end col-2 | first_line">
+
+
+                                       <!-- ####### Новый адрес доставки -->
+                                       <!--
+                                       <div class="grid-c-4">
+                                            <div class="d_f ai_end col-2 pos_r | first_line">
                                                 <input type="text" class="cw_input op_input_full" placeholder="Почтовый индекс"/>
                                             </div>
-                                            <div class="d_f ai_end col-2 | first_line">
+                                            <div class="d_f ai_end col-2 pos_r | first_line">
                                                 <input type="text" class="cw_input op_input_full" placeholder="Населенный пункт"/>
                                             </div>
                                             <div class="d_f fd_c pos_r col-4 | first_line">
@@ -421,15 +443,95 @@
                                             <div class="d_f fd_c pos_r col-4 | first_line">
                                                 <input type="text" class="cw_input op_input_full" placeholder="Nr mieszkania, localu itp">
                                             </div>
+                                        </div>-->
+
+                                        <!-- ####### Уже есть адрес доставки -->
+                                        <!--<div class="d_f jc_sb ai_c | line_address">
+                                            <div class="line_address&#45;&#45;text">
+                                                Улица 4, 222<br>
+                                                Варшава, 00-555<br>
+                                                Польша<br>
+                                            </div>
+                                            <div class="line_address&#45;&#45;control">
+                                                <label class="niceRadio">Редактировать <input type="radio" name="my_address" checked /> <span class="icon"><span></span></span> </label>
+                                            </div>
                                         </div>
+                                        <div class="d_f jc_sb ai_c | line_address">
+                                            <div class="line_address&#45;&#45;text">
+                                                Улица 8, 222<br>
+                                                Варшава, 11-666<br>
+                                                Польша<br>
+                                            </div>
+                                            <div class="line_address&#45;&#45;control">
+                                                <label class="niceRadio">Редактировать <input type="radio" name="my_address" /> <span class="icon"><span></span></span> </label>
+                                            </div>
+                                        </div>
+                                        <div class="line_address empty">
+                                            <a href="javascript:;" class="d_f jc_sb ai_c">
+                                                <div>Добавить адрес доставки</div>
+                                                <div class="ico-w">
+                                                    <span class="ico-plus"></span>
+                                                </div>
+                                            </a>
+                                        </div>-->
+
+                                        <div class="d_f jc_sb ai_c | line_address edit">
+                                            <div class="title">
+                                                Редактировать адрес
+                                            </div>
+                                            <div>
+                                                <a href="javascript:;">
+                                                    <div class="ico-w">
+                                                        <span class="ico-del"></span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="d_f jc_sb ai_c | line_address edit_form">
+                                            <div class="grid-c-4">
+                                                <div class="d_f ai_end col-2 pos_r | first_line">
+                                                    <input type="text" class="cw_input op_input_full" placeholder="Почтовый индекс" value="00-555"/>
+                                                </div>
+                                                <div class="d_f ai_end col-2 pos_r | first_line">
+                                                    <input type="text" class="cw_input op_input_full" placeholder="Населенный пункт" value="Деревня Кукуево"/>
+                                                </div>
+                                                <div class="d_f fd_c pos_r col-4 | first_line">
+                                                    <input type="text" class="cw_input op_input_full" placeholder="Улица, номер дома" value="1/1"/>
+                                                </div>
+                                                <div class="d_f fd_c pos_r col-4 | last_line">
+                                                    <input type="text" class="cw_input op_input_full" placeholder="Nr mieszkania, localu itp" value="hz" />
+                                                </div>
+                                                <div class="d_f ai_end col-2 pos_r | ">
+                                                    <a href="javascript:;" class="btn-flat">Отменить</a>
+                                                </div>
+                                                <div class="d_f ai_end col-2 pos_r | ">
+                                                    <a href="javascript:;" class="btn-flat blue">Сохранить</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="line_address empty">
+                                            <a href="javascript:;" class="d_f jc_sb ai_c">
+                                                <div>Добавить адрес доставки</div>
+                                                <div class="ico-w">
+                                                    <span class="ico-plus"></span>
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+
                                     </div>
 
-                                    <div class="simple-block | ">
+                                    <div class="simple-block | bday-block">
                                         <div class="received-email">
                                             <input class="a_name checkbox" id="bday_checkbox" type="checkbox" name="received_email" >
                                             <label for="bday_checkbox">Я хочу получать скидки на день рождения</label>
                                         </div>
-                                        <div class="received-email_form active">
+                                        <div class="received-email_form">
                                             <div class="grid-c-4">
                                                 <div class="col-2 d_f fd_c">
                                                     <div class="received-email_label | input-label">Ваш пол</div>
@@ -562,14 +664,20 @@
 
     $('document').ready(function () {
 
-        $('.bday_checkbox').click(function (){
-            $('.j-select-wrapper .scrollbar-inner').scrollbar({
-                //autoScrollSize:!1,
-                autoUpdate: true,
-                disableBodyScroll: false
-            });
-        })
 
+        if($('.bday-block #bday_checkbox').prop("checked") === true){
+            $('.received-email_form').addClass('active')
+        } else {
+            $('.received-email_form').removeClass('active')
+        }
+
+        $('.bday-block #bday_checkbox').change(function() {
+            if(this.checked) {
+                $('.received-email_form').addClass('active')
+            } else {
+                $('.received-email_form').removeClass('active')
+            }
+        });
 
 
 
@@ -606,6 +714,9 @@
                 });
             }
         });
+
+
+
 
         $('.simple-item').click(function (e) {
             let target = e.target.className
@@ -790,6 +901,7 @@
     $('document').ready(function () {
         arr_country_codes = ["at", "bg", "cz", "dk", "ee", "fr", "gr", "es", "nl", "lt", "lu", "de", "pl", "pt", "ro", "se", "sk", "hu", "it", "lv"];
         var input = document.querySelector("#customer_telephone_code");
+        var input2 = document.querySelector("#customer_telephone_code2");
 
         window.intlTelInput(input, {
             separateDialCode: true,
@@ -799,6 +911,13 @@
             utilsScript: "/libs/intlTelInput/js/utils.js"
         });
 
+        window.intlTelInput(input2, {
+            separateDialCode: true,
+            nationalMode: true,
+            preferredCountries: ["pl"],
+            onlyCountries: arr_country_codes,
+            utilsScript: "/libs/intlTelInput/js/utils.js"
+        });
 
     });
 </script>
