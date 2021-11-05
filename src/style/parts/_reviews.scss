@@ -271,6 +271,10 @@
     outline: none;
     border-bottom-color: #404142;
   }
+  &.error{
+    color: #F44436;
+    border-bottom-color: #F44436;
+  }
 }
 .cw_input_comment{
   width: 100%;

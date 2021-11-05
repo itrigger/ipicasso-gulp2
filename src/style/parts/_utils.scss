@@ -1044,14 +1044,22 @@ body {
   }
 }
 
+.add_tel_w{
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 12px;
+  a{
+    text-decoration: none;
+  }
+}
+
 .addTel{
   background: url('../img/addtel.png') center center no-repeat;
   background-size: 12px 12px;
   width: 16px;
   height: 16px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
+  margin-right: 10px;
 }
 
 .input-label{
@@ -1069,10 +1077,25 @@ body {
   top: -10px;
   left: 0;
 }
+
 .j-select-wrapper {
   height: 200px;
   .scrollbar-inner {
     height: 190px;
     max-height: 190px;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: inherit;
+  transition: background-color 5000s ease-in-out 0s;
 }
