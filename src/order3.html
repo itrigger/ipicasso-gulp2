@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Страница Оформления заказа</title>
+    //= template/head.html
+
+</head>
+<body class="product">
+//= template/header.html
+
+<!-- side menu -->
+//= template/sidemenu.html
+<!-- end of side menu -->
+<div class="category_menu_w standalone_menu"><!-- добавить класс standalone если нулевого уровня меню не будет -->
+
+    <!-- main category menu -->
+    <div class="cm-level-1-w">
+        <div class="in">
+            <div class="category_menu cm-level-1 active" id="category_menu">
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container active">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="1000">
+                            <li class="mm--item hasChild" data-menu-id="100"><a href="javascript:void(0);">Malowanie po
+                                numerach</a></li>
+                            <li class="mm--item" data-menu-id="200"><a href="javascript:void(0);">Ramy do obrazow</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="300"><a href="javascript:void(0);">Diamentowa
+                                Mozaika</a></li>
+                            <li class="mm--item hasChild" data-menu-id="400"><a href="javascript:void(0);">Papaercraft
+                                3D
+                                modele</a></li>
+                            <li class="mm--item" data-menu-id="500"><a href="javascript:void(0);">Gobeliny</a></li>
+                            <!--<li data-menu-id="600"><a class="red" href="javascript:void(0);">SALE</a></li>
+                            <li class="search"><a class="ico-search" href="javascript:void(0);"></a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="2000">
+                            <li class="mm--item hasChild" data-menu-id="2100"><a href="javascript:void(0);">Радиоуправляемые
+                                игрушки</a></li>
+                            <li class="mm--item" data-menu-id="2200"><a href="javascript:void(0);">Квадрокоптеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2300"><a
+                                    href="javascript:void(0);">Экшн-камеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2400"><a href="javascript:void(0);">Прочее</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Arrows -->
+                <div class="swiper-button-prev megamenu-swiper-button swiper-button-disabled"></div>
+                <div class="swiper-button-next megamenu-swiper-button"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end of main category menu -->
+    //= template/megamenu.html
+</div>
+
+
+//= template/breadcrumb.html
+
+<div class="in order_steps">
+
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="steps_line step2 d_f jc_sb">
+            <div class="step_ico si_1 done col-1">
+                <span></span>
+                Корзина
+            </div>
+            <div class="step_ico si_2  col-2">
+                <span></span>
+                Оформление заказа
+            </div>
+            <div class="step_ico si_3 active col-1">
+                <span></span>
+                Подтверждение
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+
+</div>
+<div class="in order_steps_content">
+
+    <div class="col-3 l-col-2 m-col-2"></div>
+    <div class="col-6 l-col-6 m-col-6">
+
+        <div class="order_step2_w">
+            <div class="left">
+
+
+                <div class="order_ok--confirmed">Ваш заказ принят</div>
+                <div class="order_ok--order-number">Номер заказа: 5374</div>
+                <div class="order_ok--text">
+                    <p>Информация о заказе будет продублирована Вам на
+                    E-mail, а актуальный статус. заказа всегда можноо узнать в личном кабинете на сайте.</p>
+
+                    <p>После обработки заказа и подтверждения наличия товара менеждер вышлет его по адресу, указанноому прии оформлении.</p>
+
+                    <p>Если у вас есть вопросы, свяжитесь с. нами
+                    По телефону: <a href="tel:+48 123 456 789" class="link">+48 123 456 789</a> или по e-mail: <a class="link" href="mailto:ipicasso.pl@gmail.com">ipicasso.pl@gmail.com</a></p>
+                </div>
+
+                <div class="order_ok_thanku">Спасибо, что выбрали нас!</div>
+
+
+
+            </div>
+            <div class="right">
+                <div class="cart_panel">
+                    <div class="title">Ваш заказ</div>
+                    <div class="row">
+                        <div class="name">Товары, 4шт.</div>
+                        <div class="price">316.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Скидка</div>
+                        <div class="price">-40.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Промокод</div>
+                        <div class="price">-6.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Доставка</div>
+                        <div class="price">- zt</div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="row total">
+                        <div class="name">Итого</div>
+                        <div class="price">278.00 <span>zt</span></div>
+                    </div>
+                </div>
+            </div>
+            <a href="/" id="order_btn_next" class="col-6 l-col-6 btn btn-big">Вернуться на главную</a>
+        </div>
+
+    </div>
+    <div class="col-3 l-col-2 m-col-2"></div>
+
+</div>
+
+
+<script>
+
+
+    $('document').ready(function () {
+
+        /////////////////////////////////////////temp
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        };
+
+        var debug = getUrlParameter('debug');
+        if (debug === '1') {
+            $('body').addClass('debug')
+        }
+        /////////////////////////////////temp end
+
+
+
+    });
+
+
+    $(window).resize(function () {
+        var windowWidth = $(this).width();
+    });
+
+    /*ToDo:
+    1. Подкорректировать верстку выпадающего списка
+    2. Сделать кастом скролл для всех селектов (и номер телефона и обычных)
+     */
+
+</script>
+
+
+//= template/footer.html
+
+
+</body>
+</html>
