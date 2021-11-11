@@ -1136,10 +1136,19 @@ dl.pickup_date {
 }
 
 .order_ok--text{
+  margin-top: 32px;
+  line-height: 24px;
+  p{
+    margin-bottom: 22px;
+  }
+}
 
+.order_ok--data{
+  margin-top: 48px;
 }
 
 .data-block{
+  margin-bottom: 18px;
   .head{
     font-size: 20px;
     font-weight: bold;
