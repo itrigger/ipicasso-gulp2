@@ -126,6 +126,9 @@ body {
   &.price--discount {
     color: $red;
   }
+  &.price--old{
+    text-decoration: line-through;
+  }
 }
 
 .rating-star {
