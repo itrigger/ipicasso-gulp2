@@ -338,6 +338,42 @@ body.product {
   margin-top: 32px;
   padding-bottom: 35px;
   border-bottom: 1px solid #CDCECF;
+  &:hover{
+    .del_w{
+      opacity: 1;
+      transition: .2s all;
+    }
+  }
+}
+
+.pi_btns{
+  .inputNumber{
+    margin-left: 8px;
+    margin-right: 16px;
+    border: 1px solid #CDCECF;
+    border-radius: 4px;
+    transition: .2s all;
+    &:hover{
+      transition: .2s all;
+      border-color: #404142;
+      .inputNumber_control{
+        opacity: 1;
+        transition: .2s all;
+        &.disabled{
+          opacity: .4;
+        }
+      }
+    }
+  }
+  .inputNumber_control{
+    width: 24px;
+    height: 100%;
+    opacity: .4;
+    transition: .2s all;
+  }
+}
+.inputNumber-w{
+
 }
 
 .pi_like_w {
@@ -615,6 +651,34 @@ body.product {
     &:last-child {
       margin-right: 0;
     }
+  }
+}
+
+.del_w {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1782E9;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: .3s all;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.pi_btns .limit_txt {
+  position: absolute;
+  bottom: 9px;
+  color: #F44436;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0;
+  &.active{
+    opacity: 1;
   }
 }
 

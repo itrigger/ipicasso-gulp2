@@ -273,11 +273,7 @@
       align-items: flex-start;
       padding-top: 17px;
 
-      .high_limit {
-        input {
-          color: #F44436 !important;
-        }
-      }
+
     }
 
     .ct_total {
@@ -312,11 +308,16 @@
     }
   }
 }
+.high_limit {
+  &.inputNumber input {
+    color: #F44436 !important;
+  }
+}
 
 .inputNumber {
   display: flex;
   align-items: center;
-
+  position: relative;
   input {
     width: 32px;
     margin: 0 7px;
@@ -342,8 +343,9 @@
       content: '';
       display: block;
       position: absolute;
-      left: 0;
-      top: 5px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
       width: 12px;
       height: 2px;
       background-color: #404142;
@@ -351,6 +353,19 @@
 
     &.disabled {
       opacity: .4;
+      &:before{
+        background-color: #404142;
+      }
+    }
+    &:hover{
+      &:before {
+        background-color: $blue;
+      }
+      &.disabled {
+        &:before{
+          background-color: #404142;
+        }
+      }
     }
   }
 
@@ -359,8 +374,9 @@
       content: '';
       display: block;
       position: absolute;
-      left: 0;
-      top: 5px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
       width: 12px;
       height: 2px;
       background-color: #404142;
@@ -370,8 +386,9 @@
       content: '';
       display: block;
       position: absolute;
-      left: 5px;
-      top: 0;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
       width: 2px;
       height: 12px;
       background-color: #404142;
@@ -379,6 +396,19 @@
 
     &.disabled {
       opacity: .4;
+      &:before, &:after{
+        background-color: #404142;
+      }
+    }
+    &:hover{
+      &:before, &:after {
+        background-color: $blue;
+      }
+      &.disabled {
+        &:before, &:after{
+          background-color: #404142;
+        }
+      }
     }
   }
 }

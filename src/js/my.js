@@ -737,3 +737,74 @@ function adjustStyling (zEvent) {
     }
 }
 
+var inptsCount = document.querySelectorAll (
+    ".inputCountTarget"
+);
+for (let s = inpsToMonitor.length - 1;  s >= 0;  --s) {
+    inptsCount[s].addEventListener ("change",    inputChange(s, false), false);
+    inptsCount[s].addEventListener ("keyup",     inputChange(s, false), false);
+    inptsCount[s].addEventListener ("focus",     inputChange(s, false), false);
+    inptsCount[s].addEventListener ("blur",      inputChange(s, false), false);
+    inptsCount[s].addEventListener ("mousedown", inputChange(s, false), false);
+
+    //-- Initial update. note that IE support is NOT needed.
+    var evts = document.createEvent ("HTMLEvents");
+    evts.initEvent ("change", false, true);
+    inpsToMonitor[s].dispatchEvent (evts);
+}
+
+
+
+//Изменение значения кол-ва в поле ввода
+function inputChange(target, state) {
+    const limit = 20
+    if (state === 'plus') {
+        let num = parseInt(target.val()) + 1;
+        if(num > limit){
+            num = num + '*';
+            target.parent().addClass('high_limit')
+            target.parent().parent().parent().find('.limit_txt').addClass('active');
+        }
+        target.val(num).parent().find('.ic_minus').removeClass('disabled');
+    } else if (state === 'minus'){
+        if (parseInt(target.val()) > 1) {
+            let num = parseInt(target.val()) - 1;
+
+            if(num > limit){
+                num = num + '*';
+                target.parent().addClass('high_limit')
+            } else {
+                target.parent().removeClass('high_limit')
+                target.parent().parent().parent().find('.limit_txt').removeClass('active');
+            }
+            target.val(num)
+            if (num === 1) {
+                target.parent().find('.ic_minus').addClass('disabled')
+            }
+
+        } else {
+            target.parent().find('.ic_minus').addClass('disabled');
+        }
+    } else {
+        let num = parseInt(target.val()) - 1;
+
+        if (parseInt(target.val()) > 1) {
+            let num = parseInt(target.val()) - 1;
+
+            if(num > limit){
+                num = num + '*';
+                target.parent().addClass('high_limit')
+            } else {
+                target.parent().removeClass('high_limit')
+                target.parent().parent().parent().find('.limit_txt').removeClass('active');
+            }
+            target.val(num)
+            if (num === 1) {
+                target.parent().find('.ic_minus').addClass('disabled')
+            }
+
+        } else {
+            target.parent().find('.ic_minus').addClass('disabled');
+        }
+    }
+}
