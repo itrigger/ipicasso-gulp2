@@ -642,12 +642,7 @@
     margin-bottom: 52px;
   }
   //////
-  .cart_panel{
-    margin-left: 20px;
-    .title{
-      margin-bottom: 20px;
-    }
-  }
+
 }
 
 .hint-error {
@@ -655,9 +650,19 @@
 }
 
 
+.order_steps_content{
+  .cart_panel {
+    margin-left: 40px;
+  }
+  .order_step3_w .cart_panel{
+    margin-left: 20px;
+    .title{
+      margin-bottom: 20px;
+    }
+  }
+}
 
 .cart_panel {
-  margin-left: 40px;
   .mc_table{
     margin-bottom: 23px;
     border-bottom: 1px solid #ccc;
