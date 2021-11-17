@@ -366,7 +366,7 @@
       }
       &.disabled {
         &:before{
-          background-color: #404142;
+          background-color: rgba(#404142,.4);
         }
       }
     }
@@ -408,7 +408,7 @@
       }
       &.disabled {
         &:before, &:after{
-          background-color: #404142;
+          background-color: rgba(#404142,.4);
         }
       }
     }

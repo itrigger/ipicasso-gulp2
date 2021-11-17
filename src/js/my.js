@@ -738,7 +738,7 @@ function adjustStyling (zEvent) {
 }
 
 
-$('.inputCountTarget').on('keyup change', function (e){
+$('.inputCountTarget').on('keyup change blur', function (e){
     let $target = $(this);
     if(event.keyCode === 46 || event.keyCode === 8){
         inputChange($target, 'backspace');
@@ -779,7 +779,7 @@ $('.ic_minus').click(function () {
     }
 })
 //Изменение значения кол-ва в поле ввода
-function inputChange(target, state, minicart = false) {
+function inputChange(target, state, minicart = false) {   //bug когда появилась звездочка - не позволяет впечатывать значение. Может удалять звезду при фокусе?
     const limit = 20
     let num = parseInt(target.val())
     switch (state) {

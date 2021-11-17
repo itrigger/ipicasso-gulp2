@@ -76,10 +76,11 @@ body {
   margin-left: auto
 }
 
-.w100{
+.w100 {
   width: 100%;
 }
-.h100{
+
+.h100 {
   height: 100%;
 }
 
@@ -132,7 +133,8 @@ body {
   &.price--discount {
     color: $red;
   }
-  &.price--old{
+
+  &.price--old {
     text-decoration: line-through;
   }
 }
@@ -587,6 +589,25 @@ body {
   }
 }
 
+.tooltipster-sidetip .tooltipster-arrow-background {
+  border: 20px solid transparent;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow {
+  height: 40px;
+  margin-top: -40px;
+  left: 0;
+  top: 0;
+  width: 40px;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow {
+  bottom: 0;
+  height: 40px;
+  margin-left: -40px;
+  width: 40px;
+}
+
 .tooltipster-sidetip .tooltipster-content {
   color: #404142 !important;
   font-size: 14px !important;
@@ -601,8 +622,35 @@ body {
   border-left-color: #FFECB8 !important;
 }
 
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background {
+  border-right-color: #FFECB8 !important;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+  border-bottom-color: #FFECB8 !important;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background {
+  border-top-color: #FFECB8 !important;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background {
+
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+
+
+}
+
 .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border,
-.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border {
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border {
   border: none !important;
 }
 
@@ -910,9 +958,7 @@ body {
 }
 
 
-
-
-.niceRadio{
+.niceRadio {
   position: relative;
   display: block;
   cursor: pointer;
@@ -965,9 +1011,11 @@ body {
   font-weight: bold;
   border-radius: 3px
 }
-.niceRadio:hover input+span.icon {
+
+.niceRadio:hover input + span.icon {
   border-color: #1782e9;
 }
+
 .niceRadio > input + .icon + .title .descFull {
   display: none
 }
@@ -982,9 +1030,10 @@ body {
   display: none
 }
 
-.niceRadio_left{
+.niceRadio_left {
   padding-left: 25px;
-  .icon{
+
+  .icon {
     left: 0;
   }
 }
@@ -1000,7 +1049,7 @@ body {
   border: 0
 }
 
-.ico-hint{
+.ico-hint {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -1011,31 +1060,37 @@ body {
   display: none;
 }
 
-.flag_w{
-  .intl-tel-input{
+.flag_w {
+  .intl-tel-input {
     display: flex;
-    .flag-container{
+
+    .flag-container {
       position: relative;
       border-bottom: 1px solid #ccc;
     }
-    .cw_input{
+
+    .cw_input {
       width: 100%;
       margin-left: 20px !important;
       padding-left: 0 !important;
     }
   }
-  .intl-tel-input .flag-container{
+
+  .intl-tel-input .flag-container {
     padding: 0;
   }
-  .intl-tel-input .selected-flag .iti-flag{
+
+  .intl-tel-input .selected-flag .iti-flag {
     left: 27px;
     margin: 0;
     top: 9px;
   }
-  .intl-tel-input.separate-dial-code .selected-dial-code{
+
+  .intl-tel-input.separate-dial-code .selected-dial-code {
     padding-left: 60px;
   }
-  .intl-tel-input .selected-flag .iti-arrow{
+
+  .intl-tel-input .selected-flag .iti-arrow {
     right: auto;
     left: 5px;
     margin-top: -1px;
@@ -1043,27 +1098,30 @@ body {
     border-right: 5px solid transparent;
     border-top: 5px solid #555;
   }
-  .intl-tel-input.allow-dropdown .selected-flag, .intl-tel-input.separate-dial-code .selected-flag{
+
+  .intl-tel-input.allow-dropdown .selected-flag, .intl-tel-input.separate-dial-code .selected-flag {
     width: 101px;
   }
-  .intl-tel-input.separate-dial-code .selected-flag{
+
+  .intl-tel-input.separate-dial-code .selected-flag {
     display: flex;
     align-items: center;
     height: 33px;
   }
 }
 
-.add_tel_w{
+.add_tel_w {
   position: absolute;
   right: 0;
   top: 10px;
   font-size: 12px;
-  a{
+
+  a {
     text-decoration: none;
   }
 }
 
-.addTel{
+.addTel {
   background: url('../img/addtel.png') center center no-repeat;
   background-size: 12px 12px;
   width: 16px;
@@ -1071,15 +1129,15 @@ body {
   margin-right: 10px;
 }
 
-.input-label{
-  color: rgba(#404142,.5);
+.input-label {
+  color: rgba(#404142, .5);
   font-size: 12px;
   line-height: 16px;
 }
 
-.custom-label{
+.custom-label {
   position: absolute;
-  color: rgba(#404142,.5);
+  color: rgba(#404142, .5);
   font-size: 12px;
   line-height: 16px;
   transition: .2s all;
@@ -1089,6 +1147,7 @@ body {
 
 .j-select-wrapper {
   height: 200px;
+
   .scrollbar-inner {
     height: 190px;
     max-height: 190px;

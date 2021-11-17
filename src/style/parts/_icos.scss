@@ -7,14 +7,12 @@
 
 .ico-user {
   position: relative;
-
   &:after {
     content: "";
     display: block;
     position: absolute;
-    right: -40px;
-    top: 50%;
-    margin-top: -23px;
+    left: 0;
+    top: 0;
     width: 32px;
     height: 32px;
     background: 0 0 no-repeat;
