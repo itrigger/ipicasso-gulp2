@@ -707,10 +707,10 @@ $(function () {
 
 
 //Добавление активного класса полю ввода
-var inpsToMonitor = document.querySelectorAll (
+let inpsToMonitor = document.querySelectorAll (
     "input[type=text], input[type=tel], input[type=email]"
 );
-for (var J = inpsToMonitor.length - 1;  J >= 0;  --J) {
+for (let J = inpsToMonitor.length - 1;  J >= 0;  --J) {
     inpsToMonitor[J].addEventListener ("change",    adjustStyling, false);
     inpsToMonitor[J].addEventListener ("keyup",     adjustStyling, false);
     inpsToMonitor[J].addEventListener ("focus",     adjustStyling, false);
@@ -718,13 +718,13 @@ for (var J = inpsToMonitor.length - 1;  J >= 0;  --J) {
     inpsToMonitor[J].addEventListener ("mousedown", adjustStyling, false);
 
     //-- Initial update. note that IE support is NOT needed.
-    var evt = document.createEvent ("HTMLEvents");
+    let evt = document.createEvent ("HTMLEvents");
     evt.initEvent ("change", false, true);
     inpsToMonitor[J].dispatchEvent (evt);
 }
 
 function adjustStyling (zEvent) {
-    var inpVal  = zEvent.target.value;
+    let inpVal  = zEvent.target.value;
     if (inpVal  &&  inpVal.replace (/^\s+|\s+$/g, "") ) {
         zEvent.target.classList.add("active");
 
@@ -747,9 +747,39 @@ $('.inputCountTarget').on('keyup change', function (e){
     }
 })
 
+$('.inputCountTarget').focusin(function (e){
+    let $target = $(this);
+    checkInputFocus($target, true)
+})
 
+$('.inputCountTarget').focusout(function (e){
+    let $target = $(this);
+    checkInputFocus($target, false)
+})
+
+$('.inputNumber').each(function () {
+    if ($(this).find('input').val() === "1") {
+        $(this).find('.ic_minus').addClass('disabled');
+    }
+})
+$('.ic_plus').click(function () {
+    let $target = $(this).parent().find('input');
+    if($(this).closest("#minicart").length) {
+        inputChange($target, 'plus', true);
+    } else {
+        inputChange($target, 'plus');
+    }
+})
+$('.ic_minus').click(function () {
+    let $target = $(this).parent().find('input');
+    if($(this).closest("#minicart").length) {
+        inputChange($target, 'minus', true);
+    } else {
+        inputChange($target, 'minus');
+    }
+})
 //Изменение значения кол-ва в поле ввода
-function inputChange(target, state) {
+function inputChange(target, state, minicart = false) {
     const limit = 20
     let num = parseInt(target.val())
     switch (state) {
@@ -758,9 +788,15 @@ function inputChange(target, state) {
             if(num > limit){
                 num = num + '*';
                 target.parent().addClass('high_limit')
-                target.parent().parent().parent().find('.limit_txt').addClass('active');
+                if(minicart){
+                    target.parent().parent().parent().parent().find('.limit_txt').addClass('active');
+                } else {
+                    target.parent().parent().parent().find('.limit_txt').addClass('active');
+                }
+
             }
             target.val(num).parent().find('.ic_minus').removeClass('disabled');
+            checkMinicartCount()
         break;
 
         case 'minus':
@@ -772,7 +808,11 @@ function inputChange(target, state) {
                     target.parent().addClass('high_limit')
                 } else {
                     target.parent().removeClass('high_limit')
-                    target.parent().parent().parent().find('.limit_txt').removeClass('active');
+                    if(minicart){
+                        target.parent().parent().parent().parent().find('.limit_txt').removeClass('active');
+                    } else {
+                        target.parent().parent().parent().find('.limit_txt').removeClass('active');
+                    }
                 }
                 target.val(num)
                 if (num === 1) {
@@ -782,9 +822,10 @@ function inputChange(target, state) {
             } else {
                 target.parent().find('.ic_minus').addClass('disabled');
             }
+            checkMinicartCount()
         break;
         case 'backspace' :
-            console.log('backspace')
+            console.log('key BACKSPACE or DELETE pressed')
         break;
         default:
             if (num > 1) {
@@ -804,62 +845,36 @@ function inputChange(target, state) {
             } else {
                 target.val('1')
                 target.parent().removeClass('high_limit')
-                target.parent().parent().parent().find('.limit_txt').removeClass('active');
+                if(minicart){
+                    target.parent().parent().parent().parent().find('.limit_txt').removeClass('active');
+                } else {
+                    target.parent().parent().parent().find('.limit_txt').removeClass('active');
+                }
                 target.parent().find('.ic_minus').addClass('disabled');
             }
+            checkMinicartCount()
     }
 
-
-   /* if (state === 'plus') {
-        let num = parseInt(target.val()) + 1;
-        if(num > limit){
-            num = num + '*';
-            target.parent().addClass('high_limit')
-            target.parent().parent().parent().find('.limit_txt').addClass('active');
-        }
-        target.val(num).parent().find('.ic_minus').removeClass('disabled');
-    } else if (state === 'minus'){
-        if (parseInt(target.val()) > 1) {
-            let num = parseInt(target.val()) - 1;
-
-            if(num > limit){
-                num = num + '*';
-                target.parent().addClass('high_limit')
-            } else {
-                target.parent().removeClass('high_limit')
-                target.parent().parent().parent().find('.limit_txt').removeClass('active');
-            }
-            target.val(num)
-            if (num === 1) {
-                target.parent().find('.ic_minus').addClass('disabled')
-            }
-
-        } else {
-            target.parent().find('.ic_minus').addClass('disabled');
-        }
-    } else {
-        let num = parseInt(target.val());
-
-        if (num > 1) {
-
-            if(num > limit){
-                num = num + '*';
-                target.parent().addClass('high_limit')
-                target.parent().parent().parent().find('.limit_txt').addClass('active');
-            } else {
-                target.parent().removeClass('high_limit')
-                target.parent().parent().parent().find('.limit_txt').removeClass('active');
-            }
-            target.val(num)
-            if (num === 1) {
-                target.parent().find('.ic_minus').addClass('disabled')
-            }
-
-        } else {
-            target.val('1')
-            target.parent().removeClass('high_limit')
-            target.parent().parent().parent().find('.limit_txt').removeClass('active');
-            target.parent().find('.ic_minus').addClass('disabled');
-        }
-    }*/
 }
+
+//Проверяем кол-во единиц у каждой позиции в миникорзине, если больше 1, то отображаем цену за штуку
+//Если обновляешь значение в корзине АЯКСом, то запускай каждый раз эту функцию
+function checkMinicartCount() {
+    if($('#minicart').length){
+        $('#minicart .inputCountTarget').each(function (){
+            if(parseInt($(this).val()) > 1){
+                $(this).parent().parent().find('.price-per-one').addClass('active')
+            } else {
+                $(this).parent().parent().find('.price-per-one').removeClass('active')
+            }
+        })
+    }
+}
+
+function checkInputFocus(target, state) {
+    state ? target.parent().parent().parent().addClass('active') : target.parent().parent().parent().removeClass('active')
+}
+
+$('document').ready(function (){
+    checkMinicartCount()
+})

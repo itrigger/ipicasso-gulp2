@@ -245,19 +245,7 @@
         margin-top: 7px;
       }
 
-      .limit_txt {
-        position: absolute;
-        bottom: 0;
-        color: #F44436;
-        font-size: 14px;
-        line-height: 16px;
-        opacity: 0;
 
-        &.active {
-          opacity: 1;
-          transition: .2s all;
-        }
-      }
     }
 
     .ct_price {
@@ -308,6 +296,20 @@
     }
   }
 }
+.limit_txt {
+  position: absolute;
+  bottom: 0;
+  color: #F44436;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transition: .2s all;
+  }
+}
+
 .high_limit {
   &.inputNumber input {
     color: #F44436 !important;
@@ -323,11 +325,13 @@
     margin: 0 7px;
     text-align: center;
     border: none !important;
+    border-bottom: 1px solid transparent !important;
     font-size: 16px;
     color: #404142 !important;
 
     &:active, &:focus {
       outline: none !important;
+      border-bottom: 1px solid $blue !important;
     }
   }
 }
@@ -335,7 +339,7 @@
 .inputNumber_control {
   position: relative;
   width: 12px;
-  height: 12px;
+  height: 20px;
   display: block;
 
   &.ic_minus {
@@ -352,9 +356,8 @@
     }
 
     &.disabled {
-      opacity: .4;
       &:before{
-        background-color: #404142;
+        background-color: rgba(#404142,.4);
       }
     }
     &:hover{
@@ -395,9 +398,8 @@
     }
 
     &.disabled {
-      opacity: .4;
       &:before, &:after{
-        background-color: #404142;
+        background-color: rgba(#404142,.4);
       }
     }
     &:hover{
@@ -436,7 +438,9 @@
 .cart-footer {
   .promocode_form {
     position: relative;
-
+    .custom-label{
+      display: none;
+    }
     .label {
       position: absolute;
       top: -11px;
@@ -462,6 +466,9 @@
 
       &:focus {
         border-bottom-color: #1782E9;
+      }
+      &::placeholder {
+        font-weight: normal;
       }
     }
 
@@ -670,6 +677,7 @@
   .mc_table_row{
     align-items: flex-start;
     margin-bottom: 16px;
+    position: relative;
   }
   .mc_title_w{
     width: 185px;
@@ -683,6 +691,7 @@
   }
   .mc_total_price{
     display: block;
+    position: relative;
     .price--old{
       color: #8A8B8C;
       font-size: 11px;

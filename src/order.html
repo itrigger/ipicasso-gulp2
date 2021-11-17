@@ -264,19 +264,7 @@
         })
 
 
-        $('.inputNumber').each(function () {
-            if ($(this).find('input').val() === "1") {
-                $(this).find('.ic_minus').addClass('disabled');
-            }
-        })
-        $('.ic_plus').click(function () {
-            let $target = $(this).parent().find('input');
-            inputChange($target, 'plus');
-        })
-        $('.ic_minus').click(function () {
-            let $target = $(this).parent().find('input');
-            inputChange($target, 'minus');
-        })
+
 
         $('.promocode_form .clear_input').click(function (){
             $(this).parent().removeClass('active').find('input').val('');
