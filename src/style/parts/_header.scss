@@ -61,7 +61,8 @@
   padding: 10px 30px 20px 0;
   position: relative;
   justify-content: flex-end;
-  &:after{
+
+  &:after {
     content: '';
     display: block;
     width: 1px;
@@ -73,6 +74,7 @@
   }
 }
 
+
 .header-user_block {
   position: relative;
 }
@@ -83,6 +85,10 @@
   margin-right: 12px;
   cursor: pointer;
   position: relative;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
   &:hover {
     .cart_block--price:after {
@@ -130,6 +136,12 @@
   margin-bottom: 2px;
 }
 
+.price--old {
+  color: #8A8B8C;
+  font-size: 14px;
+  font-weight: normal;
+}
+
 .sign-line {
   font-size: 14px;
   font-weight: bold;
@@ -142,12 +154,11 @@
 .cart_block--price {
   font-size: 16px;
   letter-spacing: 0;
-  line-height: 20px;
+  line-height: 18px;
   position: relative;
   padding-right: 36px;
   white-space: nowrap;
   font-weight: 800;
-  margin-top: 6px;
 
   span {
     font-weight: normal;
@@ -165,7 +176,7 @@
     background-size: contain;
     right: -3px;
     top: 50%;
-    margin-top: -23px;
+    margin-top: -21px;
   }
 }
 
@@ -193,7 +204,7 @@
 .cart_block--notifier {
   position: absolute;
   right: -12px;
-  top: -15px;
+  top: 3px;
   background: #F44436;
   width: 20px;
   height: 20px;
@@ -209,7 +220,7 @@
 #minicart {
   position: absolute;
   right: -12px;
-  top: 51px;
+  top: 70px;
   width: 540px;
   border: 1px solid #8A8B8C;
   border-radius: 4px;
@@ -274,20 +285,23 @@
     opacity: 0;
     transition: .2s all;
     margin-top: 2px;
+
     &.active {
       opacity: 1;
       transition: .2s all;
     }
   }
 
-  .inputNumber input{
+  .inputNumber input {
     font-size: 14px;
     line-height: 1.4;
-    &:hover{
+
+    &:hover {
       border-bottom-color: #CDCECF !important;
     }
-    &:active, &:focus{
-      &:hover{
+
+    &:active, &:focus {
+      &:hover {
         border-bottom-color: $blue !important;
       }
     }

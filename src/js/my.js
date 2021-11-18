@@ -271,7 +271,7 @@ $(document).ready(function () {
                 $(".cm-level-1 .swiper-container.active ul li").each(function() {
                     ulWidth = ulWidth + $(this).width() + 30
                 });
-                console.log(baseWidth + '---' + ulWidth);
+               // console.log(baseWidth + '---' + ulWidth);
                 if((ulWidth+80) > baseWidth) {
 
                     $(".category_menu.cm-level-1 .swiper-button-prev, .category_menu.cm-level-1 .swiper-button-next").css("display","block");
@@ -741,21 +741,20 @@ function adjustStyling (zEvent) {
 $('.inputCountTarget').on('keyup change blur', function (e){
     let $target = $(this);
     if(event.keyCode === 46 || event.keyCode === 8){
-        inputChange($target, 'backspace');
+        $(this).closest("#minicart").length ? inputChange($target, 'backspace', true) : inputChange($target, 'backspace');
     } else {
-        inputChange($target, false);
+        $(this).closest("#minicart").length ? inputChange($target, false, true) : inputChange($target, false, false);
     }
-})
-
-$('.inputCountTarget').focusin(function (e){
+}).focusin(function (e){
     let $target = $(this);
     checkInputFocus($target, true)
-})
-
-$('.inputCountTarget').focusout(function (e){
+}).focusout(function (e){
     let $target = $(this);
     checkInputFocus($target, false)
 })
+
+
+
 
 $('.inputNumber').each(function () {
     if ($(this).find('input').val() === "1") {
@@ -764,20 +763,13 @@ $('.inputNumber').each(function () {
 })
 $('.ic_plus').click(function () {
     let $target = $(this).parent().find('input');
-    if($(this).closest("#minicart").length) {
-        inputChange($target, 'plus', true);
-    } else {
-        inputChange($target, 'plus');
-    }
+    $(this).closest("#minicart").length ? inputChange($target, 'plus', true) : inputChange($target, 'plus');
 })
 $('.ic_minus').click(function () {
     let $target = $(this).parent().find('input');
-    if($(this).closest("#minicart").length) {
-        inputChange($target, 'minus', true);
-    } else {
-        inputChange($target, 'minus');
-    }
+    $(this).closest("#minicart").length ? inputChange($target, 'minus', true) : inputChange($target, 'minus');
 })
+
 //Изменение значения кол-ва в поле ввода
 function inputChange(target, state, minicart = false) {   //bug когда появилась звездочка - не позволяет впечатывать значение. Может удалять звезду при фокусе?
     const limit = 20
@@ -788,17 +780,11 @@ function inputChange(target, state, minicart = false) {   //bug когда по�
             if(num > limit){
                 num = num + '*';
                 target.parent().addClass('high_limit')
-                if(minicart){
-                    target.parent().parent().parent().parent().find('.limit_txt').addClass('active');
-                } else {
-                    target.parent().parent().parent().find('.limit_txt').addClass('active');
-                }
-
+                minicart ? target.parent().parent().parent().parent().find('.limit_txt').addClass('active') : target.parent().parent().parent().find('.limit_txt').addClass('active')
             }
             target.val(num).parent().find('.ic_minus').removeClass('disabled');
             checkMinicartCount()
         break;
-
         case 'minus':
             if (num > 1) {
                 num = num - 1;
@@ -808,11 +794,7 @@ function inputChange(target, state, minicart = false) {   //bug когда по�
                     target.parent().addClass('high_limit')
                 } else {
                     target.parent().removeClass('high_limit')
-                    if(minicart){
-                        target.parent().parent().parent().parent().find('.limit_txt').removeClass('active');
-                    } else {
-                        target.parent().parent().parent().find('.limit_txt').removeClass('active');
-                    }
+                    minicart ? target.parent().parent().parent().parent().find('.limit_txt').removeClass('active') : target.parent().parent().parent().find('.limit_txt').removeClass('active')
                 }
                 target.val(num)
                 if (num === 1) {
@@ -832,29 +814,22 @@ function inputChange(target, state, minicart = false) {   //bug когда по�
                 if(num > limit){
                     num = num + '*';
                     target.parent().addClass('high_limit')
-                    target.parent().parent().parent().find('.limit_txt').addClass('active');
+                    minicart ? target.parent().parent().parent().parent().find('.limit_txt').addClass('active') : target.parent().parent().parent().find('.limit_txt').addClass('active')
                 } else {
                     target.parent().removeClass('high_limit')
-                    target.parent().parent().parent().find('.limit_txt').removeClass('active');
+                    minicart ? target.parent().parent().parent().parent().find('.limit_txt').removeClass('active') : target.parent().parent().parent().find('.limit_txt').removeClass('active')
                 }
                 target.val(num)
-                if (num === 1) {
-                    target.parent().find('.ic_minus').addClass('disabled')
-                }
+                if (num === 1) {target.parent().find('.ic_minus').addClass('disabled')}
 
             } else {
                 target.val('1')
                 target.parent().removeClass('high_limit')
-                if(minicart){
-                    target.parent().parent().parent().parent().find('.limit_txt').removeClass('active');
-                } else {
-                    target.parent().parent().parent().find('.limit_txt').removeClass('active');
-                }
+                minicart ? target.parent().parent().parent().parent().find('.limit_txt').removeClass('active') : target.parent().parent().parent().find('.limit_txt').removeClass('active')
                 target.parent().find('.ic_minus').addClass('disabled');
             }
             checkMinicartCount()
     }
-
 }
 
 //Проверяем кол-во единиц у каждой позиции в миникорзине, если больше 1, то отображаем цену за штуку
@@ -862,11 +837,7 @@ function inputChange(target, state, minicart = false) {   //bug когда по�
 function checkMinicartCount() {
     if($('#minicart').length){
         $('#minicart .inputCountTarget').each(function (){
-            if(parseInt($(this).val()) > 1){
-                $(this).parent().parent().find('.price-per-one').addClass('active')
-            } else {
-                $(this).parent().parent().find('.price-per-one').removeClass('active')
-            }
+            parseInt($(this).val()) > 1 ? $(this).parent().parent().find('.price-per-one').addClass('active') : $(this).parent().parent().find('.price-per-one').removeClass('active')
         })
     }
 }

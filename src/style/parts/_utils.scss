@@ -582,7 +582,7 @@ body {
   border: none !important;
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.16);
   border-radius: 4px;
-  padding: 14px 6px;
+  padding: 14px 5px;
 
   p {
     margin-top: 0;
@@ -590,28 +590,46 @@ body {
 }
 
 .tooltipster-sidetip .tooltipster-arrow-background {
-  border: 20px solid transparent;
+  border: 15px solid transparent;
 }
 
 .tooltipster-sidetip.tooltipster-right .tooltipster-arrow {
-  height: 40px;
-  margin-top: -40px;
-  left: 0;
+  height: 30px;
+  margin-top: -15px;
+  left: -20px;
   top: 0;
-  width: 40px;
+  width: 30px;
 }
 
 .tooltipster-sidetip.tooltipster-top .tooltipster-arrow {
+  bottom: -20px;
+  height: 30px;
+  margin-left: -15px;
+  width: 30px;
+}
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow{
+  top: -20px;
+  height: 30px;
+  margin-left: -15px;
+  width: 30px;
   bottom: 0;
-  height: 40px;
-  margin-left: -40px;
-  width: 40px;
+}
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-uncropped{
+  top: 0;
+}
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow {
+  height: 30px;
+  margin-top: -15px;
+  right: -20px;
+  top: 0;
+  width: 30px;
 }
 
 .tooltipster-sidetip .tooltipster-content {
   color: #404142 !important;
   font-size: 14px !important;
   line-height: 24px;
+  padding: 5px 5px;
 }
 
 .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
@@ -627,6 +645,7 @@ body {
 }
 
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+  //border-bottom-color: #FFECB8 !important;
   border-bottom-color: #FFECB8 !important;
 }
 
@@ -1054,6 +1073,9 @@ body {
   width: 16px;
   height: 16px;
   background: url('../img/ico-info.jpg') 0 0 no-repeat;
+  &.active{
+    background: url('../img/ico-hint-active.png') 0 0 no-repeat;
+  }
 }
 
 .hidden {

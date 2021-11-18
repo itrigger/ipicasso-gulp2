@@ -441,9 +441,12 @@ body.sidemenu--open {
   .sign-block {
     text-align: left;
     color: #fff;
-    padding: 10px 0 17px 56px;
+    padding: 10px 0 17px 46px;
     width: 100%;
     border: none;
+    &:after {
+      display: none;
+    }
   }
 
   .ico-user {
@@ -453,6 +456,11 @@ body.sidemenu--open {
     }
   }
 
+  .ico-user:after {
+    right: -40px;
+    top: 50%;
+    margin-top: -23px;
+  }
   .heading {
     min-height: 84px;
     display: flex;
@@ -471,6 +479,9 @@ body.sidemenu--open {
   .sign-line{
     position: relative;
     right: auto;
+  }
+  .greetings{
+    padding-left: 10px;
   }
 }
 #sidemenu.catalogonly{
