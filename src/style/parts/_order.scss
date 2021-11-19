@@ -1319,3 +1319,110 @@ dl.pickup_date {
     margin-top: 35px;
   }
 }
+
+@media (max-width: 859px) {
+  .steps_line{
+    display: none;
+  }
+  .order_steps_content {
+    margin-top: 10px;
+  }
+  .order_steps_content_desc_cart{
+    margin-top: 20px;
+  }
+  .cart{
+    .row{
+      grid-gap: 0 5px;
+      padding-bottom: 14px;
+      .ct_image{
+        grid-column: 1 / span 2;
+        align-items: flex-start;
+        img{
+          max-width: 100%;
+        }
+      }
+      .ct_name{
+        grid-column: 3 / span 4;
+        flex-direction: column;
+        padding-top: 5px;
+        padding-bottom: 0;
+        .left{
+          margin-left: 5px;
+        }
+        .right{
+          margin-left: 5px;
+          margin-top: 5px;
+          text-align: left;
+        }
+        .labels{
+          margin-top: 4px;
+        }
+      }
+      .ct_input{
+        grid-column: 1 / span 2;
+        grid-row: 2;
+      }
+      .ct_total{
+        grid-column: 3 / span 4;
+        grid-row: 2;
+        text-align: left;
+        display: flex;
+        padding-left: 5px;
+      }
+      .ct_btns{
+        position: relative;
+        bottom: 0;
+        opacity: 1;
+      }
+    }
+  }
+  .ico-fav{
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    background: url('../img/mob-ico-fav.png') 0 0 no-repeat;
+  }
+  .ico-trash{
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+    width: 14px;
+    height: 17px;
+    background: url('../img/mob-ico-trash.png') 0 0 no-repeat;
+  }
+  .order_steps_content_desc_cart_footer .promocode_form{
+    grid-column: 1 / -1;
+  }
+  .order_steps_content_desc_cart_footer .cart_total_label{
+    grid-row: 2;
+    grid-column: 1 / span 3;
+    text-align: left;
+    padding-top: 25px;
+  }
+  .order_steps_content_desc_cart_footer .cart_total_price{
+    grid-row: 2;
+    grid-column: 4 / span 3;
+    padding-top: 25px;
+  }
+  .cart-footer .cart_total_price{
+    height: auto;
+  }
+  .limit_txt.active{
+    position: relative;
+    margin: 4px 0;
+  }
+  .row .inputNumber{
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  //step2
+  .order_step2_w .left{
+    grid-column: 1 / -1;
+  }
+  .order_step2_w .right{
+    grid-column: 1 / -1;
+  }
+}
