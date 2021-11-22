@@ -87,7 +87,7 @@
 </div>
 <div class="in order_steps_content">
 
-    <div class="col-3 l-col-2 m-col-1  s-col-del xs-col-del"></div>
+    <div class="col-3 l-col-2 m-col-1 s-col-del xs-col-del"></div>
     <div class="col-6 l-col-6 m-col-6 s-col-6 xs-col-4">
 
         <div class="order_step2_w">
@@ -289,7 +289,7 @@
                 </div>
 
 
-                <div class="simplecheckout-block-content disabled">
+                <div class="simplecheckout-block-content">
                     <div class="simplecheckout-block-content-header">Выберите способ оплаты</div>
                     <div class="simple-item no-desc">
                         <div class="title">
@@ -372,7 +372,7 @@
                         </div>
                         <form action="" class="cw_form">
                             <div class="tab_contents">
-                                <div class="tab_content" data-tab="1" style="display: grid;"> <!-- Физ лицо -->
+                                <div class="tab_content tab_fizlico" data-tab="1" style="display: grid;"> <!-- Физ лицо -->
 
                                     <div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
                                         <input type="text" class="cw_input op_input_full error" placeholder="Имя"/>
@@ -384,7 +384,7 @@
                                         <div class="" style="position: relative;">
                                             <div class="flag_w pos_r">
                                                 <input type="tel" name="telname_code" class="cw_input login-input-error" id="customer_telephone_code" value="" placeholder="Телефон">
-                                                <div class="login-error-text">Этот номер уже зарегистрирован <a href="javascript:;" class="default-link">Войти</a></div>
+                                                <div class="login-error-text">Неверный формат телефона</div>
                                                 <div id="adtel2" class="add_tel_w"><a class="addTel" href="#"></a></div>
                                             </div>
                                         </div>
@@ -494,12 +494,12 @@
 
 
                                     <!-- ####### Новый адрес доставки -->
-                                    <!--
+
                                     <div class="grid-c-4">
-                                         <div class="d_f ai_end col-2 pos_r | first_line">
+                                         <div class="d_f ai_end col-2 xs-col-4 pos_r | first_line">
                                              <input type="text" class="cw_input op_input_full" placeholder="Почтовый индекс"/>
                                          </div>
-                                         <div class="d_f ai_end col-2 pos_r | first_line">
+                                         <div class="d_f ai_end col-2 xs-col-4 pos_r | first_line">
                                              <input type="text" class="cw_input op_input_full" placeholder="Населенный пункт"/>
                                          </div>
                                          <div class="d_f fd_c pos_r col-4 | first_line">
@@ -508,7 +508,7 @@
                                          <div class="d_f fd_c pos_r col-4 | first_line">
                                              <input type="text" class="cw_input op_input_full" placeholder="Nr mieszkania, localu itp">
                                          </div>
-                                     </div>-->
+                                     </div>
 
                                     <!-- ####### Уже есть адрес доставки -->
                                     <!--<div class="d_f jc_sb ai_c | line_address">
@@ -540,7 +540,7 @@
                                         </a>
                                     </div>-->
 
-                                    <div class="d_f jc_sb ai_c | line_address edit">
+                             <!--       <div class="d_f jc_sb ai_c | line_address edit">
                                         <div class="title">
                                             Редактировать адрес
                                         </div>
@@ -551,9 +551,9 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div>-->
 
-                                    <div class="d_f jc_sb ai_c | line_address edit_form">
+                                <!--    <div class="d_f jc_sb ai_c | line_address edit_form">
                                         <div class="grid-c-4">
                                             <div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
                                                 <input type="text" class="cw_input op_input_full" placeholder="Почтовый индекс" value="00-555"/>
@@ -574,10 +574,10 @@
                                                 <a href="javascript:;" class="btn-flat blue">Сохранить</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
 
 
-                                    <div class="line_address empty">
+                              <!--      <div class="line_address empty">
                                         <a href="javascript:;" class="d_f jc_sb ai_c | btn_add_new_address">
                                             <div>Добавить адрес доставки</div>
                                             <div class="ico-w">
@@ -604,7 +604,7 @@
                                                 <a href="javascript:;" class="btn-flat blue disabled">Сохранить</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
 
 
                                 </div>
@@ -616,7 +616,7 @@
                                     </div>
                                     <div class="received-email_form">
                                         <div class="grid-c-4">
-                                            <div class="col-2 d_f fd_c">
+                                            <div class="col-2 xs-col-4 d_f fd_c">
                                                 <div class="received-email_label | input-label">Ваш пол</div>
                                                 <ul class="d_f | radio_tabs">
                                                     <li><label for="rec11" class="niceRadio niceRadio_left"><input type="radio" name="receiver" id="rec11" checked><span
@@ -625,7 +625,7 @@
                                                         Женский</label></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-2 d_f fd_c">
+                                            <div class="col-2 xs-col-4 d_f fd_c">
                                                 <div class="received-email_label | input-label">Дата рождения</div>
                                                 <div class="d_f | received-email_form_selects">
                                                     <select name="dob_day" id="dob_day">
@@ -700,40 +700,40 @@
                         </form>
 
 
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="right">
-            <div class="cart_panel">
-                <div class="title">Ваш заказ</div>
-                <div class="row">
-                    <div class="name">Товары, 4шт.</div>
-                    <div class="price">316.00 zt</div>
-                </div>
-                <div class="row">
-                    <div class="name">Скидка</div>
-                    <div class="price">-40.00 zt</div>
-                </div>
-                <div class="row">
-                    <div class="name">Промокод</div>
-                    <div class="price">-6.00 zt</div>
-                </div>
-                <div class="row">
-                    <div class="name">Доставка</div>
-                    <div class="price">- zt</div>
-                </div>
-                <div class="separator"></div>
-                <div class="row total">
-                    <div class="name">Итого</div>
-                    <div class="price">278.00 <span>zt</span></div>
+            </div>
+            <div class="right">
+                <div class="cart_panel">
+                    <div class="title">Ваш заказ</div>
+                    <div class="row">
+                        <div class="name">Товары, 4шт.</div>
+                        <div class="price">316.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Скидка</div>
+                        <div class="price">-40.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Промокод</div>
+                        <div class="price">-6.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Доставка</div>
+                        <div class="price">- zt</div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="row total">
+                        <div class="name">Итого</div>
+                        <div class="price">278.00 <span>zt</span></div>
+                    </div>
                 </div>
             </div>
+            <a href="/order3.html" id="order_btn_next" class="col-6 l-col-6 btn btn-big">Подтвердить заказ</a>
         </div>
-        <a href="/order3.html" id="order_btn_next" class="col-6 l-col-6 btn btn-big">Подтвердить заказ</a>
+
     </div>
-
-</div>
     <div class="col-3 l-col-2 m-col-1  s-col-del  xs-col-del"></div>
 
 </div>
