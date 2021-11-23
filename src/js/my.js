@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    /*tabs*/
     $(".tabs li").on("click", function () {
         let tabId = $(this).parents(".tabs").attr("data-tabid");
         /*        let $tabs = $(".tabs_content_wrapper[data-tabcid=" + tabId + "]");
@@ -39,7 +38,6 @@ $(document).ready(function () {
         swiperName.slideTo(0, 0);
         swiperName.lazy.load();
     });
-
 
     /*Первый аккордеон для сео блока*/
     $("#mp-accordion [data-accordion]").accordion({

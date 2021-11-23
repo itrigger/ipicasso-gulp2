@@ -92,7 +92,7 @@
 
         <div class="order_step2_w">
             <div class="left">
-                <div class="simplecheckout-block-content-header">Оформление заказа</div>
+                <div class="simplecheckout-block-content-header mobile">Оформление заказа</div>
                 <div style="display: none">
                     <select
                             name="payment_address[zone_id]"
@@ -700,40 +700,40 @@
                         </form>
 
 
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="right">
-            <div class="cart_panel">
-                <div class="title">Ваш заказ</div>
-                <div class="row">
-                    <div class="name">Товары, 4шт.</div>
-                    <div class="price">316.00 zt</div>
-                </div>
-                <div class="row">
-                    <div class="name">Скидка</div>
-                    <div class="price">-40.00 zt</div>
-                </div>
-                <div class="row">
-                    <div class="name">Промокод</div>
-                    <div class="price">-6.00 zt</div>
-                </div>
-                <div class="row">
-                    <div class="name">Доставка</div>
-                    <div class="price">- zt</div>
-                </div>
-                <div class="separator"></div>
-                <div class="row total">
-                    <div class="name">Итого</div>
-                    <div class="price">278.00 <span>zt</span></div>
+            </div>
+            <div class="right">
+                <div class="cart_panel">
+                    <div class="title">Ваш заказ</div>
+                    <div class="row">
+                        <div class="name">Товары, 4шт.</div>
+                        <div class="price">316.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Скидка</div>
+                        <div class="price">-40.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Промокод</div>
+                        <div class="price">-6.00 zt</div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Доставка</div>
+                        <div class="price">- zt</div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="row total">
+                        <div class="name">Итого</div>
+                        <div class="price">278.00 <span>zt</span></div>
+                    </div>
                 </div>
             </div>
+            <a href="/order3.html" id="order_btn_next" class="col-6 l-col-6 btn btn-big">Подтвердить заказ</a>
         </div>
-        <a href="/order3.html" id="order_btn_next" class="col-6 l-col-6 btn btn-big">Подтвердить заказ</a>
+
     </div>
-
-</div>
     <div class="col-3 l-col-2 m-col-1  s-col-del  xs-col-del"></div>
 
 </div>
@@ -941,7 +941,96 @@
      */
 
 </script>
+<script>
+    jQuery().ready(function () {
+        /* Custom select design */
+        jQuery('#paymentTown').append('<div class="ddbutton clearfix"></div>');
+        jQuery('#paymentTown').append('<ul class="select-list"></ul>');
+        jQuery('#payment_address_zone_id option').each(function () {
+            var bg = 'url("https://ipicasso.co.uk/image/flags/' + jQuery(this).data('code') + '.png")';
+            jQuery('#paymentTown .select-list').append('<li class="clsAnchor"><span value="' + jQuery(this).val() + '"  style=background-image:' + bg + '>' + jQuery(this).text() + '</span></li>');
+        });
+        jQuery('#paymentTown .ddbutton').html('<span style=background-image:url("https://ipicasso.co.uk/image/flags/' + jQuery('#payment_address_zone_id').find(':selected').data('code') + '.png">' + $('#payment_address_zone_id').find(':selected').text() + '</span>' + '<a href="javascript:void(0);" class="select-list-link">Arrow</a>');
+        jQuery('#paymentTown ul li').each(function () {
+            if (jQuery(this).find('span').attr('value') == jQuery('#payment_address_zone_id').find(':selected').val()) {
+                $("#shipping_address_zone_id").val(jQuery(this).find('span').attr('value'));
+                jQuery(this).addClass('active');
+            }
+        });
 
+        jQuery('#paymentTown .select-list span').on('click touchend', function () {
+            var dd_text = jQuery(this).text();
+            var dd_img = jQuery(this).css('background-image');
+            var dd_val = jQuery(this).attr('value');
+            jQuery('#paymentTown .ddbutton').html('<span style=background-image:' + dd_img + '>' + dd_text + '</span>' + '<a href="javascript:void(0);" class="select-list-link">Arrow</a>');
+            jQuery('#paymentTown .select-list span').parent().removeClass('active');
+            jQuery(this).parent().addClass('active');
+            $("#shipping_address_zone_id").val(dd_val);
+            $('#payment_address_zone_id').change();
+            $("#payment_address_zone_id>option[value='" + dd_val + "']").prop('selected', true);
+            $("#payment_address_zone_id>option[value='" + dd_val + "']").attr("selected", "selected");
+            $("#payment_address_zone_id>option[value='" + dd_val + "']").select();
+            $("#shipping_address_zone_id>option[value='" + dd_val + "']").prop('selected', true);
+            $("#shipping_address_zone_id>option[value='" + dd_val + "']").attr("selected", "selected");
+            $("#shipping_address_zone_id>option[value='" + dd_val + "']").select();
+            $("#payment_address_zone_id").val(dd_val);
+            $('#payment_address_zone_id').change();
+            $('#paymentTown .select-list li').slideUp("fast");
+            $('#paymentTown .select-list').removeClass("active");
+
+        });
+        jQuery('#paymentTown .ddbutton').on('click', function () {
+            jQuery('#paymentTown ul li').slideToggle("fast");
+            jQuery('#paymentTown ul').toggleClass("active");
+        });
+
+    });
+</script>
+<style>#paymentTown.drop-down {
+    width: auto;
+    z-index: 109;
+    min-width: 200px;
+}
+
+#paymentTown.drop-down .select-list {
+}
+
+#paymentTown.drop-down .ddbutton span {
+    width: auto;
+}
+
+#paymentTown.drop-down .ddbutton {
+    border-radius: 3px;
+}
+
+#paymentTown.drop-down .select-list-link {
+    margin-left: 10px;
+    margin-right: 6px;
+    float: right;
+}
+
+#paymentTown.drop-down .ddbutton span {
+    padding-left: 38px;
+}
+
+#paymentTown.drop-down .select-list li {
+    border-right: 8px solid transparent;
+    min-width: 190px;
+}
+
+#paymentTown.drop-down .select-list li.active {
+    background: url("https://ipicasso.co.uk/image/checkkk.png") no-repeat right 9px;
+}
+
+#paymentTown.drop-down .select-list li span {
+    padding: 5px 40px 5px 43px;
+}
+
+#paymentTown.drop-down .select-list li.active span {
+    color: #1782e9;
+    font-weight: bold;
+}
+</style>
 
 //= template/footer.html
 

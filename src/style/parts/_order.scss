@@ -1256,7 +1256,9 @@ dl.pickup_date {
     margin-top: 5px;
   }
 }
-
+.order_ok_thanku{
+  font-weight: bold;
+}
 .order_ok--order-number {
   margin-top: 10px;
   font-size: 24px;
@@ -1562,13 +1564,19 @@ dl.pickup_date {
 
   //step 3
   .order_step3_w .left{
+    grid-row: 2;
     grid-column: 1 / -1;
   }
   .order_step3_w .right{
+    grid-row: 1;
     grid-column: 1 / -1;
   }
   .order_steps_content .order_step3_w .cart_panel{
     margin-left: 0;
+    margin-top: 40px;
+  }
+  .order_ok--data{
+    margin-top: 15px;
   }
 
 }
