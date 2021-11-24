@@ -926,28 +926,13 @@ body.product {
   padding: 4px 10px;
 }
 
-.module_related_p {
-  .swiper-container-wrapper {
-    width: calc(100% + 40px);
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: -20px;
-  }
-  .tabs_content .swiper-container{
-    margin-top: 9px;
-    padding-bottom: 90px;
-    overflow: visible;
-  }
-  .swiper-button-next {
-    right: -68px;
-    left: auto;
-  }
-  .swiper-button-prev {
-    left: -68px;
-    right: auto;
-  }
-  .tabs_content_wrapper{
-    grid-column: 1 / -1;
+.tabs_d {
+  ul{
+    margin: 0;
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
   }
 }
 
@@ -1334,6 +1319,12 @@ body.product {
 }
 
 @media (max-width: 859px) {
+  @media (max-width: 859px) {
+    .tabs_d ul li {
+      white-space: nowrap;
+      width: auto;
+    }
+  }
   .labels_min {
     display: none;
   }

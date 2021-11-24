@@ -1077,7 +1077,26 @@
             }
         });
 
-        var pp_tabs_ul = new Swiper('#detailed_specification .swiper-container', {
+        var pp_tabs_ul = new Swiper('#detailed_specification .tabs_head .swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            speed: 400,
+            slidesOffsetAfter: 0,
+            slideToClickedSlide: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 'auto',
+                    allowTouchMove: true,
+                    watchOverflow: true,
+                },
+                860: {
+                    allowTouchMove: false,
+                    slideToClickedSlide: false,
+                }
+            }
+        });
+
+        var pp_tabs_related_ul = new Swiper('#detailed_specification .tabs_d .swiper-container', {
             slidesPerView: 'auto',
             spaceBetween: 20,
             speed: 400,
