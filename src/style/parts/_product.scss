@@ -933,6 +933,19 @@ body.product {
     padding-right: 20px;
     margin-left: -20px;
   }
+  .tabs_content .swiper-container{
+    margin-top: 9px;
+    padding-bottom: 90px;
+    overflow: visible;
+  }
+  .swiper-button-next {
+    right: -68px;
+    left: auto;
+  }
+  .swiper-button-prev {
+    left: -68px;
+    right: auto;
+  }
   .tabs_content_wrapper{
     grid-column: 1 / -1;
   }

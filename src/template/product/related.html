@@ -333,13 +333,30 @@
             }
         });
 
-        mySwiperP.appendSlide(related_p_all_slides_array);
-        mySwiperP.lazy.load();
-        /*mySwiperP.removeAllSlides();
-        mySwiperP.appendSlide(related_p_all_slides_array);
+
+        mySwiperP.removeAllSlides();
+        console.log(related_p_all_slides_array)
+        mySwiperP.prependSlide(related_p_all_slides_array);
         mySwiperP.update();
-        mySwiperP.slideTo(0, 0);
-        mySwiperP.lazy.load();*/
+        //mySwiperP.slideTo(0, 0);
+        //mySwiperP.lazy.load();
+
+        /*mySwiperP.appendSlide(related_p_all_slides_array);
+        mySwiperP.update();*/
+
+
+        //mySwiperP.lazy.load();
+        /*setTimeout(function (){
+            mySwiperP.update();
+        }, 1000)*/
+
+        $("#detailed_specification li[data-tab-content=3]").click(function (){
+            mySwiperP.update();
+            setTimeout(function (){
+                mySwiperP.update();
+            }, 100)
+
+        });
 
         let carousel_related_p_menu = undefined;
 
