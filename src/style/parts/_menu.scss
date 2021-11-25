@@ -886,6 +886,10 @@ body.sidemenu--open {
       transform: translateY(56px);
       transition: 0.3s all;
     }
+    .pi_price_w, .pi_btns{
+      transform: translateY(120px);
+      transition: 0.3s all;
+    }
   }
   .j-sidemenu-scrollbar-wrapper {
     height: calc(100vh - 104px);
