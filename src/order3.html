@@ -157,7 +157,7 @@
 
 
             </div>
-            <div class="right">
+            <div class="right d_f">
                 <div class="mobile">
                     <div class="d_f | order_ok--confirmed"><span class="ico-green-check"></span> Ваш заказ принят</div>
                     <div class="order_ok--order-number">Номер заказа: <span>5374</span></div>
@@ -173,7 +173,7 @@
 
                     <div class="order_ok_thanku">Спасибо, что выбрали нас!</div>
                 </div>
-                <div class="cart_panel">
+                <div class="cart_panel get_static">
                     <div class="title">Ваш заказ</div>
                     <div class="mc_table">
                         <div class="mc_table_row">
@@ -255,6 +255,7 @@
                     </div>
                 </div>
             </div>
+            <div class="fixed_endpoint"></div>
             <a href="/" id="order_btn_next" class="col-6 l-col-6 btn btn-big">Вернуться на главную</a>
         </div>
 
@@ -268,6 +269,29 @@
 
 
     $('document').ready(function () {
+
+        //fixed right panel
+        jQuery(function ($) {
+            $(window).scroll(function fix_element() {
+                let posTop = $('.order_step3_w').offset().top
+                let bottomEnd = $('.fixed_endpoint').offset().top
+                let panel_h = $('.get_static').height()
+                let diff = bottomEnd - panel_h
+                console.log(posTop, bottomEnd, panel_h, $(window).scrollTop(), (bottomEnd - panel_h))
+                if ($(window).scrollTop() > posTop) {
+                    if($(window).scrollTop() < diff) {
+                        $('.get_static').css({'position': 'fixed', 'top': '0px'}).parent().css({'alignItems':'flex-start'})
+                    } else {
+                        $('.get_static').css({'position': 'relative', 'top': 'auto'}).parent().css({'alignItems':'flex-end'})
+                    }
+                } else {
+                    $('.get_static').css({'position': 'relative', 'top': 'auto'}).parent().css({'alignItems':'flex-start'})
+                }
+
+                return fix_element;
+            }());
+        });
+
 
         /////////////////////////////////////////temp
         var getUrlParameter = function getUrlParameter(sParam) {
