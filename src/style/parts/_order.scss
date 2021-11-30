@@ -719,7 +719,7 @@
   }
 
   .mc_count_w {
-    padding-top: 5px;
+    padding-top: 2px;
     text-align: center;
     font-size: 14px;
     line-height: 14px;
@@ -1480,7 +1480,9 @@ dl.pickup_date {
     align-items: flex-start;
   }
   .order_steps_content .cart_panel{
+    position: relative !important;
     margin-left: 0;
+    width: 100%;
   }
   .block-receiver .radio_tabs{
     flex-direction: column;
@@ -1564,20 +1566,38 @@ dl.pickup_date {
   }
 
   //step 3
+  .order_step3_w{
+    grid-template-columns: repeat(4, 1fr);
+  }
   .order_step3_w .left{
     grid-row: 2;
     grid-column: 1 / -1;
   }
   .order_step3_w .right{
+    display: block !important;
     grid-row: 1;
     grid-column: 1 / -1;
+  }
+  .order_step3_w .btn-big{
+    margin-top: 0;
   }
   .order_steps_content .order_step3_w .cart_panel{
     margin-left: 0;
     margin-top: 40px;
+    width: 100%;
   }
   .order_ok--data{
     margin-top: 15px;
+  }
+  .order_confirm_w{
+    background: rgba(250,250,250,.9);
+    position: fixed;
+    bottom: 56px;
+    z-index: 999;
+    left: -10px;
+    right: -10px;
+    padding: 10px 15px 24px;
+    border-bottom: 1px solid #ccc;
   }
 
 }
