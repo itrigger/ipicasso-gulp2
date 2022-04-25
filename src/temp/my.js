@@ -505,6 +505,7 @@ $(document).ready(function () {
         } else {
             $(this).parent().parent().removeClass("hasItems");
         }
+
         $.ajax({
             url: 'index.php?route=checkout/cart/edit',
             type: 'post',
@@ -850,6 +851,43 @@ function inputChange(target, state, minicart = false) {   //bug когда по�
             }
             target.val(num).parent().find('.ic_minus').removeClass('disabled');
             checkMinicartCount()
+
+            $.ajax({
+                url: 'index.php?route=checkout/cart/edit',
+                type: 'post',
+                data: 'key=' + $(this).data('remove') + '&quantity=' + (typeof(num) != 'undefined' ? num : 1),
+                dataType: 'json',
+                beforeSend: function() {
+                },
+                complete: function() {
+
+                },
+                success: function(json) {
+                    if (json['success']) {
+
+                        if ($('#cart > .cart_block--price').hasClass('empty')){
+                            $('#cart > .cart_block--price').removeClass('empty');
+                            $('#cart > .cart_block--price').before('<div class="cart_block--notifier">'+json['total']+'</div>');
+                            if (json['percent'])
+                                $('#cart > .cart_block--price').prepend('<div class="price">'+json['total_text']+'</div><div class="price price--old"> ' + json['total_old_text'] + '</div>');
+                            else
+                                $('#cart > .cart_block--price').prepend('<div class="price">'+json['total_text']+'</div>');
+                        } else {
+                            $('#cart_block--notifier').html(json['total']);
+                            if (json['percent']){
+                                $('#cart > .cart_block--price .price').html( json['total_text'] );
+                                $('#cart > .cart_block--price .price--old').html(json['total_old_text']);
+                            }
+                            else
+                                $('#cart > .cart_block--price .price').html( json['total_text'] );
+                        }
+                    }
+
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
         break;
         case 'minus':
             if (num > 1) {
@@ -905,6 +943,7 @@ function checkMinicartCount() {
         $('#minicart .inputCountTarget').each(function (){
             parseInt($(this).val()) > 1 ? $(this).parent().parent().find('.price-per-one').addClass('active') : $(this).parent().parent().find('.price-per-one').removeClass('active')
         })
+
     }
 }
 
