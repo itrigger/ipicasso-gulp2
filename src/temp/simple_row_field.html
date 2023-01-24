@@ -1,0 +1,1618 @@
+<?php if ($id == 'customer_customer_group_id') { ?>
+<div class="simplecheckout-block-content-header"><?php echo $text_header_customer_data; ?></div>
+<div  class="clearfix" style="padding-bottom: 10px;">
+    <?php if ($_POST['payment_method_current'] == 'codinvoice') { $value = 2; } foreach ($values as $info) {  ?>
+    <label  class="niceCheckbox" style="float: left; padding-right: 15px; <?php if ($_POST['payment_method_current'] == 'codinvoice'  ) { ?>display:none; <?php } ?>">
+        <input type="radio" name="<?php echo $name ?>" id="<?php echo $id ?>"
+               value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'checked="checked"' : '' ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <span class="icon"></span>
+        <span class="title"><?php echo $info['text'] ?></span>
+    </label>
+    <?php } ?>
+</div>
+
+<div class="order_tabs">
+    <div class="tabs_head">
+        <ul>
+            <li class="tab_head active" data-tab-content="1">Физическое лицо</li>
+            <li class="tab_head" data-tab-content="2">Юридическое лицо</li>
+        </ul>
+    </div>
+    <?php if (!empty($rules)) { ?>
+    <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+        <?php foreach ($rules as $rule) { ?>
+        <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+        data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+        class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?>
+    </div>
+    <?php } ?>
+</div>
+<?php } ?>
+<!-- Вывод полей для фирмы -->
+<?php if ($_POST['payment_method_current'] == 'codinvoice' &&  $_POST['customer']['customer_group_id']!=2 ) { ?>
+<script type="text/javascript">
+    (function($){
+        // $('#customer_customer_group_id').click();
+        $('input[name="customer[customer_group_id]"][value="2"]').click();
+
+        setTimeout(function(){
+            reloadAll();
+        }, 100);
+    })(jQuery)
+</script>
+<? } ?>
+<?php } elseif ($id == 'customer_firstname') { rsort($rules); ?>
+<?php
+        foreach ($rules as $rule)
+        {
+            $st='';
+            if ($rule['display'] && !$rule['passed']) {
+                $st = ' error ';
+                 break;
+            }  elseif($rule['id'] == 'byLength' && !$rule['display'] && !$rule['passed'] && !empty($value))
+            {
+                $st = 'error';
+                break;
+            }
+            elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+            {
+                $st = ' noError ';
+            }
+        }
+        ?>
+<div id="customer_firstname_block" class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line <?php echo $st; ?> ">
+    <input  class="cw_input op_input_full error"  type="text" name="<?php echo $name; ?>" id="<?php echo $id ?>"  onKeyUp="this.value = this.value.toUpperCase();"
+            value="<?php echo $value?$value:(!empty($_SESSION['simple']['customer']['firstname'])?$_SESSION['simple']['customer']['firstname']:'') ?>" <?php if($_SESSION['customer_id']){ echo 'readonly="readonly" '; } ?>  <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="<?php echo $label ?><?php if ($required) { ?>*<?php } ?>">
+    <script>
+        (function($){
+            var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+            $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+            $('#<?php echo $id ?>').blur(function(){  if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+    </script>
+</div>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo !$rule['passed'] && !empty($value) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php } elseif ($id == 'customer_lastname') { ?>
+<?php
+        foreach ($rules as $rule)
+        {
+            $st='';
+            if ($rule['display'] && !$rule['passed']) {
+                $st = ' error ';
+                 break;
+            }  elseif($rule['id'] == 'byLength' && !$rule['display'] && !$rule['passed'] && !empty($value))
+            {
+                $st = 'error';
+                break;
+            }
+            elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+            {
+                $st = ' noError ';
+            }
+        }
+        ?>
+<div class=" <?php echo $st; ?>  d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
+    <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+           value="<?php echo $value?$value:(!empty($_SESSION['simple']['customer']['lastname'])?$_SESSION['simple']['customer']['lastname']:'') ?>"  <?php if($_SESSION['customer_id']){ echo 'readonly="readonly" '; } ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="<?php echo $label ?><?php if ($required) { ?>*<?php } ?>">
+    <script>
+        (function($){
+            var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+
+            $('#<?php echo $id ?>').focus(function(){
+
+                    $(this).parent().find(".label").removeClass("hide");
+                    $(this).attr("placeholder", "");
+                }
+            );
+            $('#<?php echo $id ?>').blur(function(){
+
+                if ($(this).val() == ""){
+                    $(this).parent().find(".label").addClass("hide");
+                    $(this).attr("placeholder", hint<?php echo $id ?>);
+                }
+            });
+        })(jQuery);
+    </script>
+</div>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php rsort($rules);
+            foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?>
+</div>
+<?php } ?>
+</div>
+<?php } ?>
+
+<?php } elseif ($id == 'customer_telephone') { ?>
+<?php    foreach ($rules as $rule) {
+                $st='';
+                if ($rule['display'] && !$rule['passed']) {
+                    $st = ' error ';
+                     break;
+                }
+                elseif( !$rule['display'] && !$rule['passed'] && !empty($value)) {
+                    $st = 'error';
+                    break;
+                } elseif(!$rule['display'] && $rule['passed'] && !empty($value)) {
+                    $st = ' noError ';
+                }
+            }
+    ?>
+<div class="d_f fd_c pos_r col-4 | first_line">
+    <div class="" style="position: relative;">
+        <div class="flag_w pos_r">
+            <input type="tel" name="telname_code" class="cw_input login-input-error" id="customer_telephone_code" value="" placeholder="Телефон">
+            <div class="login-error-text">Неверный формат телефона</div>
+            <div id="adtel2" class="add_tel_w"><a class="addTel" href="#"></a></div>
+        </div>
+    </div>
+</div>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php rsort($rules);   foreach ($rules as $rule) { ?>
+    <?php if($rule['id'] == 'api') { ?>
+    <?php if(!$_SESSION['customer_id']){ ?> <div style="display:none" data-for="customer_telephone" data-rule="intlTel" class="simplecheckout-error-text simplecheckout-rule" >Dane są nieprawidłowe</div> <?php } ?>
+    <div <?php echo !$rule['passed'] && !empty($value) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>>Ten numer już jest zarejestrowany <a href="javascript:void(0)" data-onclick="openLoginBox" id="login-tel" data-for="<?php echo $id ?>" >Wejść</a></div>
+<?php }  else { ?>
+<div <?php echo !$rule['passed'] && !empty($value) ? '' : 'style="display:none;"' ?>
+data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?>
+</div>
+<?php } ?>
+<?php } ?>
+</div>
+<?php } ?>
+<?php } elseif ($id == 'customer_email') { ?>
+<?php   foreach ($rules as $rule) {
+                $st='';
+                if ($rule['display'] && !$rule['passed']) {
+                    $st = ' error ';
+                    break;
+                } elseif(!$rule['display'] && !$rule['passed'] && !empty($value)) {
+                    $st = ' error ';
+                    break;
+                } elseif(!$rule['display'] && $rule['passed'] && !empty($value)) {
+                    $st = ' noError ';
+                }
+            }    ?>
+<div class="d_f fd_c pos_r col-4 pos_r | first_line">
+    <input class="cw_input op_input_full" type="text" name="<?php echo $name ?>" id="<?php echo $id ?>" placeholder="E-mail<?php if ($required) { ?>*<?php } ?>"
+           value="<?php echo $value?$value:(!empty($_SESSION['simple']['customer']['email'])?$_SESSION['simple']['customer']['email']:'') ?>" <?php if($_SESSION['customer_id']){ echo 'readonly="readonly" '; } ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+</div>
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+
+        $('#<?php echo $id ?>').focus(function(){
+                $(this).parent().find(".label").removeClass("hide");
+                $(this).attr("placeholder", "");
+            }
+        );
+        $('#<?php echo $id ?>').blur(function(){
+            if ($(this).val() == ""){
+                $(this).parent().find(".label").addClass("hide");
+                $(this).attr("placeholder", hint<?php echo $id ?>);
+            }
+        });
+    })(jQuery);
+</script>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php   foreach ($rules as $rule) { ?>
+    <?php if($rule['id'] == 'api') { ?>
+    <div <?php echo !$rule['passed'] && !empty($value) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>>Ten e-mail jest już zarejesrtowany <a href="javascript:void(0)" data-onclick="openLoginBox" id="login-mail" data-for="<?php echo $id ?>" >Zaloguj się</a></div>
+<?php } else { ?>
+<div <?php echo !$rule['passed'] && !empty($value) ? '' : 'style="display:none;"' ?>
+data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+
+<?
+ } elseif ($id == 'customer_company_name') { ?>
+<!-- Данные фирмы-->
+<div id="block_firma" >
+    <div class="col-4 | title company_data">
+        Dane firmy do faktury
+    </div>
+    <div class="d_f ai_end col-4 pos_r | first_line">
+        <input class="cw_input op_input_full" type="text" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+               value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>" />
+    </div>
+    <script>
+        (function($){
+            var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+            $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+            $('#<?php echo $id ?>').blur(function(){if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+    </script>
+
+    <?php if (!empty($rules)) { ?>
+    <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+        <?php foreach ($rules as $rule) { ?>
+        <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+        data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+        class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+    <?php } ?>
+</div>
+<?php } ?>
+
+
+<?php } elseif ($id == 'customer_company_company_id') { ?>
+<?php
+    foreach ($rules as $rule)
+    {
+        $st='';
+        if ($rule['display'] && !$rule['passed']) {
+            $st = ' error ';
+             break;
+        }
+        elseif(!$rule['display'] && !$rule['passed'] && !empty($value))
+        {
+            $st = ' error ';
+             break;
+        }elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+        {
+            $st = ' noError ';
+        }
+    }
+    ?>
+<div class="d_f ai_end col-4 pos_r | first_line">
+    <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>"/>
+</div>
+
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+        $('#<?php echo $id ?>').blur(function(){if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+</script>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+<?php } elseif ($id == 'customer_company_address_index') { ?>
+<?php
+    foreach ($rules as $rule)
+    {
+        $st='';
+        if ($rule['display'] && !$rule['passed']) {
+            $st = ' error ';
+             break;
+        }
+        elseif(!$rule['display'] && !$rule['passed'] && !empty($value))
+        {
+            $st = ' error ';
+             break;
+        }elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+        {
+            $st = ' noError ';
+        }
+    }
+    ?>
+<div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
+    <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>" />
+</div>
+
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+        $('#<?php echo $id ?>').blur(function(){if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+</script>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?> > <?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+<?php } elseif ($id == 'customer_company_address_city') { ?>
+<div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
+    <input type="text" class="cw_input op_input_full"  name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>" />
+</div>
+
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+        $('#<?php echo $id ?>').blur(function(){if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+</script>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php } elseif ($id == 'customer_company_address_street') { ?>
+<div class="d_f fd_c pos_r col-4 | first_line">
+    <input type="text" name="<?php echo $name ?>" class="cw_input op_input_full" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>" />
+</div>
+
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+        $('#<?php echo $id ?>').blur(function(){if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+</script>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?> > <?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+
+<?php } elseif ($id == 'customer_company_address_home') { ?>
+
+<?php } elseif ($id == 'customer_company_address_office') { ?>
+<div class="d_f fd_c pos_r col-4 | first_line">
+    <input  class="cw_input op_input_full" type="text" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+            value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?>" />
+</div>
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+        $('#<?php echo $id ?>').blur(function(){    if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+</script>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?> > <?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+</div> <!-- ----- Данные фирмы-->
+
+
+
+
+
+<!-- block-delivery_address -->
+<!-- block-delivery_address -->
+<!-- block-delivery_address -->
+<!-- block-delivery_address -->
+<!-- block-delivery_address -->
+
+<?php } elseif ($id == 'payment_address_zone_id') { ?>
+
+<!-- ++++++++++++ -->
+<!-- ++++++++++++ -->
+<!-- ++++++++++++ -->
+<!-- ++++++++++++ -->
+<div id="blockChooseHimself3_container" style="position: relative;">
+
+
+</div>
+
+<div class="simple-block | block-delivery_address" id="simplecheckout_payment_address">
+    <div class="simplecheckout-block-content-header"><?php echo $text_header_shipping_data; ?></div>
+    <div class="grid-c-4">
+
+        <div class="region" style="font-size:16px;">
+            <label>
+                <select name="<?php echo $name ?>"
+                        id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+                <?php foreach ($values as $info) { ?>
+                <option
+                        value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'selected="selected"' : '' ?> data-code="<?php echo strtolower($info['code']) ?>" ><?php echo $info['text'] ?></option>
+                <?php } ?>
+                </select>
+                <?php if (!empty($rules)) { ?>
+                <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none; margin-bottom: 10px;" >
+                    <?php foreach ($rules as $rule) { ?>
+                    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+                    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+                    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+                <?php } ?>
+        </div>
+        <?php } ?>
+        </label>
+    </div>
+
+    <?php } elseif ($id == 'payment_address_postcode') { ?>
+    <?php
+    foreach ($rules as $rule)
+    {
+        $st='';
+        if ($rule['display'] && !$rule['passed']) {
+            $st = ' error ';
+             break;
+        }
+        elseif(!$rule['display'] && !$rule['passed'] && !empty($value))
+        {
+            $st = ' error ';
+             break;
+        }elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+        {
+            $st = ' noError ';
+        }
+    }
+    ?>
+    <div class="d_f ai_end col-2 xs-col-4 pos_r | first_line">
+        <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>"
+               value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>" <?php echo $attrs ?> />
+    </div>
+
+    <script>
+        (function($){
+            var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+            $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+            $('#<?php echo $id ?>').blur(function(){if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+    </script>
+    <?php if (!empty($rules)) { ?>
+    <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  style="display: none">
+        <?php foreach ($rules as $rule) { ?>
+        <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+        data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+        class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?>
+    </div>
+    <?php } ?>
+</div>
+<?php } ?>
+<script>
+    $('document').ready(function(){
+        var selector = document.getElementById("payment_address_postcode");
+        var rgx = $('#payment_address_postcode').data('mask');
+
+        if ($('#payment_address_postcode').data('other') == 1) {
+            var plsh = "_";
+        } else {
+            var plsh = '';
+        }
+        $('#payment_address_postcode').inputmask({regex: rgx, placeholder:plsh,casing: "upper"});
+
+    });
+</script>
+
+
+<?php } elseif ($id == 'payment_address_city' || $id == 'shipping_address_city') { ?>
+
+<?php
+    foreach ($rules as $rule)
+    {
+        $st='';
+        if ($rule['display'] && !$rule['passed']) {
+            $st = ' error ';
+             break;
+        }  elseif($rule['id'] == 'byLength' && !$rule['display'] && !$rule['passed'] && !empty($value))
+        {
+            $st = 'error';
+            break;
+        }
+        elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+        {
+            $st = ' noError ';
+        }
+    }
+    ?>
+<div class="d_f ai_end col-2 xs-col-4 pos_r | first_line">
+    <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>">
+
+</div>
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+        $('#<?php echo $id ?>').blur(function(){  if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+</script>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php rsort($rules); foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+<?php } elseif ($id == 'payment_address_address_1' || $id == 'shipping_address_address_1') { ?>
+<?php foreach ($rules as $rule) {
+            $st='';
+            if ($rule['display'] && !$rule['passed']) {
+                $st = ' error ';
+                 break;
+            }  elseif($rule['id'] == 'byLength' && !$rule['display'] && !$rule['passed'] && !empty($value))
+            {
+                $st = 'error';
+                break;
+            }
+            elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+            {
+                $st = ' noError ';
+            }
+        }
+    ?>
+<div class="d_f fd_c pos_r col-4 | first_line">
+    <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>" />
+</div>
+
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){
+                $(this).parent().find(".label").removeClass("hide");
+                $(this).attr("placeholder", "");
+            }
+        );
+        $('#<?php echo $id ?>').blur(function(){
+
+            if ($(this).val() == ""){
+                $(this).parent().find(".label").addClass("hide");
+                $(this).attr("placeholder", hint<?php echo $id ?>);
+            }
+        });
+    })(jQuery);
+</script>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"   >
+    <?php rsort($rules); foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php } elseif ($id == 'payment_address_address_apartment' || $id == 'shipping_address_address_apartment') { ?>
+<div class="d_f fd_c pos_r col-4 | first_line">
+    <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>">
+</div>
+
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){
+                $(this).parent().find(".label").removeClass("hide");
+                $(this).attr("placeholder", "");
+            }
+        );
+        $('#<?php echo $id ?>').blur(function(){
+            if ($(this).val() == ""){
+                $(this).parent().find(".label").addClass("hide");
+                $(this).attr("placeholder", hint<?php echo $id ?>);
+            }
+        });
+    })(jQuery);
+</script>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  style="display:none;" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+</div>
+
+<div id="add_new_adrs_container"></div>
+
+<?php } elseif ($id == 'customer_confirm_discount') {  ?>
+<div id="dis_programm" class="simple-block | bday-block">
+    <!-- БЛОК ДИСК ПРОГРАММЫ -->
+    <?php echo $text_discount_desc; ?>
+    <div class="received-email">
+        <?php foreach ($values as $info) { ?>
+        <input class="a_name " type="radio" name="<?php echo $name ?>" id="<?php echo $id ?>"
+               value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'checked="checked"' : '' ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+
+        <?php } ?>
+        <label><?php echo $label ?></label>
+
+    </div>
+
+    <?php } elseif ($id == 'customer_gender') { ?>
+    <div class="received-email_form">
+        <div class="grid-c-4">
+            <div class="col-2 xs-col-4 d_f fd_c">
+                <div class="received-email_label | input-label"><?php echo $label ?></div>
+                <ul class="d_f | radio_tabs">
+                    <?php foreach ($values as $info) { ?>
+                    <li><label for="rec11" class="niceRadio niceRadio_left">
+                        <input type="radio" name="<?php echo $name ?>" id="<?php echo $id ?>"
+                               value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'checked="checked"' : '' ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+                        <span class="icon"><span></span></span><?php echo $info['text'] ?></label></li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <?php if (!empty($rules)) { ?>
+            <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+                <?php foreach ($rules as $rule) { ?>
+                <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+                data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+                class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+            <?php } ?>
+        </div>
+        <?php } ?>
+        <?php } elseif ($id == 'customer_birthday') { ?>
+        <div class="col-2 xs-col-4 d_f fd_c">
+            <div class="received-email_label | input-label"><?php echo $label ?></div>
+            <div class="d_f | received-email_form_selects">
+                <input type="text" name="<?php echo $name ?>"
+                       id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>"
+                <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="DD.MM.RRRR" style="width: 240px;">
+            </div>
+        </div>
+        <?php if (!empty($rules)) { ?>
+        <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+            <?php foreach ($rules as $rule) { ?>
+            <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+            data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+            class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+        <?php } ?>
+    </div>
+    <?php } ?>
+
+    <?php } elseif ($id == 'customer_discount') {  $_SESSION['simple']['customer']['discount'] = ''; $_POST['customer']['discount'] = ''; //print_r($_SESSION); echo '<br>'; print_r($_POST); ?>
+    <div class="col-2 xs-col-4 d_f fd_c">
+        <?php foreach ($values as $info) { ?>
+        <label <?php foreach ($rules as $rule) { ?><?php echo  $rule['display'] && !$rule['passed'] && /*$required &&*/  empty($value) ? ' style="border:  1px  solid #FC2C2C ; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px; "  ' : '' ?> <?}?> class="niceCheckbox" style="margin-bottom:0;">
+        <input class="a_name checkbox" type="checkbox" name="<?php echo $name ?>" id="<?php echo $id ?>"
+               value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? '' : '' ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <span class="icon"></span>
+        <?php echo $text_confirm_discount; ?>
+        </label>
+        <?php } ?>
+    </div>
+    <?php if (!empty($rules)) { ?>
+    <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+        <?php foreach ($rules as $rule) { ?>
+        <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+        data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+        class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+    <?php } ?>
+</div>
+<?php } ?>
+</div>
+</div>
+</div>
+
+
+<!--- КОНЕЦ БЛОКА 1 --->
+<?php } elseif ($id == 'customer_last_click') {  ?>
+<?php if(!$_SESSION['customer_id']){ ?>
+<div class="clearfix"></div>
+</div>
+
+<!-- ---block-delivery_address -->
+
+
+<!--БЛОК ДИСК ПРОГРАММЫ-->
+<? } ?>
+<input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+       value=""  >
+
+
+<?php } elseif ($id == 'shipping_address_city') { ?>
+<div class="d_f ai_end col-2 xs-col-4 pos_r | first_line">
+    <input type="text" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>">
+</div>
+
+<script>
+    (function($){
+        var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+        $('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+        $('#<?php echo $id ?>').blur(function(){ if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+</script>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none;" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+
+
+
+
+
+<?php } elseif ($id == 'payment_address_inpost_addr') { ?>
+
+<input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+       value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>">
+
+
+
+<?php } elseif ($id == 'shipping_inpost_addr') { ?>
+
+<input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+       value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>  placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>">
+
+
+
+<?php } elseif ($id == 'customer_password') { ?>
+<div class="niceInput <?php foreach ($rules as $rule) { ?><?php echo !$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value) ? ' noError ' : '' ?><?}?>">
+    <input type="password" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>"  <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+
+    <div>Пароль</div>
+</div>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php /*if ($description) { */?><!--
+        <div class="simplecheckout-tooltip" data-for="<?php /*echo $id */?>"><?php /*echo $description */?></div>
+    --><?php /*}*/ ?>
+<?php } elseif ($id == 'customer_confirm_password') { ?>
+<label>
+    <span><?php echo $label ?><?php if ($required) { ?><b>*</b><?php } ?></span>
+    <input type="password" name="<?php echo $name ?>" id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>"
+           placeholder="<?php echo $placeholder ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+    <?php if (!empty($rules)) { ?>
+    <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+        <?php foreach ($rules as $rule) { ?>
+        <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+        data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+        class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+    <?php } ?>
+    </div>
+    <?php } ?>
+
+</label>
+<?php } elseif ($id == 'customer_register') { ?>
+<label>
+    <input type="radio" class="hidden" data-id="1" name="customer[register]" id="customer_register" value="1"
+           checked="checked" data-onchange="reloadAll">
+    <input type="radio" class="hidden" data-id="0" name="customer[register]" id="customer_register" value="0"
+           data-onchange="reloadAll">
+</label>
+
+
+<?php } elseif ($id == 'customer_telephone_country' )  { ?>
+
+<div >
+    <div class="drop-down" id="dd1">
+        <select name="<?php echo $name ?>"
+                id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <?php
+                            foreach ($values as $info) { $code=''; $arr_codes[]=$info['code']; ?>
+        <option value="<?php echo $info['mask'] ?>" <?php if ($value == $info['mask']) {
+                                    echo 'selected="selected"';
+
+                                } elseif (empty($value) && $info['zone_id'] == $_SESSION['payment_zone_id']) { $code=$info['code']; echo 'selected="selected"'; } ?>
+        style="background-image:url('image/flags/<?php echo $info['code'] ?>.png');" data-ph="<?php echo $info['phonecode'] ?>" data-name="<?php echo $info['name'] ?>" data-other="<?php echo $info['showmask'] ?>"><?php echo $info['phonecode'] ?> <?php echo $info['name'] ?> </option>
+        <?php } ?>
+        </select>
+
+        <script>
+            $('document').ready(function(){
+                arr_country_codes = <?php echo json_encode($arr_codes) ?>;
+                <?php if(!$_SESSION['customer_id']){ ?>
+                    // createCodeList('dd1','customer_telephone');
+
+                    var input = document.querySelector("#customer_telephone");
+                    var iti = window.intlTelInput(input, {
+                        separateDialCode:true,
+                        nationalMode:true,
+                        preferredCountries:["pl"],
+                        onlyCountries: arr_country_codes,
+                        utilsScript: "/catalog/view/javascript/intlTelInput/js/utils.js"
+                    });
+                    if(!$("#customer_telephone").val()) iti.setCountry(jQuery('#payment_address_zone_id').find(':selected').data('code'));
+                    input.addEventListener("countrychange", function() {
+                        // do something with iti.getSelectedCountryData()
+                        if (!iti.isValidNumber()) {
+                            $('#customer_telephone').val('');
+                            $('#customer_telephonecode').val('');
+                            $("#customer_telephonee164").val('');
+
+                        }
+                    });
+                    var countryData = iti.getSelectedCountryData();
+                    console.log(countryData);
+                    if($("#customer_telephonee164").val())  iti.setNumber($("#customer_telephonee164").val());
+
+                    <?php } ?>
+                var input2 = document.querySelector("#customer_phone2");
+                var iti2 = window.intlTelInput(input2, {
+                    separateDialCode:true,
+                    nationalMode:true,                         preferredCountries:["pl"],
+                    onlyCountries: arr_country_codes,
+                    utilsScript: "/catalog/view/javascript/intlTelInput/js/utils.js"
+                });
+
+                input2.addEventListener("countrychange", function() {
+                    // do something with iti.getSelectedCountryData()
+                    if (!iti2.isValidNumber()) {
+                        $('#customer_phone2').val('');
+                        $('#customer_phone2code').val('');
+                        $("#customer_phone2e164").val('');
+                    }
+                });
+
+                if($("#customer_phone2e164").val())  iti2.setNumber($("#customer_phone2e164").val());
+            });
+        </script>
+    </div>
+</div>
+<?php }
+elseif ($id == 'customer_telephonecode') { ?>
+
+<input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+       value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+<?php }
+elseif ($id == 'customer_telephonee164') { ?>
+
+<input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+       value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+<?php }
+elseif ($id == 'customer_phone2code') { ?>
+
+<input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+       value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+<?php }
+elseif ($id == 'customer_phone2e164') { ?>
+
+<input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+       value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+
+<?php }
+elseif ($id == 'customer_phone2_country') { ?>
+<div style="display:none;">
+    <div class="drop-down" id="ddphone2">
+        <select name="<?php echo $name ?>"
+                id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <?php
+                            foreach ($values as $info) { ?>
+        <option value="<?php echo $info['mask'] ?>" <?php if ($value == $info['mask']) {
+                                    echo 'selected="selected"';
+
+                                }   elseif (empty($value) && $info['zone_id'] == $_SESSION['payment_zone_id']) echo 'selected="selected"'; ?>
+        style="background-image:url('image/flags/<?php echo $info['code'] ?>.png');" data-ph="<?php echo $info['phonecode'] ?>" data-name="<?php echo $info['name'] ?>" data-other="<?php echo $info['showmask'] ?>" ><?php echo $info['phonecode'] ?> <?php echo $info['name'] ?> </option>
+        <?php } ?>
+        </select>
+    </div>
+</div>
+<?php }
+    elseif ($id == 'customer_phone2') { ?>
+<?php
+
+    foreach ($rules as $rule)
+    {
+        $st='';
+        if ($rule['display'] && !$rule['passed']) {
+            $st = ' error ';
+             break;
+        }
+
+        elseif( !$rule['display'] && !$rule['passed'] && !empty($value))
+        {
+            $st = 'error';
+            break;
+        }elseif(!$rule['display'] && $rule['passed'] && !empty($value))
+        {
+            $st = ' noError ';
+        }
+    }
+    ?>
+<div class="dd_w clearfix">
+    <div class="niceInput tel <?php echo $st; ?>" id="tel2" <?php  if (empty($_SESSION['simple']['customer']['phone2'])) { ?>style="display:none;" <?php } ?> >
+    <div class="label hide"><label></label></div>
+    <div id="dd-customer_phone2" style="position: relative;    z-index: 9;">
+
+    </div>
+    <div class="">
+        <input type="text" name="<?php echo $name ?>" id="<?php echo $id ?>"
+               value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>
+        <?php echo $attrs ?>
+        >
+        <script>
+            //(function($){
+            //	var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+            //	$('#<?php echo $id ?>').focus(function(){$(this).parent().find(".label").removeClass("hide");$(this).attr("placeholder", "");});
+            //	$('#<?php echo $id ?>').blur(function(){if ($(this).val() == ""){$(this).parent().find(".label").addClass("hide");$(this).attr("placeholder", hint<?php echo $id ?>);}});})(jQuery);
+        </script>
+        <a href="#" id="adtel2_r" class="remove_add_address"></a>
+    </div>
+</div>
+</div>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+<div style="display:none" data-for="customer_phone2" data-rule="intlTel" class="simplecheckout-error-text simplecheckout-rule" >Dane są nieprawidłowe</div>
+</div>
+<?php } ?>
+<?php /*if ($description) { */?><!--
+        <div class="simplecheckout-tooltip" data-for="<?php /*echo $id */?>"><?php /*echo $description */?></div>
+    --><?php /*}*/ ?>
+<script>
+    $('document').ready(function() {
+        //createCodeList('ddphone2', 'customer_phone2');
+
+    });
+</script>
+
+<?php } elseif ($id == 'customer_midlename') { ?>
+<div class="niceInput <?php foreach ($rules as $rule) { ?><?php echo !$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value) ? ' noError ' : '' ?><?}?>">
+    <div class="label hide"><label><?php echo $label ?><?php if ($required) { ?> <span>*</span><?php } ?></label></div>
+    <input type="text" name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+           value="<?php echo $value?$value:(!empty($_SESSION['simple']['customer']['midlename'])?$_SESSION['simple']['customer']['midlename']:'') ?>"  <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="<?php echo $label ?><?php if ($required) { ?>*<?php } ?>">
+
+    <script>
+        (function($){
+            var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+            $('#<?php echo $id ?>').focus(function(){
+                    $(this).parent().find(".label").removeClass("hide");
+                    $(this).attr("placeholder", "");
+                }
+            );
+            $('#<?php echo $id ?>').blur(function(){
+
+                if ($(this).val() == ""){
+                    $(this).parent().find(".label").addClass("hide");
+                    $(this).attr("placeholder", hint<?php echo $id ?>);
+                }
+            });
+        })(jQuery);
+    </script>
+</div>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+<?php } elseif ($id == 'payment_address_address_id' || $id == 'shipping_address_address_id') { ?>
+<?php $i=0; ?>
+<?php if (!empty($_SESSION['shipping_method']['code2']) && $_SESSION['shipping_method']['code2'] == 'pickup'){ ?>
+
+
+<select name="<?php echo $name ?>"
+        id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> style="display:none" >
+<?php foreach ($values as $info) { ?>
+<option
+        value="<?php echo $info['id'] ?>" <?php echo $info['id'] == 0 ? 'selected="selected"' : '' ?>><?php echo $info['text'] ?></option>
+<?php } ?>
+</select>
+
+<?php } else { ?>
+<div class="niceInputParent" <?php if (!count($values) || (count($values) == 1 && $values[0]['id'] == 0)) { ?> style="display:none" <?php }?> >
+<div class="label"><label>Adres przesyłki <span>*</span></label></div>
+<div id="address_list">
+    <?php rsort($values);
+    if(array_search($value, array_column($values, 'id'))  === false) {
+     $value = $values[0]['id'];
+    }
+    foreach ($values as $info) { ?>
+    <div class="address_line">
+        <div class="address_line_header">
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <label class="niceRadio" >
+                            <input type="radio" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> id="<?php echo $id ?>" name="<?php echo $name ?>" value="<?php echo $info['id'] ?>" <?php echo ($value == $info['id'] || (!count($values) || (count($values) == 1 && $values[0]['id'] == 0))) ? 'checked="checked"' : '' ?> />
+                            <span class="icon"><span></span></span>
+                            <span class="title" style="min-height: auto; color: #404040;"><?php echo $info['text'] ?> </span>
+
+                        </label>
+
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <?php } ?>
+</div>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php } elseif ($id == 'payment_address_himself') { ?>
+
+<div id="blockChooseHimself3" class="blockChoose"  >
+    <?php foreach ($values as $info) { ?>
+    <label class="niceCheckbox">
+        <input type="radio" name="<?php echo $name ?>" id="<?php echo $id ?>"
+               value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'checked="checked"' : '' ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <span class="icon"></span>
+        <span class="title"><?php echo $info['text'] ?></span>
+    </label>
+    <?php } ?>
+    <div id="comment"></div>
+</div>
+
+<?php } elseif ($id == 'payment_address_other_firstname') { ?>
+<div id="authorizeBlockNotHimself3" class="authorizeBlock other ">
+    <div class="clearfix">
+        <div class="clearfix" style="position: relative;">
+            <div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
+                <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>"
+                       value="<?php echo $value?$value:'' ?>"  <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> onKeyUp="this.value = this.value.toUpperCase();" placeholder="<?php echo $label ?><?php if ($required) { ?>*<?php } ?>">
+
+            </div>
+
+            <script>
+                (function($){
+                    var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+                    $('#<?php echo $id ?>').focus(function(){
+                            $(this).parent().find(".label").removeClass("hide");
+                            $(this).attr("placeholder", "");
+                        }
+                    );
+                    $('#<?php echo $id ?>').blur(function(){
+
+                        if ($(this).val() == ""){
+                            $(this).parent().find(".label").addClass("hide");
+                            $(this).attr("placeholder", hint<?php echo $id ?>);
+                        }
+                    });
+                })(jQuery);
+            </script>
+
+            <?php if (!empty($rules)) { ?>
+            <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+                <?php foreach ($rules as $rule) { ?>
+                <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+                data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+                class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+            <?php } ?>
+        </div>
+        <?php } ?>
+        <?php } elseif ($id == 'payment_address_other_lastname') { ?>
+        <div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
+            <input type="text"  class="cw_input op_input_full"  name="<?php echo $name ?>" id="<?php echo $id ?>" onKeyUp="this.value = this.value.toUpperCase();"
+                   value="<?php echo $value?$value:'' ?>"   <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="<?php echo $label ?><?php if ($required) { ?>*<?php } ?>">
+
+        </div>
+
+
+        <script>
+            (function($){
+                var hint<?php echo $id ?> = $('#<?php echo $id ?>').attr("placeholder");
+                $('#<?php echo $id ?>').focus(function(){
+                        $(this).parent().find(".label").removeClass("hide");
+                        $(this).attr("placeholder", "");
+                    }
+                );
+                $('#<?php echo $id ?>').blur(function(){
+
+                    if ($(this).val() == ""){
+                        $(this).parent().find(".label").addClass("hide");
+                        $(this).attr("placeholder", hint<?php echo $id ?>);
+                    }
+                });
+            })(jQuery);
+        </script>
+
+        <?php if (!empty($rules)) { ?>
+        <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+            <?php foreach ($rules as $rule) { ?>
+            <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+            data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+            class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+        <?php } ?>
+    </div>
+
+    <?php } ?>
+
+
+
+    <?php } elseif ($id == 'payment_address_alternative_address') { ?>
+
+    <?php }
+elseif ($id == 'payment_address_other_phone_country') { ?>
+    <div style="display:none;">
+        <div class="drop-down" id="ddophone">
+            <select name="<?php echo $name ?>"
+                    id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+            <?php
+                            foreach ($values as $info) { ?>
+            <option value="<?php echo $info['mask'] ?>" <?php if ($value == $info['mask']) {
+                                    echo 'selected="selected"';
+
+                                }  elseif (empty($value) && $info['zone_id'] == $_SESSION['payment_zone_id']) echo 'selected="selected"'; ?>
+            style="background-image:url('image/flags/<?php echo $info['code'] ?>.png');" data-ph="<?php echo $info['phonecode'] ?>" data-name="<?php echo $info['name'] ?>" data-other="<?php echo $info['showmask'] ?>" ><?php echo $info['phonecode'] ?> <?php echo $info['name'] ?> </option>
+            <?php } ?>
+            </select>
+        </div>
+    </div>
+    <?php }
+elseif ($id == 'payment_address_other_phonecode') { ?>
+
+    <input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+    <?php }
+elseif ($id == 'payment_address_other_phonee164') { ?>
+
+    <input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+    <?php }
+elseif ($id == 'payment_address_other_phone2code') { ?>
+
+    <input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+    <?php }
+elseif ($id == 'payment_address_other_phone2e164') { ?>
+
+    <input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>"
+           value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+
+    <?php } elseif ($id == 'payment_address_other_phone') { ?>
+
+
+    <div class="dd_w clearfix">
+        <div class="niceInput  <?php foreach ($rules as $rule) { ?><?php echo !$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value) ? ' noError ' : '' ?><?}?>" style="position: relative;">
+            <div class="label hide"><label></label></div>
+            <div id="dd-payment_address_other_phone">
+
+            </div>
+            <div>
+                <input type="text" name="<?php echo $name ?>" id="<?php echo $id ?>"
+                       value="<?php echo $value?$value:'' ?>"  <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+                <div class="clearfix" id="adothtel2" style="margin-bottom: 10px">
+                    <a class="addTel" href="#"></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <?php if (!empty($rules)) { ?>
+    <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+        <?php foreach ($rules as $rule) { ?>
+        <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+        data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+        class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+    <?php } ?>
+    <div style="display:none" data-for="payment_address_other_phone" data-rule="intlTel" class="simplecheckout-error-text simplecheckout-rule" >Dane są nieprawidłowe</div>
+</div>
+<?php } ?>
+</div>
+</div>
+</div>
+<script>
+    $('document').ready(function() {
+        //createCodeList('ddophone', 'payment_address_other_phone');
+        var input3 = document.querySelector("#payment_address_other_phone");
+        var iti3 = window.intlTelInput(input3, {
+            separateDialCode:true,
+            nationalMode:true,                         preferredCountries:["pl"],
+            onlyCountries: arr_country_codes,
+            utilsScript: "/catalog/view/javascript/intlTelInput/js/utils.js"
+        });
+
+        input3.addEventListener("countrychange", function() {
+            // do something with iti.getSelectedCountryData()
+            if (!iti3.isValidNumber()) {
+                $('#payment_address_other_phone').val('');
+                $('#payment_address_other_phonecode').val('');
+                $("#payment_address_other_phonee164").val('');
+            }
+        });
+
+        if($("#payment_address_other_phonee164").val())  iti3.setNumber($("#payment_address_other_phonee164").val());
+
+    });
+</script>
+<?php }
+elseif ($id == 'payment_address_other_phone2_country') { ?>
+<div style="display:none;">
+    <div class="drop-down" id="ddophone2">
+        <select name="<?php echo $name ?>"
+                id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <?php
+                            foreach ($values as $info) { ?>
+        <option value="<?php echo $info['mask'] ?>" <?php if ($value == $info['mask']) {
+                                    echo 'selected="selected"';
+
+                                }  elseif (empty($value) && $info['zone_id'] == $_SESSION['payment_zone_id']) echo 'selected="selected"'; ?>
+        style="background-image:url('image/flags/<?php echo $info['code'] ?>.png');" data-ph="<?php echo $info['phonecode'] ?>" data-name="<?php echo $info['name'] ?>" data-other="<?php echo $info['showmask'] ?>" ><?php echo $info['phonecode'] ?> <?php echo $info['name'] ?> </option>
+        <?php } ?>
+        </select>
+    </div>
+</div>
+<?php }
+            elseif ($id == 'payment_address_other_phone2') { ?>
+<div class="dd_w clearfix">
+    <div class="niceInput tel <?php foreach ($rules as $rule) { ?><?php echo !$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value) ? ' noError ' : '' ?><?}?>" id="tel2o" style="display: none; position: relative;">
+        <div class="label hide"><label></label></div>
+        <div id="dd-payment_address_other_phone2" style="position: relative;    z-index: 9;">
+
+        </div>
+        <div class="">
+            <input type="text" name="<?php echo $name ?>" id="<?php echo $id ?>"
+                   value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> >
+            <a href="#" id="adothtel2_r" class="remove_add_address"></a>
+
+        </div>
+    </div>
+</div>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>"  >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+<div style="display:none" data-for="payment_address_other_phone2" data-rule="intlTel" class="simplecheckout-error-text simplecheckout-rule" >Dane są nieprawidłowe</div>
+</div>
+<?php } ?>
+
+
+<script>
+    $('document').ready(function() {
+        //createCodeList('ddophone2', 'payment_address_other_phone2');
+
+        var input4 = document.querySelector("#payment_address_other_phone2");
+        var iti4 = window.intlTelInput(input4, {
+            separateDialCode:true,
+            nationalMode:true,                         preferredCountries:["pl"],
+            onlyCountries: arr_country_codes,
+            utilsScript: "/catalog/view/javascript/intlTelInput/js/utils.js"
+        });
+
+        input4.addEventListener("countrychange", function() {
+            // do something with iti.getSelectedCountryData()
+            if (!iti4.isValidNumber()) {
+                $('#payment_address_other_phone2').val('');
+                $('#payment_address_other_phone2code').val('');
+                $("#payment_address_other_phone2e164").val('');
+            }
+        });
+
+        if($("#payment_address_other_phone2e164").val())  iti4.setNumber($("#payment_address_other_phone2e164").val());
+
+    });
+</script>
+
+
+<?php } elseif ($id == 'payment_address_other_midlename') { ?>
+
+
+
+<!-- ++++++++++++++++БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ++++++++++++++++БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ++++++++++++++++БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ++++++++++++++++БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ++++++++++++++++БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ++++++++++++++++БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+
+<?php } elseif ($id == 'edit_firstname')  { ?>
+
+<div id="edit_firstname_x" class="left">
+
+    <div class="simplecheckout-table-form-left">
+
+        <?php echo $label ?> <?php if ($required) { ?>
+        <span class="simplecheckout-required">*</span>
+        <?php } ?>
+    </div>
+    <div class="simplecheckout-table-form-right">
+        <div class="niceInput <?php foreach ($rules as $rule) { ?><?php if (!$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value)) echo ' noError '; elseif ($rule['display'] && !$rule['passed'] /*&& $required &&*/ ) echo 'error'; ?><?}?>">
+            <input type="<?php echo $type == 'date' ? 'text' : $type ?>" name="<?php echo $name ?>" onKeyUp="this.value = this.value.toUpperCase();"
+                   id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>"
+                   placeholder="<?php echo $placeholder ?>" <?php echo $attrs ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        </div>
+    </div>
+</div>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+<?php } elseif ($id == 'edit_lastname')  { ?>
+
+
+<div id="edit_lastname_x" class="right">
+    <div class="simplecheckout-table-form-left">
+
+        <?php echo $label ?> <?php if ($required) { ?>
+        <span class="simplecheckout-required">*</span>
+        <?php } ?>
+    </div>
+    <div class="simplecheckout-table-form-right">
+        <div class="niceInput <?php foreach ($rules as $rule) { ?><?php if (!$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value)) echo ' noError '; elseif ($rule['display'] && !$rule['passed'] /*&& $required &&*/ ) echo 'error'; ?><?}?>">
+            <input type="<?php echo $type == 'date' ? 'text' : $type ?>" name="<?php echo $name ?>"
+                   id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>" onKeyUp="this.value = this.value.toUpperCase();"
+                   placeholder="<?php echo $placeholder ?>" <?php echo $attrs ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        </div>
+    </div>
+</div>
+
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+
+<?php } elseif ($id == 'payment_address_address_comment') { ?>
+<div style="display:none;" class="niceInput <?php foreach ($rules as $rule) { ?><?php echo !$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value) ? ' noError ' : '' ?><?}?>">
+        <textarea name="<?php echo $name ?>"
+                  id="<?php echo $id ?>"  <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>><?php echo $value?$value:'' ?></textarea>
+
+    <div><?php echo $label ?><?php if ($required) { ?><span>*</span><?php } ?></div>
+</div>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php /*if ($description) { */?><!--
+        <div class="simplecheckout-tooltip" data-for="<?php /*echo $id */?>"><?php /*echo $description */?></div>
+    --><?php /*}*/ ?>
+
+
+
+
+
+<?php } elseif ($id == 'shipping_address_address_comment') { ?>
+<div style="display:none;" class="niceInput <?php foreach ($rules as $rule) { ?><?php echo !$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value) ? ' noError ' : '' ?><?}?>">
+        <textarea name="<?php echo $name ?>"
+                  id="<?php echo $id ?>"  <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>><?php echo $value?$value:'' ?></textarea>
+
+    <div><?php echo $label ?><?php if ($required) { ?><span>*</span><?php } ?></div>
+</div>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php /*if ($description) { */?><!--
+        <div class="simplecheckout-tooltip" data-for="<?php /*echo $id */?>"><?php /*echo $description */?></div>
+    --><?php /*}*/ ?>
+
+
+<?php } elseif ($id == 'edit_telephone')  { ?>
+
+<div id="edit_telephone_x" class="left">
+    <div class="simplecheckout-table-form-left">
+
+        <?php echo $label ?> <?php if ($required) { ?>
+        <span class="simplecheckout-required">**</span>
+        <?php } ?>
+    </div>
+    <div class="simplecheckout-table-form-right">
+        <div class="niceInput <?php foreach ($rules as $rule) { ?><?php if (!$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value)) echo ' noError '; elseif ($rule['display'] && !$rule['passed'] /*&& $required &&*/ ) echo 'error'; ?><?}?>">
+            <input type="<?php echo $type == 'date' ? 'text' : $type ?>" name="<?php echo $name ?>"
+                   id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>"
+                   placeholder="<?php echo $placeholder ?>" <?php echo $attrs ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> disabled>
+        </div>
+    </div>
+</div>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+
+<?php } elseif ($id == 'edit_email')  { ?>
+
+<div id="edit_email_x" class="right">
+    <div class="simplecheckout-table-form-left">
+        <?php echo $label ?> <?php if ($required) { ?>
+        <span class="simplecheckout-required">*</span>
+        <?php } ?>
+    </div>
+    <div class="simplecheckout-table-form-right">
+        <div class="niceInput <?php foreach ($rules as $rule) { ?><?php if (!$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value)) echo ' noError '; elseif ($rule['display'] && !$rule['passed'] /*&& $required &&*/ ) echo 'error'; ?><?}?>">
+            <input type="<?php echo $type == 'date' ? 'text' : $type ?>" name="<?php echo $name ?>"
+                   id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>"
+                   placeholder="<?php echo $placeholder ?>" <?php echo $attrs ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        </div>
+    </div>
+</div>
+
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+<!-- ----------------------БЛОК ДЛЯ СТРАНИЦЫ РЕДАКТИРОВАНИЯ ЛИЧНЫХ ДАННЫХ В КАБИНЕТЕ -->
+
+
+
+<?php } else { ?>
+
+
+
+<tr>
+    <td class="simplecheckout-table-form-left">
+        <?php if ($required) { ?>
+        <span class="simplecheckout-required">*</span>
+        <?php } ?>
+        <?php echo $label ?>
+    </td>
+    <td class="simplecheckout-table-form-right">
+        <?php if ($type == 'select') { ?>
+        <select name="<?php echo $name ?>"
+                id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <?php foreach ($values as $info) { ?>
+        <option
+                value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'selected="selected"' : '' ?>><?php echo $info['text'] ?></option>
+        <?php } ?>
+        </select>
+        <?php } elseif ($type == 'radio') { ?>
+        <?php foreach ($values as $info) { ?>
+        <label><input type="radio" name="<?php echo $name ?>" id="<?php echo $id ?>"
+                      value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'checked="checked"' : '' ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>><?php echo $info['text'] ?>
+        </label>
+        <?php } ?>
+        <?php } elseif ($type == 'checkbox') { ?>
+        <?php foreach ($values as $info) { ?>
+        <input type="hidden" name="<?php echo $name ?>[<?php echo $info['id'] ?>]" value="0">
+        <label><input type="checkbox" name="<?php echo $name ?>[<?php echo $info['id'] ?>]"
+                      id="<?php echo $id ?>"
+                      value="1" <?php echo !empty($value[$info['id']]) ? 'checked="checked"' : '' ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>><?php echo $info['text'] ?>
+        </label>
+        <?php } ?>
+        <?php } elseif ($type == 'textarea') { ?>
+        <textarea name="<?php echo $name ?>" id="<?php echo $id ?>"
+                  placeholder="<?php echo $placeholder ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>><?php echo $value?$value:'' ?></textarea>
+        <?php } elseif ($type == 'captcha') { ?>
+        <?php if ($site_key) { ?>
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
+        <div class="g-recaptcha" data-sitekey="<?php echo $site_key; ?>"></div>
+        <?php } else { ?>
+        <input type="text" name="<?php echo $name ?>" id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>"
+               placeholder="<?php echo $placeholder ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <div class="simple-captcha-container"><img
+                src="index.php?<?php echo $additional_path ?>route=common/simple_connector/captcha&t=<?php echo time() ?>"
+                alt="" id="captcha"/></div>
+        <?php } ?>
+        <?php } elseif ($type == 'file') { ?>
+        <input type="button" value="<?php echo $button_upload; ?>" data-file="<?php echo $id ?>" class="button">
+        <div id="text_<?php echo $id ?>" style="margin-top:3px;max-width:200px;"><?php echo $filename ?></div>
+        <input type="hidden" name="<?php echo $name ?>" id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>">
+        <?php } else { ?>
+        <input type="<?php echo $type == 'date' ? 'text' : $type ?>" name="<?php echo $name ?>"
+               id="<?php echo $id ?>" value="<?php echo $value?$value:'' ?>"
+               placeholder="<?php echo $placeholder ?>" <?php echo $attrs ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <?php } ?>
+    </td>
+</tr>
+<?php if (!empty($rules)) { ?>
+<div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+    <?php foreach ($rules as $rule) { ?>
+    <div <?php echo (($rule['display'] && !$rule['passed']) || (!$rule['display'] && !$rule['passed'] && !empty($value))) ? '' : 'style="display:none;"' ?>
+    data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+    class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+<?php } ?>
+</div>
+<?php } ?>
+<?php /*if ($description) { */?><!--
+        <div class="simplecheckout-tooltip" data-for="<?php /*echo $id */?>"><?php /*echo $description */?></div>
+    --><?php /*}*/ ?>
+
+
+<?php } ?>
+
+
+
+
+<script>
+
+
+    if ($("#blockChooseHimself4 .niceCheckbox  .title").parent().find("input[type=checkbox]").is(':checked')) {
+        $("#blockChooseHimself4 .niceCheckbox  .title").text("Убрать альтернативный адрес");
+    } else {
+        $("#blockChooseHimself4 .niceCheckbox  .title").text("Добавить альтернативный адрес");
+    };
+
+</script>

@@ -1,0 +1,386 @@
+body {
+  //background: url("../img/471559136.png") center 13px no-repeat;
+}
+
+.cabinet_bnr {
+  background: url("../img/cabinet_banner.jpg") center center no-repeat;
+  height: 128px;
+  margin-top: 10px;
+}
+
+#cabinet_tabs {
+  grid-column: 2 / -2;
+  margin-top: 35px;
+  margin-bottom: 100px;
+  .tabs_head {
+    margin-bottom: 20px;
+  }
+}
+
+.pane-holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 28px;
+
+  .w33 {
+    flex: 1 1 calc((100% / 3) - 56px);
+    min-height: 275px;
+  }
+
+  .w50 {
+    flex: 1 1 calc((100% / 2) - 28px);
+    min-height: 200px;
+  }
+
+  .w25 {
+    flex: 1 1 calc((50% / 2) - 28px);
+    min-height: 200px;
+  }
+}
+
+.pane {
+  border: 1px solid rgba(205, 206, 207, 0.5);
+  border-radius: 8px;
+  padding: 25px;
+  background: #fff;
+
+  .heading {
+    color: #404142;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-start;
+    .arrow {
+      margin-top: -5px;
+      transition: .3s all;
+      margin-left: auto;
+    }
+    &:hover{
+      .arrow{
+        transition: .3s all;
+        transform: translateX(-5px);
+      }
+    }
+    .counter{
+      color: #9E9FA0;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: normal;
+      margin-left: 8px;
+      position: relative;
+      margin-top: 3px;
+    }
+  }
+
+  .desc {
+    margin-top: 5px;
+    color: #9E9FA0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  p {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+
+    a {
+      color: #1782E9;
+    }
+  }
+}
+
+.pane-shadow {
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pane-flat {
+  background: #F6F7F8;
+  border-color: #F6F7F8;
+}
+
+.pane_contacts {
+  .name {
+    color: #404142;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
+  }
+
+  .line {
+    margin-top: 5px;
+
+    .text {
+      color: #9E9FA0;
+      font-size: 16px;
+      line-height: 24px;
+      margin-right: 5px;
+    }
+
+    .data {
+      color: #404142;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .exit {
+    text-decoration: underline;
+    color: #9E9FA0;
+    font-size: 16px;
+    &:hover{
+      color: $red;
+    }
+  }
+}
+
+.pane_orders {
+  .no_orders {
+    color: #404142;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
+  }
+  .info{
+    width: 60%;
+    text-align: right;
+    color: #9E9FA0;
+  }
+  .items_total{
+    .text{
+      font-size: 18px;
+      color: #404142;
+    }
+    .count{
+      margin-top: 10px;
+      font-size: 40px;
+      color: #404142;
+      font-weight: bold;
+    }
+  }
+}
+
+.pane_favorites {
+  .nothing {
+    span {
+      display: block;
+    }
+  }
+  .rev_img {
+    justify-content: flex-start;
+    img{
+      max-width: 100px;
+    }
+  }
+}
+
+.pane_addresses{
+  a{
+    color: $blue;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .address{
+    line-height: 24px;
+  }
+  .label{
+    text-transform: uppercase;
+    color: #000;
+    height: 16px;
+    border-radius: 4px;
+    background: $yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    line-height: 1;
+    margin-bottom: 15px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+}
+
+.pane_reviews{
+  a{
+    color: $blue;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.discount_popup_form{
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 30px 40px 40px;
+  grid-gap: 20px;
+  border-radius: 8px;
+  form{
+    grid-column: span 4;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    display: grid;
+  }
+  h3{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0;
+  }
+  .custom-select{
+    margin-right: 20px;
+  }
+  .desc{
+    color: #404142;
+    margin-top: 10px;
+    line-height: 23px;
+    margin-bottom: 7px;
+  }
+  .received-email{
+    a{
+      color: $blue;
+    }
+    label{
+      display: block;
+    }
+  }
+  .disclaimer{
+    color: #9FA0A0;
+  }
+  .bday-field{
+    margin-top: 11px;
+  }
+  .received-email{
+    margin-top: 10px;
+  }
+}
+#discount_popup_form_w.fancybox-content{
+  padding: 0;
+  border-radius: 8px;
+  .fancybox-close-small{
+    right: 20px;
+    top: 20px;
+  }
+  .review_notes, .review_main_form, .bordernone{
+    display: none;
+  }
+  overflow: visible;
+}
+
+#cabinet_tabs .tabs_head{
+  ul li{
+    line-height: 24px;
+    padding: 0 4px 9px;
+  }
+  .counter{
+    position: absolute;
+    right: -20px;
+    top: 2px;
+    background: #F44436;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    z-index: 2;
+  }
+}
+
+.pane_orders--order{
+  margin-right: 40px;
+  min-width: 80px;
+  &:last-child{
+    margin-right: 0;
+  }
+  .count{
+    span{
+      font-size: 40px;
+      font-weight: bold;
+    }
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .label{
+    margin-top: 5px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 10px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.red{
+      background: $red;
+    }
+    &.black{
+      background: #404142;
+    }
+    &.green{
+      background: $green;
+    }
+  }
+}
+
+.cabinet_discount_notifier{
+  height: 28px;
+  background: $red;
+  color: #FFFFFF;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+@media (min-width: 1424px) and (max-width: 1659px) {
+  #cabinet_tabs {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1423px) {
+  #cabinet_tabs {
+    grid-column: 1 / -1;
+  }
+  .pane-holder .w50{
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 860px) and (max-width: 1139px) {
+  #cabinet_tabs {
+    grid-column: 1 / -1;
+  }
+  .pane-holder .w33{
+    &:first-child{
+      flex: 1 1 100%;
+    }
+  }
+  .pane-holder .w50{
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 859px) {
+  #cabinet_tabs {
+    grid-column: 1 / -1;
+  }
+  .pane-holder .w33{
+    &:first-child{
+      flex: 1 1 100%;
+    }
+  }
+  .pane-holder .w50{
+    flex: 1 1 100%;
+    overflow: hidden;
+  }
+}

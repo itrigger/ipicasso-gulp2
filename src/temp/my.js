@@ -553,6 +553,7 @@ $(document).ready(function () {
             let cur = parseInt($(this).parent().find("input").val());
             $(this).parent().find("input").val(cur + 1);
             $(this).parent().parent().find(".notify").removeClass("notify--empty").text(cur + 1);
+            $(this).find(".cart_btn__hover").click();
         }
     });
 
