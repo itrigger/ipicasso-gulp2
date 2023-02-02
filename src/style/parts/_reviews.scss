@@ -153,6 +153,9 @@
     border-radius: 3px;
     overflow: hidden;
   }
+  a{
+    position: relative;
+  }
   a+a{
     margin-left: 20px;
   }
@@ -165,7 +168,6 @@
 }
 
 .rev_img_gallery_link{
-  position: relative;
   span{
     position: absolute;
     top: 0;
