@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Страница Оформления заказа</title>
+    //= template/head.html
+
+</head>
+<body class="product">
+//= template/header.html
+
+<!-- side menu -->
+//= template/sidemenu.html
+<!-- end of side menu -->
+<div class="category_menu_w standalone_menu"><!-- добавить класс standalone если нулевого уровня меню не будет -->
+
+    <!-- main category menu -->
+    <div class="cm-level-1-w">
+        <div class="in">
+            <div class="category_menu cm-level-1 active" id="category_menu">
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container active">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="1000">
+                            <li class="mm--item hasChild" data-menu-id="100"><a href="javascript:void(0);">Malowanie po
+                                numerach</a></li>
+                            <li class="mm--item" data-menu-id="200"><a href="javascript:void(0);">Ramy do obrazow</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="300"><a href="javascript:void(0);">Diamentowa
+                                Mozaika</a></li>
+                            <li class="mm--item hasChild" data-menu-id="400"><a href="javascript:void(0);">Papaercraft
+                                3D
+                                modele</a></li>
+                            <li class="mm--item" data-menu-id="500"><a href="javascript:void(0);">Gobeliny</a></li>
+                            <!--<li data-menu-id="600"><a class="red" href="javascript:void(0);">SALE</a></li>
+                            <li class="search"><a class="ico-search" href="javascript:void(0);"></a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="2000">
+                            <li class="mm--item hasChild" data-menu-id="2100"><a href="javascript:void(0);">Радиоуправляемые
+                                игрушки</a></li>
+                            <li class="mm--item" data-menu-id="2200"><a href="javascript:void(0);">Квадрокоптеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2300"><a
+                                    href="javascript:void(0);">Экшн-камеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2400"><a href="javascript:void(0);">Прочее</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Arrows -->
+                <div class="swiper-button-prev megamenu-swiper-button swiper-button-disabled"></div>
+                <div class="swiper-button-next megamenu-swiper-button"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end of main category menu -->
+    //= template/megamenu.html
+</div>
+
+//= template/breadcrumb.html
+
+<div class="in cabinet">
+    <div class="col-12">
+        <div class="cabinet_bnr"></div>
+    </div>
+</div>
+
+<div class="in cabinet">
+    <div class="p_tabs" id="cabinet_tabs">
+        <div class="full_tabs_w">
+            <div class="tabs_head swiper-container-wrapper">
+                <div class="swiper-container">
+                    <ul class="ul swiper-wrapper">
+                        <li class="swiper-slide" data-tab-content="1">Главная</li>
+                        <li class="active swiper-slide" data-tab-content="2">Заказы <span class="counter">3</span></li>
+                        <li class="swiper-slide" data-tab-content="3">Избранное</li>
+                        <li class="swiper-slide" data-tab-content="4">Моя скидка</li>
+                        <li class="swiper-slide" data-tab-content="5">Мои отзывы <span class="counter">3</span></li>
+                        <li class="swiper-slide" data-tab-content="6">Профиль</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tabs_content_w">
+                <div class="tab_content" data-tab="1" style="display: none;">
+                    <!-- Главная -->
+                </div>
+                <div class="tab_content" data-tab="2" style="display: grid;">
+                    <div class="col-6 | order-page">
+                        <a href="#" class="link_back">
+                            К списку заказов
+                        </a>
+
+                        <div class="d_f ai_end | order_numbers">
+                            <div class="order_number">
+                                #27982
+                            </div>
+                            <div class="order_date">
+                                02.05.2022
+                            </div>
+                        </div>
+
+                        <div class="d_f jc_sb | order_status_bar">
+                            <div class="status_text">Ожидает обработки</div>
+                            <div class="date_time">02.05.2022, 16:00</div>
+                        </div>
+
+                        <div class="order_head">
+                            Счет
+                        </div>
+
+                        <div class="order-panes">
+                            <div class="order-pane order-pane--short">
+                                <div class="order-pane--head d_f">
+                                    <div class="order-pane--short-number">0641587</div>
+                                    <div class="order-pane--short-date">02.05.2022, 15:46</div>
+
+                                    <div class="ml_auto | price">
+                                        316.00 <span>zt</span>
+                                        <div class="status">оплатить до 03.01.2023</div>
+                                    </div>
+                                    <div class="num_block btn-w">
+
+                                        <a href="#" class="btn btn-medium">Оплатить</a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-info-panels">
+                            <div class="order-info-panel oip_long">
+                                <div class="head">
+                                    Dane firmy do faktury
+                                </div>
+                                <div class="desc">
+                                    <p>ООО «Атлант»<br/>
+                                        NIP: 000000000</p>
+
+                                    <p>Улица 4, 222<br/>
+                                        Варшава, 00-555<br/>
+                                        Польша</p>
+                                </div>
+                            </div>
+                            <div class="order-info-panel oip_long">
+                                <div class="head">
+                                    Данные покупателя
+                                </div>
+                                <div class="desc">
+                                    <p>Сергей Кононов</p>
+
+                                    <p>+375 29 333 23 58,<br/>
+                                        +375 29 333 23 59</p>
+                                </div>
+                            </div>
+                            <div class="order-info-panel oip_long">
+                                <div class="head">
+                                    Получатель
+                                </div>
+                                <div class="desc">
+                                    <p>Сергей Кононов</p>
+
+                                    <p>+375 29 333 23 58,<br/>
+                                        +375 29 333 23 59</p>
+                                </div>
+                            </div>
+                            <div class="order-info-panel oip_short">
+                                <div class="head">
+                                    Comments to the order
+                                </div>
+                                <div class="desc">
+                                    <p>Позвонить за 30 минут до доставки</p>
+                                </div>
+                            </div>
+                            <div class="order-info-panel oip_short">
+                                <div class="head">
+                                    Адрес доставки
+                                </div>
+                                <div class="desc">
+                                    <p>Улица 4, 222<br/>
+                                        Варшава, 00-555<br/>
+                                        Польша</p>
+                                </div>
+                            </div>
+                            <div class="order-info-panel oip_short">
+                                <div class="head">
+                                    Доставка и оплата
+                                </div>
+                                <div class="desc">
+                                    <p>
+                                    <div class="d_f delivery_item">
+                                        <div class="name">Курьер DPD</div>
+                                        <div class="img"><img
+                                                src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png"
+                                                alt="dpd" width="49"></div>
+                                    </div>
+                                    <div class="d_f delivery_item">
+                                        <div class="name">Platnosc internetowa Online</div>
+                                        <div class="img"><img
+                                                src="https://ipicasso.pl/catalog/view/theme/ava/img/dpd_ico.png"
+                                                alt="dpd" width="49"></div>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cabinet_cart">
+                            <div class="cabinet_cart_head">
+                                Товары
+                            </div>
+                            <div class="cabinet_reviews_cart">
+                                <div class="row body">
+                                    <div class="ct_image">
+                                        <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">
+                                            <img src="../img/temp/order_1.png" alt="Słoń - symbol spokoju"
+                                                 title="Słoń - symbol spokoju">
+                                        </a>
+                                    </div>
+                                    <div class="ct_name">
+                                        <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">
+                                            Zachód słońca nad polem as bin lawendy in de o słońca nad polem as bin
+                                            lawendy stonca nad pole
+                                        </a>
+                                    </div>
+                                    <div class="ct_code">
+                                        <div class="code">PC5065062</div>
+
+                                        <div class="limit_txt"><sup>*</sup>Для оптового заказа свяжитесь с
+                                            менеджером
+                                        </div>
+                                    </div>
+
+                                    <div class="ct_price">
+                                        76.50<span> zł/шт.</span>
+                                    </div>
+
+                                    <div class="ct_input">
+                                        <div class="inputNumber">
+                                            ×1
+                                        </div>
+                                    </div>
+                                    <div class="ct_total">
+                                        <div>76.50<span>  zł</span></div>
+                                    </div>
+                                    <div class="ct_btn">
+                                        <div class="btn-w">
+                                            <a href="#" class="btn">Оставить отзыв</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row body">
+                                    <div class="ct_image">
+                                        <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">
+                                            <img src="../img/temp/order_2.png" alt="Słoń - symbol spokoju"
+                                                 title="Słoń - symbol spokoju">
+                                        </a>
+                                    </div>
+
+                                    <div class="ct_name">
+                                        <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">
+                                            Zachód słońca nad polem
+                                        </a>
+                                    </div>
+                                    <div class="ct_code">
+                                        <div class="code">PC5065062</div>
+                                        <div class="labels"><span class="label label--discount">-10%</span></div>
+                                        <div class="limit_txt"><sup>*</sup>Для оптового заказа свяжитесь с
+                                            менеджером
+                                        </div>
+                                    </div>
+
+                                    <div class="ct_price">
+                                        76.50<span> zł/шт.</span>
+                                    </div>
+
+                                    <div class="ct_input">
+                                        <div class="inputNumber">
+                                            ×1
+                                        </div>
+                                    </div>
+                                    <div class="ct_total">
+                                        <div>76.50<span>  zł</span></div>
+                                    </div>
+                                    <div class="ct_btn">
+                                        <div class="btn-w">
+                                            <a href="#" class="btn">Оставить отзыв</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row body">
+                                    <div class="ct_image">
+                                        <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">
+                                            <img src="../img/temp/order_2.png" alt="Słoń - symbol spokoju"
+                                                 title="Słoń - symbol spokoju">
+                                        </a>
+                                    </div>
+
+                                    <div class="ct_name">
+                                        <a href="https://ipicasso.pl/diamentowa-mozaika/ne-zadano-5pd4050058">
+                                            Zachód słońca nad polem
+                                        </a>
+                                    </div>
+                                    <div class="ct_code">
+                                        <div class="code">PC5065062</div>
+                                        <div class="labels"><span class="label label--discount">-10%</span></div>
+                                        <div class="limit_txt"><sup>*</sup>Для оптового заказа свяжитесь с
+                                            менеджером
+                                        </div>
+                                    </div>
+
+                                    <div class="ct_price">
+                                        76.50<span> zł/шт.</span>
+                                    </div>
+
+                                    <div class="ct_input">
+                                        <div class="inputNumber">
+                                            ×1
+                                        </div>
+                                    </div>
+                                    <div class="ct_total">
+                                        <div>76.50<span>  zł</span></div>
+                                    </div>
+                                    <div class="ct_btn">
+                                        <div class="btn-w">
+                                            <a href="#" class="btn">Оставить отзыв</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order_steps_content_desc_cart_footer cart-footer">
+                                <div class="promocode_form success">
+                                </div>
+                                <div class="cart_total_label">
+                                    <!--                                    <div class="promo_ok_label">Скидка по промокоду:</div>-->
+                                    Cart total:
+                                </div>
+                                <div class="cart_total_price">
+                                    <!--                                    <div class="price_promo">6.00 zt</div>-->
+                                    <div class="price">316.00 <span>zt</span></div>
+                                    <div class="old_price">326.00 <span>zt</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab_content" data-tab="3" style="display: none;">
+                    3
+                </div>
+                <div class="tab_content" data-tab="4" style="display: none;">
+                    4
+                </div>
+                <div class="tab_content" data-tab="5" style="display: none;">
+                    5
+                </div>
+                <div class="tab_content" data-tab="6" style="display: none;">
+                    6
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- carousel new in catalog -->
+//= template/carousel-viewed.html
+<!-- end of carousel new in catalog -->
+<script>
+
+    $('document').ready(function () {
+        var pp_tabs_ul = new Swiper('#cabinet_tabs .tabs_head .swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 100,
+            speed: 400,
+            slidesOffsetAfter: 0,
+            slideToClickedSlide: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 'auto',
+                    allowTouchMove: true,
+                    watchOverflow: true,
+                    spaceBetween: 50,
+                },
+                860: {
+                    slidesPerView: 'auto',
+                    allowTouchMove: true,
+                    watchOverflow: true,
+                    spaceBetween: 50,
+                },
+                1140: {
+                    allowTouchMove: false,
+                    slideToClickedSlide: false,
+                }
+            }
+        });
+        $('.order-info-panels .order-info-panel .head').on("click", function () {
+            $(this).toggleClass('active');
+            $(this).parent().find(".desc").toggleClass('active');
+        })
+    });
+
+
+</script>
+
+//= template/footer.html
+</body>
+</html>

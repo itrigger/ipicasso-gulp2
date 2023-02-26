@@ -1,0 +1,105 @@
+<div class="smallInputs clearfix">
+    <div class="niceInput <?php foreach ($rules as $rule) { ?><?php echo !$rule['display'] && $rule['passed'] && /*$required &&*/ !empty($value) ? ' noError ' : '' ?><?}?>">
+        <div class="label hide"><label><?php echo $label ?> <?php if ($required) { ?> <span>*</span><?php } ?></label></div>
+        <input type="text" class="cw_input op_input_full" name="<?php echo $name ?>"
+               value="<?php echo $value?$value:'' ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?> placeholder="<?php echo $label ?> <?php if ($required) { ?>*<?php } ?>">
+
+
+    </div>
+    <?php if (!empty($rules)) { ?>
+    <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+        <?php foreach ($rules as $rule) { ?>
+        <div ><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+    <?php } ?>
+</div>
+<?php } ?>
+<?php /*if ($description) { */?><!--
+        <div class="simplecheckout-tooltip" data-for="<?php /*echo $id */?>"><?php /*echo $description */?></div>
+    --><?php /*}*/ ?>
+<?php } elseif ($id == 'shipping_address_alt_courier_time_start') { ?>
+<div id="whenTime" class="whenTime" style="margin-left:215px;">
+    <div class="title">По альтернативному адресу</div>
+    <div class="holder">
+        <label>
+            <?php echo $label ?><?php if ($required) { ?><b>*</b><?php } ?><span style="width: 83px; height: 38px;">
+        <select
+                 <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+            <?php foreach ($values as $info) { ?>
+            <option
+                    value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'selected="selected"' : '' ?>><?php echo $info['text'] ?></option>
+            <?php } ?>
+            </select></span>
+            <?php if (!empty($rules)) { ?>
+            <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+                <?php foreach ($rules as $rule) { ?>
+                <div <?php echo $rule['display'] && !$rule['passed'] ? '' : 'style="display:none;"' ?>
+                data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+                class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+            <?php } ?>
+    </div>
+    <?php } ?>
+
+
+    </label>
+    <?php } elseif ($id == 'shipping_address_alt_courier_time_end') { ?>
+    <label>
+        <?php echo $label ?><?php if ($required) { ?><b>*</b><?php } ?><span style="width: 83px; height: 38px;">
+        <select name="<?php echo $name ?>"
+                id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+        <?php $count = count($values); $i=0; foreach ($values as $info) { $i++ ?>
+        <option
+                value="<?php echo $info['id'] ?>" <?php echo ($value == $info['id'] || $i == $count) ? 'selected="selected"' : '' ?>><?php echo $info['text'] ?></option>
+        <?php } ?>
+        </select></span>
+        <?php if (!empty($rules)) { ?>
+        <div class="simplecheckout-rule-group" data-for="<?php echo $id ?>" style="display:none" >
+            <?php foreach ($rules as $rule) { ?>
+            <div <?php echo $rule['display'] && !$rule['passed'] ? '' : 'style="display:none;"' ?>
+            data-for="<?php echo $id ?>" data-rule="<?php echo $rule['id'] ?>"
+            class="simplecheckout-error-text simplecheckout-rule" <?php echo $rule['attrs'] ?>><?php echo $rule['id']!='notEmpty'?$rule['text']:'' ?></div>
+        <?php } ?>
+</div>
+<?php } ?>
+
+</label>
+</div>
+</div>
+
+<?php } elseif ($id == 'shipping_address_alt_flat_date') {
+        $check = false; ?>
+
+<div style="display: none">
+    <?php foreach ($values as $info) { ?>
+    <label class="niceRadio small">
+        <input type="radio" class="cw_input op_input_full" name="<?php echo $name ?>" id="<?php echo $id ?>"
+               value="<?php echo $info['id'] ?>" <?php if ($value == $info['id'] || !$check) {
+                    echo 'checked="checked"';
+                    $check = true;
+                } ?> <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>><span class="icon"><span></span></span>
+        <span class="title"><?php echo $info['text'] ?></span>
+    </label>
+    <?php } ?>
+</div>
+<?php }
+    elseif ($id == 'payment_address_courier_time_start') { ?>
+<div id="timeFlatitem">
+    <div class="hr noMarT"></div>
+
+    <h3 class="pageTitle ttUp big clearfix">ВЫБОР ВРЕМЕНИ ДОСТАВКИ </h3>
+    <div class="paymentDesc noPad" id="fDateDesc" >
+        <?/*= $values['date_flat']; */?>
+    </div>
+    <div class="holderTime clearfix">
+        <div class="whenTime">
+            <div class="title">По основному адресу покупателя</div>
+            <div class="holder">
+                <label>
+                    с<span style="width: 83px; height: 38px;">
+                        <select name="<?php echo $name ?>"
+                                id="<?php echo $id ?>" <?php echo $reload ? 'data-onchange="reloadAll"' : '' ?>>
+                    <?php foreach ($values as $info) { ?>
+                    <option
+                            value="<?php echo $info['id'] ?>" <?php echo $value == $info['id'] ? 'selected="selected"' : '' ?>><?php echo $info['text'] ?></option>
+                    <?php } ?>
+                    </select>
+</span>
