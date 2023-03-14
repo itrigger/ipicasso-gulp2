@@ -1,5 +1,5 @@
 body {
-  //background: url("../img/2.7 Orders - Mobile.png") center 0px no-repeat;
+  //background: url("../img/6.0 Profile.png") center 14px no-repeat;
 }
 
 .cabinet_bnr {
@@ -39,6 +39,12 @@ body {
   }
 }
 
+.pane-2-row{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 18px 0px;
+}
 .pane {
   border: 1px solid rgba(205, 206, 207, 0.5);
   border-radius: 8px;
@@ -777,38 +783,34 @@ body {
     line-height: 1.3;
     color: rgba(#404142, .5);
   }
-}
-
-.order-status-spoiler {
-  display: none;
-  font-size: 14px;
-  line-height: 1.4;
-  margin-top: 7px;
-
-  &.active {
-    display: block;
-  }
-
-  .desc {
+  .desc{
+    flex: 1 0 0;
+    display: none;
     padding-right: 130px;
-  }
-
-  .all_statuses {
-    margin-top: 22px;
-
-    .line {
-      margin-bottom: 20px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    margin-bottom: 22px;
+    margin-top: 10px;
+    &.active{
+      display: block;
     }
-
+  }
+  .secondary-status{
+    display: none;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 7px;
+    margin-bottom: 20px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &.active{
+      display: block;
+    }
     .status_text {
       font-size: 16px;
     }
   }
 }
+
 
 .cabinet_spoiler {
   cursor: pointer;
@@ -1077,6 +1079,117 @@ body {
   height: 24px;
 }
 
+
+/*** Profile ***/
+
+.pane{
+  background: transparent;
+}
+.tab_cab_profile{
+  padding-top: 20px;
+  .pane .heading{
+    align-items: baseline;
+  }
+}
+.heading{
+  .link{
+    font-weight: normal;
+    font-size: 16px;
+  }
+}
+.pane_password_w{
+  padding-bottom: 10px;
+  .profile_fake_password{
+    margin-top: 23px;
+    font-size: 31px;
+    letter-spacing: 4px;
+  }
+}
+.pane-subscribe_w{
+  padding-bottom: 17px;
+}
+.pane-subscribe{
+  margin-top: 20px;
+  &>div{
+    margin-top: 2px;
+    margin-bottom: 10px;
+    &+div{
+      margin-top: 21px;
+    }
+  }
+  label{
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.pane_profile_contacts{
+  flex-wrap: wrap;
+  & > div{
+    flex: 1 1 50%;
+    flex-direction: column;
+    margin-bottom: 21px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .text{
+    font-size: 12px;
+    color: rgba(#404142, .5);
+    margin-bottom: 5px;
+  }
+  .data{
+    font-size: 16px;
+  }
+}
+
+.pane-my-addresses{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  & > div{
+    height: 144px;
+  }
+}
+.pane-my-address{
+  width: calc((100% - 133px) / 3 - 20px);
+  margin-right: 20px;
+  padding: 15px;
+  .status{
+    margin-bottom: 8px;
+    display: flex;
+    line-height: 1;
+    padding: 2px 19px;
+    font-size: 11px;
+  }
+  .head{
+    margin-bottom: 16px;
+    display: flex;
+    a{
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+  .text{
+    line-height: 18px;
+    color: #404142;
+    div{
+      margin-bottom: 6px;
+    }
+  }
+}
+.pane-my-address-add{
+  text-align: center;
+  width: 133px;
+  font-size: 16px;
+  line-height: 18px;
+  border: 1px dashed #9FA0A0;
+  border-radius: 8px;
+  span{
+    margin-bottom: 5px;
+    margin-top: 12px;
+  }
+}
 
 /*** Media ***/
 

@@ -559,4 +559,3 @@ var CustomSelect = function ($) {
 
   return CustomSelect;
 }($);
-//# sourceMappingURL=jquery.custom-select.js.map

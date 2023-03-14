@@ -109,32 +109,36 @@
                         </div>
 
                         <div class=" | order_status_bar">
-                            <div class="d_f jc_sb">
-                                <div class="status_text green">Отправлено</div>
-                                <div class="date_time">02.05.2022, 16:00</div>
-                            </div>
-                            <div class="order-status-spoiler active">
-                                <div class="desc">
+                            <div class="line primary-status">
+                                <div class="d_f jc_sb">
+                                    <div class="status_text green">Отправлено</div>
+                                    <div class="date_time">02.05.2022, 16:00</div>
+                                </div>
+                                <div class="desc active">
                                     Numer przesyłki: <b>605506907205420033070062</b><br/>
                                     Stan realizacji dostawy przesyłki można sprawdzić na stronie Paczkomaty InPost pod
                                     linkiem: <a class="blue" href="#">https://inpost.pl/sledzenie-przesylek?umber=605506907205420033070062</a>
                                 </div>
-                                <div class="all_statuses">
-                                    <div class="line d_f jc_sb">
-                                        <div class="status_text black">В обработке</div>
-                                        <div class="date_time">02.05.2022, 16:00</div>
-                                    </div>
-                                    <div class="line d_f jc_sb">
-                                        <div class="status_text">Ожидает обработки</div>
-                                        <div class="date_time">02.05.2022, 16:00</div>
-                                    </div>
+                            </div>
+                            <div class="line secondary-status active">
+                                <div class="d_f jc_sb">
+                                    <div class="status_text black">В обработке</div>
+                                    <div class="date_time">02.05.2022, 16:00</div>
                                 </div>
                             </div>
+                            <div class="line secondary-status active">
+                                <div class="d_f jc_sb">
+                                    <div class="status_text">Ожидает обработки</div>
+                                    <div class="date_time">02.05.2022, 16:00</div>
+                                </div>
+                            </div>
+
                         </div>
 
 
                         <div class="cabinet_spoiler active | d_f jc_c">
-                            <div class="d_f ai_c"><span class="state2">Скрыть историю</span><span class="state1">Показать историю</span> <span class="arrow-dd"></span></div>
+                            <div class="d_f ai_c"><span class="state2">Скрыть историю</span><span class="state1">Показать историю</span>
+                                <span class="arrow-dd"></span></div>
                         </div>
 
                         <div class="order_head | d_f jc_sb">
@@ -517,9 +521,9 @@
         //.cabinet_spoiler
         //.order-status-spoiler
 
-        $('.cabinet_spoiler').on("click", function (){
-           $(this).toggleClass('active');
-           $(".order-status-spoiler").toggleClass('active');
+        $('.cabinet_spoiler').on("click", function () {
+            $(this).toggleClass('active');
+            $(".order_status_bar .desc, .order_status_bar .secondary-status").toggleClass('active');
         });
     });
 
