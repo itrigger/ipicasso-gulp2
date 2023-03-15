@@ -1,5 +1,5 @@
 body {
-  //background: url("../img/6.0 Profile.png") center 14px no-repeat;
+  background: url("../img/6.1 Profile.png") center 14px no-repeat;
 }
 
 .cabinet_bnr {
@@ -1110,16 +1110,26 @@ body {
 }
 .pane-subscribe{
   margin-top: 20px;
-  &>div{
+  .checkbox_line{
     margin-top: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
     &+div{
-      margin-top: 21px;
+      margin-top: 16px;
     }
   }
   label{
     font-weight: bold;
     font-size: 16px;
+  }
+  .btns{
+    padding-bottom: 5px;
+  }
+  .btn{
+    font-size: 15px;
+    height: 32px;
+  }
+  .btn-flat{
+    margin-right: 16px;
   }
 }
 
@@ -1129,6 +1139,9 @@ body {
     flex: 1 1 50%;
     flex-direction: column;
     margin-bottom: 21px;
+    &.no-margin{
+      margin: 0;
+    }
     &:last-child{
       margin-bottom: 0;
     }
@@ -1147,14 +1160,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
-  & > div{
+  margin-bottom: -25px;
+  & > div, & > a{
     height: 144px;
+    margin-bottom: 25px;
   }
 }
 .pane-my-address{
   width: calc((100% - 133px) / 3 - 20px);
   margin-right: 20px;
   padding: 15px;
+  background: #F6F7F8;
   .status{
     margin-bottom: 8px;
     display: flex;
@@ -1175,6 +1191,23 @@ body {
     color: #404142;
     div{
       margin-bottom: 6px;
+    }
+  }
+  .btns{
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s all;
+    padding-right: 3px;
+    padding-top: 1px;
+    a{
+      margin-left: 22px;
+    }
+  }
+  &:hover{
+    .btns{
+      opacity: 1;
+      pointer-events: all;
+      transition: .2s all;
     }
   }
 }

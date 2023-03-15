@@ -120,9 +120,11 @@
                                         <div class="text">E-mail</div>
                                         <div class="data">yaroslove@hotmail.ru</div>
                                     </div>
-                                    <div class="line d_f">
+                                    <div class="line d_f | no-margin">
                                         <div class="text">Дата рождения</div>
-                                        <div class="data">02.12.1987</div>
+                                        <div class="data">Укажите дату рождения и получайте <span class="red bold">скидку&nbsp;10%</span>
+                                            в этот день
+                                        </div>
                                     </div>
                                     <div class="line d_f">
                                         <div class="text">Телефон</div>
@@ -149,18 +151,27 @@
                                     Подписки
                                 </div>
                                 <div class="pane-subscribe">
-                                    <div>
-                                        <input class="a_name checkbox" id="received_email_checkbox" type="checkbox"
-                                               name="received_email_checkbox">
-                                        <label for="received_email_checkbox">Получать новости на Email</label>
-                                    </div>
+                                    <div class="d_f ai_end jc_sb">
+                                        <div>
+                                            <div class="d_f ai_end | checkbox_line">
+                                                <input class="a_name checkbox" id="received_email_checkbox"
+                                                       type="checkbox"
+                                                       name="received_email_checkbox">
+                                                <label for="received_email_checkbox">Получать новости на Email</label>
+                                            </div>
 
-                                    <div>
-                                        <input class="a_name checkbox" id="received_sms_checkbox" type="checkbox"
-                                               name="received_sms_checkbox">
-                                        <label for="received_sms_checkbox">Получать новости по СМС</label>
+                                            <div class="d_f ai_end | checkbox_line">
+                                                <input class="a_name checkbox" id="received_sms_checkbox"
+                                                       type="checkbox"
+                                                       name="received_sms_checkbox">
+                                                <label for="received_sms_checkbox">Получать новости по СМС</label>
+                                            </div>
+                                        </div>
+                                        <div class="d_f | btns">
+                                            <a href="" class="btn btn-flat">Отменить</a>
+                                            <a href="" class="btn btn-medium">Сохранить</a>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -171,8 +182,12 @@
                                 </div>
                                 <div class="pane-my-addresses">
                                     <div class="pane-my-address">
-                                        <div class="head">
+                                        <div class="head d_f jc_sb">
                                             <div class="label label--soon status">default</div>
+                                            <div class="btns d_f">
+                                                <a href="#" class="ico-pencil my-address-edit"></a>
+                                                <a href="#" class="ico-trash my-address-delete"></a>
+                                            </div>
                                         </div>
                                         <div class="text">
                                             <div>Улица, 6, 123</div>
@@ -183,8 +198,9 @@
                                     <div class="pane-my-address">
                                         <div class="head d_f jc_sb">
                                             <a href="#" class="link">Установить по умолчанию</a>
-                                            <div class="btns">
-                                                a b
+                                            <div class="btns d_f">
+                                                <a href="#" class="ico-pencil my-address-edit"></a>
+                                                <a href="#" class="ico-trash my-address-delete"></a>
                                             </div>
                                         </div>
                                         <div class="text">
@@ -194,8 +210,12 @@
                                         </div>
                                     </div>
                                     <div class="pane-my-address">
-                                        <div class="head">
+                                        <div class="head d_f jc_sb">
                                             <a href="#" class="link">Установить по умолчанию</a>
+                                            <div class="btns d_f">
+                                                <a href="#" class="ico-pencil my-address-edit"></a>
+                                                <a href="#" class="ico-trash my-address-delete"></a>
+                                            </div>
                                         </div>
                                         <div class="text">
                                             <div>Улица, 6, 123</div>
@@ -203,6 +223,7 @@
                                             <div>Польша</div>
                                         </div>
                                     </div>
+
                                     <a href="#" class="pane-my-address-add d_f fd_c jc_c ai_c">
                                         <span class="ico-plus2"></span> Добавить<br/>адрес
                                     </a>

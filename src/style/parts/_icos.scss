@@ -183,6 +183,22 @@ a:hover .arrow {
   transform: rotate(45deg);
 }
 
+.ico-pencil{
+  display: block;
+  background: url(../img/ico-pencil.jpg) center center no-repeat;
+  background-size: 18px 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.ico-trash{
+  display: block;
+  background: url(../img/ico-trash.jpg) center center no-repeat;
+  background-size: 14px 18px;
+  width: 18px;
+  height: 18px;
+}
+
 .ico-green-check{
   display: block;
   background: url(../img/ico-green-check.jpg) center center no-repeat;
