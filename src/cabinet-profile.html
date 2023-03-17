@@ -105,7 +105,7 @@
                         <div class="pane pane-shadow w50">
                             <div class="d_f fd_c h100">
                                 <div class="heading jc_sb">
-                                    Личные данные <a href="#" class="link ml-auto">Редактировать</a>
+                                    Личные данные <a href="javascript:;" class="change_profile link ml-auto">Редактировать</a>
                                 </div>
                                 <div class="pane_profile_contacts d_f mt_auto">
                                     <div class="line d_f">
@@ -137,7 +137,7 @@
                             <div class="pane pane-shadow pane_password_w">
                                 <div class="d_f fd_c h100">
                                     <div class="heading jc_sb">
-                                        Пароль <a href="#" class="link ml-auto">Изменить</a>
+                                        Пароль <a href="javascript:;" class="change_pass link ml-auto">Изменить</a>
                                     </div>
                                     <div class=" mt_auto">
                                         <div class="d_f jc_sb">
@@ -237,20 +237,62 @@
     </div>
 </div>
 
-<div id="discount_popup_form_w" style="display:none;">
-    <div class="discount_popup_form">
+<div id="profile_change_pass_popup" class="default-popup" style="display:none;">
+    <div class="profile_change_pass_popup default-popup-in">
 
         <div class="col-4">
-            <h3>Дисконтная программа</h3>
+            <h3>Пароль</h3>
+            <div class="smalldesc">
+                Введите новый пароль
+            </div>
         </div>
 
-        <div class="desc col-4">
-            Może Pan/Pani uczestniczyć w programie rabatowym i korzystać ze zniżek i bonusów zgodnie z warunkami
-            programu rabatowego.
+        <div class="d_f fd_c col-4 form">
+            <input type="password" class="cw_input" placeholder="Password"/>
         </div>
-
-
         <div class="d_f fd_c col-4">
+            <input type="password" class="cw_input" placeholder="Repeat password"/>
+        </div>
+
+        <div class="btns col-4 d_f jc_sb">
+            <a href="javascript:;" class="btn btn-flat">Отменить</a>
+            <a href="javascript:;" class="btn btn-medium">Сохранить</a>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="profile_change_profile_popup" class="default-popup" style="display:none;">
+    <div class="profile_change_profile_popup default-popup-in">
+
+        <div class="col-4">
+            <h3>Личные данные</h3>
+        </div>
+
+        <div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
+            <input type="text" class="cw_input op_input_full" placeholder="Имя"/>
+        </div>
+        <div class="d_f ai_end col-2 s-col-4 xs-col-4 pos_r | first_line">
+            <input type="text" class="cw_input op_input_full" placeholder="Фамилия"/>
+        </div>
+
+        <div class="d_f fd_c pos_r col-4 | first_line">
+            <input type="text" class="cw_input op_input_full" placeholder="Email">
+        </div>
+
+        <div class="d_f fd_c pos_r col-4 | first_line">
+            <div style="position: relative;">
+                <div class="flag_w">
+                    <input type="tel" name="telname_code" class="cw_input"
+                           id="customer_telephone_code2" value="" placeholder="Телефон">
+                </div>
+            </div>
+            <div class="tel-note ml_auto">Jeżeli chce Pan/Pani zmienić numer telefonu prosimy skontaktować się z nami za
+                pomocą numeru: <b>+48 881-044-186</b></div>
+        </div>
+
+        <div class="d_f fd_c pos_r col-4 | first_line">
             <div class="received-email_label | input-label">Ваш пол</div>
             <ul class="d_f | radio_tabs">
                 <li><label for="rec11" class="niceRadio niceRadio_left"><input
@@ -262,15 +304,14 @@
                     Женский</label></li>
             </ul>
         </div>
-
-        <div class="bday-field | d_f fd_c col-4">
+        <div class="col-4 d_f fd_c ai_start | popup-bday">
             <div class="received-email_label | input-label">Дата рождения</div>
-            <div class="d_f | received-email_form_selects">
+            <div class="d_f | received-email_form_selects disabled">
                 <select name="dob_day" id="dob_day">
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
-                    <option value="04">04</option>
+                    <option value="04" selected>04</option>
                     <option value="05">05</option>
                     <option value="06">06</option>
                     <option value="07">07</option>
@@ -307,7 +348,7 @@
                     <option value="05">05</option>
                     <option value="06">06</option>
                     <option value="07">07</option>
-                    <option value="08">08</option>
+                    <option value="08" selected>08</option>
                     <option value="09">09</option>
                     <option value="10">10</option>
                     <option value="11">11</option>
@@ -322,7 +363,7 @@
                     <option value="1975">1975</option>
                     <option value="1976">1976</option>
                     <option value="1977">1977</option>
-                    <option value="1978">1978</option>
+                    <option value="1978" selected>1978</option>
                     <option value="1979">1979</option>
                     <option value="1980">1980</option>
                     <option value="1981">1981</option>
@@ -330,20 +371,15 @@
                     <option value="1983">1983</option>
                 </select>
             </div>
-        </div>
-
-        <div class="disclaimer col-4">
-            <b>Внимание!</b> После сохранения даты, вы не сможете ее изменить.
-        </div>
-
-        <div class="received-email col-4">
-            <input class="a_name checkbox" id="bday_checkbox" type="checkbox" name="received_email">
-            <label for="bday_checkbox">Я соглашаюсь с <a href="#">условиями</a> дисконтной программы</label>
+            <div class="msg yellow">
+                Вы не можете изменить дату рождения
+            </div>
         </div>
 
 
-        <div class="rev_form_btn col-4">
-            <a href="javascript:;" class="btn btn-big">Присоединиться</a>
+        <div class="btns col-4 d_f jc_sb">
+            <a href="javascript:;" class="btn btn-flat">Отменить</a>
+            <a href="javascript:;" class="btn btn-medium">Сохранить</a>
         </div>
 
     </div>
@@ -351,9 +387,20 @@
 
 <script>
 
-    $(".join_discount").on('click', function () {
+    $(".change_pass").on('click', function () {
         $.fancybox.open({
-            src: '#discount_popup_form_w',
+            src: '#profile_change_pass_popup',
+            type: 'inline',
+            opts: {
+                touch: false,
+                keyboard: false
+            },
+        });
+    })
+
+    $(".change_profile").on('click', function () {
+        $.fancybox.open({
+            src: '#profile_change_profile_popup',
             type: 'inline',
             opts: {
                 touch: false,
@@ -363,6 +410,42 @@
     })
 
     $('document').ready(function () {
+
+        $('#dob_day').customSelect({
+            includeValue: true,
+            placeholder: '<span style="color: darkgray;">ДД</span>',
+            showCallback: function () {
+                $('.j-select-wrapper .scrollbar-inner').scrollbar({
+                    //autoScrollSize:!1,
+                    autoUpdate: true,
+                    disableBodyScroll: false
+                });
+            }
+        });
+        $('#dob_month').customSelect({
+            includeValue: true,
+            placeholder: '<span style="color: darkgray;">MM</span>',
+            showCallback: function () {
+                $('.j-select-wrapper .scrollbar-inner').scrollbar({
+                    //autoScrollSize:!1,
+                    autoUpdate: true,
+                    disableBodyScroll: false
+                });
+            }
+        });
+        $('#dob_year').customSelect({
+            includeValue: true,
+            placeholder: '<span style="color: darkgray;">ГГГГ</span>',
+            showCallback: function () {
+                $('.j-select-wrapper .scrollbar-inner').scrollbar({
+                    //autoScrollSize:!1,
+                    autoUpdate: true,
+                    disableBodyScroll: false
+                });
+            }
+        });
+
+
         var pp_tabs_ul = new Swiper('#cabinet_tabs .tabs_head .swiper-container', {
             slidesPerView: 'auto',
             spaceBetween: 100,
@@ -388,6 +471,26 @@
                 }
             }
         });
+
+        arr_country_codes = ["at", "bg", "cz", "dk", "ee", "fr", "gr", "es", "nl", "lt", "lu", "de", "pl", "pt", "ro", "se", "sk", "hu", "it", "lv"];
+        /*Этот блок повторяется для каждого поля ввода телефона*/
+        var input2 = document.querySelector("#customer_telephone_code2");
+        window.intlTelInput(input2, {
+            separateDialCode: true,
+            nationalMode: true,
+            preferredCountries: ["pl"],
+            onlyCountries: arr_country_codes,
+            utilsScript: "/libs/intlTelInput/js/utils.js"
+        });
+        $(input2).parent().find('.country-list').wrapInner("<div class='j-select-wrapper'></div>").wrapInner("<div class='scrollbar-inner'></div>");
+        input2.addEventListener("open:countrydropdown", function () {
+            $(input2).parent().find('.country-list .scrollbar-inner').scrollbar({
+                //autoScrollSize:!1,
+                autoUpdate: true,
+                disableBodyScroll: false
+            });
+        });
+
     });
 </script>
 

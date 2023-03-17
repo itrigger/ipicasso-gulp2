@@ -1,5 +1,5 @@
 body {
-  background: url("../img/6.1 Profile.png") center 14px no-repeat;
+  //background: url("../img/6.3 Profile - Password.png") center 14px no-repeat;
 }
 
 .cabinet_bnr {
@@ -309,6 +309,35 @@ body {
   }
 
   .received-email {
+    margin-top: 10px;
+  }
+}
+
+.default-popup.fancybox-content {
+  padding: 0;
+  border-radius: 8px;
+  overflow: visible;
+  .fancybox-close-small {
+    right: 20px;
+    top: 20px;
+  }
+}
+
+.default-popup-in{
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 30px 40px 40px;
+    grid-gap: 20px;
+    border-radius: 8px;
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0;
+  }
+  .smalldesc{
+    font-size: 14px;
     margin-top: 10px;
   }
 }
@@ -1097,6 +1126,98 @@ body {
     font-size: 16px;
   }
 }
+
+.profile_change_profile_popup{
+  width: 540px;
+  label{
+    font-weight: bold;
+    a.link{
+      font-size: inherit;
+    }
+  }
+  .received-email_form_selects{
+    z-index: 99;
+  }
+  h3{
+    margin-bottom: 20px;
+  }
+  .discount-back{
+    border-top: 1px solid #CDCECF;
+    border-bottom: 1px solid #CDCECF;
+    background: #F6F7F8;
+    margin: 0px -40px -20px;
+    padding: 20px 40px 10px;
+    &.active{
+      background: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+    & > div{
+      opacity: .32;
+      pointer-events: none;
+    }
+    &.active > div{
+      opacity: 1;
+      pointer-events: all;
+    }
+    .desc1{
+      margin-bottom: 25px;
+    }
+    .desc2{
+      margin-top: 10px;
+      margin-bottom: 25px;
+      div{
+        color: #9FA0A0;
+        margin-top: 5px;
+      }
+    }
+    .popup-bday{
+      margin-top: 30px;
+    }
+  }
+  .custom-select {
+    margin-right: 20px;
+  }
+  .popup-bday{
+    margin-top: 12px;
+    .msg{
+      margin-top: 15px;
+    }
+  }
+  .btns{
+    margin-top: 25px;
+    .btn{
+      height: 40px;
+      font-size: 15px;
+      & + .btn{
+        margin-left: 20px;
+      }
+    }
+  }
+}
+.msg{
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  &.yellow{
+    background: #FFE9AC;
+  }
+}
+.tel-note{
+  margin-top: 10px;
+  color: rgba(#404142,.5);
+  font-size: 12px;
+  text-align: right;
+  max-width: 340px;
+}
+
+.received-email_form_selects.disabled{
+  .custom-select{
+    opacity: .5;
+    pointer-events: none;
+  }
+}
+
+
 .pane_password_w{
   padding-bottom: 10px;
   .profile_fake_password{
@@ -1105,6 +1226,23 @@ body {
     letter-spacing: 4px;
   }
 }
+
+.profile_change_pass_popup{
+  .btns{
+    margin-top: 18px;
+    .btn{
+      font-size: 15px;
+      height: 40px;
+      & + .btn{
+        margin-left: 13px;
+      }
+    }
+  }
+  input{
+    margin-top: 20px;
+  }
+}
+
 .pane-subscribe_w{
   padding-bottom: 17px;
 }
@@ -1221,6 +1359,34 @@ body {
   span{
     margin-bottom: 5px;
     margin-top: 12px;
+  }
+}
+#profile_edit_address_popup{
+  .default-popup-in{
+    width: 540px;
+  }
+}
+#profile_add_address_popup{
+  .default-popup-in{
+    width: 540px;
+  }
+}
+.address_popup{
+  h3{
+    margin-bottom: 15px;
+  }
+  .first_line{
+    margin-bottom: 10px;
+  }
+  .btns{
+    margin-top: 25px;
+    .btn{
+      height: 40px;
+      font-size: 15px;
+      & + .btn{
+        margin-left: 20px;
+      }
+    }
   }
 }
 
