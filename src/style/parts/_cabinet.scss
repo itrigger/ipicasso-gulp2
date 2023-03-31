@@ -1408,6 +1408,57 @@ body {
 }
 
 @media (min-width: 860px) and (max-width: 1139px) {
+  .pane-my-addresses{
+    overflow-x: auto;
+    display: flex;
+    min-width: 100%;
+    flex-wrap: nowrap;
+  }
+  .pane-my-address-add{
+    margin-right: 20px;
+    width: 130px !important;
+    min-width: 130px !important;
+    order: 1;
+  }
+  .pane-my-addresses::-webkit-scrollbar {
+    display: none;
+  }
+  .pane-my-address{
+    position: relative;
+  }
+  .pane-my-address .btns{
+    position: absolute;
+    opacity: 1;
+    pointer-events: all;
+    right: 10px;
+    bottom: 10px;
+  }
+  .pane-my-addresses > div, .pane-my-addresses > a{
+    width: 246px;
+    min-width: 246px;
+  }
+  .pane-my-addresses > div{
+    order: 2;
+  }
+  .checkbox:not(checked) + label:before{
+    top: -2px;
+  }
+  .tab_cab_profile{
+    .pane-holder .tcb50{
+      flex: 1 1 calc(50% - 36px);
+    }
+  }
+  .pane-subscribe_w{
+    position: relative;
+  }
+  .pane-subscribe .btns{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  .pane-subscribe .btn{
+    padding: 0 10px;
+  }
   .order-page {
     padding-top: 15px;
   }
@@ -1451,6 +1502,79 @@ body {
 }
 
 @media (max-width: 859px) {
+  .fancybox-button--zoom{
+    display: none !important;
+  }
+  #profile_add_address_popup .default-popup-in{
+    width: 100%;
+  }
+  .default-popup-in{
+    padding: 25px 15px 15px;
+    width: 100%;
+  }
+  .profile_change_profile_popup{
+    width: 100%;
+  }
+  .profile_change_profile_popup .discount-back{
+    margin: 0px -15px -20px;
+  }
+  .show_more_addresses{
+    order: 15;
+    border: 1px solid #404142;
+    height: 32px;
+    border-radius: 5px;
+    box-shadow: none;
+    text-transform: uppercase;
+    background: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .pane-my-address-add span {
+    margin-bottom: 8px;
+    margin-top: 7px;
+  }
+  .pane-my-addresses > div{
+    order: 2;
+  }
+  .pane-my-addresses > a{
+    order: 1;
+    width: 100%;
+    min-width: 100%;
+    height: 73px;
+    br{
+      display: none;
+    }
+  }
+  .pane-my-address{
+    width: 100%;
+    min-width: 100%;
+  }
+  .pane-my-address .btns{
+    opacity: 1;
+    pointer-events: all;
+  }
+  .pane-my-addresses{
+    flex-direction: column;
+  }
+  .pane{
+    padding: 16px;
+  }
+  .checkbox:not(checked) + label:before{
+    top: -2px;
+  }
+  .pane-subscribe > div{
+    flex-direction: column;
+    align-items: flex-start;
+    .btns{
+      margin-top: 20px;
+    }
+  }
+  .pane_profile_contacts{
+    margin-top: 40px;
+  }
   .order-pane--bottom .rev_imgs .rev_img {
     flex-wrap: wrap;
 
