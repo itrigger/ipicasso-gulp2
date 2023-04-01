@@ -1109,6 +1109,19 @@ body {
 }
 
 
+/*** Favs ***/
+
+.tab_cab_favs{
+  grid-template-columns: repeat(5, 1fr);
+  .card .cart_btn_w{
+    opacity: 1;
+    pointer-events: none;
+  }
+  .card .shover{
+    display: none !important;
+  }
+}
+
 /*** Profile ***/
 
 .pane{
