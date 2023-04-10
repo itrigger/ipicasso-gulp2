@@ -86,6 +86,15 @@ body {
 .mt_auto{
   margin-top: auto;
 }
+.w65 {
+  width: 65%;
+}
+.w70 {
+  width: 70%;
+}
+.w75 {
+  width: 75%;
+}
 .w100 {
   width: 100%;
 }
@@ -137,6 +146,14 @@ body {
     background: #404142;
     color: #fff;
   }
+}
+
+.infopanel{
+  background: #FFE9AC;
+  padding: 7px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 .price {

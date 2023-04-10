@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Страница Оформления заказа</title>
+    //= template/head.html
+
+</head>
+<body class="product">
+//= template/header.html
+
+<!-- side menu -->
+//= template/sidemenu.html
+<!-- end of side menu -->
+<div class="category_menu_w standalone_menu"><!-- добавить класс standalone если нулевого уровня меню не будет -->
+
+    <!-- main category menu -->
+    <div class="cm-level-1-w">
+        <div class="in">
+            <div class="category_menu cm-level-1 active" id="category_menu">
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container active">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="1000">
+                            <li class="mm--item hasChild" data-menu-id="100"><a href="javascript:void(0);">Malowanie po
+                                numerach</a></li>
+                            <li class="mm--item" data-menu-id="200"><a href="javascript:void(0);">Ramy do obrazow</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="300"><a href="javascript:void(0);">Diamentowa
+                                Mozaika</a></li>
+                            <li class="mm--item hasChild" data-menu-id="400"><a href="javascript:void(0);">Papaercraft
+                                3D
+                                modele</a></li>
+                            <li class="mm--item" data-menu-id="500"><a href="javascript:void(0);">Gobeliny</a></li>
+                            <!--<li data-menu-id="600"><a class="red" href="javascript:void(0);">SALE</a></li>
+                            <li class="search"><a class="ico-search" href="javascript:void(0);"></a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="2000">
+                            <li class="mm--item hasChild" data-menu-id="2100"><a href="javascript:void(0);">Радиоуправляемые
+                                игрушки</a></li>
+                            <li class="mm--item" data-menu-id="2200"><a href="javascript:void(0);">Квадрокоптеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2300"><a
+                                    href="javascript:void(0);">Экшн-камеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2400"><a href="javascript:void(0);">Прочее</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Arrows -->
+                <div class="swiper-button-prev megamenu-swiper-button swiper-button-disabled"></div>
+                <div class="swiper-button-next megamenu-swiper-button"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end of main category menu -->
+    //= template/megamenu.html
+</div>
+
+//= template/breadcrumb.html
+
+<div class="in cabinet">
+    <div class="col-12">
+        <div class="cabinet_bnr"></div>
+    </div>
+</div>
+
+<div class="in cabinet">
+    <div class="p_tabs" id="cabinet_tabs">
+        <div class="full_tabs_w">
+            <div class="tabs_head swiper-container-wrapper">
+                <div class="swiper-container">
+                    <ul class="ul swiper-wrapper">
+                        <li class="swiper-slide" data-tab-content="1">Главная</li>
+                        <li class="swiper-slide" data-tab-content="2">Заказы <span class="counter">3</span></li>
+                        <li class="swiper-slide" data-tab-content="3">Избранное</li>
+                        <li class="active swiper-slide" data-tab-content="4">Моя скидка</li>
+                        <li class="swiper-slide" data-tab-content="5">Мои отзывы <span class="counter">3</span></li>
+                        <li class="swiper-slide" data-tab-content="6">Профиль</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tabs_content_w">
+                <div class="tab_content" data-tab="1" style="display: none;">
+                    1
+                </div>
+                <div class="tab_content" data-tab="2" style="display: none;">
+                    2
+                </div>
+                <div class="tab_content" data-tab="3" style="display: none;">
+                    3
+                </div>
+                <div class="tab_content tab_cab_discount" data-tab="4" style="display: grid;">
+                    <div class="col-10 pane-holder">
+                        <div class="pane pane-shadow d_f w100">
+                            <div class="d_f fd_c h100 my-discount-left">
+                                <div class="heading ">
+                                    Моя скидка <span class="cabinet_discount_notifier">4%</span>
+                                </div>
+                                <div class="desc">
+                                    Скидка зависит от суммы покупок за 450 дней.
+                                </div>
+                                <div class="pane_orders mt_auto">
+                                    <div class="d_f ai_end">
+                                        <div class="items_total">
+                                            <div class="text">Текущая сумма покупок</div>
+                                            <div class="count">50 zl</div>
+                                        </div>
+                                        <div class="ml_auto | info">
+                                            Чтобы получить скидку сделайте заказ еще на 100zl
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d_f fd_c h100 my-discount-right">
+                                <div class="stairs h100 d_f ai_end">
+                                    <div class="stair stair1 d_f fd_c jc_sb success">
+                                        <div class="head">4%</div>
+                                        <div class="desc">od 150zl do 450zl</div>
+                                        <div class="desc2">150 - 450zl</div>
+                                    </div>
+                                    <div class="stair stair2 d_f fd_c jc_sb">
+                                        <div class="head">6%</div>
+                                        <div class="desc">od 450zl do 900zl</div>
+                                        <div class="desc2">450 - 900zl</div>
+                                    </div>
+                                    <div class="stair stair3 d_f fd_c jc_sb">
+                                        <div class="head">8%</div>
+                                        <div class="desc">od 900zl do 1500zl</div>
+                                        <div class="desc2">900 - 1500zl</div>
+                                    </div>
+                                    <div class="stair stair4 d_f fd_c jc_sb">
+                                        <div class="head">10%</div>
+                                        <div class="desc">od 1500zl i więcej</div>
+                                        <div class="desc2">>1500zl</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pane pane-shadow w33 pane-birthday">
+                            <div class="d_f fd_c h100">
+                                <div class="heading">
+                                    Скидка именинникам&nbsp;<span class="red">10%</span>
+                                </div>
+                                <div class="desc">
+                                    Скидка предоставляется в день рождения и +/-7 дней
+                                    от этой даты при условии, что за последние
+                                    450 дней сумма покупок была больше 0zl.
+                                </div>
+                                <div class="pane-discount-3 mt_auto">
+                                    <div class="title">Вы указали дату рождения:</div>
+                                    <div class="date">02.12.1987</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <!-- <div class="pane pane-shadow w33 pane-birthday">
+                         <div class="d_f fd_c h100">
+                             <div class="heading">
+                                 С Днем Рождения!
+                             </div>
+                             <div class="desc">
+                                 В честь дня рождения мы дарим вам
+                                 скидку на все товары.
+                             </div>
+                             <div class="pane-discount-3 mt_auto">
+                                 <div class="percent">10%</div>
+                                 <div class="title">Скидка действует с 01.12.2022 по 15.12.2022</div>
+                             </div>
+                         </div>
+                     </div> -->
+
+                     <div class="pane pane-shadow w33">
+                         <div class="d_f fd_c h100">
+                             <div class="heading jc_sb">
+                                 Единоразовая скидка
+                             </div>
+                             <div class="desc">
+                                 Cкидка предоставляется при большой сумме заказа
+                                 в одном чеке.
+                             </div>
+                             <div class="pane-discount-4 mt_auto">
+                                 <div class="horizontal-bars big-bars">
+                                     <div class="bar w65 d_f ai_end">
+                                         <div class="head">10%</div>
+                                         od 500zl do 1000zl
+                                     </div>
+                                     <div class="bar w100 d_f ai_end">
+                                         <div class="head">15%</div>
+                                         od 1000zl
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="pane pane-shadow w33">
+                         <div class="d_f fd_c h100">
+                             <div class="heading jc_sb">
+                                 Скидка за отзыв <span
+                                     title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla dui, semper eu suscipit vel, volutpat eu odio. Sed iaculis leo et massa malesuada varius. Aliquam aliquet lectus ut nisl pharetra vulputate."
+                                     class="tooltipstered-left hint help_ico"></span>
+                             </div>
+                             <div class="desc">
+                                 Оставляй отзывы о своих покупках и получай бонусы на следующий заказ.
+                             </div>
+                             <div class="pane-discount-5 mt_auto">
+                                 <div class="horizontal-bars">
+                                     <div class="bar w50 d_f ai_end">
+                                         <div class="head">10%</div>
+                                         - отзыв
+                                     </div>
+                                     <div class="bar w75 d_f ai_end">
+                                         <div class="head">15%</div>
+                                         - отзыв + фото
+                                     </div>
+                                     <div class="bar w100 d_f ai_end">
+                                         <div class="head">20%</div>
+                                         - отзыв + фото + пост в соцсетях
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="infopanel w100">
+                         <b>ВНИМАНИЕ:</b> Скидки и бонусы не суммируются. Действует наибольшая скидка на данный момент.
+                     </div>
+                 </div>
+             </div>
+             <div class="tab_content" data-tab="5" style="display: none;">
+                 5
+             </div>
+             <div class="tab_content" data-tab="6" style="display: none;">
+                 6
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+
+
+
+<script>
+
+
+ $('document').ready(function () {
+
+     $('.tooltipstered-left').tooltipster({
+         position: 'left',
+         theme: 'my-custom-tooltip',
+     });
+
+     var pp_tabs_ul = new Swiper('#cabinet_tabs .tabs_head .swiper-container', {
+         slidesPerView: 'auto',
+         spaceBetween: 100,
+         speed: 400,
+         slidesOffsetAfter: 0,
+         slideToClickedSlide: true,
+         breakpoints: {
+             320: {
+                 slidesPerView: 'auto',
+                 allowTouchMove: true,
+                 watchOverflow: true,
+                 spaceBetween: 50,
+             },
+             860: {
+                 slidesPerView: 'auto',
+                 allowTouchMove: true,
+                 watchOverflow: true,
+                 spaceBetween: 50,
+             },
+             1140: {
+                 allowTouchMove: false,
+                 slideToClickedSlide: false,
+             }
+         }
+     });
+
+
+
+ });
+</script>
+
+//= template/footer.html
+</body>
+</html>

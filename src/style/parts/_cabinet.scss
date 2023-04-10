@@ -171,6 +171,7 @@ body {
       font-size: 40px;
       color: #404142;
       font-weight: bold;
+      line-height: 1;
     }
   }
 }
@@ -246,7 +247,21 @@ body {
     font-weight: bold;
   }
 }
-
+.pane.pane-birthday{
+  background: #F44436;
+  color: #FFFFFF;
+  .heading, .desc{
+    color: #FFFFFF;
+  }
+  .percent{
+    font-size: 64px;
+    font-weight: bold;
+  }
+  .title{
+    opacity: .7;
+    color: #fff;
+  }
+}
 .pane_reviews {
   a {
     color: $blue;
@@ -310,6 +325,26 @@ body {
 
   .received-email {
     margin-top: 10px;
+  }
+}
+
+.my-custom-tooltip {
+  &.tooltipster-base {
+    max-width: 300px !important;
+  }
+
+  .tooltipster-content {
+    padding: 0 20px;
+  }
+
+  &.tooltipster-sidetip.tooltipster-left .tooltipster-arrow{
+    height: 15px;
+    margin-top: 0;
+    right: 0;
+    width: 15px;
+  }
+  &.tooltipster-sidetip .tooltipster-arrow-background{
+    border: 10px solid transparent;
   }
 }
 
@@ -1122,6 +1157,120 @@ body {
   }
 }
 
+/*** My discount ***/
+.tab_cab_discount{
+  margin-top: 40px;
+}
+.my-discount-left{
+  width: calc(100% / 3 - 10px);
+  padding-right: 50px;
+  height: 220px;
+  position: relative;
+  &:after{
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid #CDCECF;
+  }
+}
+.my-discount-right{
+  flex-grow: 1;
+  padding-left: 40px;
+}
+.stairs{
+  grid-gap: 16px;
+  .stair{
+    border-radius: 4px;
+    width: 25%;
+    background: rgba(#1782E9, .1);
+    padding: 16px;
+    .head{
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .desc{
+      font-size: 16px;
+      margin-top: 5px;
+      color: #9E9FA0;
+      line-height: 24px;
+      display: block;
+    }
+    .desc2{
+      display: none;
+    }
+    &.success{
+      background: rgba(#F44436, .1);
+      .head{
+        position: relative;
+        &:after{
+          content: '';
+          display: block;
+          position: absolute;
+          right: -4px;
+          top: -4px;
+          background: url("../img/ico-disc-ok.png") 0 0 no-repeat;
+          background-size: contain;
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+  .stair1{height: 40%;}
+  .stair2{height: 60%;}
+  .stair3{height: 80%;}
+  .stair4{height: 100%;}
+}
+.pane-discount-3{
+  .title{
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 5px;
+    color: #404142;
+  }
+  .date{
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+.horizontal-bars{
+  .w50{
+    min-height: auto;
+    width: 50%;
+  }
+}
+.bar{
+  background: rgba(#1782E9, .1);
+  border-radius: 4px;
+  height: 38px;
+  padding: 9px 16px;
+  margin-top: 4px;
+  .head{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    margin-right: 10px;
+  }
+}
+.big-bars{
+  .bar{
+    height: 58px;
+    padding: 16px;
+    margin-top: 7px;
+  }
+}
+.help_ico{
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/ic-help.svg") 0 0 no-repeat;
+
+  cursor: pointer;
+}
 /*** Profile ***/
 
 .pane{
@@ -1418,9 +1567,53 @@ body {
   .pane-holder .w50 {
     flex: 1 1 100%;
   }
+  .tab_cab_discount{
+    .pane.w33{
+      flex: 1 1 48%;
+    }
+    .pane.w33.pane-birthday{
+      flex: 1 1 100%;
+    }
+  }
 }
 
 @media (min-width: 860px) and (max-width: 1139px) {
+  .tab_cab_discount{
+    .pane.w33{
+      flex: 1 1 48%;
+    }
+    .pane.w33.pane-birthday{
+      flex: 1 1 100%;
+    }
+  }
+  .my-discount-right{
+    padding-left: 22px;
+  }
+  .pane_orders .info{
+    width: 68%;
+    line-height: 24px;
+  }
+  .stairs .stair.success .head:after{
+    width: 20px;
+    height: 20px;
+  }
+  .stairs .stair{
+    padding: 12px;
+  }
+  .stairs .stair .desc{
+    display: none;
+  }
+  .stairs .stair .desc2{
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #9E9FA0;
+    line-height: 24px;
+  }
+  .my-discount-left{
+    width: calc(100% / 2 - 90px);
+    padding-right: 22px;
+  }
   .pane-my-addresses{
     overflow-x: auto;
     display: flex;
@@ -1515,6 +1708,54 @@ body {
 }
 
 @media (max-width: 859px) {
+  .pane_orders{
+    margin-top: 55px;
+  }
+  .stairs .stair.success .head:after{
+    width: 20px;
+    height: 20px;
+  }
+  .my-discount-left:after{
+    display: none;
+  }
+  .stairs{
+    grid-gap: 8px;
+  }
+  .stairs .stair{
+    padding: 12px;
+  }
+  .stairs .stair .desc{
+    display: none;
+  }
+  .stairs .stair .desc2{
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #9E9FA0;
+    line-height: 18px;
+  }
+  .tab_cab_discount .pane-holder .w33{
+    flex: 1 1 100%;
+  }
+  .tab_cab_discount .pane.w100{
+    flex-direction: column;
+  }
+  .bar.w65{
+    width: 67%;
+  }
+  .my-discount-left{
+    height: auto;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 16px;
+  }
+  .my-discount-right{
+    padding-left: 0;
+    width: 100%;
+    min-height: 240px;
+  }
   .fancybox-button--zoom{
     display: none !important;
   }
