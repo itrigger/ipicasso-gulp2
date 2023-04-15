@@ -1274,7 +1274,7 @@ body {
 /*** Profile ***/
 
 .pane{
-  background: transparent;
+  //background: transparent;
 }
 .tab_cab_profile{
   padding-top: 20px;
@@ -1889,6 +1889,9 @@ body {
   }
   .pane{
     padding: 16px;
+  }
+  .pane-holder .w25{
+    flex: 1 1 100%
   }
   .checkbox:not(checked) + label:before{
     top: -2px;
