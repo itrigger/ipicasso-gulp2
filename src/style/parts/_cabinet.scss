@@ -1,5 +1,5 @@
 body {
-  //background: url("../img/6.3 Profile - Password.png") center 14px no-repeat;
+  //background: url("../img/5.0 Feedback.png") center 14px no-repeat;
 }
 
 .cabinet_bnr {
@@ -1551,6 +1551,63 @@ body {
     }
   }
 }
+/*** Feedback ***/
+.tab_cab_feedback{
+  .promo-desc{
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .col-10{
+    margin-bottom: 30px;
+  }
+  .container{
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .cabinet_reviews_cart .row{
+    border: none;
+    .ct_name{
+      padding-left: 25px;
+      padding-top: 20px;
+      grid-column: 2 / -1;
+    }
+    .ct_code{
+      padding-left: 25px;
+    }
+  }
+  .review_item{
+    border-bottom: 1px solid #CDCECF;
+    padding-bottom: 20px;
+  }
+  .btn.btn-big{
+    display: inline-flex;
+    width: auto;
+  }
+}
+.tab_cab_feedback--h1{
+  margin-bottom: 48px;
+  margin-top: 20px;
+  display: flex;
+  padding-left: 0;
+  align-items: baseline;
+  li{
+    list-style: none;
+    margin-right: 35px;
+    opacity: .8;
+
+    &.active{
+      font-size: 24px;
+      font-weight: bold;
+      opacity: 1;
+      span{
+        opacity: .5;
+      }
+    }
+  }
+  span{
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
 
 /*** Media ***/
 
@@ -1708,6 +1765,23 @@ body {
 }
 
 @media (max-width: 859px) {
+  .tab_cab_feedback .category_content_items.cci-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tab_cab_feedback{
+    .btn.btn-big{
+      font-size: 14px;
+      height: 40px;
+    }
+    .cabinet_reviews_cart .row .ct_name{
+        grid-column: 4 / span 8;
+      padding-left: 30px;
+    }
+    .cabinet_reviews_cart .row .ct_code{
+      padding-left: 0;
+    }
+  }
+
   .pane_orders{
     margin-top: 55px;
   }
