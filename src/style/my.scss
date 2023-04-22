@@ -39,6 +39,10 @@ a.default-link{
   }
 }
 
+h2{
+  font-size: 24px;
+}
+
 /*Хаотичная разметка по дизайну*/
 #banners{
   margin-bottom: 61px;
@@ -85,6 +89,7 @@ a.default-link{
 
 @import "parts/_order";
 @import "parts/_cabinet";
+@import "parts/_help";
 
 @import "parts/_uniqs";
 

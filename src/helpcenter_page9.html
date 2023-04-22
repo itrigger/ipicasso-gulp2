@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Страница Оформления заказа</title>
+    //= template/head.html
+
+</head>
+<body class="product">
+//= template/header.html
+
+<!-- side menu -->
+//= template/sidemenu.html
+<!-- end of side menu -->
+<div class="category_menu_w standalone_menu"><!-- добавить класс standalone если нулевого уровня меню не будет -->
+
+    <!-- main category menu -->
+    <div class="cm-level-1-w">
+        <div class="in">
+            <div class="category_menu cm-level-1 active" id="category_menu">
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container active">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="1000">
+                            <li class="mm--item hasChild" data-menu-id="100"><a href="javascript:void(0);">Malowanie po
+                                numerach</a></li>
+                            <li class="mm--item" data-menu-id="200"><a href="javascript:void(0);">Ramy do obrazow</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="300"><a href="javascript:void(0);">Diamentowa
+                                Mozaika</a></li>
+                            <li class="mm--item hasChild" data-menu-id="400"><a href="javascript:void(0);">Papaercraft
+                                3D
+                                modele</a></li>
+                            <li class="mm--item" data-menu-id="500"><a href="javascript:void(0);">Gobeliny</a></li>
+                            <!--<li data-menu-id="600"><a class="red" href="javascript:void(0);">SALE</a></li>
+                            <li class="search"><a class="ico-search" href="javascript:void(0);"></a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-container">
+                        <ul class="ul ul-level-1 swiper-wrapper" data-menu-id="2000">
+                            <li class="mm--item hasChild" data-menu-id="2100"><a href="javascript:void(0);">Радиоуправляемые
+                                игрушки</a></li>
+                            <li class="mm--item" data-menu-id="2200"><a href="javascript:void(0);">Квадрокоптеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2300"><a
+                                    href="javascript:void(0);">Экшн-камеры</a>
+                            </li>
+                            <li class="mm--item hasChild" data-menu-id="2400"><a href="javascript:void(0);">Прочее</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Arrows -->
+                <div class="swiper-button-prev megamenu-swiper-button swiper-button-disabled"></div>
+                <div class="swiper-button-next megamenu-swiper-button"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end of main category menu -->
+    //= template/megamenu.html
+</div>
+
+//= template/breadcrumb.html
+
+<div class="in helpcenter">
+    <div class="col-1 l-col-0 m-col-0 s-col-0 xs-col-0"></div>
+    <div class="col-2 l-col-2 m-col-2 s-col-2 xs-col-12">
+        //= template/helpcenter/help-left.html
+    </div>
+    <div class="col-6 l-col-6 m-col-6 s-col-4 xs-col-12">
+        <div class="help_heading-page">
+            <div class="img">
+                <img src="/img/help_head_ico9.jpg" alt="ico"/>
+            </div>
+            <h2>Reklamacje i zwroty</h2>
+            <div class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem velit, tristique sit amet mi vitae, lacinia sagittis sem. Nullam gravida venenatis nulla, sed gravida diam lacinia a.
+            </div>
+        </div>
+        <div class="help_content">
+            <p>Wystąpił problem z towarem i jakością?  Czy istnieje potrzeba zwrotu towaru? Zapraszamy do kontaktu z nami, rozwiążemy wszystkie pytania!</p>
+
+            <p>Drogi Kliencie! W sytuacji, jeżeli produkt towar nie spełnia wymagań lub z towarem były problemy, zawsze istnieje możliwość je wymienić lub zwrócić. Jest to bardzo łatwe i nie stwarza trudności. Wystarczy zapoznać się z tabelą, która w prosty sposób pokaże, w jaki sposób i na jakich warunkach można to zrobić.</p>
+        </div>
+    </div>
+    <div class="col-1 l-col-0 m-col-0 s-col-0 xs-col-0"></div>
+</div>
+
+
+<script>
+
+
+</script>
+
+//= template/footer.html
+</body>
+</html>

@@ -1,0 +1,58 @@
+<div class="help-left-menu">
+    <div class="top-head">
+        O nas <span class="ico-arr_dd"></span>
+    </div>
+    <div class="hl-spoiler">
+        <div class="block block1">
+            <div class="head d_f">
+                <div class="img">
+                    <img src="/img/help_ico_1.jpg" alt="ico 1" />
+                </div>
+                <div class="title">iPicasso.pl</div>
+            </div>
+            <ul>
+                <li><a href="helpcenter_page1.html" class="active">O nas</a></li>
+                <li><a href="helpcenter_page2.html">Nasze atuty</a></li>
+                <li><a href="helpcenter_page3.html">Program rabatowy</a></li>
+                <li><a href="helpcenter_page4.html">Regulamin Sklepu</a></li>
+                <li><a href="helpcenter_page5.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="block block2">
+            <div class="head d_f">
+                <div class="img">
+                    <img src="/img/help_ico_2.jpg" alt="ico 1" />
+                </div>
+                <div class="title">Pomoc dla kupującego</div>
+            </div>
+            <ul>
+                <li><a href="helpcenter_page6.html">Jak zamówić</a></li>
+                <li><a href="helpcenter_page7.html">Formy płatności</a></li>
+                <li><a href="helpcenter_page8.html">Koszty i sposoby dostawy</a></li>
+                <li><a href="helpcenter_page9.html">Reklamacje i zwroty</a></li>
+            </ul>
+        </div>
+        <div class="block block3">
+            <div class="head d_f">
+                <div class="img">
+                    <img src="/img/help_ico_3.jpg" alt="ico 1" />
+                </div>
+                <div class="title">Blog</div>
+            </div>
+            <ul>
+                <li><a href="#">Aktualności</a></li>
+                <li><a href="#">Artykuły i recenzje</a></li>
+                <li><a href="#">Wideo</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery('document').ready(function(){
+        jQuery('.help-left-menu .top-head').click(function (){
+            jQuery('.hl-spoiler').slideToggle().toggleClass("active")
+            jQuery(this).toggleClass("active")
+        });
+    });
+</script>
